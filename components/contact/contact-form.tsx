@@ -14,6 +14,7 @@ import {
   SelectValue,
 } from "@/components/ui/select"
 
+
 const services = [
   "Website Development",
   "Mobile App Development",
@@ -42,16 +43,24 @@ export function ContactForm() {
     service: "",
     budget: "",
     message: "",
+    website: "", // honeypot field
   })
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
+
     startTransition(async () => {
-      // Simulasi submit (siap diganti API / Formspree / backend)
-      await new Promise((resolve) => setTimeout(resolve, 1500))
-      setIsSubmitted(true)
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      })
+
+      if (res.ok) setIsSubmitted(true)
+      else alert("Gagal mengirim pesan")
     })
   }
+
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -94,6 +103,16 @@ export function ContactForm() {
             onChange={handleChange}
             placeholder="Contoh: Andi Pratama"
             required
+          />
+          {/* HONEYPOT FOR BOT PROTECTION */}
+          <Input
+            type="text"
+            name="website"
+            value={(formData as any).website || ""}
+            onChange={handleChange}
+            className="absolute left-[-9999px]"
+            tabIndex={-1}
+            autoComplete="off"
           />
         </div>
         <div className="space-y-2">
