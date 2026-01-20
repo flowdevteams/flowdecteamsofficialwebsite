@@ -9,21 +9,22 @@ export function ServicesHero() {
         <div className="max-w-4xl mx-auto text-center">
           <AnimatedSection animation="fade-in-down">
             <span className="inline-block px-4 py-1.5 rounded-full text-sm font-medium bg-primary/10 text-primary mb-6">
-              Our Services
+              Layanan Kami
             </span>
           </AnimatedSection>
-          
+
           <AnimatedSection animation="fade-in-up" delay={100}>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-6 text-balance">
-              Comprehensive Digital
-              <span className="text-primary"> Solutions</span>
+              Solusi Digital
+              <span className="text-primary"> Terintegrasi</span>
             </h1>
           </AnimatedSection>
-          
+
           <AnimatedSection animation="fade-in-up" delay={200}>
             <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed text-pretty">
-              From concept to launch and beyond, we offer end-to-end services 
-              to bring your digital vision to life and drive business growth.
+              Mulai dari perencanaan konsep hingga peluncuran dan pengembangan berkelanjutan,
+              kami menyediakan layanan digital end-to-end untuk mewujudkan visi bisnis Anda
+              serta mendorong pertumbuhan yang berkelanjutan.
             </p>
           </AnimatedSection>
         </div>

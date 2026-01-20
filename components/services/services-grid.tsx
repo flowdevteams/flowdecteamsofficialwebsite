@@ -1,7 +1,13 @@
 "use client"
 
 import Link from "next/link"
-import { ArrowRight, Globe, Smartphone, Palette, Server, ShoppingCart, BarChart3, Shield, Headphones } from "lucide-react"
+import {
+  ArrowRight,
+  Globe,
+  Smartphone,
+  Server,
+  Palette,
+} from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { AnimatedSection } from "@/components/animated-section"
 
@@ -9,50 +15,50 @@ const services = [
   {
     icon: Globe,
     title: "Web Development",
-    description: "Custom websites and web applications built with modern technologies. From simple landing pages to complex enterprise solutions, we deliver high-performance web experiences.",
-    features: ["Custom CMS Development", "E-commerce Solutions", "Progressive Web Apps", "API Integration"],
+    description:
+      "Kami menyediakan layanan pengembangan website dan aplikasi web profesional dengan teknologi modern. Dirancang untuk performa tinggi, skalabilitas, dan kemudahan pengelolaan bisnis Anda.",
+    features: [
+      "Website Company Profile",
+      "Web Application Custom",
+      "E-Commerce & Dashboard",
+      "Integrasi API & Sistem",
+    ],
   },
   {
     icon: Smartphone,
     title: "Mobile App Development",
-    description: "Native and cross-platform mobile applications for iOS and Android. We build apps that users love with intuitive interfaces and powerful functionality.",
-    features: ["iOS Development", "Android Development", "React Native Apps", "Flutter Development"],
+    description:
+      "Pengembangan aplikasi mobile Android dan iOS dengan desain intuitif dan performa optimal. Cocok untuk startup, UMKM, hingga kebutuhan enterprise.",
+    features: [
+      "Android & iOS App",
+      "Cross-Platform App",
+      "UI Native & Smooth UX",
+      "Integrasi Backend & API",
+    ],
+  },
+  {
+    icon: Server,
+    title: "Backend & API Development",
+    description:
+      "Arsitektur backend yang aman, cepat, dan siap berkembang. Kami membangun sistem server dan API yang menjadi fondasi aplikasi web dan mobile Anda.",
+    features: [
+      "REST & GraphQL API",
+      "Database Design",
+      "Cloud & Deployment",
+      "Authentication & Security",
+    ],
   },
   {
     icon: Palette,
     title: "UI/UX Design",
-    description: "Beautiful, user-centered design that converts. We create intuitive interfaces and seamless experiences that delight users and achieve business goals.",
-    features: ["User Research", "Wireframing", "Prototyping", "Design Systems"],
-  },
-  {
-    icon: Server,
-    title: "Backend Development",
-    description: "Scalable server architecture and robust APIs that power your applications. We build backends that are secure, fast, and ready to scale.",
-    features: ["API Development", "Database Design", "Cloud Architecture", "Microservices"],
-  },
-  {
-    icon: ShoppingCart,
-    title: "E-commerce Solutions",
-    description: "Complete e-commerce platforms that drive sales. From product catalogs to checkout, we build online stores that convert visitors into customers.",
-    features: ["Custom Storefronts", "Payment Integration", "Inventory Management", "Analytics Dashboard"],
-  },
-  {
-    icon: BarChart3,
-    title: "Digital Marketing",
-    description: "Data-driven marketing strategies that grow your business. We help you reach your target audience and convert them into loyal customers.",
-    features: ["SEO Optimization", "Content Strategy", "Social Media", "PPC Campaigns"],
-  },
-  {
-    icon: Shield,
-    title: "Security & Compliance",
-    description: "Comprehensive security solutions to protect your digital assets. We ensure your applications meet industry standards and regulatory requirements.",
-    features: ["Security Audits", "Penetration Testing", "GDPR Compliance", "Data Encryption"],
-  },
-  {
-    icon: Headphones,
-    title: "Support & Maintenance",
-    description: "24/7 support and ongoing maintenance to keep your applications running smoothly. We are your long-term partner in digital success.",
-    features: ["24/7 Monitoring", "Bug Fixes", "Performance Optimization", "Regular Updates"],
+    description:
+      "Desain antarmuka modern yang fokus pada pengalaman pengguna dan konversi. Setiap desain dibuat berdasarkan kebutuhan bisnis dan perilaku pengguna.",
+    features: [
+      "User Flow & Wireframe",
+      "Prototype Interaktif",
+      "Design System",
+      "High-Conversion UI",
+    ],
   },
 ]
 
@@ -81,15 +87,23 @@ export function ServicesGrid() {
                     </p>
                     <ul className="grid grid-cols-2 gap-2 mb-6">
                       {service.features.map((feature) => (
-                        <li key={feature} className="flex items-center gap-2 text-sm text-foreground">
+                        <li
+                          key={feature}
+                          className="flex items-center gap-2 text-sm text-foreground"
+                        >
                           <div className="w-1.5 h-1.5 rounded-full bg-primary" />
                           {feature}
                         </li>
                       ))}
                     </ul>
-                    <Button asChild variant="outline" size="sm" className="gap-2 group/btn bg-transparent">
+                    <Button
+                      asChild
+                      variant="outline"
+                      size="sm"
+                      className="gap-2 group/btn bg-transparent"
+                    >
                       <Link href="/contact">
-                        Learn More
+                        Konsultasi Sekarang
                         <ArrowRight className="h-4 w-4 transition-transform group-hover/btn:translate-x-1" />
                       </Link>
                     </Button>

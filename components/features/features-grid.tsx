@@ -20,63 +20,63 @@ import { AnimatedSection } from "@/components/animated-section"
 const features = [
   {
     icon: Rocket,
-    title: "Lightning Fast Performance",
-    description: "Optimized code and modern frameworks ensure your applications load instantly and run smoothly.",
+    title: "Performa Super Cepat",
+    description: "Kode yang dioptimalkan dan framework modern memastikan aplikasi Anda berjalan cepat, stabil, dan responsif.",
   },
   {
     icon: Shield,
-    title: "Enterprise Security",
-    description: "Industry-standard security protocols and best practices protect your data and users.",
+    title: "Keamanan Kelas Enterprise",
+    description: "Penerapan standar keamanan industri dan best practice untuk melindungi data serta sistem bisnis Anda.",
   },
   {
     icon: Smartphone,
-    title: "Responsive Design",
-    description: "Pixel-perfect layouts that adapt seamlessly to any device or screen size.",
+    title: "Desain Responsif",
+    description: "Tampilan presisi yang menyesuaikan sempurna di semua perangkat, mulai dari mobile hingga desktop.",
   },
   {
     icon: Palette,
-    title: "Custom UI/UX",
-    description: "Unique, branded interfaces designed to engage users and reflect your identity.",
+    title: "UI/UX Kustom",
+    description: "Desain antarmuka eksklusif yang mencerminkan identitas brand dan meningkatkan pengalaman pengguna.",
   },
   {
     icon: Database,
-    title: "Scalable Architecture",
-    description: "Built to grow with your business, handling increased traffic and data effortlessly.",
+    title: "Arsitektur Scalable",
+    description: "Sistem dirancang untuk tumbuh bersama bisnis Anda, mampu menangani trafik dan data yang terus meningkat.",
   },
   {
     icon: Cloud,
-    title: "Cloud Integration",
-    description: "Seamless integration with major cloud providers for reliable hosting and services.",
+    title: "Integrasi Cloud",
+    description: "Terintegrasi dengan layanan cloud terpercaya untuk performa, skalabilitas, dan keandalan maksimal.",
   },
   {
     icon: BarChart3,
-    title: "Analytics & Insights",
-    description: "Built-in analytics to track performance, user behavior, and business metrics.",
+    title: "Analitik & Insight",
+    description: "Pemantauan performa dan perilaku pengguna berbasis data untuk mendukung pengambilan keputusan bisnis.",
   },
   {
     icon: Lock,
-    title: "Data Privacy",
-    description: "GDPR-compliant solutions that prioritize user privacy and data protection.",
+    title: "Privasi & Proteksi Data",
+    description: "Solusi yang memprioritaskan perlindungan data dan kepatuhan terhadap standar privasi global.",
   },
   {
     icon: Zap,
-    title: "API Development",
-    description: "Robust RESTful and GraphQL APIs for seamless third-party integrations.",
+    title: "Pengembangan API",
+    description: "REST API dan GraphQL yang andal untuk integrasi sistem dan layanan pihak ketiga secara seamless.",
   },
   {
     icon: RefreshCw,
-    title: "Continuous Updates",
-    description: "Regular updates and improvements to keep your applications current and secure.",
+    title: "Pembaruan Berkelanjutan",
+    description: "Maintenance dan update rutin untuk menjaga sistem tetap aman, stabil, dan relevan.",
   },
   {
     icon: Globe,
-    title: "Multi-language Support",
-    description: "Internationalization ready to reach audiences worldwide in their language.",
+    title: "Dukungan Multi Bahasa",
+    description: "Siap menjangkau pasar global dengan sistem yang mendukung berbagai bahasa dan lokasi.",
   },
   {
     icon: Headphones,
-    title: "24/7 Support",
-    description: "Round-the-clock technical support to ensure your systems run without interruption.",
+    title: "Support Teknis 24/7",
+    description: "Dukungan teknis profesional sepanjang waktu untuk memastikan operasional bisnis tanpa hambatan.",
   },
 ]
 
@@ -85,9 +85,9 @@ export function FeaturesGrid() {
     <section className="py-20 lg:py-28 bg-background">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
-          badge="What We Offer"
-          title="Features Built for Success"
-          description="Every solution we create comes packed with powerful features to help your business thrive."
+          badge="Layanan Kami"
+          title="Fitur Lengkap untuk Pertumbuhan Bisnis"
+          description="Setiap solusi yang kami bangun dilengkapi fitur unggulan untuk mendukung efisiensi, skalabilitas, dan kesuksesan bisnis Anda."
         />
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mt-16">

@@ -7,33 +7,39 @@ import { AnimatedSection } from "@/components/animated-section"
 const values = [
   {
     icon: Heart,
-    title: "Passion",
-    description: "We love what we do and it shows in every project we deliver.",
+    title: "Passion (Dedikasi)",
+    description:
+      "Kami bekerja dengan sepenuh hati dan dedikasi tinggi dalam setiap proyek untuk memberikan hasil terbaik bagi klien.",
   },
   {
     icon: Zap,
-    title: "Innovation",
-    description: "We embrace new technologies and creative solutions to solve problems.",
+    title: "Innovation (Inovasi)",
+    description:
+      "Kami selalu mengadopsi teknologi terbaru dan pendekatan kreatif untuk menciptakan solusi digital yang relevan dan berkelanjutan.",
   },
   {
     icon: Users,
-    title: "Collaboration",
-    description: "We work closely with our clients as true partners in their success.",
+    title: "Collaboration (Kolaborasi)",
+    description:
+      "Kami percaya kesuksesan terbaik lahir dari kolaborasi erat antara tim kami dan klien sebagai partner jangka panjang.",
   },
   {
     icon: Shield,
-    title: "Integrity",
-    description: "We are honest, transparent, and always do what is right.",
+    title: "Integrity (Integritas)",
+    description:
+      "Kejujuran, transparansi, dan tanggung jawab adalah fondasi utama dalam setiap proses kerja dan keputusan kami.",
   },
   {
     icon: Sparkles,
-    title: "Excellence",
-    description: "We strive for perfection in every line of code and pixel of design.",
+    title: "Excellence (Kualitas)",
+    description:
+      "Kami berkomitmen menghadirkan kualitas tinggi dalam setiap detail, mulai dari perencanaan, desain, hingga pengembangan.",
   },
   {
     icon: Trophy,
-    title: "Results",
-    description: "We focus on delivering measurable outcomes that matter to you.",
+    title: "Results (Hasil Nyata)",
+    description:
+      "Fokus kami adalah memberikan hasil yang terukur dan berdampak nyata bagi pertumbuhan bisnis klien.",
   },
 ]
 
@@ -42,9 +48,9 @@ export function OurValues() {
     <section className="py-20 lg:py-28 bg-muted/30">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
-          badge="Our Values"
-          title="The Principles That Guide Us"
-          description="These core values shape our culture and drive every decision we make."
+          badge="Nilai-Nilai Kami"
+          title="Prinsip yang Menjadi Fondasi Kami"
+          description="Nilai-nilai inti ini membentuk budaya kerja kami dan menjadi dasar dalam setiap keputusan serta solusi digital yang kami ciptakan."
         />
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mt-16">
@@ -61,7 +67,7 @@ export function OurValues() {
                 <h3 className="text-xl font-semibold text-foreground mb-3">
                   {value.title}
                 </h3>
-                <p className="text-muted-foreground">
+                <p className="text-muted-foreground leading-relaxed">
                   {value.description}
                 </p>
               </div>

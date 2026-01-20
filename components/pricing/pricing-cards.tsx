@@ -8,57 +8,57 @@ import { cn } from "@/lib/utils"
 
 const plans = [
   {
-    name: "Starter",
-    description: "Perfect for small businesses and startups",
-    price: "2,499",
-    period: "project",
+    name: "Starter Website",
+    description: "Cocok untuk UMKM, personal brand, dan bisnis baru",
+    price: "500.000",
+    period: "proyek",
     popular: false,
     features: [
-      "Up to 5 pages",
-      "Responsive design",
-      "Basic SEO optimization",
-      "Contact form",
-      "1 month support",
-      "Content management system",
+      "Hingga 5 halaman website",
+      "Desain responsif (mobile & desktop)",
+      "SEO dasar (struktur & metadata)",
+      "Form kontak terhubung WhatsApp / Email",
+      "Gratis Maintenance & Support 1 bulan",
+      "Gratis Domain .com 1 Bulan",
     ],
-    cta: "Get Started",
+    cta: "Konsultasi Gratis",
   },
   {
-    name: "Professional",
-    description: "Ideal for growing businesses",
-    price: "5,999",
-    period: "project",
+    name: "Business / Professional",
+    description: "Untuk bisnis yang ingin tumbuh dan terlihat profesional",
+    price: "1.500.000",
+    period: "proyek",
     popular: true,
     features: [
-      "Up to 15 pages",
-      "Custom UI/UX design",
-      "Advanced SEO optimization",
-      "E-commerce functionality",
-      "3 months support",
-      "Analytics integration",
-      "API integrations",
-      "Performance optimization",
+      "Hingga 15 halaman website",
+      "Custom UI/UX sesuai brand",
+      "SEO lanjutan (on-page optimization)",
+      "Website dinamis / landing page marketing",
+      "Optimasi kecepatan website",
+      "Integrasi API (jika diperlukan)",
+      "Gratis Maintenance & Support 3 bulan",
+      "Gratis Domain .com 3 Bulan",
     ],
-    cta: "Get Started",
+    cta: "Mulai Sekarang",
   },
   {
-    name: "Enterprise",
-    description: "For large-scale applications",
+    name: "Enterprise / Custom System",
+    description: "Solusi khusus untuk sistem skala besar & aplikasi",
     price: "Custom",
-    period: "quote",
+    period: "penawaran",
     popular: false,
     features: [
-      "Unlimited pages",
-      "Custom development",
+      "Website / web app tanpa batas halaman",
+      "Pengembangan sistem custom",
+      "Backend & API (NestJS / Node.js)",
+      "Keamanan (JWT Auth, role & permission)",
       "Dedicated project manager",
-      "Priority support 24/7",
-      "12 months support",
-      "Custom integrations",
-      "Load testing & optimization",
-      "SLA guarantee",
-      "Source code ownership",
+      "Prioritas support 24/7",
+      "Maintenance hingga 12 bulan",
+      "SLA & dokumentasi teknis",
+      "Hak milik source code penuh",
     ],
-    cta: "Contact Sales",
+    cta: "Hubungi Tim Kami",
   },
 ]
 
@@ -81,17 +81,17 @@ export function PricingCards() {
                     : "bg-card border-border hover:border-primary/50"
                 )}
               >
-                {/* Popular Badge */}
+                {/* Badge Popular */}
                 {plan.popular && (
                   <div className="absolute -top-4 left-1/2 -translate-x-1/2">
                     <div className="flex items-center gap-1 px-4 py-1.5 rounded-full bg-primary text-primary-foreground text-sm font-medium">
                       <Star className="h-4 w-4 fill-current" />
-                      Most Popular
+                      Paling Banyak Dipilih
                     </div>
                   </div>
                 )}
 
-                {/* Plan Header */}
+                {/* Header */}
                 <div className="mb-6">
                   <h3 className="text-2xl font-bold text-foreground mb-2">
                     {plan.name}
@@ -101,22 +101,26 @@ export function PricingCards() {
                   </p>
                 </div>
 
-                {/* Price */}
+                {/* Harga */}
                 <div className="mb-8">
-                  <div className="flex items-baseline gap-1">
+                  <div className="flex items-baseline gap-2">
                     {plan.price !== "Custom" && (
-                      <span className="text-2xl text-muted-foreground">$</span>
+                      <span className="text-xl text-muted-foreground">
+                        Rp
+                      </span>
                     )}
                     <span className="text-5xl font-bold text-foreground">
                       {plan.price}
                     </span>
                   </div>
                   <span className="text-muted-foreground">
-                    {plan.period === "quote" ? "Custom quote" : `per ${plan.period}`}
+                    {plan.period === "penawaran"
+                      ? "Harga sesuai kebutuhan"
+                      : `per ${plan.period}`}
                   </span>
                 </div>
 
-                {/* Features */}
+                {/* Fitur */}
                 <ul className="space-y-4 mb-8 flex-1">
                   {plan.features.map((feature) => (
                     <li key={feature} className="flex items-start gap-3">
@@ -128,7 +132,7 @@ export function PricingCards() {
                   ))}
                 </ul>
 
-                {/* CTA Button */}
+                {/* CTA */}
                 <Button
                   asChild
                   size="lg"
@@ -142,15 +146,15 @@ export function PricingCards() {
           ))}
         </div>
 
-        {/* Additional Info */}
+        {/* Info Tambahan */}
         <AnimatedSection animation="fade-in-up" delay={400}>
           <div className="text-center mt-12">
             <p className="text-muted-foreground">
-              All plans include free consultation and project scoping. 
+              Semua paket termasuk konsultasi gratis dan analisis kebutuhan proyek.
               <Link href="/contact" className="text-primary hover:underline ml-1">
-                Contact us
+                Hubungi kami
               </Link>
-              {" "}for custom requirements.
+              {" "}untuk solusi website atau aplikasi yang lebih spesifik.
             </p>
           </div>
         </AnimatedSection>

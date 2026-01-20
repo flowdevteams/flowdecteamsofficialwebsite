@@ -9,33 +9,39 @@ import { AnimatedSection } from "@/components/animated-section"
 const services = [
   {
     icon: Globe,
-    title: "Web Development",
-    description: "Custom websites built with modern technologies for optimal performance and user experience.",
+    title: "Web Development Profesional",
+    description:
+      "Jasa pembuatan website custom dengan teknologi modern. Cepat, SEO-friendly, responsif, dan dirancang untuk meningkatkan kredibilitas serta konversi bisnis Anda.",
   },
   {
     icon: Smartphone,
-    title: "Mobile Apps",
-    description: "Native and cross-platform mobile applications that engage users and drive results.",
+    title: "Aplikasi Mobile (Android & iOS)",
+    description:
+      "Pengembangan aplikasi mobile native dan cross-platform yang stabil, cepat, dan mudah digunakan untuk memperluas jangkauan bisnis Anda.",
   },
   {
     icon: Palette,
-    title: "UI/UX Design",
-    description: "Beautiful, intuitive interfaces designed to delight users and achieve business goals.",
+    title: "UI/UX Design Berorientasi Bisnis",
+    description:
+      "Desain antarmuka modern dan pengalaman pengguna yang intuitif untuk meningkatkan engagement, retensi pengguna, dan kepercayaan pelanggan.",
   },
   {
     icon: Server,
-    title: "Backend Solutions",
-    description: "Scalable server architecture and APIs that power your applications reliably.",
+    title: "Backend & API Scalable",
+    description:
+      "Arsitektur backend yang aman dan scalable, lengkap dengan API handal untuk mendukung website dan aplikasi bisnis jangka panjang.",
   },
   {
     icon: Shield,
-    title: "Security & Compliance",
-    description: "Robust security measures and compliance solutions to protect your data.",
+    title: "Keamanan & Perlindungan Data",
+    description:
+      "Sistem keamanan berlapis dan praktik terbaik untuk melindungi data, transaksi, serta memastikan aplikasi Anda tetap aman dan stabil.",
   },
   {
     icon: Headphones,
-    title: "Support & Maintenance",
-    description: "24/7 support and ongoing maintenance to keep your applications running smoothly.",
+    title: "Maintenance & Support Berkelanjutan",
+    description:
+      "Layanan maintenance website dan aplikasi, update sistem, serta dukungan teknis agar platform Anda selalu optimal dan bebas masalah.",
   },
 ]
 
@@ -44,9 +50,9 @@ export function ServicesPreview() {
     <section className="py-20 lg:py-28 bg-background">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
-          badge="Our Services"
-          title="Everything You Need to Succeed Online"
-          description="We offer comprehensive digital solutions to help your business thrive in the modern digital landscape."
+          badge="Layanan Kami"
+          title="Solusi Lengkap untuk Website & Aplikasi Bisnis Anda"
+          description="Flowdev Teams menyediakan layanan web dan app development end-to-end untuk membantu bisnis Anda tumbuh lebih cepat di era digital."
         />
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mt-16">
@@ -74,7 +80,7 @@ export function ServicesPreview() {
         <AnimatedSection animation="fade-in-up" delay={600} className="text-center mt-12">
           <Button asChild variant="outline" size="lg" className="gap-2 group bg-transparent">
             <Link href="/services">
-              View All Services
+              Jelajahi Semua Layanan
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
             </Link>
           </Button>

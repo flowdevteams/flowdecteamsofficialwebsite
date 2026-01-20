@@ -9,21 +9,22 @@ export function ContactHero() {
         <div className="max-w-4xl mx-auto text-center">
           <AnimatedSection animation="fade-in-down">
             <span className="inline-block px-4 py-1.5 rounded-full text-sm font-medium bg-primary/10 text-primary mb-6">
-              Contact Us
+              Hubungi Kami
             </span>
           </AnimatedSection>
-          
+
           <AnimatedSection animation="fade-in-up" delay={100}>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-6 text-balance">
-              Lets Start Your
-              <span className="text-primary"> Project</span>
+              Wujudkan Ide Menjadi
+              <span className="text-primary"> Solusi Digital</span>
             </h1>
           </AnimatedSection>
-          
+
           <AnimatedSection animation="fade-in-up" delay={200}>
             <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed text-pretty">
-              Have a project in mind? Wed love to hear about it. Send us a message 
-              and well get back to you as soon as possible.
+              Punya rencana proyek atau tantangan bisnis?  
+              Kami siap membantu Anda merancang, membangun, dan mengembangkan
+              solusi digital yang efektif dan berkelanjutan.
             </p>
           </AnimatedSection>
         </div>

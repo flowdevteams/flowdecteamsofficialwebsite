@@ -6,86 +6,101 @@ import { Button } from "@/components/ui/button"
 import { AnimatedSection } from "@/components/animated-section"
 import { cn } from "@/lib/utils"
 
-const categories = ["All", "Web Apps", "Mobile", "E-commerce", "Dashboard"]
+const categories = [
+  "Semua",
+  "Web Application",
+  "Mobile App",
+  "E-Commerce",
+  "Dashboard Sistem",
+]
 
 const projects = [
   {
-    title: "FinanceFlow",
-    category: "Dashboard",
-    description: "A comprehensive financial dashboard for tracking investments, expenses, and portfolio performance.",
+    title: "FinanceFlow Dashboard",
+    category: "Dashboard Sistem",
+    description:
+      "Contoh dashboard keuangan yang dirancang untuk membantu bisnis memantau arus kas, laporan keuangan, dan performa investasi secara real-time.",
     tags: ["React", "Node.js", "PostgreSQL"],
     icon: BarChart3,
     color: "from-blue-500 to-cyan-500",
   },
   {
-    title: "ShopEase",
-    category: "E-commerce",
-    description: "Modern e-commerce platform with advanced filtering, wishlist, and seamless checkout experience.",
-    tags: ["Next.js", "Stripe", "MongoDB"],
+    title: "ShopEase E-Commerce",
+    category: "E-Commerce",
+    description:
+      "Simulasi platform e-commerce modern dengan fokus pada pengalaman pengguna, performa cepat, dan proses checkout yang optimal.",
+    tags: ["Next.js", "Payment Gateway", "MongoDB"],
     icon: ShoppingCart,
     color: "from-purple-500 to-pink-500",
   },
   {
-    title: "TravelMate",
-    category: "Mobile",
-    description: "Travel companion app with itinerary planning, local recommendations, and offline maps.",
+    title: "TravelMate Mobile App",
+    category: "Mobile App",
+    description:
+      "Konsep aplikasi mobile untuk kebutuhan travel, termasuk perencanaan perjalanan, rekomendasi lokasi, dan sistem offline-friendly.",
     tags: ["React Native", "Firebase", "Maps API"],
     icon: Smartphone,
     color: "from-green-500 to-teal-500",
   },
   {
-    title: "HealthHub",
-    category: "Web Apps",
-    description: "Telemedicine platform connecting patients with healthcare providers for virtual consultations.",
-    tags: ["Vue.js", "Python", "WebRTC"],
+    title: "HealthHub Web Platform",
+    category: "Web Application",
+    description:
+      "Contoh aplikasi web layanan kesehatan yang dirancang untuk konsultasi online, manajemen jadwal, dan sistem user yang aman.",
+    tags: ["Web App", "Backend API", "Security"],
     icon: Globe,
     color: "from-red-500 to-orange-500",
   },
   {
-    title: "EduLearn",
-    category: "Web Apps",
-    description: "Interactive learning management system with video courses, quizzes, and progress tracking.",
-    tags: ["Next.js", "GraphQL", "AWS"],
+    title: "EduLearn Learning System",
+    category: "Web Application",
+    description:
+      "Ilustrasi sistem pembelajaran digital (LMS) dengan fitur kelas online, manajemen materi, dan pelacakan progres pengguna.",
+    tags: ["Next.js", "API", "Cloud"],
     icon: Globe,
     color: "from-indigo-500 to-blue-500",
   },
   {
-    title: "FoodieApp",
-    category: "Mobile",
-    description: "Food delivery app with real-time tracking, restaurant reviews, and loyalty rewards.",
-    tags: ["Flutter", "Node.js", "Redis"],
+    title: "Foodie Delivery App",
+    category: "Mobile App",
+    description:
+      "Contoh konsep aplikasi pemesanan makanan dengan tracking real-time, sistem promo, dan manajemen merchant.",
+    tags: ["Mobile App", "Realtime System", "Backend"],
     icon: Smartphone,
     color: "from-yellow-500 to-orange-500",
   },
   {
-    title: "PropertyPro",
-    category: "Web Apps",
-    description: "Real estate platform with virtual tours, mortgage calculator, and agent matching.",
-    tags: ["React", "Django", "PostgreSQL"],
+    title: "PropertyPro Platform",
+    category: "Web Application",
+    description:
+      "Simulasi platform properti digital untuk listing, pencarian properti, dan kalkulator pembiayaan yang terintegrasi.",
+    tags: ["React", "Backend System", "Database"],
     icon: Globe,
     color: "from-teal-500 to-green-500",
   },
   {
-    title: "CryptoTrack",
-    category: "Dashboard",
-    description: "Cryptocurrency portfolio tracker with real-time prices, alerts, and market analysis.",
-    tags: ["Next.js", "WebSocket", "Charts"],
+    title: "CryptoTrack Analytics",
+    category: "Dashboard Sistem",
+    description:
+      "Contoh dashboard analitik untuk monitoring aset digital dan data market yang dirancang dengan visualisasi informatif.",
+    tags: ["Dashboard", "Realtime Data", "Charts"],
     icon: BarChart3,
     color: "from-amber-500 to-yellow-500",
   },
 ]
 
 export function PortfolioGrid() {
-  const [activeCategory, setActiveCategory] = useState("All")
+  const [activeCategory, setActiveCategory] = useState("Semua")
 
   const filteredProjects = projects.filter(
-    (project) => activeCategory === "All" || project.category === activeCategory
+    (project) =>
+      activeCategory === "Semua" || project.category === activeCategory
   )
 
   return (
     <section className="py-20 lg:py-28 bg-background">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Filter Buttons */}
+        {/* Filter */}
         <AnimatedSection animation="fade-in-up">
           <div className="flex flex-wrap justify-center gap-2 mb-12">
             {categories.map((category) => (
@@ -102,7 +117,7 @@ export function PortfolioGrid() {
           </div>
         </AnimatedSection>
 
-        {/* Projects Grid */}
+        {/* Grid */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {filteredProjects.map((project, index) => (
             <AnimatedSection
@@ -111,30 +126,33 @@ export function PortfolioGrid() {
               delay={index * 50}
             >
               <div className="group h-full rounded-2xl bg-card border border-border hover:border-primary/50 hover:shadow-xl overflow-hidden transition-all duration-300">
-                {/* Project Preview */}
-                <div className={cn(
-                  "aspect-video bg-gradient-to-br flex items-center justify-center",
-                  project.color
-                )}>
+                <div
+                  className={cn(
+                    "aspect-video bg-gradient-to-br flex items-center justify-center",
+                    project.color
+                  )}
+                >
                   <project.icon className="h-16 w-16 text-white/80 group-hover:scale-110 transition-transform duration-300" />
                 </div>
 
-                {/* Project Info */}
                 <div className="p-6">
                   <div className="flex items-center justify-between mb-2">
                     <span className="text-xs font-medium text-primary bg-primary/10 px-2 py-1 rounded-full">
                       {project.category}
                     </span>
-                    <button className="p-2 rounded-lg text-muted-foreground hover:text-primary hover:bg-primary/10 transition-colors">
+                    <div className="p-2 rounded-lg text-muted-foreground">
                       <ExternalLink className="h-4 w-4" />
-                    </button>
+                    </div>
                   </div>
+
                   <h3 className="text-xl font-bold text-foreground mb-2">
                     {project.title}
                   </h3>
+
                   <p className="text-sm text-muted-foreground mb-4 line-clamp-2">
                     {project.description}
                   </p>
+
                   <div className="flex flex-wrap gap-2">
                     {project.tags.map((tag) => (
                       <span

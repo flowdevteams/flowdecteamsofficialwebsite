@@ -1,8 +1,6 @@
 "use client"
 
-import React from "react"
-
-import { useState, useTransition } from "react"
+import React, { useState, useTransition } from "react"
 import { Loader2, CheckCircle } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -17,20 +15,20 @@ import {
 } from "@/components/ui/select"
 
 const services = [
-  "Web Development",
+  "Website Development",
   "Mobile App Development",
   "UI/UX Design",
-  "E-commerce Solutions",
-  "Backend Development",
-  "Other",
+  "E-Commerce Development",
+  "Backend & API Development",
+  "Konsultasi & Lainnya",
 ]
 
 const budgets = [
-  "Less than $5,000",
-  "$5,000 - $10,000",
-  "$10,000 - $25,000",
-  "$25,000 - $50,000",
-  "$50,000+",
+  "Di bawah Rp 50 Juta",
+  "Rp 50 Juta – Rp 100 Juta",
+  "Rp 100 Juta – Rp 250 Juta",
+  "Rp 250 Juta – Rp 500 Juta",
+  "Di atas Rp 500 Juta",
 ]
 
 export function ContactForm() {
@@ -49,7 +47,7 @@ export function ContactForm() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
     startTransition(async () => {
-      // Simulate form submission
+      // Simulasi submit (siap diganti API / Formspree / backend)
       await new Promise((resolve) => setTimeout(resolve, 1500))
       setIsSubmitted(true)
     })
@@ -71,13 +69,14 @@ export function ContactForm() {
           <CheckCircle className="h-8 w-8 text-primary" />
         </div>
         <h3 className="text-2xl font-bold text-foreground mb-2">
-          Thank You!
+          Terima Kasih 🙌
         </h3>
         <p className="text-muted-foreground mb-6">
-          Your message has been sent successfully. We will get back to you within 24 hours.
+          Pesan Anda berhasil dikirim. Tim kami akan menghubungi Anda maksimal
+          dalam waktu <strong>1×24 jam kerja</strong>.
         </p>
         <Button onClick={() => setIsSubmitted(false)} variant="outline">
-          Send Another Message
+          Kirim Pesan Lain
         </Button>
       </div>
     )
@@ -87,25 +86,25 @@ export function ContactForm() {
     <form onSubmit={handleSubmit} className="space-y-6">
       <div className="grid sm:grid-cols-2 gap-6">
         <div className="space-y-2">
-          <Label htmlFor="name">Full Name *</Label>
+          <Label htmlFor="name">Nama Lengkap *</Label>
           <Input
             id="name"
             name="name"
             value={formData.name}
             onChange={handleChange}
-            placeholder="John Doe"
+            placeholder="Contoh: Andi Pratama"
             required
           />
         </div>
         <div className="space-y-2">
-          <Label htmlFor="email">Email Address *</Label>
+          <Label htmlFor="email">Alamat Email *</Label>
           <Input
             id="email"
             name="email"
             type="email"
             value={formData.email}
             onChange={handleChange}
-            placeholder="john@example.com"
+            placeholder="andi@email.com"
             required
           />
         </div>
@@ -113,31 +112,31 @@ export function ContactForm() {
 
       <div className="grid sm:grid-cols-2 gap-6">
         <div className="space-y-2">
-          <Label htmlFor="company">Company Name</Label>
+          <Label htmlFor="company">Nama Perusahaan</Label>
           <Input
             id="company"
             name="company"
             value={formData.company}
             onChange={handleChange}
-            placeholder="Your Company"
+            placeholder="PT / Startup / Brand Anda"
           />
         </div>
         <div className="space-y-2">
-          <Label htmlFor="phone">Phone Number</Label>
+          <Label htmlFor="phone">Nomor WhatsApp</Label>
           <Input
             id="phone"
             name="phone"
             type="tel"
             value={formData.phone}
             onChange={handleChange}
-            placeholder="+1 (234) 567-890"
+            placeholder="08xxxxxxxxxx"
           />
         </div>
       </div>
 
       <div className="grid sm:grid-cols-2 gap-6">
         <div className="space-y-2">
-          <Label htmlFor="service">Service Interested In *</Label>
+          <Label htmlFor="service">Layanan yang Dibutuhkan *</Label>
           <Select
             value={formData.service}
             onValueChange={(value) =>
@@ -146,7 +145,7 @@ export function ContactForm() {
             required
           >
             <SelectTrigger>
-              <SelectValue placeholder="Select a service" />
+              <SelectValue placeholder="Pilih layanan" />
             </SelectTrigger>
             <SelectContent>
               {services.map((service) => (
@@ -157,8 +156,9 @@ export function ContactForm() {
             </SelectContent>
           </Select>
         </div>
+
         <div className="space-y-2">
-          <Label htmlFor="budget">Project Budget</Label>
+          <Label htmlFor="budget">Estimasi Anggaran</Label>
           <Select
             value={formData.budget}
             onValueChange={(value) =>
@@ -166,7 +166,7 @@ export function ContactForm() {
             }
           >
             <SelectTrigger>
-              <SelectValue placeholder="Select budget range" />
+              <SelectValue placeholder="Pilih range budget" />
             </SelectTrigger>
             <SelectContent>
               {budgets.map((budget) => (
@@ -180,13 +180,13 @@ export function ContactForm() {
       </div>
 
       <div className="space-y-2">
-        <Label htmlFor="message">Project Details *</Label>
+        <Label htmlFor="message">Detail Proyek *</Label>
         <Textarea
           id="message"
           name="message"
           value={formData.message}
           onChange={handleChange}
-          placeholder="Tell us about your project, goals, and timeline..."
+          placeholder="Ceritakan kebutuhan bisnis Anda, tujuan proyek, dan timeline yang diharapkan..."
           rows={5}
           required
         />
@@ -196,23 +196,23 @@ export function ContactForm() {
         {isPending ? (
           <>
             <Loader2 className="h-4 w-4 animate-spin mr-2" />
-            Sending Message...
+            Mengirim Pesan...
           </>
         ) : (
-          "Send Message"
+          "Konsultasi Gratis"
         )}
       </Button>
 
       <p className="text-xs text-muted-foreground text-center">
-        By submitting this form, you agree to our{" "}
+        Dengan mengirim formulir ini, Anda menyetujui{" "}
         <a href="#" className="text-primary hover:underline">
-          Privacy Policy
+          Kebijakan Privasi
         </a>{" "}
-        and{" "}
+        dan{" "}
         <a href="#" className="text-primary hover:underline">
-          Terms of Service
-        </a>
-        .
+          Ketentuan Layanan
+        </a>{" "}
+        kami.
       </p>
     </form>
   )

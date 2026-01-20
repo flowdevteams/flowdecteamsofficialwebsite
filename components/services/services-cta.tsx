@@ -5,12 +5,12 @@ import { SectionHeader } from "@/components/section-header"
 import { AnimatedSection } from "@/components/animated-section"
 
 const benefits = [
-  "Free initial consultation",
-  "Transparent pricing",
-  "Dedicated project manager",
-  "Regular progress updates",
-  "Post-launch support included",
-  "100% satisfaction guarantee",
+  "Konsultasi awal gratis tanpa komitmen",
+  "Harga transparan dan sesuai kebutuhan",
+  "Project manager khusus untuk setiap proyek",
+  "Update progres rutin dan terjadwal",
+  "Dukungan setelah website dan aplikasi live",
+  "Garansi kepuasan hasil kerja",
 ]
 
 export function ServicesCTA() {
@@ -19,9 +19,9 @@ export function ServicesCTA() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
           <SectionHeader
-            badge="Why Work With Us"
-            title="Your Success Is Our Priority"
-            description="We go above and beyond to ensure every project exceeds expectations."
+            badge="Kenapa Memilih Kami"
+            title="Kesuksesan Digital Bisnis Anda Adalah Prioritas Kami"
+            description="Kami berkomitmen membantu bisnis Anda tumbuh melalui website dan aplikasi yang profesional, stabil, dan siap bersaing."
           />
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-12">
@@ -35,7 +35,9 @@ export function ServicesCTA() {
                   <div className="flex-shrink-0 w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center">
                     <Check className="h-4 w-4 text-primary" />
                   </div>
-                  <span className="font-medium text-foreground">{benefit}</span>
+                  <span className="font-medium text-foreground">
+                    {benefit}
+                  </span>
                 </div>
               </AnimatedSection>
             ))}

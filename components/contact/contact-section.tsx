@@ -7,27 +7,27 @@ import { ContactForm } from "./contact-form"
 const contactInfo = [
   {
     icon: Mail,
-    title: "Email Us",
+    title: "Email",
     content: "flodev261123@gmail.com",
-    description: "Well respond within 24 hours",
+    description: "Respon maksimal dalam 24 jam kerja",
   },
   {
     icon: Phone,
-    title: "Call Us",
+    title: "Telepon / WhatsApp",
     content: "+62 815-7467-3448",
-    description: "Mon-Sat from 9am to 6pm",
+    description: "Senin – Sabtu, 09.00 – 18.00 WIB",
   },
   {
     icon: MapPin,
-    title: "Visit Us",
-    content: "123 Innovation Street",
-    description: "Bekasi, Indonesia",
+    title: "Lokasi",
+    content: "Bekasi, Indonesia",
+    description: "Melayani klien seluruh Indonesia",
   },
   {
     icon: Clock,
-    title: "Business Hours",
-    content: "Monday - Saturday",
-    description: "9:00 AM - 6:00 PM PST",
+    title: "Jam Operasional",
+    content: "Senin – Sabtu",
+    description: "09.00 – 18.00 WIB",
   },
 ]
 
@@ -40,11 +40,11 @@ export function ContactSection() {
           <div>
             <AnimatedSection animation="fade-in-left">
               <h2 className="text-3xl font-bold text-foreground mb-4">
-                Get in Touch
+                Konsultasikan Kebutuhan Digital Anda
               </h2>
               <p className="text-muted-foreground mb-8 leading-relaxed">
-                Ready to bring your ideas to life? We are here to help you succeed. 
-                Reach out through any of the channels below or fill out the form.
+                Siap mengembangkan website, aplikasi, atau sistem digital untuk bisnis Anda?  
+                Tim kami siap membantu dari tahap perencanaan hingga implementasi.
               </p>
             </AnimatedSection>
 
@@ -62,8 +62,12 @@ export function ContactSection() {
                     <h3 className="font-semibold text-foreground mb-1">
                       {info.title}
                     </h3>
-                    <p className="text-foreground font-medium">{info.content}</p>
-                    <p className="text-sm text-muted-foreground">{info.description}</p>
+                    <p className="text-foreground font-medium">
+                      {info.content}
+                    </p>
+                    <p className="text-sm text-muted-foreground">
+                      {info.description}
+                    </p>
                   </div>
                 </AnimatedSection>
               ))}
@@ -74,7 +78,7 @@ export function ContactSection() {
               <div className="mt-8 rounded-2xl bg-muted/50 border border-border overflow-hidden h-64 flex items-center justify-center">
                 <div className="text-center text-muted-foreground">
                   <MapPin className="h-12 w-12 mx-auto mb-2 text-primary/50" />
-                  <p>Interactive map would go here</p>
+                  <p>Area layanan & lokasi kerja tim kami</p>
                 </div>
               </div>
             </AnimatedSection>
@@ -89,7 +93,7 @@ export function ContactSection() {
                     <Send className="h-5 w-5 text-primary" />
                   </div>
                   <h3 className="text-2xl font-bold text-foreground">
-                    Send us a Message
+                    Kirim Pesan & Mulai Diskusi
                   </h3>
                 </div>
                 <ContactForm />

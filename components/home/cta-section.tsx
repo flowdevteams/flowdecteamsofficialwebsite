@@ -16,44 +16,48 @@ export function CTASection() {
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="max-w-3xl mx-auto text-center">
+
           <AnimatedSection animation="fade-in-up">
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-primary-foreground mb-6 text-balance">
-              Ready to Start Your Project?
+              Siap Membangun Website atau Aplikasi untuk Bisnis Anda?
             </h2>
           </AnimatedSection>
-          
+
           <AnimatedSection animation="fade-in-up" delay={100}>
             <p className="text-lg text-primary-foreground/80 mb-10 leading-relaxed text-pretty">
-              Lets discuss how we can help bring your vision to life. Get in touch 
-              with our team today and take the first step towards digital success.
+              Konsultasikan kebutuhan website dan aplikasi bisnis Anda bersama
+              tim profesional Flowdev Teams. Kami siap membantu Anda merancang,
+              mengembangkan, dan mengoptimalkan solusi digital yang tepat sasaran.
             </p>
           </AnimatedSection>
 
           <AnimatedSection animation="fade-in-up" delay={200}>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Button 
-                asChild 
-                size="lg" 
+              <Button
+                asChild
+                size="lg"
                 variant="secondary"
                 className="text-base px-8 h-12 gap-2 group"
               >
                 <Link href="/contact">
-                  Get Free Consultation
+                  Konsultasi Gratis Sekarang
                   <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </Link>
               </Button>
-              <Button 
-                asChild 
-                size="lg" 
+
+              <Button
+                asChild
+                size="lg"
                 variant="outline"
                 className="text-base px-8 h-12 border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground bg-transparent"
               >
                 <Link href="/pricing">
-                  View Pricing
+                  Lihat Paket Harga
                 </Link>
               </Button>
             </div>
           </AnimatedSection>
+
         </div>
       </div>
     </section>

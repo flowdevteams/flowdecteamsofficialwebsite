@@ -8,29 +8,37 @@ export function OurStory() {
     <section className="py-20 lg:py-28 bg-background">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          
           {/* Left - Story Content */}
           <div>
             <AnimatedSection animation="fade-in-left">
               <span className="inline-block px-4 py-1.5 rounded-full text-sm font-medium bg-primary/10 text-primary mb-4">
-                Our Story
+                Perjalanan Kami
               </span>
+
               <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-6">
-                From Garage Startup to Global Agency
+                Dari Startup Kecil hingga Agensi Digital Profesional
               </h2>
+
               <div className="space-y-4 text-muted-foreground leading-relaxed">
                 <p>
-                  Founded in 2014, Flowdev Teams began with a simple mission: to help businesses 
-                  succeed in the digital age. What started as a small team of three passionate 
-                  developers has grown into a full-service digital agency with a global presence.
+                  Flowdev Teams lahir dari satu tujuan sederhana: membantu bisnis berkembang
+                  di era digital. Berawal dari tim kecil yang berfokus pada pengembangan website
+                  dan aplikasi, kami tumbuh menjadi agensi digital yang menangani berbagai
+                  kebutuhan teknologi modern.
                 </p>
+
                 <p>
-                  Over the years, we have had the privilege of working with startups, 
-                  Fortune 500 companies, and everything in between. Each project has taught 
-                  us something new and helped us refine our craft.
+                  Kami telah bekerja dengan berbagai klien, mulai dari UMKM, startup,
+                  hingga perusahaan skala besar. Setiap proyek menjadi pengalaman berharga
+                  yang memperkuat keahlian kami dalam menciptakan solusi digital yang efektif,
+                  efisien, dan berorientasi pada hasil.
                 </p>
+
                 <p>
-                  Today, we continue to push boundaries, embrace new technologies, and 
-                  deliver solutions that make a real difference for our clients and their users.
+                  Hingga hari ini, kami terus berinovasi, mengadopsi teknologi terbaru,
+                  dan menghadirkan solusi digital yang memberikan dampak nyata bagi bisnis
+                  klien dan pengalaman terbaik bagi penggunanya.
                 </p>
               </div>
             </AnimatedSection>
@@ -38,15 +46,19 @@ export function OurStory() {
 
           {/* Right - Mission, Vision, Goal */}
           <div className="space-y-6">
+            
             <AnimatedSection animation="fade-in-right" delay={100}>
               <div className="p-6 rounded-2xl bg-card border border-border">
                 <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
                   <Target className="h-6 w-6 text-primary" />
                 </div>
-                <h3 className="text-xl font-semibold text-foreground mb-2">Our Mission</h3>
+                <h3 className="text-xl font-semibold text-foreground mb-2">
+                  Misi Kami
+                </h3>
                 <p className="text-muted-foreground">
-                  To empower businesses with cutting-edge digital solutions that drive 
-                  growth, enhance user experiences, and create lasting value.
+                  Memberdayakan bisnis melalui solusi digital inovatif yang mampu
+                  meningkatkan pertumbuhan, memperkuat brand, dan menciptakan
+                  pengalaman pengguna yang optimal.
                 </p>
               </div>
             </AnimatedSection>
@@ -56,10 +68,13 @@ export function OurStory() {
                 <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
                   <Lightbulb className="h-6 w-6 text-primary" />
                 </div>
-                <h3 className="text-xl font-semibold text-foreground mb-2">Our Vision</h3>
+                <h3 className="text-xl font-semibold text-foreground mb-2">
+                  Visi Kami
+                </h3>
                 <p className="text-muted-foreground">
-                  To be the leading digital partner for innovative businesses worldwide, 
-                  known for our creativity, reliability, and transformative results.
+                  Menjadi partner digital terpercaya bagi bisnis inovatif,
+                  dikenal karena kreativitas, profesionalisme, serta
+                  hasil nyata yang berdampak jangka panjang.
                 </p>
               </div>
             </AnimatedSection>
@@ -69,13 +84,17 @@ export function OurStory() {
                 <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
                   <TrendingUp className="h-6 w-6 text-primary" />
                 </div>
-                <h3 className="text-xl font-semibold text-foreground mb-2">Our Goal</h3>
+                <h3 className="text-xl font-semibold text-foreground mb-2">
+                  Tujuan Kami
+                </h3>
                 <p className="text-muted-foreground">
-                  To continuously innovate and deliver exceptional digital experiences 
-                  that help our clients stay ahead in an ever-evolving digital landscape.
+                  Terus berinovasi dan menghadirkan pengalaman digital berkualitas tinggi
+                  agar klien kami selalu unggul dan kompetitif di tengah
+                  perkembangan teknologi yang cepat.
                 </p>
               </div>
             </AnimatedSection>
+
           </div>
         </div>
       </div>

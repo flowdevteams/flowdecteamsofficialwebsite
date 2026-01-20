@@ -8,33 +8,35 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion"
-
 const faqs = [
   {
-    question: "How long does a typical project take?",
-    answer: "Project timelines vary based on complexity. A simple website typically takes 2-4 weeks, while complex applications may take 2-6 months. We'll provide a detailed timeline during our initial consultation.",
+    question: "Berapa lama waktu pengerjaan proyek website atau aplikasi?",
+    answer:
+      "Durasi pengerjaan tergantung pada kompleksitas proyek. Website sederhana umumnya membutuhkan waktu sekitar 2–4 minggu. Untuk website bisnis, web aplikasi, atau sistem custom, waktu pengerjaan berkisar antara 2 hingga 6 bulan. Timeline detail akan kami jelaskan setelah sesi konsultasi awal.",
   },
   {
-    question: "Do you offer payment plans?",
-    answer: "Yes, we offer flexible payment options. Typically, we require 50% upfront and 50% upon project completion. For larger projects, we can arrange milestone-based payments.",
+    question: "Apakah tersedia sistem pembayaran bertahap?",
+    answer:
+      "Ya, kami menyediakan skema pembayaran yang fleksibel. Umumnya pembayaran dilakukan dengan sistem 50% di awal proyek dan 50% setelah proyek selesai. Untuk proyek berskala besar, pembayaran dapat dibagi berdasarkan milestone yang disepakati bersama.",
   },
   {
-    question: "What happens after the project is completed?",
-    answer: "All plans include a support period after launch. We'll help with bug fixes, minor adjustments, and answer any questions. Extended maintenance packages are available for ongoing support.",
+    question: "Apa yang saya dapatkan setelah proyek selesai?",
+    answer:
+      "Setelah website atau aplikasi diluncurkan, Anda tetap mendapatkan masa support sesuai paket yang dipilih. Kami membantu perbaikan bug, penyesuaian minor, serta konsultasi teknis. Paket maintenance lanjutan juga tersedia untuk dukungan jangka panjang.",
   },
   {
-    question: "Can I upgrade my plan later?",
-    answer: "Absolutely! Your project can grow with your business. We can add features, pages, or functionality at any time. Contact us to discuss your needs and we'll provide a quote for additional work.",
+    question: "Apakah paket layanan bisa di-upgrade di kemudian hari?",
+    answer:
+      "Tentu bisa. Website dan aplikasi Anda dapat dikembangkan seiring pertumbuhan bisnis. Kami dapat menambahkan fitur baru, halaman tambahan, atau integrasi sistem kapan saja sesuai kebutuhan Anda.",
   },
+
   {
-    question: "Do you provide hosting services?",
-    answer: "We can recommend and set up hosting solutions tailored to your needs. While hosting costs are separate from our development fees, we'll ensure your site is deployed on reliable, fast servers.",
-  },
-  {
-    question: "What if I'm not satisfied with the final product?",
-    answer: "Your satisfaction is our priority. We include revision rounds in all projects and work closely with you throughout the process. We don't consider a project complete until you're happy with the results.",
+    question: "Bagaimana jika hasil akhir tidak sesuai harapan?",
+    answer:
+      "Kepuasan klien adalah prioritas utama kami. Setiap proyek mencakup beberapa tahap revisi dan komunikasi intensif selama proses pengerjaan. Proyek tidak kami anggap selesai sebelum hasilnya sesuai dengan kebutuhan dan ekspektasi Anda.",
   },
 ]
+
 
 export function PricingFAQ() {
   return (

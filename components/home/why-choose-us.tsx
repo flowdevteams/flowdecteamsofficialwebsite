@@ -7,33 +7,37 @@ import { AnimatedSection } from "@/components/animated-section"
 const features = [
   {
     icon: Users,
-    title: "Expert Team",
-    description: "Our seasoned developers and designers bring years of experience to every project.",
+    title: "Tim Profesional & Berpengalaman",
+    description:
+      "Didukung oleh developer dan desainer berpengalaman yang terbiasa menangani proyek website dan aplikasi skala bisnis.",
   },
   {
     icon: Rocket,
-    title: "Fast Delivery",
-    description: "Agile methodology ensures quick turnaround without compromising quality.",
+    title: "Pengerjaan Cepat & Terstruktur",
+    description:
+      "Menggunakan metode agile untuk memastikan pengembangan lebih cepat, terukur, dan tepat waktu tanpa mengorbankan kualitas.",
   },
   {
     icon: Award,
-    title: "Quality Assured",
-    description: "Rigorous testing and code reviews guarantee exceptional deliverables.",
+    title: "Kualitas Terjamin",
+    description:
+      "Setiap proyek melalui proses testing dan review ketat untuk memastikan performa, keamanan, dan stabilitas terbaik.",
   },
   {
     icon: Clock,
-    title: "24/7 Support",
-    description: "Round-the-clock assistance to keep your applications running smoothly.",
+    title: "Support & Respons Cepat",
+    description:
+      "Dukungan teknis berkelanjutan untuk memastikan website dan aplikasi Anda selalu berjalan optimal.",
   },
 ]
 
 const benefits = [
-  "Custom solutions tailored to your needs",
-  "Transparent pricing with no hidden fees",
-  "Regular progress updates and communication",
-  "Post-launch support and maintenance",
-  "Scalable architecture for future growth",
-  "Industry best practices and standards",
+  "Solusi website & aplikasi custom sesuai kebutuhan bisnis",
+  "Harga transparan tanpa biaya tersembunyi",
+  "Update progres rutin dan komunikasi yang jelas",
+  "Support dan maintenance setelah project selesai",
+  "Arsitektur scalable untuk pertumbuhan jangka panjang",
+  "Mengikuti standar industri dan best practice teknologi",
 ]
 
 export function WhyChooseUs() {
@@ -41,12 +45,13 @@ export function WhyChooseUs() {
     <section className="py-20 lg:py-28 bg-muted/30">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+
           {/* Left Content */}
           <div>
             <SectionHeader
-              badge="Why Choose Us"
-              title="We Deliver Results That Matter"
-              description="Partner with a team that understands your vision and has the expertise to bring it to life."
+              badge="Kenapa Memilih Kami"
+              title="Partner Digital yang Fokus pada Hasil Nyata"
+              description="Flowdev Teams adalah software house yang memahami kebutuhan bisnis Anda dan mampu mewujudkannya menjadi website dan aplikasi yang efektif."
               centered={false}
             />
 
@@ -75,18 +80,15 @@ export function WhyChooseUs() {
             </div>
           </div>
 
-          {/* Right Content - Benefits List */}
+          {/* Right Content */}
           <AnimatedSection animation="fade-in-right" delay={200}>
             <div className="bg-card rounded-2xl border border-border p-8 lg:p-10">
               <h3 className="text-2xl font-bold text-foreground mb-6">
-                What You Get With Us
+                Keuntungan Bekerja dengan Flowdev Teams
               </h3>
               <ul className="space-y-4">
                 {benefits.map((benefit, index) => (
-                  <li
-                    key={index}
-                    className="flex items-start gap-3"
-                  >
+                  <li key={index} className="flex items-start gap-3">
                     <div className="flex-shrink-0 w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center mt-0.5">
                       <Check className="h-4 w-4 text-primary" />
                     </div>
@@ -96,6 +98,7 @@ export function WhyChooseUs() {
               </ul>
             </div>
           </AnimatedSection>
+
         </div>
       </div>
     </section>

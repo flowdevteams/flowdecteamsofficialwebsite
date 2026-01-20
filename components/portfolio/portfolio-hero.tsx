@@ -9,21 +9,22 @@ export function PortfolioHero() {
         <div className="max-w-4xl mx-auto text-center">
           <AnimatedSection animation="fade-in-down">
             <span className="inline-block px-4 py-1.5 rounded-full text-sm font-medium bg-primary/10 text-primary mb-6">
-              Our Work
+              Portofolio Kami
             </span>
           </AnimatedSection>
           
           <AnimatedSection animation="fade-in-up" delay={100}>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-6 text-balance">
-              Projects That
-              <span className="text-primary"> Inspire</span>
+              Proyek Digital yang
+              <span className="text-primary"> Memberikan Dampak</span>
             </h1>
           </AnimatedSection>
           
           <AnimatedSection animation="fade-in-up" delay={200}>
             <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed text-pretty">
-              Take a look at some of our recent work. Each project represents our 
-              commitment to quality, innovation, and client success.
+              Jelajahi hasil karya kami dalam pengembangan website dan aplikasi. 
+              Setiap proyek mencerminkan komitmen kami terhadap kualitas, inovasi, 
+              dan keberhasilan bisnis klien.
             </p>
           </AnimatedSection>
         </div>

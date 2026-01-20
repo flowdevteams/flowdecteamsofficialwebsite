@@ -8,26 +8,30 @@ const steps = [
   {
     number: "01",
     icon: MessageSquare,
-    title: "Discovery",
-    description: "We start by understanding your business, goals, and requirements through detailed discussions.",
+    title: "Analisis & Diskusi",
+    description:
+      "Kami memulai dengan memahami bisnis, tujuan, dan kebutuhan Anda melalui diskusi mendalam dan analisis yang terstruktur.",
   },
   {
     number: "02",
     icon: Pencil,
-    title: "Design",
-    description: "Our designers create wireframes and mockups that bring your vision to life with stunning visuals.",
+    title: "Perancangan Desain",
+    description:
+      "Tim kami menyusun wireframe dan desain visual yang merepresentasikan solusi digital sesuai identitas dan kebutuhan bisnis Anda.",
   },
   {
     number: "03",
     icon: Code,
-    title: "Development",
-    description: "Our expert developers build your solution using the latest technologies and best practices.",
+    title: "Pengembangan Sistem",
+    description:
+      "Developer berpengalaman kami membangun sistem menggunakan teknologi modern dengan standar performa dan keamanan terbaik.",
   },
   {
     number: "04",
     icon: Rocket,
-    title: "Launch",
-    description: "After thorough testing, we deploy your project and provide ongoing support and maintenance.",
+    title: "Peluncuran & Dukungan",
+    description:
+      "Setelah melalui pengujian menyeluruh, proyek diluncurkan dan didukung dengan maintenance serta support berkelanjutan.",
   },
 ]
 
@@ -36,9 +40,9 @@ export function ProcessSection() {
     <section className="py-20 lg:py-28 bg-background">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
-          badge="Our Process"
-          title="How We Work"
-          description="A streamlined process designed to deliver exceptional results on time and within budget."
+          badge="Proses Kerja"
+          title="Alur Kerja Terstruktur & Efisien"
+          description="Proses kerja kami dirancang secara sistematis untuk menghasilkan solusi digital berkualitas, tepat waktu, dan sesuai kebutuhan bisnis Anda."
         />
 
         <div className="relative mt-16 pointer-events-none">

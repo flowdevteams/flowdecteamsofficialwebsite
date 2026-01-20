@@ -9,21 +9,22 @@ export function FeaturesHero() {
         <div className="max-w-4xl mx-auto text-center">
           <AnimatedSection animation="fade-in-down">
             <span className="inline-block px-4 py-1.5 rounded-full text-sm font-medium bg-primary/10 text-primary mb-6">
-              Features
+              Fitur Unggulan
             </span>
           </AnimatedSection>
           
           <AnimatedSection animation="fade-in-up" delay={100}>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-6 text-balance">
-              Powerful Features for
-              <span className="text-primary"> Modern Solutions</span>
+              Fitur Andal untuk
+              <span className="text-primary"> Solusi Digital Modern</span>
             </h1>
           </AnimatedSection>
           
           <AnimatedSection animation="fade-in-up" delay={200}>
             <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed text-pretty">
-              Explore the comprehensive set of features and technologies we leverage 
-              to build world-class digital products for our clients.
+              Jelajahi rangkaian fitur dan teknologi terbaik yang kami gunakan untuk
+              membangun produk digital berkualitas tinggi, scalable, dan siap
+              mendukung pertumbuhan bisnis Anda.
             </p>
           </AnimatedSection>
         </div>
