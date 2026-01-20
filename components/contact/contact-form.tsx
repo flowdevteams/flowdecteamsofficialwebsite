@@ -25,11 +25,11 @@ const services = [
 ]
 
 const budgets = [
-  "Di bawah Rp 50 Juta",
-  "Rp 50 Juta – Rp 100 Juta",
-  "Rp 100 Juta – Rp 250 Juta",
-  "Rp 250 Juta – Rp 500 Juta",
-  "Di atas Rp 500 Juta",
+  "Di bawah Rp 500 Ribu",
+  "Rp 500 Ribu – Rp 2 Juta",
+  "Rp 2 Juta – Rp 10 Juta",
+  "Rp 10 Juta – Rp 50 Juta",
+  "Di atas Rp 50 Juta",
 ]
 
 export function ContactForm() {
