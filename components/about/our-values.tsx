@@ -60,7 +60,7 @@ export function OurValues() {
               animation="fade-in-up"
               delay={index * 100}
             >
-              <div className="text-center p-6 lg:p-8 rounded-2xl bg-card border border-border hover:border-primary/30 transition-colors">
+              <div className="text-center flex-1 h-full p-6 lg:p-8 rounded-2xl bg-card border border-border hover:border-primary/30 transition-colors">
                 <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-6">
                   <value.icon className="h-8 w-8 text-primary" />
                 </div>

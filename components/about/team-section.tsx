@@ -60,7 +60,7 @@ export function TeamSection() {
               animation="fade-in-up"
               delay={index * 100}
             >
-              <div className="group p-6 rounded-2xl bg-card border border-border hover:border-primary/30 hover:shadow-lg transition-all duration-300">
+              <div className="group flex-1 h-full p-6 rounded-2xl bg-card border border-border hover:border-primary/30 hover:shadow-lg transition-all duration-300">
                 <div className="w-20 h-20 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-6 group-hover:bg-primary/20 transition-colors">
                   <span className="text-2xl font-bold text-primary">
                     {member.name.split(" ").map(n => n[0]).join("")}

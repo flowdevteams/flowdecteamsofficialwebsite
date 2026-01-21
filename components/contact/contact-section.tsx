@@ -61,7 +61,7 @@ export function ContactSection() {
                   animation="fade-in-up"
                   delay={index * 100}
                 >
-                  <div className="p-6 rounded-2xl bg-card border border-border hover:border-primary/30 transition-colors">
+                  <div className="p-6 flex-1 h-full rounded-2xl bg-card border border-border hover:border-primary/30 transition-colors">
                     <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
                       <info.icon className="h-6 w-6 text-primary" />
                     </div>
