@@ -1,105 +1,198 @@
 "use client"
 
-import { MessageSquare, ClipboardList, Code2, Bug, Rocket, Headphones } from "lucide-react"
-import { AnimatedSection } from "@/components/animated-section"
+import {
+  MessageSquare,
+  ClipboardList,
+  Code2,
+  Bug,
+  Rocket,
+  Headphones,
+} from "lucide-react"
 import { SectionHeader } from "@/components/section-header"
+import { AnimatedSection } from "@/components/animated-section"
+import { cn } from "@/lib/utils"
 
 const steps = [
-  {
-    icon: MessageSquare,
-    title: "Konsultasi & Analisis Kebutuhan",
-    description:
-      "Kami memulai dengan sesi konsultasi untuk memahami tujuan bisnis, target audiens, dan kebutuhan teknis Anda. Tahap ini memastikan solusi website atau aplikasi yang kami bangun benar-benar relevan dan tepat sasaran.",
-  },
-  {
-    icon: ClipboardList,
-    title: "Perencanaan & Strategi Digital",
-    description:
-      "Tim kami menyusun perencanaan teknis, arsitektur sistem, serta strategi UI/UX dan SEO. Semua dirancang agar website dan aplikasi memiliki performa optimal, mudah dikembangkan, dan siap bersaing di mesin pencari.",
-  },
-  {
-    icon: Code2,
-    title: "Desain & Pengembangan",
-    description:
-      "Kami mengembangkan website atau aplikasi menggunakan teknologi modern, aman, dan scalable. Setiap fitur dibangun secara custom sesuai kebutuhan bisnis Anda, bukan menggunakan template instan.",
-  },
-  {
-    icon: Bug,
-    title: "Quality Assurance & Testing",
-    description:
-      "Sebelum rilis, sistem melalui tahap pengujian menyeluruh untuk memastikan keamanan, kecepatan, kompatibilitas perangkat, serta pengalaman pengguna yang optimal.",
-  },
-  {
-    icon: Rocket,
-    title: "Peluncuran & Go Live",
-    description:
-      "Website atau aplikasi Anda kami luncurkan secara profesional. Kami pastikan semuanya berjalan stabil, SEO-ready, dan siap digunakan oleh pelanggan Anda.",
-  },
-  {
-    icon: Headphones,
-    title: "Maintenance & Support Berkelanjutan",
-    description:
-      "Setelah peluncuran, Flowdev Teams tetap mendampingi melalui layanan maintenance, update sistem, dan dukungan teknis agar solusi digital Anda terus berkembang.",
-  },
+  { icon: MessageSquare, title: "Konsultasi", align: "left" },
+  { icon: ClipboardList, title: "Perencanaan", align: "right" },
+  { icon: Code2, title: "Development", align: "left" },
+  { icon: Bug, title: "Testing", align: "right" },
+  { icon: Rocket, title: "Launch", align: "left" },
+  { icon: Headphones, title: "Support", align: "right" },
 ]
 
 export function HowWeWorkSection() {
   return (
-    <section className="py-20 lg:py-28 bg-background">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="relative py-28 lg:py-36 overflow-hidden bg-background">
+      {/* Background Grid */}
+      <div
+        className="absolute inset-0 opacity-[0.04] pointer-events-none"
+        style={{
+          backgroundImage:
+            "linear-gradient(var(--foreground) 1px, transparent 1px), linear-gradient(90deg, var(--foreground) 1px, transparent 1px)",
+          backgroundSize: "80px 80px",
+        }}
+      />
 
-        {/* Section Header */}
+      <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
-          badge="Proses Kerja Kami"
-          title="Bagaimana Flowdev Teams Melayani Klien"
-          description="Flowdev Teams memiliki proses kerja yang terstruktur dan transparan, mulai dari konsultasi hingga maintenance, untuk memastikan setiap website dan aplikasi bisnis dibangun secara profesional dan berkelanjutan."
+          badge="Workflow"
+          title="Cara Flowdev Teams Bekerja"
+          description="Alur kerja modern, terstruktur, dan berulang untuk memastikan setiap proyek berjalan presisi."
         />
 
-        {/* Steps */}
-        <div className="mt-16 grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {steps.map((step, index) => (
-            <AnimatedSection
-              key={step.title}
-              animation="fade-in-up"
-              delay={index * 100}
+        {/* Timeline Wrapper */}
+        <div className="relative mt-32 max-w-5xl mx-auto">
+          {/* ================= SVG FLOW LINE + DOT ================= */}
+          <div className="absolute left-1/2 top-0 -translate-x-1/2 w-full h-[1400px] z-0 pointer-events-none">
+            <svg
+              className="w-full h-full"
+              viewBox="0 0 1000 1400"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              preserveAspectRatio="xMidYMid meet"
             >
-              <div className="relative h-full p-8 rounded-2xl bg-card border border-border hover:border-primary/50 transition-all duration-300">
+              <defs>
+                {/* Glow filter */}
+                <filter id="glow-dot" x="-200%" y="-200%" width="400%" height="400%">
+                  <feGaussianBlur stdDeviation="8" result="blurred"/>
+                  <feMerge>
+                    <feMergeNode in="blurred"/>
+                    <feMergeNode in="SourceGraphic"/>
+                  </feMerge>
+                </filter>
 
-                {/* Step Number */}
-                <div className="absolute -top-4 -left-4 w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold shadow">
-                  {index + 1}
+                {/* Gradient line */}
+                <linearGradient id="lineGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%" stopColor="hsl(var(--primary))" stopOpacity="0.2" />
+                  <stop offset="50%" stopColor="hsl(var(--primary))" stopOpacity="0.5" />
+                  <stop offset="100%" stopColor="hsl(var(--primary))" stopOpacity="0.2" />
+                </linearGradient>
+              </defs>
+
+              {/* Background soft line */}
+              <path
+                d="
+                  M 250 0
+                  C 250 80, 750 160, 750 240
+                  C 750 320, 250 400, 250 480
+                  C 250 560, 750 640, 750 720
+                  C 750 800, 250 880, 250 960
+                  C 250 1040, 750 1120, 750 1200
+                "
+                stroke="url(#lineGradient)"
+                strokeWidth="20"
+                fill="none"
+                opacity="0.15"
+                strokeLinecap="round"
+              />
+
+              {/* Main animated path */}
+              <path
+                id="workflow-path"
+                d="
+                  M 250 0
+                  C 250 80, 750 160, 750 240
+                  C 750 320, 250 400, 250 480
+                  C 250 560, 750 640, 750 720
+                  C 750 800, 250 880, 250 960
+                  C 250 1040, 750 1120, 750 1200
+                "
+                stroke="hsl(var(--primary))"
+                strokeWidth="3"
+                fill="none"
+                strokeOpacity="0.6"
+                strokeLinecap="round"
+                strokeDasharray="12 8"
+                className="animate-dash"
+              />
+
+              {/* Dot bergerak dengan glow */}
+              <g filter="url(#glow-dot)">
+                <circle r="16" fill="hsl(var(--primary))" opacity="0.25">
+                  <animateMotion dur="25s" repeatCount="indefinite" rotate="auto">
+                    <mpath href="#workflow-path" />
+                  </animateMotion>
+                </circle>
+                <circle r="10" fill="hsl(var(--primary))" opacity="0.6">
+                  <animateMotion dur="25s" repeatCount="indefinite" rotate="auto">
+                    <mpath href="#workflow-path" />
+                  </animateMotion>
+                </circle>
+                <circle r="5" fill="hsl(var(--primary))">
+                  <animateMotion dur="25s" repeatCount="indefinite" rotate="auto">
+                    <mpath href="#workflow-path" />
+                  </animateMotion>
+                </circle>
+              </g>
+            </svg>
+          </div>
+
+          {/* ================= STEPS ================= */}
+          <div className="relative z-10 space-y-24 md:space-y-32">
+            {steps.map((step, index) => (
+              <AnimatedSection key={step.title} animation="fade-in-up" delay={index * 150}>
+                <div
+                  className={cn(
+                    "relative flex items-center w-full",
+                    step.align === "right" ? "flex-row-reverse" : "flex-row"
+                  )}
+                >
+                  <div className="w-1/2 flex justify-center items-center">
+                    <div className="relative group">
+                      {/* Glow Shadow */}
+                      <div className="absolute -inset-10 bg-primary/30 blur-[45px] opacity-0 group-hover:opacity-100 transition duration-700 rounded-full" />
+                      
+                      {/* Icon Node */}
+                      <div className="relative w-20 h-20 rounded-2xl bg-card border-2 border-primary/20 flex items-center justify-center shadow-2xl group-hover:border-primary/60 transition-all duration-500 z-10">
+                        <step.icon className="h-10 w-10 text-primary group-hover:scale-110 transition-transform duration-500" />
+                      </div>
+
+                      {/* Label */}
+                      <div
+                        className={cn(
+                          "absolute top-1/2 -translate-y-1/2 whitespace-nowrap",
+                          step.align === "right"
+                            ? "right-full mr-12 text-right"
+                            : "left-full ml-12 text-left"
+                        )}
+                      >
+                        <span className="text-primary/50 font-mono text-xs font-bold tracking-widest block mb-1">
+                          PROCESS 0{index + 1}
+                        </span>
+                        <h3 className="text-2xl font-bold text-foreground tracking-tight">
+                          {step.title}
+                        </h3>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-
-                {/* Icon */}
-                <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-6">
-                  <step.icon className="h-7 w-7 text-primary" />
-                </div>
-
-                {/* Content */}
-                <h3 className="text-xl font-semibold text-foreground mb-3">
-                  {step.title}
-                </h3>
-                <p className="text-muted-foreground leading-relaxed">
-                  {step.description}
-                </p>
-              </div>
-            </AnimatedSection>
-          ))}
+              </AnimatedSection>
+            ))}
+          </div>
         </div>
 
-        {/* Bottom Trust Text */}
-        <AnimatedSection animation="fade-in-up" delay={700}>
-          <div className="max-w-3xl mx-auto text-center mt-16">
-            <p className="text-muted-foreground">
-              Dengan alur kerja yang jelas dan komunikasi yang transparan,
-              Flowdev Teams memastikan setiap klien mendapatkan solusi website
-              dan aplikasi yang tidak hanya bagus secara tampilan,
-              tetapi juga kuat secara teknis dan bisnis.
-            </p>
+        {/* Statement Box */}
+        <AnimatedSection animation="fade-in-up" delay={800}>
+          <div className="mt-40 text-center">
+            <div className="inline-block px-8 py-4 rounded-2xl border border-primary/10 bg-primary/5 backdrop-blur-md">
+              <p className="text-muted-foreground max-w-md">
+                Flowdev Teams bekerja dengan presisi tinggi untuk hasil yang stabil dan scalable.
+              </p>
+            </div>
           </div>
         </AnimatedSection>
-
       </div>
+
+      <style jsx>{`
+        .animate-dash {
+          stroke-dashoffset: 1000;
+          animation: dash-flow 25s linear infinite;
+        }
+        @keyframes dash-flow {
+          to { stroke-dashoffset: 0; }
+        }
+      `}</style>
     </section>
   )
 }
