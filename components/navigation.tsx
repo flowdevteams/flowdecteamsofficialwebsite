@@ -19,6 +19,15 @@ const navLinks = [
   { href: "/contact", label: "Kontak" },
 ]
 
+function PromoBadge() {
+  return (
+    <span className="ml-2 inline-flex items-center rounded-full bg-red-500 px-2 py-0.5 text-[10px] font-semibold text-white leading-none">
+      Promo
+    </span>
+  )
+}
+
+
 export function Navigation() {
   const [isOpen, setIsOpen] = React.useState(false)
   const [isScrolled, setIsScrolled] = React.useState(false)
@@ -61,7 +70,7 @@ export function Navigation() {
       >
         <nav className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16 lg:h-20">
-            
+
             {/* Logo */}
             <Link
               href="/"
@@ -78,10 +87,10 @@ export function Navigation() {
                 />
               </div>
 
-              <span className="hidden sm:inline">
-                Flowdev <span className="text-primary">Teams</span>
+              <span className="hidden sm:inline text-sm lg:text-md xl:text-xl">
+                Flowdev <span className="text-primary ">Teams</span>
               </span>
-              <span className="sm:hidden">FD</span>
+              <span className="sm:hidden inline text-sm">Flowdev <span className="text-primary">Teams</span></span>
             </Link>
 
             {/* Desktop Navigation */}
@@ -91,14 +100,33 @@ export function Navigation() {
                   key={link.href}
                   href={link.href}
                   className={cn(
-                    "px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-200",
+                    "relative px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-200",
                     pathname === link.href
                       ? "text-primary bg-primary/10"
                       : "text-muted-foreground hover:text-foreground hover:bg-muted"
                   )}
                 >
                   {link.label}
+
+                  {link.href === "/pricing" && (
+                    <span className="
+      absolute 
+      -top-1.5 
+      -right-1.5 
+      rounded-full 
+      bg-red-500 
+      px-1.5 
+      py-[1px] 
+      text-[8px] 
+      font-semibold 
+      text-white 
+      leading-none
+    ">
+                      PROMO
+                    </span>
+                  )}
                 </Link>
+
               ))}
             </div>
 
@@ -177,14 +205,33 @@ export function Navigation() {
                   href={link.href}
                   onClick={() => setIsOpen(false)}
                   className={cn(
-                    "px-4 py-3 rounded-xl text-base font-medium",
+                    "relative px-4 py-3 rounded-xl text-base font-medium",
                     pathname === link.href
                       ? "text-primary bg-primary/10"
                       : "hover:bg-muted"
                   )}
                 >
                   {link.label}
+
+                  {link.href === "/pricing" && (
+                    <span className="
+      absolute 
+      top-2 
+      right-3 
+      rounded-full 
+      bg-red-500 
+      px-1.5 
+      py-[1px] 
+      text-[9px] 
+      font-semibold 
+      text-white 
+      leading-none
+    ">
+                      PROMO
+                    </span>
+                  )}
                 </Link>
+
               ))}
             </nav>
 

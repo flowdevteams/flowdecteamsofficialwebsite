@@ -3,6 +3,12 @@
 import { Mail, Phone, MapPin, Clock, Send } from "lucide-react"
 import { AnimatedSection } from "@/components/animated-section"
 import { ContactForm } from "./contact-form"
+import dynamic from "next/dynamic"
+
+const InteractiveMap = dynamic(
+  () => import("@/components/interactive-map").then(m => m.InteractiveMap),
+  { ssr: false }
+)
 
 const contactInfo = [
   {
@@ -76,10 +82,9 @@ export function ContactSection() {
             {/* Map Placeholder */}
             <AnimatedSection animation="fade-in-up" delay={400}>
               <div className="mt-8 rounded-2xl bg-muted/50 border border-border overflow-hidden h-64 flex items-center justify-center">
-                <div className="text-center text-muted-foreground">
-                  <MapPin className="h-12 w-12 mx-auto mb-2 text-primary/50" />
-                  <p>Area layanan & lokasi kerja tim kami</p>
-                </div>
+              
+                  <InteractiveMap />
+            
               </div>
             </AnimatedSection>
           </div>

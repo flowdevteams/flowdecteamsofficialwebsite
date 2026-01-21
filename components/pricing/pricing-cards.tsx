@@ -11,6 +11,8 @@ const plans = [
     name: "Starter Website",
     description: "Cocok untuk UMKM, personal brand, dan bisnis baru",
     price: "500.000",
+    oldPrice: "1.000.000",
+    discount: "50%",
     period: "proyek",
     popular: false,
     features: [
@@ -27,6 +29,8 @@ const plans = [
     name: "Business / Professional",
     description: "Untuk bisnis yang ingin tumbuh dan terlihat profesional",
     price: "1.500.000",
+    oldPrice: "3.000.000",
+    discount: "50%",
     period: "proyek",
     popular: true,
     features: [
@@ -66,6 +70,7 @@ export function PricingCards() {
   return (
     <section className="py-20 lg:py-28 bg-background">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {plans.map((plan, index) => (
             <AnimatedSection
@@ -75,16 +80,33 @@ export function PricingCards() {
             >
               <div
                 className={cn(
-                  "relative h-full flex flex-col p-8 rounded-2xl border transition-all duration-300",
+                  "relative overflow-visible h-full flex flex-col p-10 rounded-2xl border transition-all duration-300",
+
                   plan.popular
                     ? "bg-primary/5 border-primary shadow-xl shadow-primary/10"
                     : "bg-card border-border hover:border-primary/50"
                 )}
               >
+                {plan.discount && (
+                  <div className="absolute top-1 -left-10 z-10">
+                    <div className="relative">
+                      <div className="bg-red-500 text-white text-sm font-bold px-6 py-2 rotate-[-12deg] shadow-lg">
+                        Hemat {plan.discount}
+                      </div>
+
+                      {/* Ujung pita (efek berjeruji) */}
+                      <div className="absolute -bottom-2 left-0 w-0 h-0 
+        border-l-[10px] border-l-red-700
+        border-t-[10px] border-t-transparent">
+                      </div>
+                    </div>
+                  </div>
+                )}
+
                 {/* Badge Popular */}
                 {plan.popular && (
                   <div className="absolute -top-4 left-1/2 -translate-x-1/2">
-                    <div className="flex items-center gap-1 px-4 py-1.5 rounded-full bg-primary text-primary-foreground text-sm font-medium">
+                    <div className="flex items-center gap-1 px-2 py-1.5 rounded-full bg-primary text-primary-foreground text-sm font-medium">
                       <Star className="h-4 w-4 fill-current" />
                       Paling Banyak Dipilih
                     </div>
@@ -103,22 +125,28 @@ export function PricingCards() {
 
                 {/* Harga */}
                 <div className="mb-8">
+                  {plan.oldPrice && (
+                    <div className="text-muted-foreground line-through text-lg mb-1">
+                      Rp {plan.oldPrice}
+                    </div>
+                  )}
+
                   <div className="flex items-baseline gap-2">
                     {plan.price !== "Custom" && (
-                      <span className="text-xl text-muted-foreground">
-                        Rp
-                      </span>
+                      <span className="text-xl text-muted-foreground">Rp</span>
                     )}
                     <span className="text-5xl font-bold text-foreground">
                       {plan.price}
                     </span>
                   </div>
+
                   <span className="text-muted-foreground">
                     {plan.period === "penawaran"
                       ? "Harga sesuai kebutuhan"
                       : `per ${plan.period}`}
                   </span>
                 </div>
+
 
                 {/* Fitur */}
                 <ul className="space-y-4 mb-8 flex-1">
