@@ -1,7 +1,6 @@
 "use client"
 
 import React, { useEffect, useState } from "react"
-
 import { useAnimation } from "@/hooks/use-animation"
 import { cn } from "@/lib/utils"
 
@@ -42,33 +41,33 @@ export function AnimatedSection({
 
   const getAnimationStyles = (): React.CSSProperties => {
     const baseStyles: React.CSSProperties = {
-      transition: "all 0.6s cubic-bezier(0.16, 1, 0.3, 1)",
+      transition: "all 0.8s cubic-bezier(0.16, 1, 0.3, 1)",
+      willChange: "transform, opacity", // Optimasi performa GPU
     }
     
     if (!shouldAnimate) {
-      // Initial hidden state based on animation type
       switch (animation) {
         case "fade-in-up":
-          return { ...baseStyles, opacity: 0, transform: "translateY(30px)" }
+          return { ...baseStyles, opacity: 0, transform: "translateY(20px)" }
         case "fade-in-down":
-          return { ...baseStyles, opacity: 0, transform: "translateY(-30px)" }
+          return { ...baseStyles, opacity: 0, transform: "translateY(-20px)" }
         case "fade-in-left":
-          return { ...baseStyles, opacity: 0, transform: "translateX(-30px)" }
+          return { ...baseStyles, opacity: 0, transform: "translateX(-20px)" }
         case "fade-in-right":
-          return { ...baseStyles, opacity: 0, transform: "translateX(30px)" }
+          return { ...baseStyles, opacity: 0, transform: "translateX(20px)" }
         case "scale-in":
-          return { ...baseStyles, opacity: 0, transform: "scale(0.95)" }
+          return { ...baseStyles, opacity: 0, transform: "scale(0.97)" }
         default:
           return { ...baseStyles, opacity: 0 }
       }
     }
-    return { ...baseStyles, opacity: 1, transform: "translateY(0) translateX(0) scale(1)" }
+    return { ...baseStyles, opacity: 1, transform: "translate(0, 0) scale(1)" }
   }
 
   return (
     <div
       ref={ref}
-      className={className}
+      className={cn("backface-hidden", className)} // Menghindari flickering di Safari mobile
       style={getAnimationStyles()}
     >
       {children}
