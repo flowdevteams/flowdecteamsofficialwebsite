@@ -37,96 +37,17 @@ export function HowWeWorkSection() {
       <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
           badge="Workflow"
-          title="Cara Flowdev Teams Bekerja"
+          title="Bagaimana Flowdev Teams Bekerja"
           description="Alur kerja modern, terstruktur, dan berulang untuk memastikan setiap proyek berjalan presisi."
         />
 
         {/* Timeline Wrapper */}
         <div className="relative mt-32 max-w-5xl mx-auto">
-          {/* ================= SVG FLOW LINE + DOT ================= */}
-          <div className="absolute left-1/2 top-0 -translate-x-1/2 w-full h-[1400px] z-0 pointer-events-none">
-            <svg
-              className="w-full h-full"
-              viewBox="0 0 1000 1400"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              preserveAspectRatio="xMidYMid meet"
-            >
-              <defs>
-                {/* Glow filter */}
-                <filter id="glow-dot" x="-200%" y="-200%" width="400%" height="400%">
-                  <feGaussianBlur stdDeviation="8" result="blurred"/>
-                  <feMerge>
-                    <feMergeNode in="blurred"/>
-                    <feMergeNode in="SourceGraphic"/>
-                  </feMerge>
-                </filter>
-
-                {/* Gradient line */}
-                <linearGradient id="lineGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-                  <stop offset="0%" stopColor="hsl(var(--primary))" stopOpacity="0.2" />
-                  <stop offset="50%" stopColor="hsl(var(--primary))" stopOpacity="0.5" />
-                  <stop offset="100%" stopColor="hsl(var(--primary))" stopOpacity="0.2" />
-                </linearGradient>
-              </defs>
-
-              {/* Background soft line */}
-              <path
-                d="
-                  M 250 0
-                  C 250 80, 750 160, 750 240
-                  C 750 320, 250 400, 250 480
-                  C 250 560, 750 640, 750 720
-                  C 750 800, 250 880, 250 960
-                  C 250 1040, 750 1120, 750 1200
-                "
-                stroke="url(#lineGradient)"
-                strokeWidth="20"
-                fill="none"
-                opacity="0.15"
-                strokeLinecap="round"
-              />
-
-              {/* Main animated path */}
-              <path
-                id="workflow-path"
-                d="
-                  M 250 0
-                  C 250 80, 750 160, 750 240
-                  C 750 320, 250 400, 250 480
-                  C 250 560, 750 640, 750 720
-                  C 750 800, 250 880, 250 960
-                  C 250 1040, 750 1120, 750 1200
-                "
-                stroke="hsl(var(--primary))"
-                strokeWidth="3"
-                fill="none"
-                strokeOpacity="0.6"
-                strokeLinecap="round"
-                strokeDasharray="12 8"
-                className="animate-dash"
-              />
-
-              {/* Dot bergerak dengan glow */}
-              <g filter="url(#glow-dot)">
-                <circle r="16" fill="hsl(var(--primary))" opacity="0.25">
-                  <animateMotion dur="25s" repeatCount="indefinite" rotate="auto">
-                    <mpath href="#workflow-path" />
-                  </animateMotion>
-                </circle>
-                <circle r="10" fill="hsl(var(--primary))" opacity="0.6">
-                  <animateMotion dur="25s" repeatCount="indefinite" rotate="auto">
-                    <mpath href="#workflow-path" />
-                  </animateMotion>
-                </circle>
-                <circle r="5" fill="hsl(var(--primary))">
-                  <animateMotion dur="25s" repeatCount="indefinite" rotate="auto">
-                    <mpath href="#workflow-path" />
-                  </animateMotion>
-                </circle>
-              </g>
-            </svg>
+          {/* Vertical Glow Spine */}
+          <div className="absolute inset-0 flex justify-center pointer-events-none">
+            <div className="w-[2px] h-full bg-gradient-to-b from-transparent via-primary/40 to-transparent blur-[1px]" />
           </div>
+
 
           {/* ================= STEPS ================= */}
           <div className="relative z-10 space-y-24 md:space-y-32">
@@ -140,13 +61,16 @@ export function HowWeWorkSection() {
                 >
                   <div className="w-1/2 flex justify-center items-center">
                     <div className="relative group">
-                      {/* Glow Shadow */}
-                      <div className="absolute -inset-10 bg-primary/30 blur-[45px] opacity-0 group-hover:opacity-100 transition duration-700 rounded-full" />
-                      
-                      {/* Icon Node */}
-                      <div className="relative w-20 h-20 rounded-2xl bg-card border-2 border-primary/20 flex items-center justify-center shadow-2xl group-hover:border-primary/60 transition-all duration-500 z-10">
-                        <step.icon className="h-10 w-10 text-primary group-hover:scale-110 transition-transform duration-500" />
+                      {/* Ambient Glow */}
+                      <div className="absolute -inset-8 bg-primary/20 blur-[50px] opacity-0 group-hover:opacity-100 transition duration-700 rounded-full" />
+
+                      {/* Core Node */}
+                      <div className="relative w-20 h-20 rounded-2xl bg-background border border-primary/20 flex items-center justify-center shadow-xl backdrop-blur-md group-hover:scale-110 transition-all duration-500 z-10">
+                        <step.icon className="h-10 w-10 text-primary" />
                       </div>
+
+                      {/* Pulse Ring */}
+                      <div className="absolute inset-0 rounded-2xl border border-primary/30 animate-pulse opacity-40" />
 
                       {/* Label */}
                       <div

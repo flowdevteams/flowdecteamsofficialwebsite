@@ -63,8 +63,8 @@ export function ServicesPreview() {
               delay={index * 100}
             >
               <div className="group flex-1 h-full p-6 lg:p-8 rounded-2xl bg-card border border-border hover:border-primary/50 hover:shadow-lg hover:shadow-primary/5 transition-all duration-300">
-                <div className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors">
-                  <service.icon className="h-7 w-7 text-primary" />
+                <div className="w-14 h-14 rounded-xl mx-auto bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors">
+                  <service.icon className="h-7 w-7 text-primary " />
                 </div>
                 <h3 className="text-xl font-semibold text-foreground mb-3">
                   {service.title}
