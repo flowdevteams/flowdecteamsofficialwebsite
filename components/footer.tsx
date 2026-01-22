@@ -37,7 +37,7 @@ export function Footer() {
           <div className="lg:col-span-2">
             <Link
               href="/"
-              className="flex items-center gap-2 text-xl font-bold text-foreground z-50 relative"
+              className="flex items-center gap-2 text-xl font-bold text-foreground z-20 relative"
             >
               <div className="w-8 h-8 rounded-lg overflow-hidden flex items-center justify-center">
                 <Image
@@ -53,7 +53,7 @@ export function Footer() {
               <span className="hidden sm:inline">
                 Flowdev <span className="text-primary">Teams</span>
               </span>
-              <span className="sm:hidden">FT</span>
+              <span className="sm:hidden"> Flowdev <span className="text-primary">Teams</span></span>
             </Link>
 
             <p className="text-muted-foreground mb-6 max-w-sm leading-relaxed mt-5">

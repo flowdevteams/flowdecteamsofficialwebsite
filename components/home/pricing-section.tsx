@@ -90,9 +90,9 @@ export function PricingPreviewSection() {
               >
                 {/* Promo Ribbon */}
                 {plan.discount && (
-                  <div className="absolute top-1 -left-10 z-10">
+                  <div className="absolute top-1 -left-3 z-10">
                     <div className="relative">
-                      <div className="bg-red-500 text-white text-sm font-bold px-6 py-2 rotate-[-12deg] shadow-lg">
+                      <div className="bg-red-500 text-white text-sm font-bold px-4 py-2 rotate-[-12deg] shadow-lg">
                         DISKON {plan.discount}
                       </div>
 

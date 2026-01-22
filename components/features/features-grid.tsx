@@ -25,7 +25,7 @@ const features = [
   },
   {
     icon: Shield,
-    title: "Keamanan Kelas Enterprise",
+    title: "Keamanan Enterprise",
     description: "Penerapan standar keamanan industri dan best practice untuk melindungi data serta sistem bisnis Anda.",
   },
   {
@@ -98,13 +98,13 @@ export function FeaturesGrid() {
               delay={index * 50}
             >
               <div className="group h-full p-6 rounded-2xl bg-card border border-border hover:border-primary/50 hover:shadow-lg hover:shadow-primary/5 transition-all duration-300">
-                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
+                <div className="w-12 h-12 rounded-xl bg-primary/10 mx-auto flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
                   <feature.icon className="h-6 w-6 text-primary" />
                 </div>
-                <h3 className="text-lg font-semibold text-foreground mb-2">
+                <h3 className="text-lg font-semibold text-foreground text-center mb-2">
                   {feature.title}
                 </h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">
+                <p className="text-sm text-muted-foreground text-center leading-relaxed">
                   {feature.description}
                 </p>
               </div>

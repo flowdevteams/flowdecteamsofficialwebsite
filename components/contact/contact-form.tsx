@@ -78,7 +78,7 @@ export function ContactForm() {
           <CheckCircle className="h-8 w-8 text-primary" />
         </div>
         <h3 className="text-2xl font-bold text-foreground mb-2">
-          Terima Kasih 🙌
+          Terima Kasih 
         </h3>
         <p className="text-muted-foreground mb-6">
           Pesan Anda berhasil dikirim. Tim kami akan menghubungi Anda maksimal

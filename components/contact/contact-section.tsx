@@ -61,14 +61,14 @@ export function ContactSection() {
                   animation="fade-in-up"
                   delay={index * 100}
                 >
-                  <div className="p-6 flex-1 h-full rounded-2xl bg-card border border-border hover:border-primary/30 transition-colors">
-                    <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
+                  <div className="p-6 flex-1 h-full rounded-2xl bg-card border text-center border-border hover:border-primary/30 transition-colors">
+                    <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mx-auto mb-4">
                       <info.icon className="h-6 w-6 text-primary" />
                     </div>
                     <h3 className="font-semibold text-foreground mb-1">
                       {info.title}
                     </h3>
-                    <p className="text-foreground font-medium">
+                    <p className="text-foreground font-normal mb-3">
                       {info.content}
                     </p>
                     <p className="text-sm text-muted-foreground">

@@ -21,7 +21,6 @@ const plans = [
       "SEO dasar (struktur & metadata)",
       "Form kontak terhubung WhatsApp / Email",
       "Gratis Maintenance & Support 1 bulan",
-      "Gratis Domain .com 1 Bulan",
     ],
     cta: "Konsultasi Gratis",
   },
@@ -41,7 +40,7 @@ const plans = [
       "Optimasi kecepatan website",
       "Integrasi API (jika diperlukan)",
       "Gratis Maintenance & Support 3 bulan",
-      "Gratis Domain .com 3 Bulan",
+     
     ],
     cta: "Mulai Sekarang",
   },
@@ -88,9 +87,9 @@ export function PricingCards() {
                 )}
               >
                 {plan.discount && (
-                  <div className="absolute top-1 -left-10 z-10">
+                  <div className="absolute top-1 -left-3 z-10">
                     <div className="relative">
-                      <div className="bg-red-500 text-white text-sm font-bold px-6 py-2 rotate-[-12deg] shadow-lg">
+                      <div className="bg-red-500 text-white text-sm font-bold px-4 py-2 rotate-[-12deg] shadow-lg">
                         Hemat {plan.discount}
                       </div>
 
@@ -108,7 +107,7 @@ export function PricingCards() {
                   <div className="absolute -top-4 left-1/2 -translate-x-1/2">
                     <div className="flex items-center gap-1 px-2 py-1.5 rounded-full bg-primary text-primary-foreground text-sm font-medium">
                       <Star className="h-4 w-4 fill-current" />
-                      Paling Banyak Dipilih
+                     Most Popular
                     </div>
                   </div>
                 )}

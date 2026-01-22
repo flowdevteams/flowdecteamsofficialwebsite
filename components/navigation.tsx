@@ -60,22 +60,22 @@ export function Navigation() {
 
   return (
     <>
-      <header
-      
-        className={cn(
-          "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
-          isScrolled || isOpen
-            ? "bg-background/95 backdrop-blur-md shadow-sm border-b border-border shadow-lg shadow-primary/50"
-            : "bg-transparent"
-        )}
-      >
+    <header
+  className={cn(
+    "fixed  z-50 transition-all duration-300 transform-gpu will-change-transform mx-auto left-0 right-0 top-0",
+    isScrolled || isOpen
+      ? "bg-background/95 backdrop-blur-md border-b border-border shadow-lg shadow-primary/30"
+      : "bg-transparent"
+  )}
+>
+
         <nav className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 ">
           <div className="flex items-center justify-between h-16 lg:h-20">
 
             {/* Logo */}
             <Link
               href="/"
-              className="flex items-center gap-2 text-xl font-bold text-foreground z-50 relative"
+              className="flex items-center gap-2 text-xl font-bold text-foreground z-50 relative "
             >
               <div className="w-8 h-8 rounded-lg overflow-hidden flex items-center justify-center">
                 <Image

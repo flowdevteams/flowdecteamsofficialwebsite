@@ -73,43 +73,42 @@ export function ServicesGrid() {
               animation="fade-in-up"
               delay={index * 100}
             >
-              <div className="group h-full p-8 rounded-2xl bg-card border border-border hover:border-primary/50 hover:shadow-xl hover:shadow-primary/5 transition-all duration-300">
-                <div className="flex items-start gap-6">
-                  <div className="flex-shrink-0 w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                    <service.icon className="h-8 w-8 text-primary" />
-                  </div>
-                  <div className="flex-1">
-                    <h3 className="text-2xl font-bold text-foreground mb-3">
-                      {service.title}
-                    </h3>
-                    <p className="text-muted-foreground mb-6 leading-relaxed">
-                      {service.description}
-                    </p>
-                    <ul className="grid grid-cols-2 gap-2 mb-6">
-                      {service.features.map((feature) => (
-                        <li
-                          key={feature}
-                          className="flex items-center gap-2 text-sm text-foreground"
-                        >
-                          <div className="w-1.5 h-1.5 rounded-full bg-primary" />
-                          {feature}
-                        </li>
-                      ))}
-                    </ul>
-                    <Button
-                      asChild
-                      variant="outline"
-                      size="sm"
-                      className="gap-2 group/btn bg-transparent"
-                    >
-                      <Link href="/contact">
-                        Konsultasi Sekarang
-                        <ArrowRight className="h-4 w-4 transition-transform group-hover/btn:translate-x-1" />
-                      </Link>
-                    </Button>
-                  </div>
-                </div>
-              </div>
+           <div className="group h-full p-6 sm:p-8 rounded-2xl bg-card border border-border">
+  <div className="flex items-center gap-3 mb-4">
+    <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center">
+      <service.icon className="h-5 w-5 text-primary" />
+    </div>
+    <h3 className="text-lg font-semibold text-foreground leading-tight">
+      {service.title}
+    </h3>
+  </div>
+
+  <p className="text-sm text-muted-foreground mb-4 leading-relaxed">
+    {service.description}
+  </p>
+
+  <ul className="space-y-2 mb-6">
+    {service.features.map((feature) => (
+      <li key={feature} className="flex items-center gap-2 text-sm">
+        <span className="w-1.5 h-1.5 rounded-full bg-primary" />
+        {feature}
+      </li>
+    ))}
+  </ul>
+
+  <Button
+    asChild
+    variant="outline"
+    size="sm"
+    className="w-full gap-2"
+  >
+    <Link href="/contact">
+      Konsultasi Sekarang
+      <ArrowRight className="h-4 w-4" />
+    </Link>
+  </Button>
+</div>
+
             </AnimatedSection>
           ))}
         </div>
