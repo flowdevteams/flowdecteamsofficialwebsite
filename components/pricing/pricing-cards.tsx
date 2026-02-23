@@ -10,8 +10,8 @@ const plans = [
   {
     name: "UMKM Express",
     description: "Website profesional siap online dalam 48 jam",
-    price: "397.000",
-    oldPrice: "897.000",
+    price: "497.000",
+    oldPrice: "997.000",
     discount: "50%",
     period: "proyek",
     popular: false,
