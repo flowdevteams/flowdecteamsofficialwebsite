@@ -20,7 +20,7 @@ const contactInfo = [
   {
     icon: Phone,
     title: "Telepon / WhatsApp",
-    content: "+62 815-7467-3448",
+    content: "+62 857-1645-4348",
     description: "Senin – Sabtu, 09.00 – 18.00 WIB",
   },
   {
