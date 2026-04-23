@@ -176,7 +176,7 @@ export function PricingPreviewSection() {
                   variant={plan.popular ? "default" : "outline"}
                   className="w-full"
                 >
-                  <Link href="/pricing" className="flex items-center justify-center gap-2">
+                  <Link href="/harga-paket" className="flex items-center justify-center gap-2">
                     Lihat Detail
                     <ArrowRight className="h-4 w-4" />
                   </Link>
@@ -193,7 +193,7 @@ export function PricingPreviewSection() {
               Promo terbatas! Konsultasi gratis sebelum slot penuh.
             </p>
             <Button asChild size="lg">
-              <Link href="/contact">
+              <Link href="/kontak">
                 Konsultasi Gratis Sekarang
               </Link>
             </Button>
@@ -204,3 +204,4 @@ export function PricingPreviewSection() {
     </section>
   )
 }
+

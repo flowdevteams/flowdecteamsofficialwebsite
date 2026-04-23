@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   description:
     "Temukan layanan Flowdev Teams: jasa pembuatan website, web app, dan aplikasi bisnis yang modern, cepat, dan SEO-friendly.",
   alternates: {
-    canonical: "/services",
+    canonical: "/layanan",
   },
   robots: {
     index: true,
@@ -33,3 +33,4 @@ export default function ServicesPage() {
     </>
   )
 }
+

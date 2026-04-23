@@ -10,32 +10,35 @@ const plans = [
   {
     name: "UMKM Express",
     description: "Website profesional siap online dalam waktu singkat untuk bisnis kecil & UMKM",
-    price: "490.000",
-    oldPrice: "880.000",
+    price: "395.000",
+    oldPrice: "790.000",
     discount: "50%",
+    monthlyNote: "Biaya Maintenance Rp 120.000/bulan di bulan kedua",
     period: "proyek",
     popular: false,
     features: [
-      "Hingga 7 halaman basic",
+      "Hingga 5 halaman basic",
       "Desain modern & mobile friendly",
       "SEO dasar (Google ready)",
       "Gratis Domain .com 1 tahun",
       "Gratis Hosting 1 bulan",
+      "Gratis Maintenance & Support 1 bulan",
+      "Pengerjaan maksimal 3-5 Hari",
       "Garansi revisi 7 hari",
-      "Pengerjaan maksimal 5 Hari",
-      "Maintenance & Support 2 bulan",
     ],
     cta: "Ambil Slot Sekarang",
   },
   {
     name: "Growth Business",
     description: "Solusi terbaik untuk bisnis yang ingin terlihat profesional & konversi tinggi",
-    price: "850.000",
-    oldPrice: "1.700.000",
+    price: "695.000",
+    oldPrice: "1.390.000",
     discount: "50%",
+    monthlyNote: "Biaya Maintenance Rp 150.000/bulan di bulan ketiga",
     period: "proyek",
     popular: true,
     features: [
+       "Prioritas support 24/7",
       "Hingga 10 - 15 halaman kompleks",
       "Custom UI/UX sesuai brand identity",
        "Desain Premium & mobile friendly",
@@ -44,8 +47,9 @@ const plans = [
       "SEO on-page lengkap",
       "Optimasi kecepatan website",
       "Gratis Domain .com 1 tahun",
-      "Gratis Hosting 3 bulan",
-      "Maintenance & Support 5 bulan",
+      "Gratis Hosting 2 bulan",
+      "Gratis Maintenance & Support 2 bulan",
+      "Garansi revisi 21 hari",
     ],
     cta: "Mulai & Amankan Diskon",
   },
@@ -63,7 +67,7 @@ const plans = [
       "Integrasi pembayaran / API eksternal",
       "Dedicated project manager",
       "Prioritas support 24/7",
-      "Maintenance hingga 12 bulan",
+      "Gratis Maintenance hingga 12 bulan",
       "Hak milik source code penuh",
     ],
     cta: "Diskusikan Proyek Anda",
@@ -129,6 +133,8 @@ export function PricingCards() {
 
                 {/* Harga */}
                 <div className="mb-8">
+                 
+
                   {plan.oldPrice && (
                     <div className="text-muted-foreground line-through text-lg mb-1">
                       Rp {plan.oldPrice}
@@ -139,9 +145,11 @@ export function PricingCards() {
                     {plan.price !== "Custom" && (
                       <span className="text-xl text-muted-foreground">Rp</span>
                     )}
+                    
                     <span className="text-5xl font-bold text-foreground">
                       {plan.price}
                     </span>
+                    
                   </div>
 
                   <span className="text-muted-foreground">
@@ -149,6 +157,13 @@ export function PricingCards() {
                       ? "Harga sesuai kebutuhan"
                       : `per ${plan.period}`}
                   </span>
+                   {plan.monthlyNote && (
+                    <div className="flex justify-end mb-2">
+                      <span className="inline-block rounded-full bg-primary/10 text-primary text-xs font-semibold px-3 py-1">
+                        {plan.monthlyNote}
+                      </span>
+                    </div>
+                  )}
                 </div>
 
 
@@ -171,7 +186,7 @@ export function PricingCards() {
                   variant={plan.popular ? "default" : "outline"}
                   className="w-full"
                 >
-                  <Link href="/contact">{plan.cta}</Link>
+                  <Link href="/kontak">{plan.cta}</Link>
                 </Button>
               </div>
             </AnimatedSection>
@@ -183,7 +198,7 @@ export function PricingCards() {
           <div className="text-center mt-12">
             <p className="text-muted-foreground">
               Semua paket termasuk konsultasi gratis dan analisis kebutuhan proyek.
-              <Link href="/contact" className="text-primary hover:underline ml-1">
+              <Link href="/kontak" className="text-primary hover:underline ml-1">
                 Hubungi kami
               </Link>
               {" "}untuk solusi website atau aplikasi yang lebih spesifik.

@@ -102,7 +102,7 @@ export function ServicesGrid() {
     size="sm"
     className="w-full gap-2"
   >
-    <Link href="/contact">
+    <Link href="/kontak">
       Konsultasi Sekarang
       <ArrowRight className="h-4 w-4" />
     </Link>
@@ -116,3 +116,4 @@ export function ServicesGrid() {
     </section>
   )
 }
+

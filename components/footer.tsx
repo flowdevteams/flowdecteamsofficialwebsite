@@ -4,14 +4,14 @@ import Image from "next/image"
 
 const footerLinks = {
   company: [
-    { href: "/about", label: "Tentang Kami" },
-    { href: "/features", label: "Keunggulan" },
-    { href: "/services", label: "Layanan" },
-    { href: "/portfolio", label: "Portofolio" },
+    { href: "/tentang-kami", label: "Tentang Kami" },
+    { href: "/fitur", label: "Keunggulan" },
+    { href: "/layanan", label: "Layanan" },
+    { href: "/portofolio", label: "Portofolio" },
   ],
   support: [
-    { href: "/contact", label: "Kontak" },
-    { href: "/pricing", label: "Harga & Paket" },
+    { href: "/kontak", label: "Kontak" },
+    { href: "/harga-paket", label: "Harga & Paket" },
     { href: "#", label: "Dokumentasi" },
     { href: "#", label: "FAQ" },
   ],
@@ -161,3 +161,4 @@ export function Footer() {
     </footer>
   )
 }
+

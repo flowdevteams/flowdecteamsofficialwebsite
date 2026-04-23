@@ -79,7 +79,7 @@ export function ServicesPreview() {
 
         <AnimatedSection animation="fade-in-up" delay={600} className="text-center mt-12">
           <Button asChild variant="outline" size="lg" className="gap-2 group bg-transparent">
-            <Link href="/services">
+            <Link href="/layanan">
               Jelajahi Semua Layanan
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
             </Link>
@@ -89,3 +89,4 @@ export function ServicesPreview() {
     </section>
   )
 }
+

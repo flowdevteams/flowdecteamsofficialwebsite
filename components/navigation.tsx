@@ -11,12 +11,12 @@ import Image from "next/image"
 
 const navLinks = [
   { href: "/", label: "Beranda" },
-  { href: "/about", label: "Tentang Kami" },
-  { href: "/features", label: "Fitur" },
-  { href: "/services", label: "Layanan" },
-  { href: "/pricing", label: "Harga" },
-  { href: "/portfolio", label: "Portofolio" },
-  { href: "/contact", label: "Kontak" },
+  { href: "/tentang-kami", label: "Tentang Kami" },
+  { href: "/fitur", label: "Fitur" },
+  { href: "/layanan", label: "Layanan" },
+  { href: "/harga-paket", label: "Harga" },
+  { href: "/portofolio", label: "Portofolio" },
+  { href: "/kontak", label: "Kontak" },
 ]
 
 export function Navigation() {
@@ -165,7 +165,7 @@ export function Navigation() {
                     )}
                   </span>
 
-                  {link.href === "/pricing" && (
+                  {link.href === "/harga-paket" && (
                     <span className="absolute -top-1.5 -right-1.5 rounded-full bg-gradient-to-r from-red-500 to-pink-500 px-1.5 py-[1px] text-[8px] font-semibold text-white shadow-lg shadow-red-500/50 animate-pulse">
                       PROMO
                     </span>
@@ -202,7 +202,7 @@ export function Navigation() {
                 asChild
                 className="hidden lg:inline-flex relative overflow-hidden group bg-gradient-to-r from-primary/90 via-primary to-primary/90 bg-[length:200%_100%] hover:bg-[position:100%_0] transition-all duration-500 shadow-lg shadow-primary/30 hover:shadow-xl hover:shadow-primary/50 hover:scale-105"
               >
-                <Link href="/contact" className="relative z-10">
+                <Link href="/kontak" className="relative z-10">
                   <Sparkles className="w-4 h-4 mr-2 animate-pulse" />
                   Mulai Proyek
                   <span className="absolute inset-0 bg-white/20 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
@@ -300,7 +300,7 @@ export function Navigation() {
 
                   <span className="relative z-10 flex items-center justify-between">
                     {link.label}
-                    {link.href === "/pricing" && (
+                    {link.href === "/harga-paket" && (
                       <span className="rounded-full bg-gradient-to-r from-red-500 to-pink-500 px-2 py-0.5 text-[10px] font-semibold text-white shadow-lg shadow-red-500/50 animate-pulse">
                         PROMO
                       </span>
@@ -328,7 +328,7 @@ export function Navigation() {
                   transform: isOpen ? 'scale(1)' : 'scale(0.9)',
                 }}
               >
-                <Link href="/contact" onClick={() => setIsOpen(false)} className="relative z-10">
+                <Link href="/kontak" onClick={() => setIsOpen(false)} className="relative z-10">
                   <Sparkles className="w-4 h-4 mr-2 animate-pulse" />
                   Konsultasi Gratis
                   <span className="absolute inset-0 bg-white/20 transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700" />

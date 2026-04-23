@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   description:
     "Lihat portofolio Flowdev Teams berisi contoh project website dan aplikasi dari berbagai bisnis di Indonesia, dengan desain modern dan performa optimal.",
   alternates: {
-    canonical: "/portfolio",
+    canonical: "/portofolio",
   },
   robots: {
     index: true,
@@ -33,3 +33,4 @@ export default function PortfolioPage() {
     </>
   )
 }
+

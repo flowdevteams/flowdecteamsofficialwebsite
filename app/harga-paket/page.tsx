@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   description:
     "Pilih paket harga Flowdev Teams yang fleksibel untuk jasa pembuatan website dan aplikasi bisnis. Konsultasi gratis, proses cepat, hasil profesional.",
   alternates: {
-    canonical: "/pricing",
+    canonical: "/harga-paket",
   },
   robots: {
     index: true,
@@ -33,3 +33,4 @@ export default function PricingPage() {
     </>
   )
 }
+

@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description:
     "Hubungi Flowdev Teams untuk konsultasi gratis jasa pembuatan website dan aplikasi. Ceritakan kebutuhan bisnis Anda, kami siap bantu dari konsep sampai launch.",
   alternates: {
-    canonical: "/contact",
+    canonical: "/kontak",
   },
   robots: {
     index: true,
@@ -29,3 +29,4 @@ export default function ContactPage() {
     </>
   )
 }
+

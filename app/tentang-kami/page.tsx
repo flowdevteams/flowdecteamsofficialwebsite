@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   description:
     "Kenali Flowdev Teams, tim jasa pembuatan website dan aplikasi untuk UMKM, startup, dan bisnis di Indonesia.",
   alternates: {
-    canonical: "/about",
+    canonical: "/tentang-kami",
   },
   robots: {
     index: true,
@@ -35,3 +35,4 @@ export default function AboutPage() {
     </>
   )
 }
+

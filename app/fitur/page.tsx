@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   description:
     "Jelajahi fitur layanan Flowdev Teams untuk pengembangan website dan aplikasi yang cepat, modern, dan SEO-friendly untuk bisnis di Indonesia.",
   alternates: {
-    canonical: "/features",
+    canonical: "/fitur",
   },
   robots: {
     index: true,
@@ -35,3 +35,4 @@ export default function FeaturesPage() {
     </>
   )
 }
+

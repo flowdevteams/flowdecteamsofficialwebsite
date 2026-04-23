@@ -136,14 +136,14 @@ export function HeroSection() {
           <AnimatedSection animation="fade-in-up" delay={300}>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Button asChild size="lg" className="text-base px-8 h-12 gap-2 group">
-                <Link href="/contact">
+                <Link href="/kontak">
                   Konsultasi Proyek Sekarang
                   <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </Link>
               </Button>
 
               <Button asChild variant="outline" size="lg" className="text-base px-8 h-12 gap-2 bg-transparent">
-                <Link href="/portfolio">
+                <Link href="/portofolio">
                   <Play className="h-4 w-4" />
                   Lihat Portofolio Kami
                 </Link>
@@ -284,3 +284,4 @@ export function HeroSection() {
     </section>
   )
 }
+

@@ -39,7 +39,7 @@ export function CTASection() {
                 variant="secondary"
                 className="text-base px-8 h-12 gap-2 group"
               >
-                <Link href="/contact">
+                <Link href="/kontak">
                   Konsultasi Gratis Sekarang
                   <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </Link>
@@ -51,7 +51,7 @@ export function CTASection() {
                 variant="outline"
                 className="text-base px-8 h-12 border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground bg-transparent"
               >
-                <Link href="/pricing">
+                <Link href="/harga-paket">
                   Lihat Paket Harga
                 </Link>
               </Button>
@@ -63,3 +63,4 @@ export function CTASection() {
     </section>
   )
 }
+
