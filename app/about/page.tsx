@@ -8,8 +8,16 @@ import { TeamSection } from "@/components/about/team-section"
 import { CTASection } from "@/components/home/cta-section"
 
 export const metadata: Metadata = {
-  title: "About Us | Flowdev Teams",
-  description: "Learn about Flowdev Teams, our mission, values, and the talented team behind your digital success.",
+  title: "Tentang Flowdev Teams | Jasa Pembuatan Website & Aplikasi",
+  description:
+    "Kenali Flowdev Teams, tim jasa pembuatan website dan aplikasi untuk UMKM, startup, dan bisnis di Indonesia.",
+  alternates: {
+    canonical: "/about",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 }
 
 export default function AboutPage() {

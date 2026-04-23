@@ -7,8 +7,16 @@ import { ServicesCTA } from "@/components/services/services-cta"
 import { CTASection } from "@/components/home/cta-section"
 
 export const metadata: Metadata = {
-  title: "Services | Flowdev Teams",
-  description: "Explore our comprehensive range of web and app development services designed to help your business succeed.",
+  title: "Layanan terbaik web development Flowdev Teams | Jasa Pembuatan Website & Aplikasi",
+  description:
+    "Temukan layanan Flowdev Teams: jasa pembuatan website, web app, dan aplikasi bisnis yang modern, cepat, dan SEO-friendly.",
+  alternates: {
+    canonical: "/services",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 }
 
 export default function ServicesPage() {

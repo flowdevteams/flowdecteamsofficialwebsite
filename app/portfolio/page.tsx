@@ -7,8 +7,16 @@ import { ClientsSection } from "@/components/portfolio/clients-section"
 import { CTASection } from "@/components/home/cta-section"
 
 export const metadata: Metadata = {
-  title: "Portfolio | Flowdev Teams",
-  description: "Explore our portfolio of successful projects. See how we've helped businesses transform their digital presence.",
+  title: "Portofolio Flowdev Teams | Contoh Project Website & Aplikasi",
+  description:
+    "Lihat portofolio Flowdev Teams berisi contoh project website dan aplikasi dari berbagai bisnis di Indonesia, dengan desain modern dan performa optimal.",
+  alternates: {
+    canonical: "/portfolio",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 }
 
 export default function PortfolioPage() {
