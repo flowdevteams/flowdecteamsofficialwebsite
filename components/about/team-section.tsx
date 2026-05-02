@@ -11,7 +11,7 @@ const team = [
     role: "Product Strategist & Lead Engineer",
     bio: "Visioner digital yang memimpin strategi produk dan pengembangan teknologi untuk mendorong pertumbuhan serta inovasi berkelanjutan.",
     image: "/team/alif.png",
-    socials: { linkedin: "#" },
+    socials: { linkedin: "https://www.linkedin.com/in/alif-haikal-67a307378/" },
     portfolioUrl: "https://alifhaikalportfolio.flowdevteams.com/",
   },
   {
