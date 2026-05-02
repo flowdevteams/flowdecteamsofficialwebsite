@@ -23,7 +23,6 @@ const footerLinks = {
 }
 
 const socialLinks = [
-  { href: "https://github.com/flowdevteams", icon: Github, label: "GitHub Flowdev Teams" },
   { href: "https://www.instagram.com/flowdevteams/", icon: Instagram, label: "Instagram Flowdev Teams" },
 ]
 
