@@ -12,6 +12,7 @@ const team = [
     bio: "Visioner digital yang memimpin strategi produk dan pengembangan teknologi untuk mendorong pertumbuhan serta inovasi berkelanjutan.",
     image: "/team/alif.png",
     socials: { linkedin: "#", twitter: "#" },
+    portfolioUrl: "https://alifhaikalportfolio.flowdevteams.com/",
   },
   {
     name: "Zainul Rahmat",
@@ -19,20 +20,23 @@ const team = [
     bio: "Arsitek sistem dan full-stack developer berpengalaman dalam merancang infrastruktur aplikasi yang scalable, aman, dan efisien.",
     image: "/team/zainul.png",
     socials: { linkedin: "#", github: "#" },
+    portfolioUrl: "https://zainulrahmat.dev",
   },
   {
     name: "Bagas Aditya",
-    role: "UI/UX & Product Experience Designer",
+    role: "Data Abalytics & UI/UX Designer",
     bio: "Spesialis UI/UX yang fokus pada desain modern, usability tinggi, dan peningkatan konversi melalui pengalaman pengguna yang optimal.",
     image: "/team/bagas.png",
     socials: { linkedin: "#", twitter: "#" },
+    portfolioUrl: "https://bagasaditya.web.id/",
   },
   {
     name: "Ahmad Sholehuddin",
     role: "Cloud & Infrastructure Engineer",
     bio: "Ahli cloud dan server dengan pengalaman membangun, mengelola, dan mengamankan infrastruktur berbasis cloud untuk kebutuhan skala bisnis.",
     image: "/team/didin.png",
-    socials: { linkedin: "#", twitter: "#" },
+    socials: { linkedin: "https://www.linkedin.com/authwall?trk=gf&trkInfo=AQHfZYj8UHfRmQAAAZ3obn-o36GyRMm3BbwQEf-Up0-ilCZz0ARzLK5SL5UPH_w5lnkneoNRAj11idCO2fUe5ySEZfHREr7TUx89NGLFXwqPCjzkWJxFmahC6di6MOAlOwGItBI=&original_referer=&sessionRedirect=https%3A%2F%2Fwww.linkedin.com%2Fin%2Fachmadsholehudin", twitter: "#" },
+    portfolioUrl: "#",
   },
   {
     name: "Mohammad Riky Fahrian",
@@ -40,6 +44,7 @@ const team = [
     bio: "Software engineer berpengalaman dengan fokus pada React, Next.js, dan Node.js untuk membangun aplikasi web modern berperforma tinggi.",
     image: "/team/riky.png",
     socials: { linkedin: "#", github: "#" },
+    portfolioUrl: "https://riky.dev",
   },
   {
     name: "Tiana Ramdhani",
@@ -47,6 +52,7 @@ const team = [
     bio: "Spesialis machine learning dan data analysis dalam pengembangan model prediktif, automasi cerdas, dan solusi berbasis AI.",
     image: "/team/tian.png",
     socials: { linkedin: "#", twitter: "#" },
+    portfolioUrl: "#",
   },
 ]
 
@@ -143,9 +149,33 @@ export function TeamSection() {
                     {member.role}
                   </p>
 
-                  <p className="text-sm text-muted-foreground leading-relaxed">
+                  <p className="text-sm text-muted-foreground leading-relaxed mb-4 flex-1">
                     {member.bio}
                   </p>
+
+                  {member.portfolioUrl && (
+                    <a
+                      href={member.portfolioUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center justify-center gap-2 px-4 py-2 rounded-lg bg-primary/10 hover:bg-primary/20 text-primary text-sm font-medium transition-all duration-200 border border-primary/20 hover:border-primary/40 w-full"
+                    >
+                      Lihat Portfolio
+                      <svg
+                        className="w-4 h-4"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.658 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"
+                        />
+                      </svg>
+                    </a>
+                  )}
                 </div>
               </div>
             </AnimatedSection>
