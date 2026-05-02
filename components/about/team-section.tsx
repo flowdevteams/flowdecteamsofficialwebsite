@@ -11,7 +11,7 @@ const team = [
     role: "Product Strategist & Lead Engineer",
     bio: "Visioner digital yang memimpin strategi produk dan pengembangan teknologi untuk mendorong pertumbuhan serta inovasi berkelanjutan.",
     image: "/team/alif.png",
-    socials: { linkedin: "#", twitter: "#" },
+    socials: { linkedin: "#" },
     portfolioUrl: "https://alifhaikalportfolio.flowdevteams.com/",
   },
   {
@@ -19,15 +19,15 @@ const team = [
     role: "System Architect & Full-Stack Engineer",
     bio: "Arsitek sistem dan full-stack developer berpengalaman dalam merancang infrastruktur aplikasi yang scalable, aman, dan efisien.",
     image: "/team/zainul.png",
-    socials: { linkedin: "#", github: "#" },
-    portfolioUrl: "https://zainulrahmat.dev",
+    socials: { linkedin: "#" },
+    portfolioUrl: "#",
   },
   {
     name: "Bagas Aditya",
     role: "Data Abalytics & UI/UX Designer",
     bio: "Spesialis UI/UX yang fokus pada desain modern, usability tinggi, dan peningkatan konversi melalui pengalaman pengguna yang optimal.",
     image: "/team/bagas.png",
-    socials: { linkedin: "#", twitter: "#" },
+    socials: { linkedin: "#" },
     portfolioUrl: "https://bagasaditya.web.id/",
   },
   {
@@ -43,15 +43,15 @@ const team = [
     role: "Frontend & Backend Engineer",
     bio: "Software engineer berpengalaman dengan fokus pada React, Next.js, dan Node.js untuk membangun aplikasi web modern berperforma tinggi.",
     image: "/team/riky.png",
-    socials: { linkedin: "#", github: "#" },
-    portfolioUrl: "https://riky.dev",
+    socials: { linkedin: "https://www.linkedin.com/in/rikyfahrian/" },
+    portfolioUrl: "https://rikyfahrian.vercel.app",
   },
   {
     name: "Tiana Ramdhani",
     role: "Machine Learning & Data Engineer",
     bio: "Spesialis machine learning dan data analysis dalam pengembangan model prediktif, automasi cerdas, dan solusi berbasis AI.",
     image: "/team/tian.png",
-    socials: { linkedin: "#", twitter: "#" },
+    socials: { linkedin: "https://www.linkedin.com/in/tianaramdani/"},
     portfolioUrl: "#",
   },
 ]
@@ -110,22 +110,7 @@ export function TeamSection() {
                             <Linkedin className="h-3 w-3" />
                           </a>
                         )}
-                        {member.socials.twitter && (
-                          <a
-                            href={member.socials.twitter}
-                            className="photo-social w-7 h-7 rounded-md bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center text-white hover:bg-primary hover:border-primary transition-all duration-200"
-                          >
-                            <Twitter className="h-3 w-3" />
-                          </a>
-                        )}
-                        {member.socials.github && (
-                          <a
-                            href={member.socials.github}
-                            className="photo-social w-7 h-7 rounded-md bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center text-white hover:bg-primary hover:border-primary transition-all duration-200"
-                          >
-                            <Github className="h-3 w-3" />
-                          </a>
-                        )}
+                       
                       </div>
                     </div>
                   </div>
