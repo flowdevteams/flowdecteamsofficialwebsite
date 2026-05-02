@@ -22,7 +22,7 @@ export function HeroSection() {
     return () => clearInterval(interval)
   }, [])
 
-  const fullText = "Website Profesional" // Teks yang ingin ditampilkan dengan efek ketik
+  const fullText = "Website Termurah" // Teks yang ingin ditampilkan dengan efek ketik
   const [typedText, setTypedText] = useState("")
 
   useEffect(() => {
@@ -123,8 +123,7 @@ export function HeroSection() {
           {/* Subheading */}
           <AnimatedSection animation="fade-in-up" delay={200}>
             <p className="text-md sm:text-lg text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed text-pretty">
-              Jasa Pembuatan Website profesional untuk bisnis Anda Dengan Harga Termurah. Kami menyediakan layanan
-              pembuatan website custom yang cepat, aman, scalable, dan dirancang khusus sesuai kebutuhan bisnis Anda.
+              Jasa Pembuatan Website profesional untuk bisnis Anda Dengan Harga Termurah Mulai Dari <span className="font-bold text-xl">300 Ribuan</span> Sudah Gratis Domain dan Hosting!
              
             </p>
           </AnimatedSection>
