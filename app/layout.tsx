@@ -11,7 +11,7 @@ const _inter = Inter({ subsets: ["latin"] });
 const _geistMono = Geist_Mono({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: 'Jasa Pembuatan Website Untuk Bisnis UMKM Termurah | Flowdev Teams',
+  title: 'Jasa Pembuatan Website Untuk Bisnis UMKM/UKM Termurah | Flowdev Teams',
   description: 'We build stunning websites and applications that drive growth and deliver exceptional user experiences. Transform your digital presence with our expert team.',
   keywords: ['web development', 'app development', 'software agency', 'digital solutions', 'UI/UX design'],
   authors: [{ name: 'Flowdev Teams' }],

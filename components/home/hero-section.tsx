@@ -22,7 +22,7 @@ export function HeroSection() {
     return () => clearInterval(interval)
   }, [])
 
-  const fullText = "Website & Aplikasi"
+  const fullText = "Website Profesional" // Teks yang ingin ditampilkan dengan efek ketik
   const [typedText, setTypedText] = useState("")
 
   useEffect(() => {
@@ -105,7 +105,7 @@ export function HeroSection() {
 
               <span className="relative block text-primary">
                 {/* Placeholder agar layout stabil */}
-                <span className="invisible">Website & Aplikasi</span>
+                <span className="invisible">Website</span>
 
                 {/* Typewriter text */}
                 <span className="absolute inset-0 flex justify-center">
@@ -114,7 +114,7 @@ export function HeroSection() {
                 </span>
               </span>
 
-              <span className="block">Custom untuk Bisnis Modern</span>
+              <span className="block">Untuk Bisnis <span className="text-primary">UMKM/UKM</span></span>
             </h1>
 
 
@@ -123,12 +123,9 @@ export function HeroSection() {
           {/* Subheading */}
           <AnimatedSection animation="fade-in-up" delay={200}>
             <p className="text-md sm:text-lg text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed text-pretty">
-              Flowdev Teams adalah software house yang fokus pada
-              <strong> custom web development </strong>
-              dan
-              <strong> custom app development</strong>.
-              Kami membantu bisnis Anda tumbuh melalui website dan aplikasi
-              yang cepat, aman, scalable, dan dirancang khusus sesuai kebutuhan.
+              Jasa Pembuatan Website profesional untuk bisnis Anda Dengan Harga Termurah. Kami menyediakan layanan
+              pembuatan website custom yang cepat, aman, scalable, dan dirancang khusus sesuai kebutuhan bisnis Anda.
+             
             </p>
           </AnimatedSection>
 
