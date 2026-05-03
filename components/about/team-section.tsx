@@ -20,7 +20,7 @@ const team = [
     bio: "Arsitek sistem dan full-stack developer berpengalaman dalam merancang infrastruktur aplikasi yang scalable, aman, dan efisien.",
     image: "/team/zainul.png",
     socials: { linkedin: "#" },
-    portfolioUrl: "https://zainulrrhmtportfolio.flowdevteams.com/",
+    portfolioUrl: "https://zainulrhmtportfolio.flowdevteams.com/",
   },
   {
     name: "Bagas Aditya",
