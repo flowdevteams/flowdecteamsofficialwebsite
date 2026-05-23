@@ -19,13 +19,13 @@ export function CTASection() {
 
           <AnimatedSection animation="fade-in-up">
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-primary-foreground mb-6 text-balance">
-              Siap Membangun Website atau Aplikasi untuk Bisnis Anda?
+              Siap Membangun Website untuk Bisnis Anda?
             </h2>
           </AnimatedSection>
 
           <AnimatedSection animation="fade-in-up" delay={100}>
             <p className="text-lg text-primary-foreground/80 mb-10 leading-relaxed text-pretty">
-              Konsultasikan kebutuhan website dan aplikasi bisnis Anda bersama
+              Konsultasikan kebutuhan Website bisnis Anda bersama
               tim profesional Flowdev Teams. Kami siap membantu Anda merancang,
               mengembangkan, dan mengoptimalkan solusi digital yang tepat sasaran.
             </p>

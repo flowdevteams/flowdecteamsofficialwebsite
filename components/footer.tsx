@@ -41,7 +41,7 @@ export function Footer() {
               <div className="w-8 h-8 rounded-lg overflow-hidden flex items-center justify-center">
                 <Image
                   src="/logo/flowdevteams-logo.png"
-                  alt="Flowdev Teams - Jasa Pembuatan Website dan Aplikasi"
+                  alt="Flowdev Teams - Jasa Pembuatan Website"
                   width={32}
                   height={32}
                   className="object-contain"
@@ -56,8 +56,8 @@ export function Footer() {
             </Link>
 
             <p className="text-muted-foreground mb-6 max-w-sm leading-relaxed mt-5">
-              Flowdev Teams adalah software house yang menyediakan jasa pembuatan
-              website dan aplikasi custom untuk membantu bisnis berkembang lebih
+              Flowdev Teams adalah Website House yang menyediakan jasa pembuatan
+              Website custom untuk membantu bisnis berkembang lebih
               cepat melalui solusi digital yang modern, aman, dan scalable.
             </p>
 

@@ -9,7 +9,7 @@ const testimonials = [
     name: "Andi Pratama",
     role: "CEO, Startup Teknologi",
     content:
-      "Flowdev Teams benar-benar membantu bisnis kami naik level. Website yang mereka bangun sangat cepat, modern, dan SEO-friendly. Dalam beberapa bulan, traffic website kami meningkat drastis dan konversi juga ikut naik.",
+      "Flowdev Teams benar-benar membantu bisnis kami naik level. Websiteyang mereka bangun sangat cepat, modern, dan SEO-friendly. Dalam beberapa bulan, traffic Websitekami meningkat drastis dan konversi juga ikut naik.",
     rating: 5,
   },
   {
@@ -35,7 +35,7 @@ export function TestimonialsSection() {
         <SectionHeader
           badge="Testimoni Klien"
           title="Dipercaya oleh Klien dari Berbagai Industri"
-          description="Bukan sekadar janji. Berikut pengalaman nyata klien yang telah menggunakan jasa pembuatan website dan aplikasi dari Flowdev Teams."
+          description="Bukan sekadar janji. Berikut pengalaman nyata klien yang telah menggunakan jasa pembuatan Website dari Flowdev Teams."
         />
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mt-16">

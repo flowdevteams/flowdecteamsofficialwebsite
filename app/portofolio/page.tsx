@@ -7,9 +7,9 @@ import { ClientsSection } from "@/components/portfolio/clients-section"
 import { CTASection } from "@/components/home/cta-section"
 
 export const metadata: Metadata = {
-  title: "Portofolio Flowdev Teams | Contoh Project Website & Aplikasi",
+  title: "Portofolio Flowdev Teams | Contoh Project Website& Aplikasi",
   description:
-    "Lihat portofolio Flowdev Teams berisi contoh project website dan aplikasi dari berbagai bisnis di Indonesia, dengan desain modern dan performa optimal.",
+    "Lihat portofolio Flowdev Teams berisi contoh project Website dari berbagai bisnis di Indonesia, dengan desain modern dan performa optimal.",
   alternates: {
     canonical: "/portofolio",
   },

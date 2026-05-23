@@ -7,71 +7,72 @@ import { AnimatedSection } from "@/components/animated-section"
 import { cn } from "@/lib/utils"
 
 const plans = [
+   {
+    name: "Landing Page Basic",
+    description: "Landing page sederhana untuk UMKM dengan kebutuhan dasar",
+    price: "150.000",
+    oldPrice: "300.000",
+    discount: "50%",
+    monthlyNote: "Maintenance Rp 20.000/bulan di bulan kedua",
+    period: "sekali bayar",
+    popular: false,
+    features: [
+      "Landing page 1 halaman dengan desain minimal",
+      "3 navigasi section",
+      "Gratis subdomain dari kami (contoh: namabisnis.flowdevteams.com) 1 tahun",
+      "Gratis maintenance 1 bulan", 
+      "Garansi revisi 1 kali setelah desain awal selesai",
+      "1 Kali update minor (konten dan gambar) bulanan",
+    ],
+    cta: "Pilih Paket Ini",
+  },
   {
-    name: "UMKM Express",
-    description: "Website profesional siap online dalam waktu singkat untuk bisnis kecil & UMKM",
+    name: "Landing Page Pro",
+    description: "Landing page sederhana untuk UMKM dengan kebutuhan dasar",
     price: "395.000",
     oldPrice: "790.000",
     discount: "50%",
-    monthlyNote: "Biaya Maintenance Rp 120.000/bulan di bulan kedua",
-    period: "proyek",
-    popular: false,
-    features: [
-      "Hingga 5 halaman basic",
-      "Desain modern & mobile friendly",
-      "SEO dasar (Google ready)",
-      "Gratis Domain .com 1 tahun",
-      "Gratis Hosting 1 bulan",
-      "Gratis Maintenance & Support 1 bulan",
-      "Pengerjaan maksimal 3-5 Hari",
-      "Garansi revisi 7 hari",
-    ],
-    cta: "Ambil Slot Sekarang",
-  },
-  {
-    name: "Growth Business",
-    description: "Solusi terbaik untuk bisnis yang ingin terlihat profesional & konversi tinggi",
-    price: "695.000",
-    oldPrice: "1.390.000",
-    discount: "50%",
-    monthlyNote: "Biaya Maintenance Rp 150.000/bulan di bulan ketiga",
-    period: "proyek",
+    monthlyNote: "Maintenance Rp 50.000/bulan di bulan kedua",
+    period: "sekali bayar",
     popular: true,
     features: [
-       "Prioritas support 24/7",
-      "Hingga 10 - 15 halaman kompleks",
-      "Custom UI/UX sesuai brand identity",
-       "Desain Premium & mobile friendly",
-      "Landing page konversi tinggi",
-      "Copywriting AI optimized",
-      "SEO on-page lengkap",
-      "Optimasi kecepatan website",
-      "Gratis Domain .com 1 tahun",
-      "Gratis Hosting 2 bulan",
-      "Gratis Maintenance & Support 2 bulan",
-      "Garansi revisi 21 hari",
+      "Landing page 1 halaman dengan desain basic",
+      "5 navigasi section",
+      "Seo optimasi dasar",
+      "Cta button untuk whatsapp",
+      "Gratis domain .com  1 tahun",
+      "Gratis maintenance 1 bulan", 
+      "Garansi revisi 3 kali setelah desain awal selesai",
+      "3 Kali update minor (konten dan gambar) bulanan",
+      "Analitik kunjungan bulanan untuk melacak performa landing page",
     ],
-    cta: "Mulai & Amankan Diskon",
+    cta: "Pilih Paket Ini",
   },
   {
-    name: "Authority / Custom System",
-    description: "Untuk bisnis serius yang ingin sistem & skalabilitas penuh",
-    price: "Custom",
-    period: "penawaran",
-    popular: false,
+    name: "Landing Page Super",
+    description: "Landing page profesional untuk UMKM dengan kebutuhan lebih kompleks",
+    price: "539.000",
+    oldPrice: "1078.000",
+    discount: "50%",
+    monthlyNote: "Maintenance Rp 90.000/bulan di bulan kedua",
+    period: "sekali bayar",
+    popular: false, 
     features: [
-      "Website / web app tanpa batas halaman",
-      "Pengembangan sistem custom",
-      "Backend & API (NestJS / Node.js)",
-      "Keamanan (JWT Auth, role & permission)",
-      "Integrasi pembayaran / API eksternal",
-      "Dedicated project manager",
-      "Prioritas support 24/7",
-      "Gratis Maintenance hingga 12 bulan",
-      "Hak milik source code penuh",
+      "Landing page 1 halaman dengan desain profesional dan kompleks",
+      "Animasi dan interaksi yang lebih menarik",
+      "10 navigasi section",
+      "Seo optimasi lanjutan",
+      "Cta button untuk whatsapp & Kontak form untuk email",
+      "Kecepatan loading yang dioptimalkan untuk performa terbaik",
+      "Gratis domain .com/.net 1 tahun",
+      "Gratis maintenance 1 bulan", 
+      "Garansi revisi 6 kali setelah desain awal selesai",
+      "6 Kali update minor (konten dan gambar) bulanan",
+      "Analitik kunjungan mingguan untuk melacak performa landing page",
     ],
-    cta: "Diskusikan Proyek Anda",
+    cta: "Pilih Paket Ini",
   },
+ 
 ]
 
 export function PricingPreviewSection() {
@@ -83,22 +84,21 @@ export function PricingPreviewSection() {
         <AnimatedSection animation="fade-in-up">
           <div className="max-w-3xl mx-auto text-center mb-16">
             <span className="inline-block mb-4 px-4 py-1.5 rounded-full text-sm font-medium bg-primary/10 text-primary">
-              Promo Jasa Pembuatan Website
+              Promo Landing Page 
             </span>
 
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-4">
-              Website Profesional, Harga Lebih Hemat
+              Paket Landing Page Termurah Dengan Fitur Terlengkap
             </h2>
 
             <p className="text-lg text-muted-foreground">
-              Penawaran spesial untuk bisnis yang ingin tampil profesional
-              dan meningkatkan kepercayaan pelanggan secara online.
+           Pilih paket sesuai kebutuhan bisnis anda dan dapatkan kelengkapan fitur landing page dengan harga terbaik
             </p>
           </div>
         </AnimatedSection>
 
         {/* Pricing Cards */}
-        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto ">
+       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {plans.map((plan, index) => (
             <AnimatedSection
               key={plan.name}
@@ -107,67 +107,92 @@ export function PricingPreviewSection() {
             >
               <div
                 className={cn(
-                  "relative overflow-visible h-full  flex flex-col p-12 rounded-2xl border transition-all duration-300",
+                  "relative overflow-visible h-full flex flex-col p-10 rounded-2xl border transition-all duration-300",
+
                   plan.popular
-                    ? "bg-primary/5 border-primary shadow-xl shadow-primary/10 scale-[1.03]"
+                    ? "bg-primary/5 border-primary shadow-xl shadow-primary/10"
                     : "bg-card border-border hover:border-primary/50"
                 )}
               >
-                {/* Promo Ribbon */}
                 {plan.discount && (
                   <div className="absolute top-1 -left-3 z-10">
                     <div className="relative">
                       <div className="bg-red-500 text-white text-sm font-bold px-4 py-2 rotate-[-12deg] shadow-lg">
-                        DISKON {plan.discount}
+                        Promo {plan.discount}
                       </div>
 
-                      {/* Ribbon edge */}
-                      <div
-                        className="absolute -bottom-2 left-0 w-0 h-0
-                        border-l-[10px] border-l-red-700
-                        border-t-[10px] border-t-transparent"
-                      />
+                      {/* Ujung pita (efek berjeruji) */}
+                      <div className="absolute -bottom-2 left-0 w-0 h-0 
+        border-l-[10px] border-l-red-700
+        border-t-[10px] border-t-transparent">
+                      </div>
                     </div>
                   </div>
                 )}
 
-                {/* Best Seller */}
+                {/* Badge Popular */}
                 {plan.popular && (
                   <div className="absolute -top-4 left-1/2 -translate-x-1/2">
-                    <div className="flex items-center gap-1 px-3 py-1.5 rounded-full bg-primary text-primary-foreground text-sm font-medium shadow">
+                    <div className="flex items-center gap-1 px-2 py-1.5 rounded-full bg-primary text-primary-foreground text-sm font-medium">
                       <Star className="h-4 w-4 fill-current" />
-                      Best Seller
+                     Most Popular
                     </div>
                   </div>
                 )}
 
-                {/* Title */}
-                <h3 className="text-xl font-bold text-foreground mb-2">
-                  {plan.name}
-                </h3>
-                <p className="text-muted-foreground mb-6">
-                  {plan.description}
-                </p>
-
-                {/* Price */}
+                {/* Header */}
                 <div className="mb-6">
+                  <h3 className="text-2xl font-bold text-foreground mb-2">
+                    {plan.name}
+                  </h3>
+                  <p className="text-muted-foreground">
+                    {plan.description}
+                  </p>
+                </div>
+
+                {/* Harga */}
+                <div className="mb-8">
+                 
+
                   {plan.oldPrice && (
-                    <div className="text-muted-foreground line-through text-lg">
+                    <div className="text-muted-foreground line-through text-lg mb-1">
                       Rp {plan.oldPrice}
                     </div>
                   )}
 
-                  <div className="text-4xl font-bold text-foreground">
-                    {plan.price !== "Custom" && "Rp "}
-                    {plan.price}
+                  <div className="flex items-baseline gap-2">
+                    {plan.price !== "Custom" && (
+                      <span className="text-xl text-foreground">Rp</span>
+                    )}
+                    
+                    <span className="text-5xl font-bold text-foreground">
+                      {plan.price}
+                    </span>
+                    
                   </div>
+
+                  <span className="text-muted-foreground">
+                    {plan.period === "penawaran"
+                      ? "Harga sesuai kebutuhan"
+                      : `per ${plan.period}`}
+                  </span>
+                   {plan.monthlyNote && (
+                    <div className="flex justify-end mb-2">
+                      <span className="inline-block rounded-full bg-primary/10 text-primary text-xs font-semibold px-3 py-1">
+                        {plan.monthlyNote}
+                      </span>
+                    </div>
+                  )}
                 </div>
 
-                {/* Features */}
-                <ul className="space-y-3 mb-8 flex-1">
+
+                {/* Fitur */}
+                <ul className="space-y-4 mb-8 flex-1">
                   {plan.features.map((feature) => (
                     <li key={feature} className="flex items-start gap-3">
-                      <Check className="h-4 w-4 text-primary mt-1" />
+                      <div className="flex-shrink-0 w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center mt-0.5">
+                        <Check className="h-3 w-3 text-primary" />
+                      </div>
                       <span className="text-foreground">{feature}</span>
                     </li>
                   ))}
@@ -180,29 +205,14 @@ export function PricingPreviewSection() {
                   variant={plan.popular ? "default" : "outline"}
                   className="w-full"
                 >
-                  <Link href="/harga-paket" className="flex items-center justify-center gap-2">
-                    Lihat Detail
-                    <ArrowRight className="h-4 w-4" />
-                  </Link>
+                  <Link href="/kontak">{plan.cta}</Link>
                 </Button>
               </div>
             </AnimatedSection>
           ))}
         </div>
 
-        {/* Bottom CTA */}
-        <AnimatedSection animation="fade-in-up" delay={400}>
-          <div className="text-center mt-16">
-            <p className="text-muted-foreground mb-4">
-              Promo terbatas! Konsultasi gratis sebelum slot penuh.
-            </p>
-            <Button asChild size="lg">
-              <Link href="/kontak">
-                Konsultasi Gratis Sekarang
-              </Link>
-            </Button>
-          </div>
-        </AnimatedSection>
+       
 
       </div>
     </section>

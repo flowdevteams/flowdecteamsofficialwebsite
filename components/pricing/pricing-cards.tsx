@@ -7,71 +7,72 @@ import { AnimatedSection } from "@/components/animated-section"
 import { cn } from "@/lib/utils"
 
 const plans = [
+   {
+    name: "Landing Page Basic",
+    description: "Landing page sederhana untuk UMKM dengan kebutuhan dasar",
+    price: "150.000",
+    oldPrice: "300.000",
+    discount: "50%",
+    monthlyNote: "Maintenance Rp 20.000/bulan di bulan kedua",
+    period: "sekali bayar",
+    popular: false,
+    features: [
+      "Landing page 1 halaman dengan desain minimal",
+      "3 navigasi section",
+      "Gratis subdomain dari kami (contoh: namabisnis.flowdevteams.com) 1 tahun",
+      "Gratis maintenance 1 bulan", 
+      "Garansi revisi 1 kali setelah desain awal selesai",
+      "1 Kali update minor (konten dan gambar) bulanan",
+    ],
+    cta: "Pilih Paket Ini",
+  },
   {
-    name: "UMKM Express",
-    description: "Website profesional siap online dalam waktu singkat untuk bisnis kecil & UMKM",
+    name: "Landing Page Pro",
+    description: "Landing page sederhana untuk UMKM dengan kebutuhan dasar",
     price: "395.000",
     oldPrice: "790.000",
     discount: "50%",
-    monthlyNote: "Biaya Maintenance Rp 120.000/bulan di bulan kedua",
-    period: "proyek",
-    popular: false,
-    features: [
-      "Hingga 5 halaman basic",
-      "Desain modern & mobile friendly",
-      "SEO dasar (Google ready)",
-      "Gratis Domain .com 1 tahun",
-      "Gratis Hosting 1 bulan",
-      "Gratis Maintenance & Support 1 bulan",
-      "Pengerjaan maksimal 3-5 Hari",
-      "Garansi revisi 7 hari",
-    ],
-    cta: "Ambil Slot Sekarang",
-  },
-  {
-    name: "Growth Business",
-    description: "Solusi terbaik untuk bisnis yang ingin terlihat profesional & konversi tinggi",
-    price: "695.000",
-    oldPrice: "1.390.000",
-    discount: "50%",
-    monthlyNote: "Biaya Maintenance Rp 150.000/bulan di bulan ketiga",
-    period: "proyek",
+    monthlyNote: "Maintenance Rp 50.000/bulan di bulan kedua",
+    period: "sekali bayar",
     popular: true,
     features: [
-       "Prioritas support 24/7",
-      "Hingga 10 - 15 halaman kompleks",
-      "Custom UI/UX sesuai brand identity",
-       "Desain Premium & mobile friendly",
-      "Landing page konversi tinggi",
-      "Copywriting AI optimized",
-      "SEO on-page lengkap",
-      "Optimasi kecepatan website",
-      "Gratis Domain .com 1 tahun",
-      "Gratis Hosting 2 bulan",
-      "Gratis Maintenance & Support 2 bulan",
-      "Garansi revisi 21 hari",
+      "Landing page 1 halaman dengan desain basic",
+      "5 navigasi section",
+      "Seo optimasi dasar",
+      "Cta button untuk whatsapp",
+      "Gratis domain .com  1 tahun",
+      "Gratis maintenance 1 bulan", 
+      "Garansi revisi 3 kali setelah desain awal selesai",
+      "3 Kali update minor (konten dan gambar) bulanan",
+      "Analitik kunjungan bulanan untuk melacak performa landing page",
     ],
-    cta: "Mulai & Amankan Diskon",
+    cta: "Pilih Paket Ini",
   },
   {
-    name: "Authority / Custom System",
-    description: "Untuk bisnis serius yang ingin sistem & skalabilitas penuh",
-    price: "Custom",
-    period: "penawaran",
-    popular: false,
+    name: "Landing Page Super",
+    description: "Landing page profesional untuk UMKM dengan kebutuhan lebih kompleks",
+    price: "539.000",
+    oldPrice: "1078.000",
+    discount: "50%",
+    monthlyNote: "Maintenance Rp 90.000/bulan di bulan kedua",
+    period: "sekali bayar",
+    popular: false, 
     features: [
-      "Website / web app tanpa batas halaman",
-      "Pengembangan sistem custom",
-      "Backend & API (NestJS / Node.js)",
-      "Keamanan (JWT Auth, role & permission)",
-      "Integrasi pembayaran / API eksternal",
-      "Dedicated project manager",
-      "Prioritas support 24/7",
-      "Gratis Maintenance hingga 12 bulan",
-      "Hak milik source code penuh",
+      "Landing page 1 halaman dengan desain profesional dan kompleks",
+      "Animasi dan interaksi yang lebih menarik",
+      "10 navigasi section",
+      "Seo optimasi lanjutan",
+      "Cta button untuk whatsapp & Kontak form untuk email",
+      "Kecepatan loading yang dioptimalkan untuk performa terbaik",
+      "Gratis domain .com/.net 1 tahun",
+      "Gratis maintenance 1 bulan", 
+      "Garansi revisi 6 kali setelah desain awal selesai",
+      "6 Kali update minor (konten dan gambar) bulanan",
+      "Analitik kunjungan mingguan untuk melacak performa landing page",
     ],
-    cta: "Diskusikan Proyek Anda",
+    cta: "Pilih Paket Ini",
   },
+ 
 ]
 
 export function PricingCards() {
@@ -99,7 +100,7 @@ export function PricingCards() {
                   <div className="absolute top-1 -left-3 z-10">
                     <div className="relative">
                       <div className="bg-red-500 text-white text-sm font-bold px-4 py-2 rotate-[-12deg] shadow-lg">
-                        Hemat {plan.discount}
+                        Promo {plan.discount}
                       </div>
 
                       {/* Ujung pita (efek berjeruji) */}
@@ -143,7 +144,7 @@ export function PricingCards() {
 
                   <div className="flex items-baseline gap-2">
                     {plan.price !== "Custom" && (
-                      <span className="text-xl text-muted-foreground">Rp</span>
+                      <span className="text-xl text-foreground">Rp</span>
                     )}
                     
                     <span className="text-5xl font-bold text-foreground">
@@ -193,18 +194,6 @@ export function PricingCards() {
           ))}
         </div>
 
-        {/* Info Tambahan */}
-        <AnimatedSection animation="fade-in-up" delay={400}>
-          <div className="text-center mt-12">
-            <p className="text-muted-foreground">
-              Semua paket termasuk konsultasi gratis dan analisis kebutuhan proyek.
-              <Link href="/kontak" className="text-primary hover:underline ml-1">
-                Hubungi kami
-              </Link>
-              {" "}untuk solusi website atau aplikasi yang lebih spesifik.
-            </p>
-          </div>
-        </AnimatedSection>
       </div>
     </section>
   )

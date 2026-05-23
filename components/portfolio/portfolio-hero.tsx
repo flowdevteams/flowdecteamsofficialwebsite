@@ -22,7 +22,7 @@ export function PortfolioHero() {
           
           <AnimatedSection animation="fade-in-up" delay={200}>
             <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed text-pretty">
-              Jelajahi hasil karya kami dalam pengembangan website dan aplikasi. 
+              Jelajahi hasil karya kami dalam pengembangan Website. 
               Setiap proyek mencerminkan komitmen kami terhadap kualitas, inovasi, 
               dan keberhasilan bisnis klien.
             </p>

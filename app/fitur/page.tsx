@@ -8,9 +8,9 @@ import { ProcessSection } from "@/components/features/process-section"
 import { CTASection } from "@/components/home/cta-section"
 
 export const metadata: Metadata = {
-  title: "Fitur & Layanan Flowdev Teams | Website & Aplikasi untuk Bisnis",
+  title: "Fitur & Layanan Flowdev Teams | Website& Aplikasi untuk Bisnis",
   description:
-    "Jelajahi fitur layanan Flowdev Teams untuk pengembangan website dan aplikasi yang cepat, modern, dan SEO-friendly untuk bisnis di Indonesia.",
+    "Jelajahi fitur layanan Flowdev Teams untuk pengembangan Website yang cepat, modern, dan SEO-friendly untuk bisnis di Indonesia.",
   alternates: {
     canonical: "/fitur",
   },

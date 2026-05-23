@@ -16,7 +16,7 @@ import {
 
 
 const services = [
-  "Website Development",
+  "WebsiteDevelopment",
   "Mobile App Development",
   "UI/UX Design",
   "E-Commerce Development",
@@ -108,7 +108,7 @@ export function ContactForm() {
           <Input
             type="text"
             name="website"
-            value={(formData as any).website || ""}
+            value={(formData as any).Website|| ""}
             onChange={handleChange}
             className="absolute left-[-9999px]"
             tabIndex={-1}

@@ -10,9 +10,9 @@ import {
 } from "@/components/ui/accordion"
 const faqs = [
   {
-    question: "Berapa lama waktu pengerjaan proyek website atau aplikasi?",
+    question: "Berapa lama waktu pengerjaan proyek Website?",
     answer:
-      "Durasi pengerjaan tergantung pada kompleksitas proyek. Website sederhana umumnya membutuhkan waktu sekitar 2–4 minggu. Untuk website bisnis, web aplikasi, atau sistem custom, waktu pengerjaan berkisar antara 2 hingga 6 bulan. Timeline detail akan kami jelaskan setelah sesi konsultasi awal.",
+      "Durasi pengerjaan tergantung pada kompleksitas proyek. Websitesederhana umumnya membutuhkan waktu sekitar 2–4 minggu. Untuk Websitebisnis, web aplikasi, atau sistem custom, waktu pengerjaan berkisar antara 2 hingga 6 bulan. Timeline detail akan kami jelaskan setelah sesi konsultasi awal.",
   },
   {
     question: "Apakah tersedia sistem pembayaran bertahap?",
@@ -22,12 +22,12 @@ const faqs = [
   {
     question: "Apa yang saya dapatkan setelah proyek selesai?",
     answer:
-      "Setelah website atau aplikasi diluncurkan, Anda tetap mendapatkan masa support sesuai paket yang dipilih. Kami membantu perbaikan bug, penyesuaian minor, serta konsultasi teknis. Paket maintenance lanjutan juga tersedia untuk dukungan jangka panjang.",
+      "Setelah Website diluncurkan, Anda tetap mendapatkan masa support sesuai paket yang dipilih. Kami membantu perbaikan bug, penyesuaian minor, serta konsultasi teknis. Paket maintenance lanjutan juga tersedia untuk dukungan jangka panjang.",
   },
   {
     question: "Apakah paket layanan bisa di-upgrade di kemudian hari?",
     answer:
-      "Tentu bisa. Website dan aplikasi Anda dapat dikembangkan seiring pertumbuhan bisnis. Kami dapat menambahkan fitur baru, halaman tambahan, atau integrasi sistem kapan saja sesuai kebutuhan Anda.",
+      "Tentu bisa. Website Anda dapat dikembangkan seiring pertumbuhan bisnis. Kami dapat menambahkan fitur baru, halaman tambahan, atau integrasi sistem kapan saja sesuai kebutuhan Anda.",
   },
 
   {

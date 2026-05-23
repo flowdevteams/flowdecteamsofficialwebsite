@@ -9,7 +9,7 @@ const features = [
     icon: Users,
     title: "Tim Profesional & Berpengalaman",
     description:
-      "Didukung oleh developer dan desainer berpengalaman yang terbiasa menangani proyek website dan aplikasi skala bisnis.",
+      "Didukung oleh developer dan desainer berpengalaman yang terbiasa menangani proyek Website skala bisnis.",
   },
   {
     icon: Rocket,
@@ -27,12 +27,12 @@ const features = [
     icon: Clock,
     title: "Support & Respons Cepat",
     description:
-      "Dukungan teknis berkelanjutan untuk memastikan website dan aplikasi Anda selalu berjalan optimal.",
+      "Dukungan teknis berkelanjutan untuk memastikan Website Anda selalu berjalan optimal.",
   },
 ]
 
 const benefits = [
-  "Solusi website & aplikasi custom sesuai kebutuhan bisnis",
+  "Solusi Website sesuai kebutuhan bisnis",
   "Harga transparan tanpa biaya tersembunyi",
   "Update progres rutin dan komunikasi yang jelas",
   "Support dan maintenance setelah project selesai",
@@ -51,7 +51,7 @@ export function WhyChooseUs() {
             <SectionHeader
               badge="Kenapa Memilih Kami"
               title="Partner Digital yang Fokus pada Hasil Nyata"
-              description="Flowdev Teams adalah software house yang memahami kebutuhan bisnis Anda dan mampu mewujudkannya menjadi website dan aplikasi yang efektif."
+              description="Flowdev Teams adalah Website House yang memahami kebutuhan bisnis Anda dan mampu mewujudkannya menjadi Website yang efektif."
               centered={false}
             />
 

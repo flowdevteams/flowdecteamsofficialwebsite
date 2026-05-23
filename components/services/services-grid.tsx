@@ -16,9 +16,9 @@ const services = [
     icon: Globe,
     title: "Web Development",
     description:
-      "Kami menyediakan layanan pengembangan website dan aplikasi web profesional dengan teknologi modern. Dirancang untuk performa tinggi, skalabilitas, dan kemudahan pengelolaan bisnis Anda.",
+      "Kami menyediakan layanan pengembangan Website web profesional dengan teknologi modern. Dirancang untuk performa tinggi, skalabilitas, dan kemudahan pengelolaan bisnis Anda.",
     features: [
-      "Website Company Profile",
+      "WebsiteCompany Profile",
       "Web Application Custom",
       "E-Commerce & Dashboard",
       "Integrasi API & Sistem",

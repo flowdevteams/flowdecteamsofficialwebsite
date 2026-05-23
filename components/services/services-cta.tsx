@@ -9,7 +9,7 @@ const benefits = [
   "Harga transparan dan sesuai kebutuhan",
   "Project manager khusus untuk setiap proyek",
   "Update progres rutin dan terjadwal",
-  "Dukungan setelah website dan aplikasi live",
+  "Dukungan setelah Website live",
   "Garansi kepuasan hasil kerja",
 ]
 
@@ -21,7 +21,7 @@ export function ServicesCTA() {
           <SectionHeader
             badge="Kenapa Memilih Kami"
             title="Kesuksesan Digital Bisnis Anda Adalah Prioritas Kami"
-            description="Kami berkomitmen membantu bisnis Anda tumbuh melalui website dan aplikasi yang profesional, stabil, dan siap bersaing."
+            description="Kami berkomitmen membantu bisnis Anda tumbuh melalui Website yang profesional, stabil, dan siap bersaing."
           />
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-12">

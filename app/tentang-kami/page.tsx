@@ -8,9 +8,9 @@ import { TeamSection } from "@/components/about/team-section"
 import { CTASection } from "@/components/home/cta-section"
 
 export const metadata: Metadata = {
-  title: "Tentang Flowdev Teams | Jasa Pembuatan Website & Aplikasi",
+  title: "Tentang Flowdev Teams | Jasa Pembuatan Website& Aplikasi",
   description:
-    "Kenali Flowdev Teams, tim jasa pembuatan website dan aplikasi untuk UMKM, startup, dan bisnis di Indonesia.",
+    "Kenali Flowdev Teams, tim jasa pembuatan Website untuk UMKM, startup, dan bisnis di Indonesia.",
   alternates: {
     canonical: "/tentang-kami",
   },

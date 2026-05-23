@@ -5,9 +5,9 @@ import { ContactHero } from "@/components/contact/contact-hero"
 import { ContactSection } from "@/components/contact/contact-section"
 
 export const metadata: Metadata = {
-  title: "Kontak Flowdev Teams | Konsultasi Website & Aplikasi Gratis",
+  title: "Kontak Flowdev Teams | Konsultasi Website& Aplikasi Gratis",
   description:
-    "Hubungi Flowdev Teams untuk konsultasi gratis jasa pembuatan website dan aplikasi. Ceritakan kebutuhan bisnis Anda, kami siap bantu dari konsep sampai launch.",
+    "Hubungi Flowdev Teams untuk konsultasi gratis jasa pembuatan Website. Ceritakan kebutuhan bisnis Anda, kami siap bantu dari konsep sampai launch.",
   alternates: {
     canonical: "/kontak",
   },

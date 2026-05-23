@@ -111,7 +111,7 @@ export function Navigation() {
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-primary/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 <Image
                   src="/logo/flowdevteams-logo.png"
-                  alt="Flowdev Teams - Jasa Pembuatan Website dan Aplikasi"
+                  alt="Flowdev Teams - Jasa Pembuatan Website"
                   width={32}
                   height={32}
                   className="object-contain"

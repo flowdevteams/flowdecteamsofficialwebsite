@@ -123,7 +123,7 @@ export function HeroSection() {
           {/* Subheading */}
           <AnimatedSection animation="fade-in-up" delay={200}>
             <p className="text-md sm:text-lg text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed text-pretty">
-              Jasa Pembuatan Website profesional untuk bisnis Anda Dengan Harga Termurah Mulai Dari <span className="font-bold text-xl">300 Ribuan</span> Sudah Gratis Domain dan Hosting!
+              Jasa Pembuatan Website Profesional untuk bisnis Anda Dengan Harga Termurah Mulai Dari <span className="font-bold text-xl">300 Ribuan</span> Sudah Gratis Domain dan Hosting!
              
             </p>
           </AnimatedSection>
@@ -151,7 +151,7 @@ export function HeroSection() {
           <AnimatedSection animation="fade-in-up" delay={400}>
             <div className="flex flex-wrap items-center justify-center gap-4 mt-12">
               {[
-                { icon: Code2, text: "Pengembangan Web & Aplikasi Custom" },
+                { icon: Code2, text: "Pengembangan Website Profesional Untuk Bisnis" },
                 { icon: Zap, text: "Performa Cepat & Optimal" },
                 { icon: Sparkles, text: "UI/UX Modern & Profesional" },
               ].map((item) => (
@@ -192,7 +192,7 @@ export function HeroSection() {
                           <Image
                             key={src}
                             src={src}
-                            alt="Preview dashboard website dan aplikasi custom Flowdev Teams"
+                            alt="Preview dashboard Website custom Flowdev Teams"
                             fill
                             priority={index === 0}
                             className={`
