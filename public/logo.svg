@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none">
+  <!-- Rounded Outer Frame -->
+  <rect x="36" y="36" width="440" height="440" rx="64" stroke="#1d4076" stroke-width="48" fill="none" />
+  
+  <!-- Letter F -->
+  <path d="M152 144H264V176H192V224H252V256H192V368H152V144Z" fill="#1d4076" />
+  
+  <!-- Letter T -->
+  <path d="M228 184H376V216H318V368H278V216H228V184Z" fill="#1d4076" />
+  
+  <!-- Wave Layers at Bottom -->
+  <path d="M60 236C60 236 100 340 180 360C260 380 380 300 452 320V428C452 444 436 452 420 452H92C76 452 60 444 60 428V236Z" fill="#162955" />
+  <path d="M60 280C60 280 120 370 200 376C280 382 360 316 452 336V428H60V280Z" fill="#1d4076" />
+  <path d="M60 340C140 370 240 400 360 350C400 334 430 340 452 352V428H60V340Z" fill="#254f96" />
+  <path d="M72 424C160 424 280 380 440 396V428H72V424Z" fill="#ffffff" />
+</svg>

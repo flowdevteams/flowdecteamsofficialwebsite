@@ -2,6 +2,7 @@
 
 import { Target, Lightbulb, TrendingUp } from "lucide-react"
 import { AnimatedSection } from "@/components/animated-section"
+import { AccentTitle } from "@/components/accent-title"
 
 export function OurStory() {
   return (
@@ -17,7 +18,7 @@ export function OurStory() {
               </span>
 
               <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-6">
-                Dari Startup Kecil hingga Agensi Digital Profesional
+                <AccentTitle text="Dari Startup Kecil hingga Agensi Digital Profesional" />
               </h2>
 
               <div className="space-y-4 text-muted-foreground leading-relaxed">

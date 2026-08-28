@@ -20,7 +20,7 @@ const partners = [
 
 export function PartnersSection() {
     return (
-        <section className="py-20 lg:py-24 bg-primary/5">
+        <section className="border-b border-border/60 bg-muted/35 py-20 lg:py-24">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
 
                 <SectionHeader
@@ -28,7 +28,7 @@ export function PartnersSection() {
                     title="Bekerja Sama dengan Vendor Terpercaya"
                     description="Flowdev Teams berkolaborasi dengan berbagai vendor dan platform teknologi untuk memastikan kualitas, performa, dan keamanan setiap solusi digital yang kami bangun."
                 />
-                <div className="mt-16 flex flex-wrap justify-center gap-8">
+                <div className="mt-14 flex flex-wrap justify-center gap-5">
                     {partners.map((partner, index) => (
                         <AnimatedSection
                             key={partner.name}
@@ -39,7 +39,7 @@ export function PartnersSection() {
                                 href={partner.url}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="group relative w-72 h-45 p-2 flex items-center justify-center rounded-2xl bg-card border border-border hover:border-primary/40 transition-all duration-300"
+                                className="group relative flex h-44 w-72 items-center justify-center rounded-xl border border-border/70 bg-card p-5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-primary/35 hover:shadow-xl hover:shadow-primary/10"
                             >
 
                                 <Image
@@ -56,10 +56,7 @@ export function PartnersSection() {
           "
                                 />
 
-                                {/* Hover glow */}
-                                <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition pointer-events-none">
-                                    <div className="absolute inset-0 bg-primary/5 rounded-2xl" />
-                                </div>
+                                <div className="pointer-events-none absolute inset-x-0 top-0 h-1 bg-primary opacity-0 transition-opacity group-hover:opacity-100" />
                             </a>
                         </AnimatedSection>
                     ))}

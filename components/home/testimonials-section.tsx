@@ -30,7 +30,7 @@ const testimonials = [
 
 export function TestimonialsSection() {
   return (
-    <section className="py-20 lg:py-28 bg-background">
+    <section className="border-b border-border/60 bg-background py-20 lg:py-28">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
           badge="Testimoni Klien"
@@ -38,16 +38,17 @@ export function TestimonialsSection() {
           description="Bukan sekadar janji. Berikut pengalaman nyata klien yang telah menggunakan jasa pembuatan Website dari Flowdev Teams."
         />
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mt-16">
+        <div className="mt-16 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
           {testimonials.map((testimonial, index) => (
             <AnimatedSection
               key={testimonial.name}
               animation="fade-in-up"
               delay={index * 100}
+              className="h-full"
             >
-              <div className="h-full p-6 lg:p-8 rounded-2xl bg-card border border-border hover:border-primary/30 transition-colors">
-                {/* Quote Icon */}
-                <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mb-6">
+              <article className="group relative flex h-full flex-col justify-between overflow-hidden rounded-xl border border-border/70 bg-card/90 p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-primary/35 hover:shadow-xl hover:shadow-primary/10 lg:p-8">
+                <div className="relative z-10 flex flex-col flex-1">
+                <div className="mb-6 flex h-10 w-10 items-center justify-center rounded-lg border border-primary/15 bg-primary/10">
                   <Quote className="h-5 w-5 text-primary" />
                 </div>
 
@@ -62,14 +63,14 @@ export function TestimonialsSection() {
                 </div>
 
                 {/* Content */}
-                <p className="text-foreground mb-6 leading-relaxed">
+                <p className="mb-8 flex-1 leading-relaxed text-foreground opacity-90">
                   {`"${testimonial.content}"`}
                 </p>
 
                 {/* Author */}
-                <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                    <span className="text-primary font-semibold text-lg">
+                <div className="flex items-center gap-4 pt-6 border-t border-border/50">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-lg border border-primary/20 bg-primary/10 transition-colors duration-300 group-hover:bg-primary/15">
+                    <span className="text-primary font-bold text-lg">
                       {testimonial.name.charAt(0)}
                     </span>
                   </div>
@@ -82,7 +83,8 @@ export function TestimonialsSection() {
                     </div>
                   </div>
                 </div>
-              </div>
+                </div>
+              </article>
             </AnimatedSection>
           ))}
         </div>

@@ -2,6 +2,7 @@
 
 import { Mail, Phone, MapPin, Clock, Send } from "lucide-react"
 import { AnimatedSection } from "@/components/animated-section"
+import { AccentTitle } from "@/components/accent-title"
 import { ContactForm } from "./contact-form"
 import dynamic from "next/dynamic"
 
@@ -46,7 +47,7 @@ export function ContactSection() {
           <div>
             <AnimatedSection animation="fade-in-left">
               <h2 className="text-3xl font-bold text-foreground mb-4">
-                Konsultasikan Kebutuhan Digital Anda
+                <AccentTitle text="Konsultasikan Kebutuhan Digital Anda" highlightWords={2} />
               </h2>
               <p className="text-muted-foreground mb-8 leading-relaxed">
                 Siap mengembangkan website, aplikasi, atau sistem digital untuk bisnis Anda?  
@@ -98,7 +99,7 @@ export function ContactSection() {
                     <Send className="h-5 w-5 text-primary" />
                   </div>
                   <h3 className="text-2xl font-bold text-foreground">
-                    Kirim Pesan & Mulai Diskusi
+                    <AccentTitle text="Kirim Pesan & Mulai Diskusi" highlightWords={2} />
                   </h3>
                 </div>
                 <ContactForm />

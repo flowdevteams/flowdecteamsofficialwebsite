@@ -5,6 +5,7 @@ import Image from "next/image"
 import { ShieldAlert, MessageCircle, Clock, AlertTriangle } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { AnimatedSection } from "@/components/animated-section"
+import { AccentTitle } from "@/components/accent-title"
 import { useMemo } from "react"
 
 export default function MaintenancePage() {
@@ -94,7 +95,7 @@ export default function MaintenancePage() {
         {/* Heading */}
         <AnimatedSection animation="fade-in-up" delay={200}>
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-4 leading-tight text-balance">
-            Layanan Website{" "}
+            <AccentTitle text="Layanan Website" highlightWords={1} />{" "}
             <span className="text-destructive">Ditangguhkan</span>
           </h1>
         </AnimatedSection>

@@ -1,32 +1,35 @@
 "use client"
 
 import { AnimatedSection } from "@/components/animated-section"
+import { AccentTitle } from "@/components/accent-title"
 
 export function ContactHero() {
   return (
-    <section className="py-20 lg:py-28 bg-gradient-to-b from-primary/5 to-background">
+    <section className="bg-background px-4 py-8 sm:px-6 lg:px-8">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto text-center">
+        <div className="inverse-panel relative mx-auto max-w-6xl overflow-hidden rounded-xl border border-white/10 px-5 py-16 text-center sm:px-8 lg:px-12 lg:py-20">
+          <div className="absolute inset-0 inverse-grid" />
+          <div className="relative z-10 mx-auto max-w-4xl">
           <AnimatedSection animation="fade-in-down">
-            <span className="inline-block px-4 py-1.5 rounded-full text-sm font-medium bg-primary/10 text-primary mb-6">
+            <span className="inline-block px-4 py-1.5 rounded-md text-sm font-medium bg-white/10 text-white mb-6 border border-white/15">
               Hubungi Kami
             </span>
           </AnimatedSection>
 
           <AnimatedSection animation="fade-in-up" delay={100}>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground mb-6 text-balance">
-              Wujudkan Ide Menjadi
-              <span className="text-primary"> Solusi Digital</span>
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 text-balance">
+              <AccentTitle text="Wujudkan Ide Menjadi Solusi Digital" highlightWords={2} className="text-white" accentClassName="text-white/62" />
             </h1>
           </AnimatedSection>
 
           <AnimatedSection animation="fade-in-up" delay={200}>
-            <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed text-pretty">
+            <p className="text-lg sm:text-xl text-white/82 leading-relaxed text-pretty">
               Punya rencana proyek atau tantangan bisnis?  
               Kami siap membantu Anda merancang, membangun, dan mengembangkan
               solusi digital yang efektif dan berkelanjutan.
             </p>
           </AnimatedSection>
+          </div>
         </div>
       </div>
     </section>

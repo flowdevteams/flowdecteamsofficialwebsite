@@ -19,41 +19,37 @@ const clients = [
 
 export function StatsSection() {
   return (
-    <section className="py-20 lg:py-24 bg-primary/5">
+    <section className="border-b border-border/60 bg-card py-16">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
           badge="Dipercaya Bisnis & Perusahaan di Indonesia"
           title="Klien yang Mempercayai Flowdev Teams"
         />
 
-        <div className="mt-16 flex flex-wrap justify-center gap-8">
+        <div className="mt-12 flex flex-wrap justify-center gap-4 sm:gap-6">
           {clients.map((client, index) => (
             <AnimatedSection
               key={client.id}
               animation="fade-in-up"
               delay={index * 80}
             >
-              <div className="group relative w-72 h-45 p-2 flex flex-col items-center justify-center rounded-2xl bg-card border border-border hover:border-primary/40 transition-all duration-300">
+              <div className="group relative flex h-36 w-64 cursor-default flex-col items-center justify-center rounded-xl border border-border/70 bg-background/70 p-6 shadow-sm transition-all duration-300 hover:border-primary/35 hover:shadow-lg hover:shadow-primary/10">
                 <Image
                   src={client.logo}
                   alt={client.name}
-                  width={100}
-                  height={100}
-                  className="max-h-full  mx-auto transition-all duration-300 group-hover:opacity-100 group-hover:grayscale-0"
+                  width={120}
+                  height={120}
+                  className="mx-auto max-h-full opacity-70 grayscale transition-all duration-300 group-hover:opacity-100 group-hover:grayscale-0"
                 />
-                <h3 className="mt-2 text-center text-lg font-semibold text-foreground/80">
+                <h3 className="mt-4 translate-y-1 text-center text-sm font-medium text-muted-foreground opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
                   {client.name}
                 </h3>
-
-                <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition pointer-events-none">
-                  <div className="absolute inset-0 bg-primary/5 rounded-2xl" />
-                </div>
               </div>
             </AnimatedSection>
           ))}
         </div>
 
-        <div className="mt-20 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
+
       </div>
     </section>
   )

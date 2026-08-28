@@ -10,7 +10,6 @@ import {
 } from "lucide-react"
 import { SectionHeader } from "@/components/section-header"
 import { AnimatedSection } from "@/components/animated-section"
-import { cn } from "@/lib/utils"
 
 const steps = [
   { icon: MessageSquare, title: "Konsultasi", align: "left" },
@@ -23,16 +22,15 @@ const steps = [
 
 export function HowWeWorkSection() {
   return (
-    <section className="relative py-28 lg:py-36 overflow-hidden bg-background">
-      {/* Background Grid */}
-      <div
-        className="absolute inset-0 opacity-[0.04] pointer-events-none"
-        style={{
-          backgroundImage:
-            "linear-gradient(var(--foreground) 1px, transparent 1px), linear-gradient(90deg, var(--foreground) 1px, transparent 1px)",
-          backgroundSize: "80px 80px",
-        }}
-      />
+    <section className="relative overflow-hidden border-b border-border/60 bg-background py-24 lg:py-32">
+      <div className="pointer-events-none absolute inset-0 saas-grid opacity-35 dark:opacity-15" />
+      
+      {/* Animated Grid Dots */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="grid-dot animate-grid-light-1" />
+        <div className="grid-dot animate-grid-light-2" />
+        <div className="grid-dot animate-grid-light-3" />
+      </div>
 
       <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
@@ -41,65 +39,136 @@ export function HowWeWorkSection() {
           description="Alur kerja modern, terstruktur, dan berulang untuk memastikan setiap proyek berjalan presisi."
         />
 
-        {/* Timeline Wrapper */}
-        <div className="relative mt-32 max-w-5xl mx-auto">
-          {/* Vertical Glow Spine */}
-          <div className="absolute inset-0 flex justify-center pointer-events-none">
-            <div className="w-[2px] h-full bg-gradient-to-b from-transparent via-primary/40 to-transparent blur-[1px]" />
+        <div className="relative mx-auto mt-20 max-w-5xl">
+          {/* Central Timeline Line (Desktop Only) */}
+          <div className="absolute left-1/2 inset-y-0 hidden w-px -translate-x-1/2 bg-primary/20 md:block">
+            {/* Animated Arrow Light */}
+            <div className="absolute left-1/2 top-0 h-[16.66%] w-[2px] -translate-x-1/2 rounded-full bg-gradient-to-b from-transparent via-primary to-transparent shadow-[0_0_15px_3px_var(--primary)] animate-timeline-light" />
           </div>
 
+          <div className="relative z-10 flex flex-col gap-6 md:gap-0">
+            {steps.map((step, index) => {
+              const isLeft = index % 2 === 0;
 
-          {/* ================= STEPS ================= */}
-          <div className="relative z-10 space-y-24 md:space-y-32">
-            {steps.map((step, index) => (
-              <AnimatedSection key={step.title} animation="fade-in-up" delay={index * 150}>
-                <div
-                  className={cn(
-                    "relative flex items-center w-full",
-                    step.align === "right" ? "flex-row-reverse" : "flex-row"
-                  )}
-                >
-                  <div className="w-1/2 flex justify-center items-center">
-                    <div className="relative group">
-                      {/* Ambient Glow */}
-                      <div className="absolute -inset-8 bg-primary/20 blur-[50px] opacity-0 group-hover:opacity-100 transition duration-700 rounded-full" />
+              return (
+                <AnimatedSection key={step.title} animation={isLeft ? "fade-in-right" : "fade-in-left"} delay={index * 100}>
+                  <div className="group relative flex w-full items-center md:h-36 lg:h-40">
+                    
+                    {/* Desktop Layout */}
+                    <div className="hidden md:flex w-full items-center">
+                      {isLeft ? (
+                        <>
+                          <div className="flex w-1/2 items-center justify-end pr-10 lg:pr-16">
+                            {/* Card Content [Icon] [Text] */}
+                            <div 
+                              className="animate-sync-card flex w-72 lg:w-80 items-center gap-5 rounded-2xl border border-border/70 p-5 transition-all duration-300 hover:-translate-y-1 hover:!border-primary/30 hover:!shadow-xl hover:!shadow-primary/10"
+                              style={{ animationDelay: `-${6 - index}s` }}
+                            >
+                              <div 
+                                className="animate-sync-icon-box flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-xl border shadow-inner"
+                                style={{ animationDelay: `-${6 - index}s` }}
+                              >
+                                <step.icon 
+                                  className="animate-sync-icon h-6 w-6 transition-transform group-hover:scale-110" 
+                                  style={{ animationDelay: `-${6 - index}s` }}
+                                />
+                              </div>
+                              <div className="flex flex-col text-left">
+                                <span 
+                                  className="animate-sync-text-sub mb-1 font-mono text-[10px] font-bold uppercase tracking-widest"
+                                  style={{ animationDelay: `-${6 - index}s` }}
+                                >
+                                  PROCESS 0{index + 1}
+                                </span>
+                                <h3 
+                                  className="animate-sync-text-main text-lg font-semibold tracking-tight"
+                                  style={{ animationDelay: `-${6 - index}s` }}
+                                >
+                                  {step.title}
+                                </h3>
+                              </div>
+                            </div>
+                          </div>
+                          <div className="w-1/2" />
+                        </>
+                      ) : (
+                        <>
+                          <div className="w-1/2" />
+                          <div className="flex w-1/2 items-center justify-start pl-10 lg:pl-16">
+                            {/* Card Content [Text] [Icon] */}
+                            <div 
+                              className="animate-sync-card flex w-72 lg:w-80 items-center justify-between gap-5 rounded-2xl border border-border/70 p-5 transition-all duration-300 hover:-translate-y-1 hover:!border-primary/30 hover:!shadow-xl hover:!shadow-primary/10"
+                              style={{ animationDelay: `-${6 - index}s` }}
+                            >
+                              <div className="flex flex-col text-left">
+                                <span 
+                                  className="animate-sync-text-sub mb-1 font-mono text-[10px] font-bold uppercase tracking-widest"
+                                  style={{ animationDelay: `-${6 - index}s` }}
+                                >
+                                  PROCESS 0{index + 1}
+                                </span>
+                                <h3 
+                                  className="animate-sync-text-main text-lg font-semibold tracking-tight"
+                                  style={{ animationDelay: `-${6 - index}s` }}
+                                >
+                                  {step.title}
+                                </h3>
+                              </div>
+                              <div 
+                                className="animate-sync-icon-box flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-xl border shadow-inner"
+                                style={{ animationDelay: `-${6 - index}s` }}
+                              >
+                                <step.icon 
+                                  className="animate-sync-icon h-6 w-6 transition-transform group-hover:scale-110" 
+                                  style={{ animationDelay: `-${6 - index}s` }}
+                                />
+                              </div>
+                            </div>
+                          </div>
+                        </>
+                      )}
+                    </div>
 
-                      {/* Core Node */}
-                      <div className="relative w-20 h-20 rounded-2xl bg-background border border-primary/20 flex items-center justify-center shadow-xl backdrop-blur-md group-hover:scale-110 transition-all duration-500 z-10">
-                        <step.icon className="h-10 w-10 text-primary" />
-                      </div>
-
-                      {/* Pulse Ring */}
-                      <div className="absolute inset-0 rounded-2xl border border-primary/30 animate-pulse opacity-40" />
-
-                      {/* Label */}
-                      <div
-                        className={cn(
-                          "absolute top-1/2 -translate-y-1/2 whitespace-nowrap",
-                          step.align === "right"
-                            ? "right-full mr-12 text-right"
-                            : "left-full ml-12 text-left"
-                        )}
+                    {/* Mobile Layout (Stacked) */}
+                    <div 
+                      className="animate-sync-card flex md:hidden w-full items-center gap-5 rounded-xl border border-border/70 p-5 transition-all hover:!border-primary/30"
+                      style={{ animationDelay: `-${6 - index}s` }}
+                    >
+                      <div 
+                        className="animate-sync-icon-box flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-xl border shadow-inner"
+                        style={{ animationDelay: `-${6 - index}s` }}
                       >
-                        <span className="text-primary/50 font-mono text-xs font-bold tracking-widest block mb-1">
+                        <step.icon 
+                          className="animate-sync-icon h-6 w-6" 
+                          style={{ animationDelay: `-${6 - index}s` }}
+                        />
+                      </div>
+                      <div className="flex flex-col text-left">
+                        <span 
+                          className="animate-sync-text-sub mb-1 font-mono text-[10px] font-bold uppercase tracking-widest"
+                          style={{ animationDelay: `-${6 - index}s` }}
+                        >
                           PROCESS 0{index + 1}
                         </span>
-                        <h3 className="text-2xl font-bold text-foreground tracking-tight">
+                        <h3 
+                          className="animate-sync-text-main text-lg font-semibold tracking-tight"
+                          style={{ animationDelay: `-${6 - index}s` }}
+                        >
                           {step.title}
                         </h3>
                       </div>
                     </div>
+
                   </div>
-                </div>
-              </AnimatedSection>
-            ))}
+                </AnimatedSection>
+              );
+            })}
           </div>
         </div>
 
-        {/* Statement Box */}
         <AnimatedSection animation="fade-in-up" delay={800}>
-          <div className="mt-40 text-center">
-            <div className="inline-block px-8 py-4 rounded-2xl border border-primary/10 bg-primary/5 backdrop-blur-md">
+          <div className="mt-12 text-center">
+            <div className="inline-block rounded-xl border border-primary/15 bg-card/80 px-6 py-4 shadow-sm backdrop-blur-md">
               <p className="text-muted-foreground max-w-md">
                 Flowdev Teams bekerja dengan presisi tinggi untuk hasil yang stabil dan scalable.
               </p>
@@ -108,15 +177,6 @@ export function HowWeWorkSection() {
         </AnimatedSection>
       </div>
 
-      <style jsx>{`
-        .animate-dash {
-          stroke-dashoffset: 1000;
-          animation: dash-flow 25s linear infinite;
-        }
-        @keyframes dash-flow {
-          to { stroke-dashoffset: 0; }
-        }
-      `}</style>
     </section>
   )
 }

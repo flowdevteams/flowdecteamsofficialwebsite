@@ -87,7 +87,7 @@ export function TeamSection() {
               animation="fade-in-up"
               delay={index * 80}
             >
-              <div className="team-card group relative h-full flex flex-col overflow-hidden rounded-2xl bg-card border border-border">
+              <article className="team-card group relative h-full flex flex-col overflow-hidden rounded-3xl bg-card border border-border/60">
 
                 <div className="card-border-glow absolute inset-0 rounded-2xl pointer-events-none" />
 
@@ -170,7 +170,7 @@ export function TeamSection() {
                     </a>
                   )}
                 </div>
-              </div>
+              </article>
             </AnimatedSection>
           ))}
         </div>
