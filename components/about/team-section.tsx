@@ -54,6 +54,14 @@ const team = [
     socials: { linkedin: "https://www.linkedin.com/in/tianaramdani/"},
     portfolioUrl: "#",
   },
+  {
+    name: "Fazril",
+    role: "Professional Software Engineer",
+    bio: "Software engineer profesional dengan fokus pada pengembangan solusi perangkat lunak yang inovatif, efisien, dan andal.",
+    image: "/team/fazril.png",
+    socials: { linkedin: "#" },
+    portfolioUrl: "https://fazril210.github.io/fazrilmv.github.io/",
+  },
 ]
 
 export function TeamSection() {
