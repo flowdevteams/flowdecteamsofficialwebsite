@@ -26,9 +26,9 @@ export default function AboutPage() {
       <Navigation />
       <main className="min-h-screen pt-20">
         <AboutHero />
+        <TeamSection />
         <OurStory />
         <OurValues />
-        <TeamSection />
         <CTASection />
       </main>
       <Footer />

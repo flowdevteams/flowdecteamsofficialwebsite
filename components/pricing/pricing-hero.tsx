@@ -9,6 +9,14 @@ export function PricingHero() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="inverse-panel relative mx-auto max-w-6xl overflow-hidden rounded-xl border border-white/10 px-5 py-16 text-center sm:px-8 lg:px-12 lg:py-20">
           <div className="absolute inset-0 inverse-grid" />
+          
+          {/* Animated Inverse Grid Dots */}
+          <div className="absolute inset-0 overflow-hidden pointer-events-none">
+            <div className="grid-dot-inverse animate-grid-light-1" />
+            <div className="grid-dot-inverse animate-grid-light-2" />
+            <div className="grid-dot-inverse animate-grid-light-3" />
+          </div>
+
           <div className="relative z-10 mx-auto max-w-4xl">
           <AnimatedSection animation="fade-in-down">
             <span className="inline-block px-4 py-1.5 rounded-md text-sm font-medium bg-white/10 text-white mb-6 border border-white/15">

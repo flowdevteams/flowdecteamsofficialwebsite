@@ -3,8 +3,7 @@
 import * as React from "react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import { Menu, X, Moon, Sun, Sparkles } from "lucide-react"
-import { useTheme } from "next-themes"
+import { Menu, X, Sparkles } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
 import Image from "next/image"
@@ -24,12 +23,6 @@ export function Navigation() {
   const [isScrolled, setIsScrolled] = React.useState(false)
   const [hoveredLink, setHoveredLink] = React.useState<string | null>(null)
   const pathname = usePathname()
-  const { theme, setTheme } = useTheme()
-  const [mounted, setMounted] = React.useState(false)
-
-  React.useEffect(() => {
-    setMounted(true)
-  }, [])
 
   React.useEffect(() => {
     const handleScroll = () => {
@@ -129,22 +122,6 @@ export function Navigation() {
             </div>
 
             <div className="flex items-center gap-2">
-              {mounted && (
-                <Button
-                  variant="ghost"
-                  size="icon"
-                  onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-                  aria-label="Ganti Tema"
-                  className="relative h-10 w-10 overflow-hidden rounded-lg border border-border/70 bg-card/70 shadow-sm"
-                >
-                  {theme === "dark" ? (
-                    <Sun className="h-5 w-5 relative z-10" />
-                  ) : (
-                    <Moon className="h-5 w-5 relative z-10" />
-                  )}
-                </Button>
-              )}
-
               <Button
                 asChild
                 className="hidden lg:inline-flex relative h-10 rounded-lg px-5 shadow-sm transition-all duration-200 hover:shadow-primary/20"

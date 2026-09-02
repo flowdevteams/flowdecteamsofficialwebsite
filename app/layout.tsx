@@ -38,10 +38,7 @@ export const metadata: Metadata = {
 }
 
 export const viewport: Viewport = {
-  themeColor: [
-    { media: '(prefers-color-scheme: light)', color: '#0ea5e9' },
-    { media: '(prefers-color-scheme: dark)', color: '#0284c7' },
-  ],
+  themeColor: '#ffffff',
   width: 'device-width',
   initialScale: 1,
 }
@@ -52,13 +49,14 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body className={`${anticDidone.variable} ${plusJakartaSans.variable} ${geistMono.variable} font-sans antialiased`} suppressHydrationWarning>
+    <html lang="id" className="light" style={{ colorScheme: "light" }} suppressHydrationWarning>
+      <body className={`${anticDidone.variable} ${plusJakartaSans.variable} ${geistMono.variable} font-sans antialiased bg-background text-foreground`} suppressHydrationWarning>
         <ThemeProvider
           attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange={false}
+          defaultTheme="light"
+          forcedTheme="light"
+          enableSystem={false}
+          disableTransitionOnChange
         >
           {children}
         </ThemeProvider>

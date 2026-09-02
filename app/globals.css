@@ -42,36 +42,36 @@
 .dark {
   --background: oklch(0.13 0.035 260);
   --foreground: oklch(0.98 0.006 250);
-  --card: oklch(0.17 0.04 260);
+  --card: oklch(0.17 0.038 260);
   --card-foreground: oklch(0.98 0.006 250);
-  --popover: oklch(0.17 0.04 260);
+  --popover: oklch(0.17 0.038 260);
   --popover-foreground: oklch(0.98 0.006 250);
-  --primary: oklch(0.376 0.101 258.9);
-  --primary-foreground: oklch(0.98 0.006 250);
-  --secondary: oklch(0.21 0.045 260);
-  --secondary-foreground: oklch(0.96 0.01 250);
-  --muted: oklch(0.21 0.04 260);
-  --muted-foreground: oklch(0.84 0.026 250);
-  --accent: oklch(0.25 0.07 252);
-  --accent-foreground: oklch(0.96 0.01 250);
-  --destructive: oklch(0.35 0.15 27);
-  --destructive-foreground: oklch(0.98 0 0);
-  --border: oklch(0.27 0.045 260);
-  --input: oklch(0.27 0.045 260);
-  --ring: oklch(0.72 0.1 246);
-  --chart-1: oklch(0.68 0.16 240);
-  --chart-2: oklch(0.58 0.18 220);
+  --primary: oklch(0.68 0.19 250);
+  --primary-foreground: oklch(0.99 0 0);
+  --secondary: oklch(0.22 0.04 260);
+  --secondary-foreground: oklch(0.98 0.006 250);
+  --muted: oklch(0.20 0.035 260);
+  --muted-foreground: oklch(0.72 0.03 250);
+  --accent: oklch(0.24 0.06 252);
+  --accent-foreground: oklch(0.98 0.006 250);
+  --destructive: oklch(0.55 0.22 27);
+  --destructive-foreground: oklch(0.99 0 0);
+  --border: oklch(0.26 0.035 260);
+  --input: oklch(0.26 0.035 260);
+  --ring: oklch(0.68 0.19 250);
+  --chart-1: oklch(0.68 0.19 250);
+  --chart-2: oklch(0.60 0.18 220);
   --chart-3: oklch(0.65 0.12 200);
   --chart-4: oklch(0.55 0.15 260);
   --chart-5: oklch(0.70 0.1 230);
-  --sidebar: oklch(0.16 0.04 260);
+  --sidebar: oklch(0.16 0.035 260);
   --sidebar-foreground: oklch(0.96 0.01 250);
-  --sidebar-primary: oklch(0.78 0.11 246);
-  --sidebar-primary-foreground: oklch(0.14 0.045 260);
-  --sidebar-accent: oklch(0.22 0.045 260);
+  --sidebar-primary: oklch(0.68 0.19 250);
+  --sidebar-primary-foreground: oklch(0.99 0 0);
+  --sidebar-accent: oklch(0.22 0.04 260);
   --sidebar-accent-foreground: oklch(0.96 0.01 250);
-  --sidebar-border: oklch(0.27 0.045 260);
-  --sidebar-ring: oklch(0.72 0.1 246);
+  --sidebar-border: oklch(0.26 0.035 260);
+  --sidebar-ring: oklch(0.68 0.19 250);
 }
 
 @theme inline {
@@ -178,10 +178,10 @@
 
 .dark .inverse-panel {
   background:
-    linear-gradient(color-mix(in oklch, var(--primary-foreground) 96%, black), color-mix(in oklch, var(--primary-foreground) 96%, black));
+    linear-gradient(145deg, oklch(0.18 0.04 255), oklch(0.14 0.03 260));
   box-shadow:
     0 1px 0 rgb(255 255 255 / 0.08) inset,
-    0 28px 90px rgb(0 0 0 / 0.34);
+    0 28px 90px rgb(0 0 0 / 0.4);
 }
 
 .inverse-grid {
