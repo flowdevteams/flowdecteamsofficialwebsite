@@ -3,6 +3,7 @@ import { Footer } from "@/components/footer"
 import { HeroSection } from "@/components/home/hero-section"
 import { PartnersSection } from "@/components/home/partner"
 import { StatsSection } from "@/components/home/stats-section"
+import { PortfolioShowcaseSection } from "@/components/home/portfolio-showcase"
 import { ServicesPreview } from "@/components/home/services-preview"
 import { WhyChooseUs } from "@/components/home/why-choose-us"
 import { TestimonialsSection } from "@/components/home/testimonials-section"
@@ -15,11 +16,12 @@ export default function HomePage() {
   return (
     <>
       <Navigation />
-      <main className="relative min-h-screen overflow-hidden">
+      <main className="relative min-h-screen">
         {/* 1. HeroSection (menggunakan <GlowRing /> di background) */}
         <HeroSection />
         
         <StatsSection />
+        <PortfolioShowcaseSection />
         <PricingPreviewSection />
         <ServicesPreview />
         <HowWeWorkSection />
@@ -28,7 +30,7 @@ export default function HomePage() {
         <TestimonialsSection />
 
         {/* 2. Contoh Penggunaan <GlowLogo /> dan <GlowRing /> di CTA / Floating Section */}
-        <div className="relative">
+        <div className="relative overflow-hidden">
           {/* Ambient Glow Effects Layer */}
           <div className="pointer-events-none absolute -left-20 -bottom-20 z-0 hidden opacity-60 lg:block">
             <GlowRing size={520} animate={true} />

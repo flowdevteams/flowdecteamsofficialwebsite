@@ -26,22 +26,22 @@ export function StatsSection() {
           title="Klien yang Mempercayai Flowdev Teams"
         />
 
-        <div className="mt-12 flex flex-wrap justify-center gap-4 sm:gap-6">
+        <div className="mt-12 flex flex-wrap justify-center gap-5 sm:gap-6">
           {clients.map((client, index) => (
             <AnimatedSection
               key={client.id}
               animation="fade-in-up"
               delay={index * 80}
             >
-              <div className="group relative flex h-36 w-64 cursor-default flex-col items-center justify-center rounded-xl border border-border/70 bg-background/70 p-6 shadow-sm transition-all duration-300 hover:border-primary/35 hover:shadow-lg hover:shadow-primary/10">
+              <div className="group relative flex h-44 w-72 sm:w-80 cursor-default flex-col items-center justify-center rounded-2xl border border-border/80 bg-background p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-xl hover:shadow-primary/10">
                 <Image
                   src={client.logo}
                   alt={client.name}
-                  width={120}
-                  height={120}
-                  className="mx-auto max-h-full opacity-70 grayscale transition-all duration-300 group-hover:opacity-100 group-hover:grayscale-0"
+                  width={180}
+                  height={100}
+                  className="max-h-24 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
                 />
-                <h3 className="mt-4 translate-y-1 text-center text-sm font-medium text-muted-foreground opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
+                <h3 className="mt-3 text-center text-xs font-semibold uppercase tracking-wider text-muted-foreground/80 transition-colors group-hover:text-foreground">
                   {client.name}
                 </h3>
               </div>

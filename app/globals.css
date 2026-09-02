@@ -10,7 +10,7 @@
   --card-foreground: oklch(0.16 0.06 260);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.16 0.06 260);
-  --primary: oklch(0.31 0.12 259);
+  --primary: oklch(0.376 0.101 258.9);
   --primary-foreground: oklch(0.98 0 0);
   --secondary: oklch(0.95 0.018 252);
   --secondary-foreground: oklch(0.22 0.075 260);
@@ -46,8 +46,8 @@
   --card-foreground: oklch(0.98 0.006 250);
   --popover: oklch(0.17 0.04 260);
   --popover-foreground: oklch(0.98 0.006 250);
-  --primary: oklch(0.78 0.11 246);
-  --primary-foreground: oklch(0.14 0.045 260);
+  --primary: oklch(0.376 0.101 258.9);
+  --primary-foreground: oklch(0.98 0.006 250);
   --secondary: oklch(0.21 0.045 260);
   --secondary-foreground: oklch(0.96 0.01 250);
   --muted: oklch(0.21 0.04 260);
@@ -546,4 +546,35 @@ html {
 
 ::-webkit-scrollbar-thumb:hover {
   background: var(--accent);
+}
+
+/* Logo Ripple & Breathing Animations */
+@keyframes logo-ripple {
+  0% {
+    transform: scale(0.9);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1.4);
+    opacity: 0;
+  }
+}
+
+@keyframes logo-breathe {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(1.06);
+    opacity: 0.85;
+  }
+}
+
+.animate-logo-ripple {
+  animation: logo-ripple 3s cubic-bezier(0.1, 0, 0.3, 1) infinite;
+}
+.animate-logo-ripple-delay {
+  animation: logo-ripple 3s cubic-bezier(0.1, 0, 0.3, 1) infinite;
+  animation-delay: 1.5s;
 }

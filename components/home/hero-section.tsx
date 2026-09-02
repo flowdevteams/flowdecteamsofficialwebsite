@@ -127,8 +127,8 @@ export function HeroSection() {
             </AnimatedSection>
           </div>
 
-          <AnimatedSection animation="scale-in" delay={500} className="flex items-center justify-center">
-            <GlowLogo size={500} className="w-full max-w-[500px] lg:scale-110" />
+          <AnimatedSection animation="scale-in" delay={500} className="flex items-center justify-center lg:justify-end">
+            <GlowLogo size={420} className="w-full max-w-[420px] lg:scale-105" />
           </AnimatedSection>
         </div>
       </div>

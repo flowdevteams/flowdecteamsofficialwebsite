@@ -1,0 +1,4 @@
+Left Bezier: C 120 980, 300 945, 500 945
+Right Bezier: C 750 945, 920 1000, 924.2 886.03
+
+NO CROSSINGS! Perfect gap.

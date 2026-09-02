@@ -91,21 +91,23 @@ export function WhyChooseUs() {
       {/* DESKTOP VIEW: Cinematic Scroll-Driven Transition (react-kino) */}
       <div className="hidden lg:block">
         <Kino>
-          <Scene duration="240vh">
+          <Scene duration="350vh">
             {(progress) => {
               // Hitung transisi yang halus antara before dan after
-              // 0.0 - 0.40 : Before murni (opacity 1)
-              // 0.40 - 0.60 : Transisi crossfade halus
-              // 0.60 - 1.00 : After murni (opacity 1)
               const clamped = Math.max(0, Math.min(1, progress))
               
-              // Progress ratio: 0 (sebelum) -> 1 (setelah)
-              const beforeOpacity = clamped <= 0.35 ? 1 : Math.max(0, (0.55 - clamped) / 0.20)
-              const afterOpacity = clamped >= 0.65 ? 1 : Math.max(0, (clamped - 0.45) / 0.20)
-              const isAfterActive = clamped >= 0.5
+              // Progress transformasi aktif (0% -> 100%) berlangsung antara clamped 0.15 dan 0.70
+              // Sisa clamped 0.70 -> 1.00 dialokasikan khusus sebagai BUFFER HOLD 100% agar tidak langsung kepotong
+              const animProgress = Math.max(0, Math.min(1, (clamped - 0.15) / 0.55))
+              const displayPercent = Math.round(animProgress * 100)
+              
+              // Hitung Opacity Before & After berbasis animProgress
+              const beforeOpacity = animProgress <= 0.10 ? 1 : Math.max(0, (0.50 - animProgress) / 0.40)
+              const afterOpacity = animProgress >= 0.85 ? 1 : Math.max(0, (animProgress - 0.45) / 0.40)
+              const isAfterActive = animProgress >= 0.50
 
               return (
-                <div className="relative w-full h-[100vh] overflow-hidden flex flex-col items-center justify-center pt-16 lg:pt-20 pb-4 px-6 xl:px-12 gap-3 xl:gap-4">
+                <div className="relative w-full h-full overflow-hidden flex flex-col items-center justify-center pt-14 lg:pt-16 pb-6 px-6 xl:px-12 gap-3 xl:gap-4">
                   
                   {/* Floating Controller / Status Bar (Rapat dengan card di bawahnya) */}
                   <div className="relative z-30 max-w-4xl mx-auto w-full flex items-center justify-between gap-4 bg-card/85 dark:bg-card/75 backdrop-blur-md border border-border/80 rounded-full px-5 py-2 shadow-sm">
@@ -136,11 +138,11 @@ export function WhyChooseUs() {
                       <div className="w-24 h-2 bg-muted rounded-full overflow-hidden border border-border/50">
                         <div 
                           className="h-full bg-primary transition-all duration-150 ease-out rounded-full"
-                          style={{ width: `${Math.round(clamped * 100)}%` }}
+                          style={{ width: `${displayPercent}%` }}
                         />
                       </div>
                       <span className="text-xs font-mono text-muted-foreground min-w-[32px] text-right">
-                        {Math.round(clamped * 100)}%
+                        {displayPercent}%
                       </span>
                     </div>
                   </div>
