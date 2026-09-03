@@ -4,21 +4,23 @@ import Image from "next/image"
 
 const footerLinks = {
   company: [
-    { href: "/tentang-kami", label: "Tentang Kami" },
-    { href: "/fitur", label: "Keunggulan" },
     { href: "/layanan", label: "Layanan" },
+    { href: "/tentang-kami", label: "Tentang Kami" },
     { href: "/portofolio", label: "Portofolio" },
+  ],
+  services: [
+    { href: "/layanan/kecerdasan-buatan", label: "Kecerdasan Buatan (AI)" },
+    { href: "/layanan/aplikasi-web", label: "Aplikasi Web & Sistem" },
+    { href: "/layanan/landing-page", label: "Landing Page & Web" },
   ],
   support: [
     { href: "/kontak", label: "Kontak" },
     { href: "/harga-paket", label: "Harga & Paket" },
-    { href: "#", label: "Dokumentasi" },
     { href: "#", label: "FAQ" },
   ],
   legal: [
     { href: "#", label: "Kebijakan Privasi" },
     { href: "#", label: "Syarat & Ketentuan" },
-    { href: "#", label: "Kebijakan Cookie" },
   ],
 }
 
@@ -56,8 +58,8 @@ export function Footer() {
             </Link>
 
             <p className="text-muted-foreground mb-6 max-w-sm leading-relaxed mt-5">
-              Flowdev Teams adalah Website House yang menyediakan jasa pembuatan
-              Website custom untuk membantu bisnis berkembang lebih
+              Flowdev Teams adalah Software House yang menyediakan rekayasa AI,
+              aplikasi web kustom, dan landing page performa tinggi untuk membantu bisnis berkembang lebih
               cepat melalui solusi digital yang modern, aman, dan scalable.
             </p>
 
@@ -70,19 +72,45 @@ export function Footer() {
                 <span>flodev261123@gmail.com</span>
               </a>
 
-              <a
-                href="tel:+6285716454348"
-                className="flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors"
-              >
-                <Phone className="h-5 w-5" />
-                <span>+62 857-1645-4348</span>
-              </a>
+              <div className="space-y-2">
+                <a
+                  href="tel:+6281574673448"
+                  className="flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors text-sm"
+                >
+                  <Phone className="h-4 w-4 shrink-0" />
+                  <span>+62 815-7467-3448</span>
+                </a>
+                <a
+                  href="tel:+6287709165697"
+                  className="flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors text-sm"
+                >
+                  <Phone className="h-4 w-4 shrink-0" />
+                  <span>+62 877-0916-5697</span>
+                </a>
+              </div>
 
               <div className="flex items-center gap-3 text-muted-foreground">
                 <MapPin className="h-5 w-5" />
                 <span>Bekasi, Indonesia</span>
               </div>
             </div>
+          </div>
+
+          {/* Service Categories Links */}
+          <div>
+            <h3 className="mb-4 font-semibold text-foreground">Kategori Layanan</h3>
+            <ul className="space-y-3">
+              {footerLinks.services.map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className="text-muted-foreground transition-colors hover:text-primary text-sm"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </div>
 
           {/* Company Links */}
@@ -93,7 +121,7 @@ export function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-muted-foreground transition-colors hover:text-primary"
+                    className="text-muted-foreground transition-colors hover:text-primary text-sm"
                   >
                     {link.label}
                   </Link>
@@ -102,32 +130,25 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Support Links */}
+          {/* Support & Legal Links */}
           <div>
-            <h3 className="mb-4 font-semibold text-foreground">Bantuan</h3>
+            <h3 className="mb-4 font-semibold text-foreground">Bantuan & Legal</h3>
             <ul className="space-y-3">
               {footerLinks.support.map((link) => (
                 <li key={link.label}>
                   <Link
                     href={link.href}
-                    className="text-muted-foreground transition-colors hover:text-primary"
+                    className="text-muted-foreground transition-colors hover:text-primary text-sm"
                   >
                     {link.label}
                   </Link>
                 </li>
               ))}
-            </ul>
-          </div>
-
-          {/* Legal Links */}
-          <div>
-            <h3 className="mb-4 font-semibold text-foreground">Legal</h3>
-            <ul className="space-y-3">
               {footerLinks.legal.map((link) => (
                 <li key={link.label}>
                   <Link
                     href={link.href}
-                    className="text-muted-foreground transition-colors hover:text-primary"
+                    className="text-muted-foreground transition-colors hover:text-primary text-sm"
                   >
                     {link.label}
                   </Link>

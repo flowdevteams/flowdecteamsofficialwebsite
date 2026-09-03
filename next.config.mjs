@@ -14,11 +14,6 @@ const nextConfig = {
         permanent: true,
       },
       {
-        source: "/features",
-        destination: "/fitur",
-        permanent: true,
-      },
-      {
         source: "/services",
         destination: "/layanan",
         permanent: true,

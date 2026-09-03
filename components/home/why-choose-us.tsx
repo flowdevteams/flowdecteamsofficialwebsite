@@ -14,73 +14,77 @@ import {
   TrendingDown,
   Star,
   ArrowRight,
-  ShieldCheck
+  ShieldCheck,
+  Zap,
+  Code2,
+  Lock,
+  Coins
 } from "lucide-react"
 import { Kino, Scene } from "react-kino"
 import { cn } from "@/lib/utils"
 
-// KONTEN AFTER (BERSAMA FLOWDEV TEAMS)
+// KONTEN AFTER (STANDAR REKAYASA FLOWDEV TEAMS)
 const afterFeatures = [
   {
-    icon: Users,
-    title: "Tim Profesional & Berpengalaman",
-    description: "Didukung developer & desainer berpengalaman menangani website skala bisnis.",
+    icon: Code2,
+    title: "100% Hak Milik Source Code",
+    description: "Akses penuh ke Git repository & DB. Bebas vendor lock-in tanpa biaya royalti tersembunyi.",
   },
   {
-    icon: Rocket,
-    title: "Pengerjaan Cepat & Terstruktur",
-    description: "Metode agile terukur, selesai tepat waktu tanpa mengorbankan kualitas.",
+    icon: Zap,
+    title: "PageSpeed 95+ (Tanpa Bloatware)",
+    description: "Dibangun dengan Next.js 16 native, loading < 1.5 detik memangkas bounce rate iklan.",
   },
   {
-    icon: Award,
-    title: "Kualitas & Performa Terjamin",
-    description: "Testing ketat untuk performa cepat, keamanan tinggi, dan SEO optimal.",
+    icon: Coins,
+    title: "Termin Milestone Transparan",
+    description: "Skema pembayaran bertahap berbasis validasi progres nyata demi kenyamanan investasi Anda.",
   },
   {
-    icon: Clock,
-    title: "Support & Maintenance Aktif",
-    description: "Dukungan teknis berkelanjutan memastikan website selalu prima 24/7.",
+    icon: Lock,
+    title: "Garansi & SLA Support Terkelola",
+    description: "Monitoring uptime server, backup berkala, dan pendampingan teknis responsif.",
   },
 ]
 
 const afterBenefits = [
-  "Website dirancang khusus sesuai identitas & tujuan bisnis",
-  "Biaya transparan, garansi tanpa biaya tak terduga",
-  "Pelaporan progres rutin & komunikasi langsung dengan tim",
-  "Arsitektur modern yang siap berkembang jangka panjang",
-  "Struktur SEO & kecepatan tinggi ramah mesin pencari",
+  "Kepemilikan aset digital 100% mutlak milik bisnis Anda",
+  "Performa kilat memangkas biaya iklan dan mendongkrak konversi",
+  "Arsitektur modern skalabel siap integrasi sistem AI & SaaS",
+  "Transparansi total tanpa tagihan siluman atau royalti lisensi",
+  "Dukungan teknis responsif langsung bersama tim developer inti",
 ]
 
-// KONTEN BEFORE (TANPA WEBSITE RESMI / KONVENSIONAL)
+// KONTEN BEFORE (MASALAH VENDOR & AGENSI TRASISIONAL)
 const beforeFeatures = [
   {
     icon: SearchX,
-    title: "Sulit Ditemukan Pelanggan",
-    description: "Calon pembeli mencari di Google, bisnis tanpa website kehilangan ribuan prospek.",
+    title: "Template Pasaran & Bloatware",
+    description: "Banyak plugin pihak ketiga yang membuat website lambat dan rentan celah keamanan.",
   },
   {
-    icon: Briefcase,
-    title: "Kredibilitas Diragukan",
-    description: "Konsumen ragu bertransaksi karena tidak menemukan profil resmi perusahaan.",
-  },
-  {
-    icon: AlertTriangle,
-    title: "Operasional Serba Manual",
-    description: "Melayani tanya-jawab & katalog manual yang menyita banyak waktu berharga.",
+    icon: Lock,
+    title: "Source Code Ditahan Vendor",
+    description: "Akses server dan kode dikunci sehingga bisnis tersandera jika ingin upgrade sistem.",
   },
   {
     icon: TrendingDown,
-    title: "Jangkauan Sangat Terbatas",
-    description: "Hanya mengandalkan lokasi fisik & mulut ke mulut yang lambat berkembang.",
+    title: "Biaya Tersembunyi & Royalti",
+    description: "Harga awal murah tetapi dibebani biaya perpanjangan plugin mahal setiap tahun.",
+  },
+  {
+    icon: AlertTriangle,
+    title: "Timeline Molor & Komunikasi Kaku",
+    description: "Pengerjaan sering tertunda berbulan-bulan dan sulit dihubungi saat terjadi error.",
   },
 ]
 
 const beforeBenefits = [
-  "Kehilangan calon pembeli yang mencari solusi di internet",
-  "Kalah bersaing dengan kompetitor yang sudah serba digital",
-  "Tutup saat jam kerja selesai, kehilangan peluang di malam hari",
-  "Tidak memiliki tempat resmi untuk menampilkan portofolio produk",
-  "Sulit meyakinkan klien besar karena tidak ada profil resmi",
+  "Website lambat (> 4 detik) membuat trafik iklan berbayar terbuang sia-sia",
+  "Keterikatan vendor (Vendor Lock-in) yang membatasi perkembangan bisnis",
+  "Biaya operasional membengkak akibat biaya langganan tak terduga",
+  "Struktur kode berantakan yang mustahil dikembangkan ke skala sistem besar",
+  "Kredibilitas brand terancam karena downtime dan tampilan tidak profesional",
 ]
 
 export function WhyChooseUs() {
@@ -93,15 +97,10 @@ export function WhyChooseUs() {
         <Kino>
           <Scene duration="350vh">
             {(progress) => {
-              // Hitung transisi yang halus antara before dan after
               const clamped = Math.max(0, Math.min(1, progress))
-              
-              // Progress transformasi aktif (0% -> 100%) berlangsung antara clamped 0.15 dan 0.70
-              // Sisa clamped 0.70 -> 1.00 dialokasikan khusus sebagai BUFFER HOLD 100% agar tidak langsung kepotong
               const animProgress = Math.max(0, Math.min(1, (clamped - 0.15) / 0.55))
               const displayPercent = Math.round(animProgress * 100)
               
-              // Hitung Opacity Before & After berbasis animProgress
               const beforeOpacity = animProgress <= 0.10 ? 1 : Math.max(0, (0.50 - animProgress) / 0.40)
               const afterOpacity = animProgress >= 0.85 ? 1 : Math.max(0, (animProgress - 0.45) / 0.40)
               const isAfterActive = animProgress >= 0.50
@@ -109,16 +108,16 @@ export function WhyChooseUs() {
               return (
                 <div className="relative w-full h-full overflow-hidden flex flex-col items-center justify-center pt-14 lg:pt-16 pb-6 px-6 xl:px-12 gap-3 xl:gap-4">
                   
-                  {/* Floating Controller / Status Bar (Rapat dengan card di bawahnya) */}
+                  {/* Floating Controller / Status Bar */}
                   <div className="relative z-30 max-w-4xl mx-auto w-full flex items-center justify-between gap-4 bg-card/85 dark:bg-card/75 backdrop-blur-md border border-border/80 rounded-full px-5 py-2 shadow-sm">
                     {/* State Indicator */}
                     <div className="flex items-center gap-2">
                       <span className={cn(
                         "w-2.5 h-2.5 rounded-full transition-all duration-300",
-                        isAfterActive ? "bg-primary shadow-[0_0_8px_rgba(59,130,246,0.6)]" : "bg-primary/50"
+                        isAfterActive ? "bg-primary shadow-[0_0_8px_rgba(24,57,102,0.6)]" : "bg-primary/50"
                       )} />
                       <span className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-                        {isAfterActive ? "Transformasi Digital: Berhasil" : "Kondisi: Bisnis Konvensional"}
+                        {isAfterActive ? "Standar Flowdev Teams" : "Masalah Vendor Web Umum"}
                       </span>
                     </div>
 
@@ -126,11 +125,11 @@ export function WhyChooseUs() {
                     <div className="flex items-center gap-3">
                       <div className="hidden sm:flex items-center gap-1.5 text-xs text-muted-foreground">
                         <span className={cn("font-medium transition-colors", !isAfterActive && "text-foreground font-bold")}>
-                          Tanpa Website
+                          Vendor Web Umum
                         </span>
                         <ArrowRight className="w-3.5 h-3.5 text-muted-foreground/60" />
                         <span className={cn("font-medium transition-colors", isAfterActive && "text-primary font-bold")}>
-                          Dengan Flowdev
+                          Flowdev Teams
                         </span>
                       </div>
                       
@@ -150,7 +149,7 @@ export function WhyChooseUs() {
                   {/* MAIN COMPARISON CONTAINER */}
                   <div className="relative w-full max-w-7xl h-[520px] xl:h-[540px] flex items-center justify-center">
                     
-                    {/* === LAYER 1: BEFORE CONTENT (Tanpa Website) === */}
+                    {/* === LAYER 1: BEFORE CONTENT === */}
                     <div 
                       className="absolute inset-0 w-full h-full flex items-center justify-center transition-all duration-300 pointer-events-none"
                       style={{ 
@@ -160,31 +159,23 @@ export function WhyChooseUs() {
                         visibility: beforeOpacity <= 0.01 ? "hidden" : "visible"
                       }}
                     >
-                      <div className="relative w-full h-full rounded-2xl overflow-hidden border border-border/80 bg-card/70 backdrop-blur-sm p-6 xl:p-8 shadow-md flex items-center">
-                        
-                        {/* Animated Grid Dots for Before State */}
-                        <div className="absolute inset-0 saas-grid opacity-25 dark:opacity-15 pointer-events-none" />
-                        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                          <div className="grid-dot animate-grid-light-1 opacity-40" />
-                          <div className="grid-dot animate-grid-light-2 opacity-40" />
-                        </div>
-
-                        <div className="relative z-10 grid grid-cols-12 gap-8 xl:gap-12 items-center w-full">
+                      <div className="w-full h-full rounded-2xl border border-border/80 bg-card p-6 xl:p-8 shadow-sm flex flex-col justify-center">
+                        <div className="grid grid-cols-12 gap-8 xl:gap-12 items-center w-full">
                           
-                          {/* Left Column: Headline & Pain Points */}
+                          {/* Left Column: Pain Points */}
                           <div className="col-span-5 flex flex-col gap-3.5">
                             <div>
                               <span className="inline-flex items-center gap-1.5 px-3 py-1 text-xs font-semibold uppercase tracking-wider mb-2.5 bg-primary/10 text-primary rounded-md border border-primary/20">
                                 <AlertTriangle className="w-3.5 h-3.5 text-primary" />
-                                Kondisi Bisnis Saat Ini
+                                Masalah Vendor Web Konvensional
                               </span>
                               <h3 className="text-2xl xl:text-3xl font-bold leading-snug text-foreground">
-                                Tantangan Nyata Bisnis Tanpa Website Resmi
+                                Keterikatan Vendor &amp; Biaya Tak Terduga
                               </h3>
                             </div>
                             
                             <div className="flex flex-col gap-2 mt-0.5">
-                              <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">Kendala yang sering dialami:</p>
+                              <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">Tantangan yang Sering Terjadi:</p>
                               {beforeBenefits.map((benefit, index) => (
                                 <div key={index} className="flex items-start gap-2.5">
                                   <div className="mt-0.5 flex-shrink-0 flex items-center justify-center w-4 h-4 bg-primary/10 text-primary border border-primary/20 rounded">
@@ -196,18 +187,20 @@ export function WhyChooseUs() {
                             </div>
                           </div>
 
-                          {/* Right Column: 4 Pain Point Cards */}
+                          {/* Right Column: 4 Grid Cards */}
                           <div className="col-span-7 grid grid-cols-2 gap-3.5">
                             {beforeFeatures.map((feature, index) => (
                               <div 
                                 key={index} 
-                                className="flex flex-col gap-2 p-4 rounded-xl border border-border/70 bg-background/50 hover:bg-background/80 transition-colors"
+                                className="p-4 rounded-xl border border-border/70 bg-muted/30 flex flex-col gap-2"
                               >
                                 <div className="w-9 h-9 flex items-center justify-center rounded-lg bg-primary/10 text-primary border border-primary/20">
                                   <feature.icon className="w-4 h-4" />
                                 </div>
-                                <h4 className="text-sm xl:text-base font-semibold tracking-tight text-foreground">{feature.title}</h4>
-                                <p className="text-xs leading-relaxed text-muted-foreground">{feature.description}</p>
+                                <div>
+                                  <h4 className="text-sm font-semibold text-foreground">{feature.title}</h4>
+                                  <p className="text-xs text-muted-foreground leading-relaxed mt-0.5">{feature.description}</p>
+                                </div>
                               </div>
                             ))}
                           </div>
@@ -216,7 +209,7 @@ export function WhyChooseUs() {
                       </div>
                     </div>
 
-                    {/* === LAYER 2: AFTER CONTENT (Dengan Flowdev Teams) === */}
+                    {/* === LAYER 2: AFTER CONTENT === */}
                     <div 
                       className="absolute inset-0 w-full h-full flex items-center justify-center transition-all duration-300 pointer-events-none"
                       style={{ 
@@ -226,17 +219,15 @@ export function WhyChooseUs() {
                         visibility: afterOpacity <= 0.01 ? "hidden" : "visible"
                       }}
                     >
-                      <div className="relative w-full h-full rounded-2xl overflow-hidden border border-primary/30 bg-gradient-to-br from-[oklch(0.24_0.12_259)] to-[oklch(0.18_0.10_260)] text-white p-6 xl:p-8 shadow-2xl flex items-center">
+                      <div className="relative w-full h-full rounded-2xl overflow-hidden border border-primary/30 bg-[#142d52] text-white p-6 xl:p-8 shadow-xl flex flex-col justify-center">
                         
-                        {/* Background Decorative Glow, Grid & Animated Base Dots */}
+                        {/* Background Animated Dots */}
                         <div className="absolute inset-0 saas-grid opacity-35 pointer-events-none" />
                         <div className="absolute inset-0 overflow-hidden pointer-events-none">
                           <div className="grid-dot-inverse animate-grid-light-1" />
                           <div className="grid-dot-inverse animate-grid-light-2" />
                           <div className="grid-dot-inverse animate-grid-light-3" />
                         </div>
-                        <div className="absolute -top-24 -right-24 w-96 h-96 bg-primary/30 blur-3xl rounded-full pointer-events-none" />
-                        <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-blue-500/20 blur-3xl rounded-full pointer-events-none" />
 
                         <div className="relative z-10 grid grid-cols-12 gap-8 xl:gap-12 items-center w-full">
                           
@@ -244,39 +235,41 @@ export function WhyChooseUs() {
                           <div className="col-span-5 flex flex-col gap-3.5">
                             <div>
                               <span className="inline-flex items-center gap-1.5 px-3 py-1 text-xs font-semibold uppercase tracking-wider mb-2.5 bg-white/15 text-white rounded-md border border-white/20 shadow-sm backdrop-blur-md">
-                                <Star className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
-                                Solusi Flowdev Teams
+                                <Star className="w-3.5 h-3.5 fill-white text-white" />
+                                Standar Flowdev Teams
                               </span>
                               <h3 className="text-2xl xl:text-3xl font-bold leading-snug text-white">
-                                Partner Digital yang Fokus pada Pertumbuhan Nyata
+                                Rekayasa Digital Transparan &amp; Berkinerja Tinggi
                               </h3>
                             </div>
                             
                             <div className="flex flex-col gap-2 mt-0.5">
-                              <p className="text-xs font-semibold uppercase tracking-wider text-white/80">Keunggulan Solusi Kami:</p>
+                              <p className="text-xs font-semibold uppercase tracking-wider text-white/80">Keunggulan Bersama Kami:</p>
                               {afterBenefits.map((benefit, index) => (
                                 <div key={index} className="flex items-start gap-2.5">
-                                  <div className="mt-0.5 flex-shrink-0 flex items-center justify-center w-4 h-4 bg-white/20 text-white rounded-full border border-white/40 shadow-[0_0_8px_rgba(255,255,255,0.3)]">
+                                  <div className="mt-0.5 flex-shrink-0 flex items-center justify-center w-4 h-4 bg-white/20 text-white rounded-full border border-white/40">
                                     <Check className="w-2.5 h-2.5" />
                                   </div>
-                                  <span className="text-xs xl:text-sm leading-relaxed text-white/90 font-normal">{benefit}</span>
+                                  <span className="text-xs xl:text-sm leading-relaxed text-white/90">{benefit}</span>
                                 </div>
                               ))}
                             </div>
                           </div>
 
-                          {/* Right Column: 4 Solution Feature Cards */}
+                          {/* Right Column: 4 Grid Cards */}
                           <div className="col-span-7 grid grid-cols-2 gap-3.5">
                             {afterFeatures.map((feature, index) => (
                               <div 
                                 key={index} 
-                                className="group flex flex-col gap-2 p-4 rounded-xl border border-white/15 bg-white/10 backdrop-blur-md shadow-sm transition-all duration-300 hover:border-white/35 hover:bg-white/15 hover:-translate-y-0.5"
+                                className="p-4 rounded-xl border border-white/15 bg-white/10 backdrop-blur-md flex flex-col gap-2"
                               >
-                                <div className="w-9 h-9 flex items-center justify-center rounded-lg bg-white/15 border border-white/25 text-white transition-transform duration-300 group-hover:scale-105 group-hover:rotate-3">
+                                <div className="w-9 h-9 flex items-center justify-center rounded-lg bg-white/15 border border-white/25 text-white">
                                   <feature.icon className="w-4 h-4" />
                                 </div>
-                                <h4 className="text-sm xl:text-base font-semibold tracking-tight text-white">{feature.title}</h4>
-                                <p className="text-xs leading-relaxed text-white/75">{feature.description}</p>
+                                <div>
+                                  <h4 className="text-sm font-semibold text-white">{feature.title}</h4>
+                                  <p className="text-xs text-white/75 leading-relaxed mt-0.5">{feature.description}</p>
+                                </div>
                               </div>
                             ))}
                           </div>
@@ -286,7 +279,6 @@ export function WhyChooseUs() {
                     </div>
 
                   </div>
-
                 </div>
               )
             }}
@@ -294,8 +286,8 @@ export function WhyChooseUs() {
         </Kino>
       </div>
 
-      {/* MOBILE & TABLET VIEW: Responsive Interactive Switcher (< lg) */}
-      <div className="block lg:hidden py-14 px-4 sm:px-6">
+      {/* MOBILE / TABLET VIEW */}
+      <div className="block lg:hidden py-12 px-4 sm:px-6">
         <div className="max-w-xl mx-auto flex flex-col gap-6">
           
           {/* Tab Controls */}
@@ -310,7 +302,7 @@ export function WhyChooseUs() {
               )}
             >
               <AlertTriangle className={cn("w-4 h-4", activeTab === "before" ? "text-primary" : "text-muted-foreground")} />
-              Tanpa Website
+              Vendor Web Umum
             </button>
             <button
               onClick={() => setActiveTab("after")}
@@ -322,7 +314,7 @@ export function WhyChooseUs() {
               )}
             >
               <ShieldCheck className="w-4 h-4" />
-              Dengan Flowdev
+              Flowdev Teams
             </button>
           </div>
 
@@ -332,10 +324,10 @@ export function WhyChooseUs() {
               <div>
                 <span className="inline-flex items-center gap-1.5 px-3 py-1 text-xs font-semibold uppercase tracking-wider mb-3 bg-primary/10 text-primary rounded-md border border-primary/20">
                   <AlertTriangle className="w-3.5 h-3.5 text-primary" />
-                  Kondisi Bisnis Konvensional
+                  Masalah Vendor Web Umum
                 </span>
                 <h3 className="text-2xl font-bold leading-tight text-foreground">
-                  Tantangan Bisnis Tanpa Website
+                  Keterikatan Vendor &amp; Biaya Tak Terduga
                 </h3>
               </div>
 
@@ -366,7 +358,7 @@ export function WhyChooseUs() {
 
           {/* Tab Content: After */}
           {activeTab === "after" && (
-            <div className="relative rounded-2xl overflow-hidden border border-primary/30 bg-gradient-to-br from-[oklch(0.24_0.12_259)] to-[oklch(0.18_0.10_260)] text-white p-5 sm:p-7 shadow-xl flex flex-col gap-6 animate-in fade-in zoom-in-95 duration-200">
+            <div className="relative rounded-2xl overflow-hidden border border-primary/30 bg-[#142d52] text-white p-5 sm:p-7 shadow-xl flex flex-col gap-6 animate-in fade-in zoom-in-95 duration-200">
               
               {/* Background Animated Dots for Mobile */}
               <div className="absolute inset-0 saas-grid opacity-35 pointer-events-none" />
@@ -377,11 +369,11 @@ export function WhyChooseUs() {
 
               <div className="relative z-10">
                 <span className="inline-flex items-center gap-1.5 px-3 py-1 text-xs font-semibold uppercase tracking-wider mb-3 bg-white/15 text-white rounded-md border border-white/20 shadow-sm backdrop-blur-md">
-                  <Star className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
-                  Solusi Flowdev Teams
+                  <Star className="w-3.5 h-3.5 fill-white text-white" />
+                  Standar Flowdev Teams
                 </span>
                 <h3 className="text-2xl font-bold leading-tight text-white">
-                  Partner Digital Fokus Hasil Nyata
+                  Rekayasa Transparan &amp; Bebas Keterikatan
                 </h3>
               </div>
 

@@ -16,12 +16,17 @@ const contactInfo = [
     icon: Mail,
     title: "Email",
     content: "flodev261123@gmail.com",
+    href: "mailto:flodev261123@gmail.com",
     description: "Respon maksimal dalam 24 jam kerja",
   },
   {
     icon: Phone,
     title: "Telepon / WhatsApp",
-    content: "+62 857-1645-4348",
+    isPhones: true,
+    phones: [
+      { label: "Admin 1", number: "+62 815-7467-3448", href: "https://wa.me/6281574673448" },
+      { label: "Admin 2", number: "+62 877-0916-5697", href: "https://wa.me/6287709165697" },
+    ],
     description: "Senin – Sabtu, 09.00 – 18.00 WIB",
   },
   {
@@ -66,13 +71,40 @@ export function ContactSection() {
                     <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mx-auto mb-4">
                       <info.icon className="h-6 w-6 text-primary" />
                     </div>
-                    <h3 className="font-semibold text-foreground mb-1">
+                    <h3 className="font-semibold text-foreground mb-2 text-sm sm:text-base">
                       {info.title}
                     </h3>
-                    <p className="text-foreground font-normal mb-3">
-                      {info.content}
-                    </p>
-                    <p className="text-sm text-muted-foreground">
+                    
+                    {info.isPhones ? (
+                      <div className="space-y-1.5 mb-3">
+                        {info.phones?.map((p) => (
+                          <a
+                            key={p.number}
+                            href={p.href}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="block text-sm font-medium text-foreground hover:text-primary transition-colors"
+                          >
+                            {p.number}
+                          </a>
+                        ))}
+                      </div>
+                    ) : info.href ? (
+                      <p className="mb-3">
+                        <a 
+                          href={info.href} 
+                          className="text-foreground font-medium text-sm hover:text-primary transition-colors"
+                        >
+                          {info.content}
+                        </a>
+                      </p>
+                    ) : (
+                      <p className="text-foreground font-medium text-sm mb-3">
+                        {info.content}
+                      </p>
+                    )}
+
+                    <p className="text-xs text-muted-foreground">
                       {info.description}
                     </p>
                   </div>
@@ -83,9 +115,7 @@ export function ContactSection() {
             {/* Map Placeholder */}
             <AnimatedSection animation="fade-in-up" delay={400}>
               <div className="mt-8 rounded-2xl bg-muted/50 border border-border overflow-hidden h-64 flex items-center justify-center">
-              
-                  <InteractiveMap />
-            
+                <InteractiveMap />
               </div>
             </AnimatedSection>
           </div>
@@ -93,7 +123,7 @@ export function ContactSection() {
           {/* Contact Form */}
           <div>
             <AnimatedSection animation="fade-in-right">
-              <div className="p-8 rounded-2xl bg-card border border-border">
+              <div className="p-8 rounded-2xl bg-card border border-border shadow-sm">
                 <div className="flex items-center gap-3 mb-6">
                   <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
                     <Send className="h-5 w-5 text-primary" />

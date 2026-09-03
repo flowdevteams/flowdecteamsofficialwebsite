@@ -98,8 +98,8 @@ const portfolioData: Record<CategoryKey, ProjectItem[]> = {
         "Dashboard analitik reject rate per shift kerja & ekspor laporan ISO"
       ],
       techStack: ["Python", "PyTorch", "YOLOv8", "FastAPI", "Docker", "CUDA"],
-      accentColor: "from-cyan-500 to-blue-600",
-      gradient: "from-cyan-500/20 via-blue-500/10 to-transparent",
+      accentColor: "from-primary to-blue-800",
+      gradient: "from-primary/20 via-blue-600/10 to-transparent",
       previewMode: "compare-slider"
     },
     {
@@ -121,8 +121,8 @@ const portfolioData: Record<CategoryKey, ProjectItem[]> = {
         "Zero-Hallucination Guardrails dengan verifikasi sitasi ganda"
       ],
       techStack: ["OpenAI API", "LangChain", "Qdrant Vector DB", "Next.js 16", "FastAPI"],
-      accentColor: "from-indigo-500 to-violet-600",
-      gradient: "from-indigo-500/20 via-violet-500/10 to-transparent",
+      accentColor: "from-primary to-blue-800",
+      gradient: "from-primary/20 via-blue-600/10 to-transparent",
       previewMode: "live-dashboard"
     },
     {
@@ -144,8 +144,8 @@ const portfolioData: Record<CategoryKey, ProjectItem[]> = {
         "Grafik tren interaktif dengan sistem alert stok menipis"
       ],
       techStack: ["Python", "LightGBM", "Prophet", "PostgreSQL", "React", "FastAPI"],
-      accentColor: "from-amber-500 to-orange-600",
-      gradient: "from-amber-500/20 via-orange-500/10 to-transparent",
+      accentColor: "from-primary to-blue-800",
+      gradient: "from-primary/20 via-blue-600/10 to-transparent",
       previewMode: "live-dashboard"
     }
   ],
@@ -169,8 +169,8 @@ const portfolioData: Record<CategoryKey, ProjectItem[]> = {
         "Portal tracking publik untuk klien cek posisi barang mandiri"
       ],
       techStack: ["Next.js 16", "Node.js", "PostgreSQL", "WebSockets", "Leaflet GIS"],
-      accentColor: "from-blue-600 to-cyan-500",
-      gradient: "from-blue-600/20 via-cyan-500/10 to-transparent",
+      accentColor: "from-primary to-blue-800",
+      gradient: "from-primary/20 via-blue-600/10 to-transparent",
       previewMode: "live-dashboard"
     },
     {
@@ -192,8 +192,8 @@ const portfolioData: Record<CategoryKey, ProjectItem[]> = {
         "Dashboard analitik morbiditas penyakit & performa pendapatan dokter"
       ],
       techStack: ["React", "TypeScript", "NestJS", "PostgreSQL", "Redis Cache"],
-      accentColor: "from-emerald-500 to-teal-600",
-      gradient: "from-emerald-500/20 via-teal-500/10 to-transparent",
+      accentColor: "from-primary to-blue-800",
+      gradient: "from-primary/20 via-blue-600/10 to-transparent",
       previewMode: "live-dashboard"
     },
     {
@@ -215,8 +215,8 @@ const portfolioData: Record<CategoryKey, ProjectItem[]> = {
         "Visualisasi grafik arus kas, EBITDA, dan profitabilitas real-time"
       ],
       techStack: ["Next.js 16", "TypeScript", "Prisma ORM", "PostgreSQL", "TailwindCSS"],
-      accentColor: "from-purple-500 to-indigo-600",
-      gradient: "from-purple-500/20 via-indigo-500/10 to-transparent",
+      accentColor: "from-primary to-blue-800",
+      gradient: "from-primary/20 via-blue-600/10 to-transparent",
       previewMode: "live-dashboard"
     }
   ],
@@ -240,8 +240,8 @@ const portfolioData: Record<CategoryKey, ProjectItem[]> = {
         "Dukungan multibahasa (Bahasa Indonesia & English) ramah investor"
       ],
       techStack: ["Next.js 16", "TailwindCSS", "SEO Architecture", "Vercel Edge"],
-      accentColor: "from-blue-700 to-sky-500",
-      gradient: "from-blue-700/20 via-sky-500/10 to-transparent",
+      accentColor: "from-primary to-blue-800",
+      gradient: "from-primary/20 via-blue-600/10 to-transparent",
       previewMode: "interactive-landing"
     },
     {
@@ -263,8 +263,8 @@ const portfolioData: Record<CategoryKey, ProjectItem[]> = {
         "Optimasi Core Web Vitals untuk pengalaman scrolling tanpa lag"
       ],
       techStack: ["Next.js 16", "TailwindCSS", "Framer Motion", "Cloudflare CDN"],
-      accentColor: "from-amber-600 to-yellow-500",
-      gradient: "from-amber-600/20 via-yellow-500/10 to-transparent",
+      accentColor: "from-primary to-blue-800",
+      gradient: "from-primary/20 via-blue-600/10 to-transparent",
       previewMode: "interactive-landing"
     },
     {
@@ -286,8 +286,8 @@ const portfolioData: Record<CategoryKey, ProjectItem[]> = {
         "Desain dark theme premium dengan tipografi editorial modern"
       ],
       techStack: ["Next.js 16", "TailwindCSS", "Micro-Interactions", "PWA Ready"],
-      accentColor: "from-orange-700 to-amber-500",
-      gradient: "from-orange-700/20 via-amber-500/10 to-transparent",
+      accentColor: "from-primary to-blue-800",
+      gradient: "from-primary/20 via-blue-600/10 to-transparent",
       previewMode: "interactive-landing"
     }
   ]
@@ -483,12 +483,12 @@ export function PortfolioShowcaseSection() {
                 {/* Browser Window Chrome / Header */}
                 <div className="flex items-center justify-between px-4 py-3 bg-muted/60 border-b border-border/70">
                   <div className="flex items-center gap-2">
-                    <div className="w-3 h-3 rounded-full bg-red-500/80" />
-                    <div className="w-3 h-3 rounded-full bg-yellow-500/80" />
-                    <div className="w-3 h-3 rounded-full bg-green-500/80" />
+                    <div className="w-2.5 h-2.5 rounded-full bg-border" />
+                    <div className="w-2.5 h-2.5 rounded-full bg-border" />
+                    <div className="w-2.5 h-2.5 rounded-full bg-border" />
                   </div>
                   <div className="flex items-center gap-2 px-3 py-1 rounded-md bg-background/80 border border-border/60 text-[11px] font-mono text-muted-foreground max-w-[240px] truncate">
-                    <ShieldCheck className="w-3 h-3 text-emerald-500 shrink-0" />
+                    <ShieldCheck className="w-3 h-3 text-primary shrink-0" />
                     <span>https://flowdevteams.com/showcase/{currentProject.id}</span>
                   </div>
                   <div className="flex items-center gap-1.5 text-muted-foreground/60">
@@ -515,8 +515,8 @@ export function PortfolioShowcaseSection() {
                         <p className="text-[10px] text-muted-foreground">Production Environment Active</p>
                       </div>
                     </div>
-                    <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[10px] font-mono font-semibold bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 border border-emerald-500/30">
-                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-ping" />
+                    <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[10px] font-mono font-semibold bg-primary/10 text-primary border border-primary/20">
+                      <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
                       ONLINE LIVE
                     </span>
                   </div>
@@ -547,17 +547,17 @@ export function PortfolioShowcaseSection() {
                           after={
                             <div className="w-full h-full bg-gradient-to-br from-slate-950 to-blue-950 flex flex-col items-center justify-center p-4 text-white relative">
                               {/* Simulated AI Detection Box */}
-                              <div className="absolute top-4 left-6 border-2 border-emerald-400 bg-emerald-500/20 px-3 py-2 rounded text-[10px] font-mono font-bold text-emerald-300 flex flex-col gap-0.5 shadow-[0_0_15px_rgba(52,211,153,0.4)]">
+                              <div className="absolute top-4 left-6 border border-primary/40 bg-primary/20 px-3 py-2 rounded text-[10px] font-mono font-bold text-white flex flex-col gap-0.5 shadow-xs">
                                 <span>[OK] Dimension: 45.02mm (99.8%)</span>
-                                <span className="text-[8px] text-emerald-200">PASS QUALITY ASSURANCE</span>
+                                <span className="text-[8px] text-white/70">PASS QUALITY ASSURANCE</span>
                               </div>
-                              <div className="absolute bottom-4 right-6 border-2 border-red-500 bg-red-500/20 px-3 py-2 rounded text-[10px] font-mono font-bold text-red-300 flex flex-col gap-0.5 shadow-[0_0_15px_rgba(239,68,68,0.4)]">
-                                <span>[ALERT] Micro-Crack: 0.12mm</span>
-                                <span className="text-[8px] text-red-200">AUTO-EJECT REJECT TRIGGERED</span>
+                              <div className="absolute bottom-4 right-6 border border-border bg-slate-900/80 px-3 py-2 rounded text-[10px] font-mono font-bold text-slate-300 flex flex-col gap-0.5">
+                                <span>[LOG] Micro-Crack Sensor Ready</span>
+                                <span className="text-[8px] text-muted-foreground">AUTO-EJECT SENSOR ONLINE</span>
                               </div>
-                              <Sparkles className="w-10 h-10 text-cyan-400 animate-pulse mb-2" />
-                              <span className="text-xs font-mono font-bold text-cyan-300">AI INFERENCE ACTIVE</span>
-                              <span className="text-[10px] text-cyan-200/80 mt-1">YOLOv8 Realtime Detection Active</span>
+                              <Sparkles className="w-10 h-10 text-white animate-pulse mb-2" />
+                              <span className="text-xs font-mono font-bold text-white">AI INFERENCE ACTIVE</span>
+                              <span className="text-[10px] text-white/75 mt-1">YOLOv8 Realtime Detection Active</span>
                             </div>
                           }
                         />
@@ -581,10 +581,7 @@ export function PortfolioShowcaseSection() {
                           {[35, 60, 50, 75, 65, 90, 80, 100, 85, 70, 95, 100].map((val, idx) => (
                             <div key={idx} className="flex-1 flex flex-col items-center gap-1">
                               <div 
-                                className={cn(
-                                  "w-full rounded-t-sm transition-all duration-500 bg-gradient-to-t",
-                                  idx === 7 || idx === 11 ? "from-primary to-cyan-400" : "from-primary/40 to-primary/80"
-                                )}
+                                className="w-full rounded-t-sm transition-all duration-500 bg-gradient-to-t from-primary/40 to-primary"
                                 style={{ height: `${val}%` }}
                               />
                             </div>
@@ -598,7 +595,7 @@ export function PortfolioShowcaseSection() {
                           <span className="text-[10px] font-semibold text-muted-foreground uppercase">Response Speed</span>
                           <span className="text-sm font-bold text-foreground font-mono">99.98% FAST</span>
                           <div className="w-full bg-border/60 h-1 rounded-full overflow-hidden mt-1">
-                            <div className="bg-emerald-500 h-full w-[96%]" />
+                            <div className="bg-primary h-full w-[96%]" />
                           </div>
                         </div>
                         <div className="p-3 rounded-xl border border-border/60 bg-muted/40 flex flex-col gap-1">

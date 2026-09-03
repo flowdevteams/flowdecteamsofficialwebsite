@@ -85,8 +85,8 @@ export const allPortfolioProjects: FullProject[] = [
       "Dashboard analitik reject rate per shift kerja & ekspor laporan ISO"
     ],
     techStack: ["Python", "PyTorch", "YOLOv8", "FastAPI", "Docker", "CUDA"],
-    accentColor: "from-cyan-500 to-blue-600",
-    gradient: "from-cyan-500/20 via-blue-500/10 to-transparent",
+    accentColor: "from-primary to-blue-800",
+    gradient: "from-primary/20 via-blue-600/10 to-transparent",
     hasCompareSlider: true
   },
   {
@@ -114,8 +114,8 @@ export const allPortfolioProjects: FullProject[] = [
       "Zero-Hallucination Guardrails dengan verifikasi sitasi ganda"
     ],
     techStack: ["OpenAI API", "LangChain", "Qdrant Vector DB", "Next.js 16", "FastAPI"],
-    accentColor: "from-indigo-500 to-violet-600",
-    gradient: "from-indigo-500/20 via-violet-500/10 to-transparent"
+    accentColor: "from-primary to-blue-800",
+    gradient: "from-primary/20 via-blue-600/10 to-transparent"
   },
   {
     id: "ai-forecast",
@@ -142,8 +142,8 @@ export const allPortfolioProjects: FullProject[] = [
       "Grafik tren interaktif dengan sistem alert stok menipis"
     ],
     techStack: ["Python", "LightGBM", "Prophet", "PostgreSQL", "React", "FastAPI"],
-    accentColor: "from-amber-500 to-orange-600",
-    gradient: "from-amber-500/20 via-orange-500/10 to-transparent"
+    accentColor: "from-primary to-blue-800",
+    gradient: "from-primary/20 via-blue-600/10 to-transparent"
   },
   {
     id: "ai-speech",
@@ -170,8 +170,8 @@ export const allPortfolioProjects: FullProject[] = [
       "Integrasi webhook ke sistem ticketing CRM secara instan"
     ],
     techStack: ["Whisper AI", "Python", "Transformers", "Node.js", "ClickHouse"],
-    accentColor: "from-rose-500 to-pink-600",
-    gradient: "from-rose-500/20 via-pink-500/10 to-transparent"
+    accentColor: "from-primary to-blue-700",
+    gradient: "from-primary/20 via-blue-500/10 to-transparent"
   },
 
   // === 2. APLIKASI BERBASIS WEB (ENTERPRISE ERP & SAAS) ===
@@ -200,8 +200,8 @@ export const allPortfolioProjects: FullProject[] = [
       "Portal tracking publik untuk klien cek posisi barang mandiri"
     ],
     techStack: ["Next.js 16", "Node.js", "PostgreSQL", "WebSockets", "Leaflet GIS"],
-    accentColor: "from-blue-600 to-cyan-500",
-    gradient: "from-blue-600/20 via-cyan-500/10 to-transparent"
+    accentColor: "from-primary to-blue-800",
+    gradient: "from-primary/20 via-blue-600/10 to-transparent"
   },
   {
     id: "hospital-cloud",
@@ -228,8 +228,8 @@ export const allPortfolioProjects: FullProject[] = [
       "Dashboard analitik morbiditas penyakit & performa pendapatan dokter"
     ],
     techStack: ["React", "TypeScript", "NestJS", "PostgreSQL", "Redis Cache"],
-    accentColor: "from-emerald-500 to-teal-600",
-    gradient: "from-emerald-500/20 via-teal-500/10 to-transparent"
+    accentColor: "from-primary to-blue-800",
+    gradient: "from-primary/20 via-blue-600/10 to-transparent"
   },
   {
     id: "finance-dashboard",
@@ -256,8 +256,8 @@ export const allPortfolioProjects: FullProject[] = [
       "Visualisasi grafik arus kas, EBITDA, dan profitabilitas real-time"
     ],
     techStack: ["Next.js 16", "TypeScript", "Prisma ORM", "PostgreSQL", "TailwindCSS"],
-    accentColor: "from-purple-500 to-indigo-600",
-    gradient: "from-purple-500/20 via-indigo-500/10 to-transparent"
+    accentColor: "from-primary to-blue-800",
+    gradient: "from-primary/20 via-blue-600/10 to-transparent"
   },
   {
     id: "procure-flow",
@@ -284,8 +284,8 @@ export const allPortfolioProjects: FullProject[] = [
       "Approval matrix pengadaan bertingkat berbasis nilai anggaran"
     ],
     techStack: ["Next.js 16", "Golang", "PostgreSQL", "TailwindCSS", "Docker"],
-    accentColor: "from-teal-500 to-emerald-600",
-    gradient: "from-teal-500/20 via-emerald-500/10 to-transparent"
+    accentColor: "from-primary to-blue-800",
+    gradient: "from-primary/20 via-blue-600/10 to-transparent"
   },
 
   // === 3. WEBSITE LANDING PAGE (COMPANY PROFILE & D2C) ===
@@ -342,8 +342,8 @@ export const allPortfolioProjects: FullProject[] = [
       "Optimasi Core Web Vitals untuk pengalaman scrolling tanpa lag"
     ],
     techStack: ["Next.js 16", "Three.js", "TailwindCSS", "Cloudflare CDN"],
-    accentColor: "from-amber-600 to-yellow-500",
-    gradient: "from-amber-600/20 via-yellow-500/10 to-transparent"
+    accentColor: "from-primary to-blue-800",
+    gradient: "from-primary/20 via-blue-600/10 to-transparent"
   },
   {
     id: "zenith-coffee",
@@ -370,8 +370,8 @@ export const allPortfolioProjects: FullProject[] = [
       "Desain dark theme premium dengan tipografi editorial modern"
     ],
     techStack: ["Next.js 16", "TailwindCSS", "Micro-Interactions", "PWA Ready"],
-    accentColor: "from-orange-700 to-amber-500",
-    gradient: "from-orange-700/20 via-amber-500/10 to-transparent"
+    accentColor: "from-primary to-blue-800",
+    gradient: "from-primary/20 via-blue-600/10 to-transparent"
   },
   {
     id: "nusa-solar",
@@ -398,8 +398,8 @@ export const allPortfolioProjects: FullProject[] = [
       "Struktur SEO optimal mendominasi kata kunci PLTS Atap Indonesia"
     ],
     techStack: ["Next.js 16", "TailwindCSS", "React Hook Form", "SEO Engine"],
-    accentColor: "from-emerald-600 to-lime-500",
-    gradient: "from-emerald-600/20 via-lime-500/10 to-transparent"
+    accentColor: "from-primary to-blue-800",
+    gradient: "from-primary/20 via-blue-600/10 to-transparent"
   }
 ]
 
@@ -551,7 +551,7 @@ export function PortfolioGrid() {
                     <span className="text-[10px] font-mono text-muted-foreground/80 px-2 py-0.5 rounded bg-background/80 border border-border/60 truncate max-w-[150px]">
                       flowdevteams.com/demo/{project.id}
                     </span>
-                    <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+                    <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
                   </div>
 
                   {/* Visual Simulation in Mockup */}
@@ -703,14 +703,14 @@ export function PortfolioGrid() {
                     }
                     after={
                       <div className="w-full h-full bg-gradient-to-br from-slate-950 to-blue-950 flex flex-col items-center justify-center p-4 text-white relative">
-                        <div className="absolute top-4 left-6 border-2 border-emerald-400 bg-emerald-500/20 px-3 py-1.5 rounded text-xs font-mono font-bold text-emerald-300 shadow-[0_0_15px_rgba(52,211,153,0.4)]">
+                        <div className="absolute top-4 left-6 border border-primary/40 bg-primary/20 px-3 py-1.5 rounded text-xs font-mono font-bold text-white shadow-xs">
                           [OK] Dimension: 45.02mm (99.8%)
                         </div>
-                        <div className="absolute bottom-4 right-6 border-2 border-red-500 bg-red-500/20 px-3 py-1.5 rounded text-xs font-mono font-bold text-red-300 shadow-[0_0_15px_rgba(239,68,68,0.4)]">
-                          [ALERT] Micro-Crack: 0.12mm REJECT
+                        <div className="absolute bottom-4 right-6 border border-border bg-slate-900/80 px-3 py-1.5 rounded text-xs font-mono font-bold text-slate-300">
+                          [LOG] Auto-Inspection Active
                         </div>
-                        <Sparkles className="w-12 h-12 text-cyan-400 animate-pulse mb-2" />
-                        <span className="text-sm font-mono font-bold text-cyan-300">AI DETEKSI OTOMATIS</span>
+                        <Sparkles className="w-12 h-12 text-white animate-pulse mb-2" />
+                        <span className="text-sm font-mono font-bold text-white">AI DETEKSI OTOMATIS</span>
                       </div>
                     }
                   />
@@ -721,12 +721,12 @@ export function PortfolioGrid() {
             {/* Problem & Solution Cards */}
             <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div className="p-4 rounded-2xl bg-muted/40 border border-border/70 flex flex-col gap-1.5">
-                <span className="text-xs font-semibold text-red-500 uppercase tracking-wider">Tantangan Klien:</span>
+                <span className="text-xs font-mono font-semibold text-muted-foreground uppercase tracking-wider">Tantangan Klien:</span>
                 <p className="text-xs text-muted-foreground leading-relaxed">{selectedProject.problemSolution.problem}</p>
               </div>
-              <div className="p-4 rounded-2xl bg-primary/5 border border-primary/20 flex flex-col gap-1.5">
-                <span className="text-xs font-semibold text-primary uppercase tracking-wider">Solusi Flowdev Teams:</span>
-                <p className="text-xs text-foreground/90 leading-relaxed">{selectedProject.problemSolution.solution}</p>
+              <div className="p-4 rounded-2xl bg-primary/[0.04] border border-primary/30 flex flex-col gap-1.5">
+                <span className="text-xs font-mono font-semibold text-primary uppercase tracking-wider">Solusi Flowdev Teams:</span>
+                <p className="text-xs text-foreground/90 leading-relaxed font-medium">{selectedProject.problemSolution.solution}</p>
               </div>
             </div>
 

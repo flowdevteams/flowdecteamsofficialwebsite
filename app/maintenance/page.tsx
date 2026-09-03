@@ -136,7 +136,7 @@ export default function MaintenancePage() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Button asChild size="lg" className="text-base px-8 h-12 gap-2 group">
               <a
-                href="https://wa.me/6285716454348?text=Halo%20Flowdev%20Teams%2C%20saya%20ingin%20menyelesaikan%20pembayaran%20maintenance%20website%20saya."
+                href="https://wa.me/6281574673448?text=Halo%20Flowdev%20Teams%2C%20saya%20ingin%20menyelesaikan%20pembayaran%20maintenance%20website%20saya."
                 target="_blank"
                 rel="noopener noreferrer"
               >

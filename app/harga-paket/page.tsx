@@ -7,9 +7,9 @@ import { PricingFAQ } from "@/components/pricing/pricing-faq"
 import { CTASection } from "@/components/home/cta-section"
 
 export const metadata: Metadata = {
-  title: "Harga termurah Untuk Jasa Pembuatan Website& Aplikasi | Flowdev Teams",
+  title: "Investasi & Skema Harga Terukur | Solusi Digital Flowdev Teams",
   description:
-    "Pilih paket harga Flowdev Teams yang fleksibel untuk jasa pembuatan Website bisnis. Konsultasi gratis, proses cepat, hasil profesional.",
+    "Pilihan skema investasi digital transparan dari Flowdev Teams: Landing Page Konversi Tinggi, Aplikasi Web & Sistem Enterprise, hingga Solusi Kecerdasan Buatan (AI).",
   alternates: {
     canonical: "/harga-paket",
   },
@@ -33,4 +33,3 @@ export default function PricingPage() {
     </>
   )
 }
-
