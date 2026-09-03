@@ -82,7 +82,7 @@ function useRippleEngine(isHovered: boolean) {
 }
 
 export function GlowLogo({
-  size = 320,
+  size,
   className,
   animate = true,
   interactive = true,
@@ -100,6 +100,10 @@ export function GlowLogo({
 
   useEffect(() => {
     if (!interactive) return
+    if (typeof window !== "undefined" && window.matchMedia("(pointer: coarse)").matches) {
+      // Skip mouse tracking on mobile/touch screens to preserve 60fps and battery
+      return
+    }
 
     let animationFrameId: number
     const targetTilt = { x: 0, y: 0 }
@@ -155,8 +159,8 @@ export function GlowLogo({
       animationFrameId = requestAnimationFrame(updateTilt)
     }
 
-    window.addEventListener("mousemove", handleMouseMove)
-    document.addEventListener("mouseleave", handleMouseLeave)
+    window.addEventListener("mousemove", handleMouseMove, { passive: true })
+    document.addEventListener("mouseleave", handleMouseLeave, { passive: true })
 
     return () => {
       window.removeEventListener("mousemove", handleMouseMove)
@@ -165,15 +169,15 @@ export function GlowLogo({
     }
   }, [interactive, mousePos.isActive])
 
-  const sizeStyle = {
+  const sizeStyle = size !== undefined ? {
     width: typeof size === "number" ? `${size}px` : size,
     height: typeof size === "number" ? `${size}px` : size,
-  }
+  } : undefined
 
   return (
     <div 
       ref={containerRef}
-      className={cn("relative group flex items-center justify-center select-none", className)}
+      className={cn("relative group flex items-center justify-center select-none aspect-square", className)}
       style={sizeStyle}
     >
       {/* ── Immersive Ripple Rings ────────────────────────── */}
@@ -248,8 +252,8 @@ export function GlowLogo({
               style={{
                 width: "140%",
                 height: "140%",
-                left: mousePos.x - (typeof size === "number" ? size : 320) * 0.7,
-                top: mousePos.y - (typeof size === "number" ? size : 320) * 0.7,
+                left: mousePos.x - (containerRef.current?.offsetWidth || (typeof size === "number" ? size : 320)) * 0.7,
+                top: mousePos.y - (containerRef.current?.offsetHeight || (typeof size === "number" ? size : 320)) * 0.7,
                 opacity: mousePos.isActive ? 0.55 * intensity : 0,
                 background: "radial-gradient(circle, rgba(255,255,255,0.7) 0%, rgba(147,197,253,0.35) 30%, transparent 65%)",
                 mixBlendMode: "overlay",

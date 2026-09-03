@@ -282,7 +282,7 @@ export function PricingCards() {
 
   return (
     <section className="py-16 lg:py-24 bg-background">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
         
         {/* Category Switcher Tabs */}
         <div className="flex flex-col items-center justify-center mb-12">

@@ -372,6 +372,9 @@ export function GlowRing({
   // Window pointer proximity tracking for seamless section-wide interaction
   useEffect(() => {
     if (!interactive) return
+    if (typeof window !== "undefined" && window.matchMedia("(pointer: coarse)").matches) {
+      return
+    }
 
     const handleGlobalPointerMove = (e: PointerEvent) => {
       if (e.pointerType === "touch") return

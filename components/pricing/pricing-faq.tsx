@@ -11,45 +11,45 @@ import {
 
 const faqs = [
   {
-    question: "Bagaimana skema pembayaran dan termin proyek di Flowdev Teams?",
+    question: "Bagaimana skema pembayaran dan termin di Flowdev Teams?",
     answer:
-      "Untuk proyek Landing Page standar, pembayaran dapat dilakukan dengan DP 50% di awal dan pelunasan 50% saat website telah diuji dan siap online. Untuk proyek Aplikasi Web & Sistem atau AI berskala menengah/besar, kami menggunakan sistem termin berbasis milestone pengerjaan (misal: DP 30% Desain & Arsitektur, 40% Pengembangan Fitur Inti, 30% Testing & Serah Terima Handover).",
+      "Untuk Landing Page: DP 50% di awal dan pelunasan 50% saat website siap tayang. Untuk Aplikasi Web & AI: sistem termin milestone (DP 30% Desain/Arsitektur, 40% Fitur Inti, 30% Serah Terima Handover)."
   },
   {
-    question: "Apakah saya mendapatkan akses penuh terhadap Source Code dan Database?",
+    question: "Apakah saya mendapatkan 100% hak milik Source Code dan Database?",
     answer:
-      "Ya, 100%. Kami memberikan hak milik penuh (Full IP Ownership) atas seluruh kode sumber (source code), aset desain, dan database proyek Anda setelah pelunasan. Tidak ada sistem sewa terikat atau biaya royalti bulanan tersembunyi.",
+      "Ya, 100%. Anda mendapatkan hak milik penuh atas repositori Git, skema database, dan seluruh aset digital tanpa sistem sewa atau royalti bulanan tersembunyi."
   },
   {
-    question: "Berapa lama estimasi waktu pengerjaan dari awal hingga peluncuran?",
+    question: "Berapa lama estimasi waktu pengerjaan dari awal hingga online?",
     answer:
-      "Landing Page konversi umumnya selesai dalam 3–7 hari kerja. Aplikasi Web MVP berkisar 2–4 minggu. Sedangkan untuk Sistem Enterprise atau solusi Kecerdasan Buatan (AI) berkisar antara 4 hingga 8 minggu tergantung kompleksitas integrasi.",
+      "Landing Page: 3–7 hari kerja. Aplikasi Web / SaaS MVP: 2–4 minggu. Sistem Enterprise & Custom AI: 4–8 minggu sesuai ruang lingkup yang disepakati."
   },
   {
-    question: "Apakah bisa dibuatkan surat perjanjian kerja sama dan NDA (Non-Disclosure Agreement)?",
+    question: "Apakah tersedia perjanjian kerja sama resmi dan dokumen NDA?",
     answer:
-      "Tentu. Kami sangat menjunjung tinggi keamanan data dan kerahasiaan ide bisnis klien. Kami siap menandatangani dokumen NDA resmi dan kontrak kerja sama tertulis sebelum proyek dimulai.",
+      "Tentu. Kami menjamin kerahasiaan ide bisnis dan keamanan data Anda dengan menandatangani dokumen NDA (Non-Disclosure Agreement) dan kontrak kerja tertulis sebelum proyek dimulai."
   },
   {
-    question: "Bagaimana jika di kemudian hari kami ingin menambah fitur baru atau upgrade?",
+    question: "Bagaimana jika bisnis kami ingin menambah fitur baru di masa depan?",
     answer:
-      "Arsitektur kode yang kami bangun menerapkan standar industri modern yang modular dan bersih (clean architecture). Hal ini memudahkan penambahan fitur baru, integrasi API tambahan, atau upgrade kapasitas server seiring pertumbuhan bisnis Anda.",
+      "Arsitektur kode kami dibangun secara modular dan clean code (Next.js 16/TypeScript/Python), sehingga penambahan fitur atau integrasi sistem baru dapat dilakukan dengan sangat mudah."
   },
   {
-    question: "Apakah sudah termasuk layanan pemeliharaan (maintenance) dan perbaikan bug?",
+    question: "Apakah ada garansi dan dukungan teknis setelah website diluncurkan?",
     answer:
-      "Setiap paket sudah mencakup garansi masa pemeliharaan gratis pasca-peluncuran untuk memastikan sistem berjalan lancar tanpa bug. Kami juga menyediakan paket Maintenance & Support Terkelola berkala untuk kebutuhan backup, pemantauan server, dan pembaruan berkala.",
-  },
+      "Setiap paket mendapatkan garansi perbaikan bug pasca-rilis. Kami juga menyediakan opsi pemeliharaan terkelola berkala untuk monitoring uptime server dan backup data rutin."
+  }
 ]
 
 export function PricingFAQ() {
   return (
     <section className="py-20 lg:py-28 bg-muted/30">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
-          badge="Transparansi & FAQ"
-          title="Pertanyaan Seputar Investasi & Alur Kerja"
-          description="Temukan jawaban lengkap mengenai skema pembayaran, kepemilikan kode, dan jaminan kualitas layanan kami."
+          badge="TRANSPARANSI &amp; FAQ"
+          title="Pertanyaan Seputar Investasi &amp; Alur Kerja"
+          description="Jawaban ringkas dan transparan mengenai skema pembayaran, hak milik kode, dan jaminan keamanan proyek Anda."
         />
 
         <AnimatedSection animation="fade-in-up" delay={200} className="max-w-3xl mx-auto mt-12">
@@ -58,9 +58,9 @@ export function PricingFAQ() {
               <AccordionItem
                 key={index}
                 value={`item-${index}`}
-                className="bg-card border border-border rounded-xl px-6 data-[state=open]:border-primary/50"
+                className="bg-card border border-border/80 rounded-2xl px-6 data-[state=open]:border-primary/50 shadow-xs"
               >
-                <AccordionTrigger className="text-left font-semibold hover:no-underline py-5 text-sm sm:text-base">
+                <AccordionTrigger className="text-left font-semibold hover:no-underline py-5 text-sm sm:text-base text-foreground">
                   {faq.question}
                 </AccordionTrigger>
                 <AccordionContent className="text-muted-foreground pb-6 text-xs sm:text-sm leading-relaxed">

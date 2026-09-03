@@ -70,10 +70,18 @@ export function Navigation() {
   const pathname = usePathname()
 
   React.useEffect(() => {
+    let ticking = false
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10)
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          const scrolled = window.scrollY > 10
+          setIsScrolled((prev) => (prev !== scrolled ? scrolled : prev))
+          ticking = false
+        })
+        ticking = true
+      }
     }
-    window.addEventListener("scroll", handleScroll)
+    window.addEventListener("scroll", handleScroll, { passive: true })
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
@@ -126,8 +134,8 @@ export function Navigation() {
           isScrolled ? "opacity-100" : "opacity-0"
         )} />
 
-        <nav className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 relative">
-          <div className="flex items-center justify-between h-16 lg:h-20">
+        <nav className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+          <div className="flex items-center justify-between h-14 sm:h-16 lg:h-20">
             {/* Logo */}
             <Link
               href="/"
@@ -327,7 +335,7 @@ export function Navigation() {
       {/* Mobile Menu Drawer */}
       <div
         className={cn(
-          "lg:hidden fixed inset-0 z-[90] transition-all duration-500",
+          "lg:hidden fixed inset-0 z-[90] overflow-hidden transition-all duration-500",
           isOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
         )}
       >
@@ -341,11 +349,11 @@ export function Navigation() {
 
         <div
           className={cn(
-            "absolute top-0 right-0 h-[100dvh] w-[min(340px,88vw)] border-l border-border/70 bg-card/95 shadow-2xl backdrop-blur-xl transition-all duration-300 ease-out",
+            "absolute top-0 right-0 h-[100dvh] w-[min(340px,92vw)] border-l border-border/70 bg-card/95 shadow-2xl backdrop-blur-xl transition-all duration-300 ease-out",
             isOpen ? "translate-x-0 scale-100" : "translate-x-full scale-95"
           )}
         >
-          <div className="flex flex-col h-full pt-20 px-4 pb-6 relative z-10">
+          <div className="flex flex-col h-full pt-16 sm:pt-20 px-4 pb-6 relative z-10">
             <nav className="flex flex-col gap-1.5 overflow-y-auto flex-1 pr-1">
               {navLinks.map((link) => {
                 const isActive = link.hasDropdown ? isServiceActive : pathname === link.href
@@ -358,7 +366,7 @@ export function Navigation() {
                           href={link.href}
                           onClick={() => setIsOpen(false)}
                           className={cn(
-                            "flex-1 rounded-lg px-4 py-2.5 text-base font-medium transition-all duration-200",
+                            "flex-1 rounded-lg px-4 py-3 text-[15px] sm:text-base font-medium transition-all duration-200",
                             pathname === "/layanan"
                               ? "bg-primary text-primary-foreground shadow-sm"
                               : "text-muted-foreground hover:bg-accent hover:text-foreground"
@@ -407,7 +415,7 @@ export function Navigation() {
                     href={link.href}
                     onClick={() => setIsOpen(false)}
                     className={cn(
-                      "relative overflow-hidden rounded-lg px-4 py-2.5 text-base font-medium transition-all duration-200 active:scale-[0.98] group",
+                      "relative overflow-hidden rounded-lg px-4 py-3 text-[15px] sm:text-base font-medium transition-all duration-200 active:scale-[0.98] group",
                       isActive
                         ? "bg-primary text-primary-foreground shadow-sm"
                         : "text-muted-foreground hover:bg-accent hover:text-foreground"
@@ -430,7 +438,7 @@ export function Navigation() {
               <Button
                 asChild
                 size="lg"
-                className="w-full relative overflow-hidden rounded-lg shadow-lg shadow-primary/20"
+                className="w-full relative overflow-hidden rounded-xl h-12 text-base shadow-lg shadow-primary/20"
               >
                 <Link href="/kontak" onClick={() => setIsOpen(false)} className="relative z-10">
                   <Sparkles className="w-4 h-4 mr-2" />

@@ -8,10 +8,10 @@ import { AccentTitle } from "@/components/accent-title"
 
 export function CTASection() {
   return (
-    <section className="relative bg-background px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
-      <div className="container mx-auto max-w-5xl relative z-10">
-        <div className="inverse-panel relative overflow-hidden rounded-3xl border border-white/10 p-8 md:p-14 lg:p-16 bg-[#142d52]">
-          <div className="absolute inset-0 inverse-grid opacity-35" />
+    <section className="relative bg-background py-14 sm:py-20 lg:py-28">
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="inverse-panel relative w-full overflow-hidden rounded-2xl sm:rounded-3xl border border-white/10 p-6 sm:p-8 md:p-14 lg:p-16 bg-[#142d52]">
+          <div className="absolute inset-0 inverse-grid" />
           
           {/* Animated Inverse Grid Dots */}
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -29,7 +29,7 @@ export function CTASection() {
             </AnimatedSection>
 
             <AnimatedSection animation="fade-in-up" delay={100}>
-              <h2 className="mb-6 text-3xl font-semibold tracking-tight sm:text-4xl lg:text-5xl">
+              <h2 className="mb-4 sm:mb-6 text-xl sm:text-2xl md:text-3xl font-semibold tracking-tight lg:text-5xl">
                 <AccentTitle
                   text="Siap Mengakselerasi Pertumbuhan Bisnis Anda dengan Solusi Digital yang Tepat?"
                   highlightWords={4}
@@ -40,13 +40,13 @@ export function CTASection() {
             </AnimatedSection>
 
             <AnimatedSection animation="fade-in-up" delay={200}>
-              <p className="mx-auto mb-8 max-w-2xl text-base sm:text-lg leading-relaxed text-white/80">
+              <p className="mx-auto mb-6 sm:mb-8 max-w-2xl text-[13px] sm:text-base lg:text-lg leading-relaxed text-white/80">
                 Diskusikan tujuan kampanye penjualan, rencana pembuatan sistem aplikasi, atau ide integrasi AI bersama tim developer Flowdev Teams. Dapatkan rekomendasi arsitektur dan estimasi biaya transparan hari ini.
               </p>
             </AnimatedSection>
 
             {/* Micro Guarantees */}
-            <AnimatedSection animation="fade-in-up" delay={250} className="mb-10 flex flex-wrap items-center justify-center gap-4 sm:gap-6 text-xs text-white/90">
+            <AnimatedSection animation="fade-in-up" delay={250} className="mb-8 sm:mb-10 flex flex-col sm:flex-row flex-wrap items-center justify-center gap-2.5 sm:gap-4 lg:gap-6 text-[11px] sm:text-xs text-white/90">
               <div className="flex items-center gap-1.5">
                 <CheckCircle2 className="h-4 w-4 text-white" />
                 <span>Respon Kilat via WhatsApp</span>
@@ -66,7 +66,7 @@ export function CTASection() {
                 <Button
                   asChild
                   size="lg"
-                  className="h-12 w-full gap-2 rounded-xl bg-white px-8 text-base font-bold text-primary shadow-xl shadow-black/20 transition-all hover:bg-white/90 sm:w-auto group"
+                  className="h-11 sm:h-12 w-full gap-2 rounded-xl bg-white px-6 sm:px-8 text-[13px] sm:text-base font-bold text-primary shadow-xl shadow-black/20 transition-all hover:bg-white/90 sm:w-auto group"
                 >
                   <Link href="/kontak">
                     Hubungi Kami Sekarang
@@ -78,7 +78,7 @@ export function CTASection() {
                   asChild
                   size="lg"
                   variant="outline"
-                  className="h-12 w-full rounded-xl border-white/30 bg-transparent px-8 text-base font-semibold text-white transition-all hover:bg-white/10 hover:text-white sm:w-auto"
+                  className="h-11 sm:h-12 w-full rounded-xl border-white/30 bg-transparent px-6 sm:px-8 text-[13px] sm:text-base font-semibold text-white transition-all hover:bg-white/10 hover:text-white sm:w-auto"
                 >
                   <Link href="/harga-paket">
                     Cek Skema Harga &amp; Paket

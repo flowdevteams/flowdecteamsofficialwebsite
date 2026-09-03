@@ -50,7 +50,7 @@ export function ServiceDetailView({ service }: ServiceDetailViewProps) {
       
       {/* 1. HERO SECTION (DEEP BLUE & WHITE) */}
       <section className="relative px-4 pt-8 sm:px-6 lg:px-8">
-        <div className="container mx-auto max-w-6xl">
+        <div className="container mx-auto max-w-7xl">
           {/* Breadcrumb Navigation */}
           <div className="mb-6 flex items-center gap-2 text-xs font-mono text-muted-foreground">
             <Link href="/" className="transition-colors hover:text-foreground">
@@ -65,7 +65,7 @@ export function ServiceDetailView({ service }: ServiceDetailViewProps) {
           </div>
 
           <div className="inverse-panel relative overflow-hidden rounded-3xl border border-white/10 px-6 py-14 text-center sm:px-10 lg:px-16 lg:py-20 bg-[#142d52]">
-            <div className="absolute inset-0 inverse-grid opacity-40" />
+            <div className="absolute inset-0 inverse-grid" />
             
             {/* Ambient Lighting */}
             <div className="pointer-events-none absolute -top-20 left-1/2 -translate-x-1/2 h-72 w-96 rounded-full bg-primary/20 blur-[100px]" />
@@ -119,7 +119,7 @@ export function ServiceDetailView({ service }: ServiceDetailViewProps) {
 
       {/* 2. ROI & IMPACT METRICS */}
       <section className="px-4 sm:px-6 lg:px-8">
-        <div className="container mx-auto max-w-6xl">
+        <div className="container mx-auto max-w-7xl">
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {service.roiMetrics.map((metric, idx) => (
               <AnimatedSection
@@ -146,7 +146,7 @@ export function ServiceDetailView({ service }: ServiceDetailViewProps) {
 
       {/* 3. PROBLEM VS SOLUTION (CLEAN SLATE GREY & DEEP BLUE MATRIX) */}
       <section className="px-4 sm:px-6 lg:px-8">
-        <div className="container mx-auto max-w-6xl">
+        <div className="container mx-auto max-w-7xl">
           <div className="mb-10 text-center">
             <div className="inline-flex items-center gap-1.5 px-3 py-1 text-xs font-mono font-semibold uppercase tracking-wider rounded-md bg-muted/80 text-primary border border-border mb-3">
               <Terminal className="h-3.5 w-3.5" />
@@ -232,7 +232,7 @@ export function ServiceDetailView({ service }: ServiceDetailViewProps) {
 
       {/* 4. DELIVERABLES & KEY FEATURES */}
       <section className="px-4 sm:px-6 lg:px-8">
-        <div className="container mx-auto max-w-6xl">
+        <div className="container mx-auto max-w-7xl">
           <div className="mb-10 text-center">
             <span className="inline-block px-3 py-1 text-xs font-mono font-semibold uppercase tracking-wider rounded-md bg-primary/10 text-primary mb-3">
               CAKUPAN LAYANAN &amp; FITUR
@@ -291,7 +291,7 @@ export function ServiceDetailView({ service }: ServiceDetailViewProps) {
 
       {/* 5. TARGET AUDIENCE & TECH STACK */}
       <section className="px-4 sm:px-6 lg:px-8">
-        <div className="container mx-auto max-w-6xl">
+        <div className="container mx-auto max-w-7xl">
           <div className="grid gap-8 lg:grid-cols-2">
             
             {/* Target Audience */}
@@ -364,7 +364,7 @@ export function ServiceDetailView({ service }: ServiceDetailViewProps) {
 
       {/* 6. WORKFLOW / STEP-BY-STEP PROCESS */}
       <section className="px-4 sm:px-6 lg:px-8">
-        <div className="container mx-auto max-w-6xl">
+        <div className="container mx-auto max-w-7xl">
           <div className="mb-10 text-center">
             <span className="inline-block px-3 py-1 text-xs font-mono font-semibold uppercase tracking-wider rounded-md bg-primary/10 text-primary mb-3">
               TAHAPAN REKAYASA
@@ -444,9 +444,9 @@ export function ServiceDetailView({ service }: ServiceDetailViewProps) {
 
       {/* 8. BOTTOM CTA BANNER (DARK BLUE & WHITE) */}
       <section className="px-4 sm:px-6 lg:px-8">
-        <div className="container mx-auto max-w-6xl">
+        <div className="container mx-auto max-w-7xl">
           <div className="inverse-panel relative overflow-hidden rounded-3xl border border-white/10 px-6 py-12 text-center sm:px-12 lg:py-16 bg-[#142d52]">
-            <div className="absolute inset-0 inverse-grid opacity-40" />
+            <div className="absolute inset-0 inverse-grid" />
             
             <div className="relative z-10 mx-auto max-w-2xl">
               <h3 className="text-2xl font-bold text-white sm:text-3xl">

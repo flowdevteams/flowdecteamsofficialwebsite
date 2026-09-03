@@ -46,7 +46,7 @@ const steps = [
 
 export function HowWeWorkSection() {
   return (
-    <section className="relative overflow-hidden border-b border-border/60 bg-background py-20 lg:py-28">
+    <section className="relative overflow-hidden border-b border-border/60 bg-background py-14 sm:py-20 lg:py-28">
       <div className="pointer-events-none absolute inset-0 saas-grid opacity-35 dark:opacity-15" />
       
       {/* Animated Grid Dots */}
@@ -56,7 +56,7 @@ export function HowWeWorkSection() {
         <div className="grid-dot animate-grid-light-3" />
       </div>
 
-      <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="w-full max-w-7xl relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
           badge="ALUR KERJA TERSTRUKTUR"
           title="Metodologi Eksekusi yang Cepat, Transparan, & Terukur"
@@ -109,7 +109,10 @@ export function HowWeWorkSection() {
                                 >
                                   {step.title}
                                 </h3>
-                                <p className="text-[11px] text-muted-foreground leading-relaxed mt-0.5">
+                                <p 
+                                  className="animate-sync-text-desc text-[11px] text-muted-foreground leading-relaxed mt-0.5"
+                                  style={{ animationDelay: `-${6 - index}s` }}
+                                >
                                   {step.desc}
                                 </p>
                               </div>
@@ -147,7 +150,10 @@ export function HowWeWorkSection() {
                                 >
                                   {step.title}
                                 </h3>
-                                <p className="text-[11px] text-muted-foreground leading-relaxed mt-0.5">
+                                <p 
+                                  className="animate-sync-text-desc text-[11px] text-muted-foreground leading-relaxed mt-0.5"
+                                  style={{ animationDelay: `-${6 - index}s` }}
+                                >
                                   {step.desc}
                                 </p>
                               </div>
@@ -159,7 +165,7 @@ export function HowWeWorkSection() {
 
                     {/* Mobile Layout (Stacked) */}
                     <div 
-                      className="animate-sync-card flex md:hidden w-full items-center gap-4 rounded-xl border border-border/80 bg-card p-4 shadow-xs"
+                      className="animate-sync-card flex md:hidden w-full items-center gap-3 sm:gap-4 rounded-xl border border-border/80 bg-card p-3.5 sm:p-4 shadow-xs"
                       style={{ animationDelay: `-${6 - index}s` }}
                     >
                       <div 
@@ -181,7 +187,10 @@ export function HowWeWorkSection() {
                         >
                           {step.title}
                         </h3>
-                        <p className="text-[11px] text-muted-foreground leading-relaxed mt-0.5">
+                        <p 
+                          className="animate-sync-text-desc text-[11px] text-muted-foreground leading-relaxed mt-0.5"
+                          style={{ animationDelay: `-${6 - index}s` }}
+                        >
                           {step.desc}
                         </p>
                       </div>

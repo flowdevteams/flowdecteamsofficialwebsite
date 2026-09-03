@@ -7,97 +7,113 @@ import {
   Globe, 
   ArrowRight, 
   Check, 
-  Code2, 
   ShieldCheck, 
   Zap, 
-  Search,
-  Server,
+  Search, 
+  Server, 
   ArrowBigRight
 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { SectionHeader } from "@/components/section-header"
 import { AnimatedSection } from "@/components/animated-section"
-import { AccentTitle } from "@/components/accent-title"
 import { cn } from "@/lib/utils"
 
 const mainPillars = [
   {
     icon: Globe,
     title: "Landing Page & Web Interaktif",
-    shortTitle: "Landing Page & Web",
-    badge: "Konversi & Penjualan Cepat",
-    tagline: "Hadirkan kesan pertama yang memukau dan ubah trafik pengunjung menjadi pembeli aktif.",
-    description: "Website dan landing page berkecepatan tinggi (< 1.5 detik) yang dirancang khusus untuk kampanye iklan berbayar (Meta/TikTok/Google Ads) serta company profile modern.",
+    badge: "PROMO PERDANA 50%",
+    isPopular: true,
+    tagline: "Desain Berkecepatan Tinggi untuk Maksimalkan Konversi Penjualan",
+    description: "Halaman web berkecepatan kilat (< 1.5 detik) yang dirancang khusus untuk mengubah trafik iklan (Meta, TikTok, Google Ads) menjadi closing penjualan WhatsApp.",
     features: [
-      "Optimasi Kecepatan Ekstrem (Google PageSpeed 95+ Score)",
-      "Formula Copywriting AIDA & Tombol Order Direct WhatsApp",
-      "Pemasangan Meta Pixel, TikTok Pixel & Google Tag Manager",
-      "Gratis Domain & Hosting Cloud 1 Tahun Penuh"
+      "Performa Cepat: Google PageSpeed 95+ Score",
+      "Struktur Copywriting Persuasif & Direct WA Checkout",
+      "Setup Tracking: Meta Pixel & Google Tag Manager",
+      "Gratis Domain & Cloud Hosting 1 Tahun Penuh",
+      "100% Hak Milik Source Code & Desain Kustom"
     ],
-    startingPrice: "Mulai Rp 150.000",
+    priceLabel: "Paket UMKM & Iklan",
+    discountBadge: "Hemat 50%",
+    numericPrice: "Rp 150.000",
+    hasPrefix: false,
+    originalPrice: "Coret Rp 300.000",
+    paymentTerm: "Bayar 1x • Tanpa Royalti",
     href: "/layanan/landing-page",
-    colSpan: "lg:col-span-4"
+    ctaText: "Mulai Landing Page"
   },
   {
     icon: LayoutDashboard,
     title: "Aplikasi Web & Sistem Bisnis",
-    shortTitle: "Web App & SaaS",
-    badge: "Efisiensi Operasional",
-    tagline: "Sistem operasional kustom yang mendigitalkan seluruh alur kerja bisnis tanpa batas lisensi.",
-    description: "Pengembangan platform SaaS, sistem ERP/CRM internal, point of sale (POS) multi-cabang, hingga dashboard analitik real-time yang disesuaikan 100% dengan SOP bisnis Anda.",
+    badge: "SISTEM & SAAS",
+    isPopular: false,
+    tagline: "Digitalkan Operasional Bisnis Anda Tanpa Batas Lisensi",
+    description: "Pengembangan platform SaaS, sistem ERP/CRM, POS kasir multi-cabang, dan dashboard analitik real-time yang disesuaikan 100% dengan alur kerja bisnis Anda.",
     features: [
-      "Arsitektur Full-Stack Modern (Next.js, TypeScript & PostgreSQL)",
-      "Role-Based Access Control (RBAC) & Autentikasi Pengguna Aman",
+      "Full-Stack Modern: Next.js 16, TypeScript & PostgreSQL",
+      "Role-Based Access Control (RBAC) & Multi-Role User",
       "Integrasi Payment Gateway Otomatis (Midtrans / Xendit)",
-      "100% Hak Milik Source Code & Handover Repository Git"
+      "RESTful API & Webhooks Siap Integrasi Eksternal",
+      "Penyerahan Lengkap Git Repository & Dokumentasi"
     ],
-    startingPrice: "Mulai Rp 2.500.000",
+    priceLabel: "Sistem Kustom & SaaS",
+    discountBadge: "Milestone",
+    numericPrice: "Rp 2.500.000",
+    hasPrefix: true,
+    originalPrice: "Coret Rp 5.000.000",
+    paymentTerm: "Termin Bertahap (Milestone)",
     href: "/layanan/aplikasi-web",
-    colSpan: "lg:col-span-4"
+    ctaText: "Konsultasi Sistem Bisnis"
   },
   {
     icon: Brain,
     title: "Kecerdasan Buatan (AI) & ML",
-    shortTitle: "AI & Otomasi",
-    badge: "Otomasi & Produktivitas 24/7",
-    tagline: "Otomatisasi alur kerja berulang dan tingkatkan kecepatan respon pelanggan dengan teknologi AI mutakhir.",
-    description: "Integrasi LLM RAG berbasis dokumen SOP bisnis, pembuatan agen AI otonom untuk memproses data transaksi, hingga sistem Computer Vision untuk inspeksi mutu industri.",
+    badge: "AI & OTOMASI",
+    isPopular: false,
+    tagline: "Otomatisasi Cerdas 24/7 & Analitik Prediktif Bisnis",
+    description: "Integrasi LLM RAG berbasis dokumen SOP perusahaan, AI Agent otonom pemroses tugas transaksi, hingga Computer Vision inspeksi mutu industri manufaktur.",
     features: [
-      "Asisten AI RAG Cerdas Terlatih SOP Internal & Katalog Produk",
-      "AI Agent Otomasi Alur Kerja Antar Aplikasi (Tool Calling)",
-      "Computer Vision Real-time Quality Inspection (YOLO / PyTorch)",
-      "Privasi Data Terjamin dengan Enkripsi End-to-End"
+      "Chatbot AI RAG Cerdas Membaca Dokumen SOP & PDF",
+      "AI Agent Eksekusi Alur Kerja Otomatis (Tool Calling)",
+      "Computer Vision Inspeksi Cacat Produk Real-time",
+      "Keamanan Data Terjamin: Enkripsi End-to-End",
+      "Dashboard Monitoring Token & Latensi Respon AI"
     ],
-    startingPrice: "Mulai Rp 3.500.000",
+    priceLabel: "Model & Agent AI",
+    discountBadge: "Custom AI",
+    numericPrice: "Rp 3.500.000",
+    hasPrefix: true,
+    originalPrice: "Coret Rp 7.000.000",
+    paymentTerm: "Dataset SOP Kustom",
     href: "/layanan/kecerdasan-buatan",
-    colSpan: "lg:col-span-4"
+    ctaText: "Eksplorasi Solusi AI"
   }
 ]
 
 const supportingCapabilities = [
   {
     icon: Search,
-    title: "On-Page SEO & Analytics",
-    description: "Struktur data Schema.org dan sitemap XML agar bisnis Anda mendominasi pencarian Google."
+    title: "On-Page SEO & Schema Markup",
+    description: "Struktur teknis teroptimasi agar website bisnis Anda mudah ditemukan di halaman pencarian Google."
   },
   {
     icon: Server,
-    title: "Managed Cloud & Zero Vendor Lock",
-    description: "Infrastruktur cloud berkecepatan tinggi dengan kepemilikan penuh tanpa biaya royalti tersembunyi."
+    title: "Zero Vendor Lock-in",
+    description: "Seluruh kode, database, dan aset diserahkan 100% kepada Anda tanpa biaya royalti sewa tahunan."
   },
   {
     icon: ShieldCheck,
-    title: "Pemeliharaan & SLA Support",
-    description: "Pendampingan teknis, monitoring uptime, dan backup data berkala agar sistem selalu aman."
+    title: "Garansi & SLA Support Terkelola",
+    description: "Pemantauan uptime, backup data rutin, dan pendampingan teknis responsif demi kelancaran operasional."
   }
 ]
 
 export function ServicesPreview() {
   return (
-    <section className="border-b border-border/60 bg-background px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
-        <div className="inverse-panel relative overflow-hidden rounded-3xl border border-white/10 px-6 py-14 sm:px-10 lg:px-14 lg:py-20 bg-[#142d52]">
-          <div className="absolute inset-0 inverse-grid opacity-35" />
+    <section className="border-b border-border/60 bg-background py-16 lg:py-24">
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="inverse-panel relative w-full overflow-hidden rounded-2xl sm:rounded-3xl border border-white/10 px-4 py-10 sm:px-8 sm:py-12 lg:px-14 lg:py-20 bg-[#142d52]">
+          <div className="absolute inset-0 inverse-grid" />
           
           {/* Animated Inverse Grid Dots */}
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -108,14 +124,14 @@ export function ServicesPreview() {
 
           <div className="relative z-10">
             <SectionHeader
-              badge="3 PILAR UTAMA LAYANAN"
-              title="Solusi Rekayasa Digital yang Dirancang Khusus untuk Kebutuhan Bisnis Anda"
-              description="Kami fokus pada 3 domain keahlian inti: mendorong konversi penjualan, merapikan sistem manajemen operasional, dan menghadirkan otomatisasi kecerdasan buatan."
+              badge="3 PILAR UTAMA &amp; INVESTASI TRANSPARAN"
+              title="Pilihan Solusi Rekayasa Digital yang Dirancang untuk Pertumbuhan Nyata"
+              description="Skema investasi terukur tanpa biaya terselubung. Pilih tingkatan solusi yang paling sesuai dengan target dan skala bisnis Anda."
               tone="inverse"
             />
 
-            {/* 3 Main Pillars Cards */}
-            <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {/* 3 Main Pillars Cards Grid */}
+            <div className="mt-8 sm:mt-12 grid gap-4 sm:gap-6 md:grid-cols-2 lg:grid-cols-3 items-stretch">
               {mainPillars.map((pillar, index) => (
                 <AnimatedSection
                   key={pillar.title}
@@ -123,30 +139,47 @@ export function ServicesPreview() {
                   delay={index * 120}
                   className="h-full"
                 >
-                  <article className="group relative flex h-full flex-col justify-between overflow-hidden rounded-2xl border border-white/15 bg-white/[0.07] p-7 shadow-lg backdrop-blur transition-all duration-300 hover:-translate-y-1 hover:border-white/35 hover:bg-white/[0.12]">
+                  <article className={cn(
+                    "group relative flex h-full flex-col justify-between rounded-xl sm:rounded-2xl p-5 sm:p-6 lg:p-7 shadow-lg backdrop-blur transition-all duration-300 hover:-translate-y-1",
+                    pillar.isPopular 
+                      ? "border-2 border-white/35 bg-white/[0.10] shadow-2xl ring-1 ring-white/20" 
+                      : "border border-white/15 bg-white/[0.06] hover:border-white/30 hover:bg-white/[0.09]"
+                  )}>
+                    
+                    {/* Top Content Area */}
                     <div>
-                      {/* Top Header & Icon */}
+                      {/* Card Header: Icon & Badge */}
                       <div className="flex items-center justify-between gap-3 mb-5">
-                        <div className="flex h-12 w-12 items-center justify-center rounded-xl border border-white/20 bg-white/10 text-white shadow-xs group-hover:scale-105 transition-transform">
-                          <pillar.icon className="h-6 w-6 text-white" />
+                        <div className="flex h-11 w-11 items-center justify-center rounded-xl border border-white/20 bg-white/10 text-white shadow-xs group-hover:scale-105 transition-transform">
+                          <pillar.icon className="h-5 w-5 text-white" />
                         </div>
-                        <span className="rounded-full bg-white/10 border border-white/20 px-3 py-1 text-[10px] font-mono font-bold uppercase tracking-wider text-white">
+                        <span className={cn(
+                          "rounded-full px-3 py-1 text-[10px] font-mono font-bold uppercase tracking-wider",
+                          pillar.isPopular 
+                            ? "bg-white text-primary shadow-xs" 
+                            : "bg-white/10 text-white border border-white/20"
+                        )}>
                           {pillar.badge}
                         </span>
                       </div>
 
-                      <h3 className="text-xl font-bold text-white mb-2 leading-snug group-hover:text-white transition-colors">
+                      {/* Card Heading */}
+                      <h3 className="text-lg sm:text-xl font-bold text-white mb-2 leading-snug font-heading">
                         {pillar.title}
                       </h3>
+                      
+                      <p className="text-xs font-semibold text-white/90 mb-2 leading-relaxed">
+                        {pillar.tagline}
+                      </p>
 
-                      <p className="text-xs text-white/80 leading-relaxed mb-6">
+                      <p className="text-xs text-white/75 leading-relaxed mb-6">
                         {pillar.description}
                       </p>
 
                       {/* Feature Bullet Points */}
-                      <div className="space-y-2.5 mb-8 pb-6 border-b border-white/10 text-xs">
+                      <div className="space-y-2.5 mb-6 pb-6 border-b border-white/15 text-xs">
                         {pillar.features.map((feat) => (
-                          <div key={feat} className="flex items-start gap-2 text-white/90 leading-relaxed">
+                          <div key={feat} className="flex items-start gap-2.5 text-white/90 leading-relaxed">
                             <Check className="h-3.5 w-3.5 text-white shrink-0 mt-0.5" />
                             <span>{feat}</span>
                           </div>
@@ -154,19 +187,53 @@ export function ServicesPreview() {
                       </div>
                     </div>
 
-                    {/* Bottom Price & Link */}
-                    <div className="flex items-center justify-between pt-2">
-                      <div>
-                        <span className="block text-[10px] uppercase font-mono text-white/60 font-semibold">Investasi</span>
-                        <span className="text-sm font-bold text-white font-mono">{pillar.startingPrice}</span>
+                    {/* DEDICATED ROBUST PRICE BOX (Zero Overflow) */}
+                    <div className="flex flex-col gap-3.5">
+                      <div className="rounded-2xl border border-white/20 bg-white/10 p-4.5 backdrop-blur-md">
+                        {/* Top Label & Discount Tag */}
+                        <div className="flex items-center justify-between gap-2 mb-2">
+                          <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-white/70 truncate">
+                            {pillar.priceLabel}
+                          </span>
+                          <span className="text-[10px] font-mono font-bold px-2 py-0.5 rounded bg-white/15 border border-white/20 text-white shrink-0">
+                            {pillar.discountBadge}
+                          </span>
+                        </div>
+
+                        {/* Large Clean Price Value */}
+                        <div className="my-1.5">
+                          <div className="flex items-baseline gap-1.5">
+                            {pillar.hasPrefix && (
+                              <span className="text-xs font-mono text-white/60 font-medium">Mulai</span>
+                            )}
+                            <span className="text-2xl sm:text-3xl font-extrabold text-white font-mono tracking-tight">
+                              {pillar.numericPrice}
+                            </span>
+                          </div>
+                        </div>
+
+                        {/* Bottom Terms & Anchor Price */}
+                        <div className="mt-2.5 pt-2.5 border-t border-white/10 flex items-center justify-between text-[11px] text-white/75">
+                          <span className="font-medium truncate">{pillar.paymentTerm}</span>
+                          <span className="font-mono line-through text-white/50 text-[10px] shrink-0">
+                            {pillar.originalPrice}
+                          </span>
+                        </div>
                       </div>
-                      <Button asChild size="sm" className="rounded-lg font-semibold bg-white text-primary hover:bg-white/90">
-                        <Link href={pillar.href}>
-                          Pelajari
-                          <ArrowRight className="ml-1.5 h-3.5 w-3.5" />
+
+                      {/* Full-width CTA Button */}
+                      <Button 
+                        asChild 
+                        size="lg" 
+                        className="w-full h-11 rounded-xl font-bold text-xs sm:text-sm bg-white text-primary hover:bg-white/90 shadow-md transition-all group/btn"
+                      >
+                        <Link href={pillar.href} className="flex items-center justify-center gap-2">
+                          <span>{pillar.ctaText}</span>
+                          <ArrowRight className="h-4 w-4 transition-transform group-hover/btn:translate-x-1" />
                         </Link>
                       </Button>
                     </div>
+
                   </article>
                 </AnimatedSection>
               ))}
@@ -175,8 +242,8 @@ export function ServicesPreview() {
             {/* 3 Supporting Capabilities Strip */}
             <div className="mt-8 grid gap-4 sm:grid-cols-3">
               {supportingCapabilities.map((cap) => (
-                <div key={cap.title} className="rounded-xl border border-white/10 bg-white/[0.04] p-4 backdrop-blur text-left">
-                  <div className="flex items-center gap-2.5 text-xs font-bold text-white mb-1">
+                <div key={cap.title} className="rounded-xl border border-white/15 bg-white/[0.05] p-4 backdrop-blur text-left flex flex-col gap-1">
+                  <div className="flex items-center gap-2 text-xs font-bold text-white">
                     <cap.icon className="h-4 w-4 text-white shrink-0" />
                     <span>{cap.title}</span>
                   </div>
@@ -187,12 +254,18 @@ export function ServicesPreview() {
               ))}
             </div>
 
-            {/* Bottom Section Action */}
-            <AnimatedSection animation="fade-in-up" delay={500} className="text-center mt-12">
-              <Button asChild size="lg" className="rounded-xl font-semibold px-8 bg-white text-primary shadow-lg shadow-black/20 hover:bg-white/90">
+            {/* Bottom Section Action Buttons */}
+            <AnimatedSection animation="fade-in-up" delay={500} className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-4">
+              <Button asChild size="lg" className="h-11 rounded-xl font-bold px-7 bg-white text-primary shadow-lg shadow-black/20 hover:bg-white/90">
                 <Link href="/layanan">
-                  Lihat Rincian Seluruh Kategori Layanan
+                  Jelajahi Rincian Semua Layanan
                   <ArrowBigRight className="ml-2 h-4 w-4" />
+                </Link>
+              </Button>
+
+              <Button asChild size="lg" variant="outline" className="h-11 rounded-xl font-semibold px-7 border-white/30 bg-transparent text-white hover:bg-white/10 hover:text-white">
+                <Link href="/harga-paket">
+                  Bandingkan Skema Harga Lengkap
                 </Link>
               </Button>
             </AnimatedSection>

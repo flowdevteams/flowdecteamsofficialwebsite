@@ -46,18 +46,30 @@ const contactInfo = [
 export function ContactSection() {
   return (
     <section className="py-20 lg:py-28 bg-background">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16">
           {/* Contact Info */}
           <div>
             <AnimatedSection animation="fade-in-left">
-              <h2 className="text-3xl font-bold text-foreground mb-4">
+              <h2 className="text-3xl font-bold text-foreground mb-4 font-serif">
                 <AccentTitle text="Konsultasikan Kebutuhan Digital Anda" highlightWords={2} />
               </h2>
-              <p className="text-muted-foreground mb-8 leading-relaxed">
-                Siap mengembangkan website, aplikasi, atau sistem digital untuk bisnis Anda?  
-                Tim kami siap membantu dari tahap perencanaan hingga implementasi.
+              <p className="text-muted-foreground mb-6 leading-relaxed">
+                Diskusikan rencana pembuatan Landing Page konversi, Aplikasi Web/SaaS bisnis, atau integrasi Kecerdasan Buatan (AI) bersama tim developer Flowdev Teams.
               </p>
+              
+              {/* Direct Guarantees */}
+              <div className="flex flex-wrap gap-2.5 mb-8 text-xs font-mono">
+                <span className="px-3 py-1 rounded-full bg-primary/10 text-primary border border-primary/20">
+                  ✓ Respon WhatsApp &lt; 15 Menit
+                </span>
+                <span className="px-3 py-1 rounded-full bg-primary/10 text-primary border border-primary/20">
+                  ✓ Konsultasi Awal 100% Gratis
+                </span>
+                <span className="px-3 py-1 rounded-full bg-primary/10 text-primary border border-primary/20">
+                  ✓ Jaminan Kerahasiaan NDA
+                </span>
+              </div>
             </AnimatedSection>
 
             <div className="grid sm:grid-cols-2 gap-6">

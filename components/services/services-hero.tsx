@@ -5,9 +5,9 @@ import { AccentTitle } from "@/components/accent-title"
 
 export function ServicesHero() {
   return (
-    <section className="bg-background px-4 py-8 sm:px-6 lg:px-8">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="inverse-panel relative mx-auto max-w-6xl overflow-hidden rounded-xl border border-white/10 px-5 py-16 text-center sm:px-8 lg:px-12 lg:py-20">
+    <section className="bg-background py-8">
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="inverse-panel relative w-full overflow-hidden rounded-3xl border border-white/10 px-6 py-14 text-center sm:px-10 lg:px-14 lg:py-20 bg-[#142d52]">
           <div className="absolute inset-0 inverse-grid" />
           
           {/* Animated Inverse Grid Dots */}
@@ -18,26 +18,25 @@ export function ServicesHero() {
           </div>
 
           <div className="relative z-10 mx-auto max-w-4xl">
-          <AnimatedSection animation="fade-in-down">
-            <span className="inline-block px-4 py-1.5 rounded-md text-sm font-medium bg-white/10 text-white mb-6 border border-white/15">
-              Layanan Kami
-            </span>
-          </AnimatedSection>
-
-          <AnimatedSection animation="fade-in-up" delay={100}>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 text-balance">
-              <AccentTitle text="Solusi Digital Terintegrasi" highlightWords={1} className="text-white" accentClassName="text-white/62" />
-            </h1>
-          </AnimatedSection>
-
-          <AnimatedSection animation="fade-in-up" delay={200}>
-            <p className="text-lg sm:text-xl text-white/82 leading-relaxed text-pretty">
-              Mulai dari perencanaan konsep hingga peluncuran dan pengembangan berkelanjutan,
-              kami menyediakan layanan digital end-to-end untuk mewujudkan visi bisnis Anda
-              serta mendorong pertumbuhan yang berkelanjutan.
-            </p>
-          </AnimatedSection>
+            <AnimatedSection animation="fade-in-down">
+              <span className="inline-block px-4 py-1.5 rounded-full text-xs font-mono font-semibold uppercase tracking-wider bg-white/10 text-white mb-6 border border-white/20">
+                LAYANAN &amp; SPESIALISASI TEKNIS
+              </span>
+            </AnimatedSection>
+            
+            <AnimatedSection animation="fade-in-up" delay={100}>
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6 text-balance font-heading">
+                <AccentTitle text="Layanan Rekayasa Digital Komprehensif untuk Skalabilitas Bisnis" highlightWords={3} className="text-white" accentClassName="text-white/60" />
+              </h1>
+            </AnimatedSection>
+            
+            <AnimatedSection animation="fade-in-up" delay={200}>
+              <p className="text-base sm:text-lg text-white/80 leading-relaxed text-pretty">
+                Dari landing page konversi tinggi untuk akselerasi pemasaran, sistem web enterprise kustom, hingga integrasi kecerdasan buatan (AI) otonom. Dibangun dengan standar performa 95+ PageSpeed dan 100% kepemilikan source code.
+              </p>
+            </AnimatedSection>
           </div>
+
         </div>
       </div>
     </section>

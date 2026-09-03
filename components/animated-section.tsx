@@ -41,8 +41,8 @@ export function AnimatedSection({
 
   const getAnimationStyles = (): React.CSSProperties => {
     const baseStyles: React.CSSProperties = {
-      transition: "all 0.8s cubic-bezier(0.16, 1, 0.3, 1)",
-      willChange: "transform, opacity", // Optimasi performa GPU
+      transition: "opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1)",
+      willChange: !shouldAnimate ? "transform, opacity" : "auto",
     }
     
     if (!shouldAnimate) {

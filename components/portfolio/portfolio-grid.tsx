@@ -424,7 +424,7 @@ export function PortfolioGrid() {
 
   return (
     <section className="py-16 lg:py-24 bg-background relative">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Controls: Category Tabs & Search Bar */}
         <div className="flex flex-col lg:flex-row items-center justify-between gap-6 mb-12">

@@ -8,7 +8,6 @@ import { ServicesPreview } from "@/components/home/services-preview"
 import { WhyChooseUs } from "@/components/home/why-choose-us"
 import { TestimonialsSection } from "@/components/home/testimonials-section"
 import { CTASection } from "@/components/home/cta-section"
-import { PricingPreviewSection } from "@/components/home/pricing-section"
 import { HowWeWorkSection } from "@/components/home/howwe-work"
 import { GlowLogo, GlowRing } from "@/components/effects"
 
@@ -16,20 +15,32 @@ export default function HomePage() {
   return (
     <>
       <Navigation />
-      <main className="relative min-h-screen">
-        {/* 1. HeroSection (menggunakan <GlowRing /> di background) */}
+      <main className="relative min-h-screen overflow-x-clip w-full max-w-full">
+        {/* 1. Hero Section */}
         <HeroSection />
         
+        {/* 2. Client Social Proof */}
         <StatsSection />
+
+        {/* 3. Interactive Portfolio Showcase */}
         <PortfolioShowcaseSection />
-        <PricingPreviewSection />
+
+        {/* 4. 3 Core Business Pillars & Starting Investments */}
         <ServicesPreview />
+
+        {/* 5. How We Work / Alur Kerja */}
         <HowWeWorkSection />
-        <PartnersSection />
+
+        {/* 6. Why Choose Us / Komparasi Nilai */}
         <WhyChooseUs />
+
+        {/* 7. Client Testimonials */}
         <TestimonialsSection />
 
-        {/* 2. Contoh Penggunaan <GlowLogo /> dan <GlowRing /> di CTA / Floating Section */}
+        {/* 8. Tech Ecosystem Partners */}
+        <PartnersSection />
+
+        {/* 9. Final CTA */}
         <div className="relative overflow-hidden">
           {/* Ambient Glow Effects Layer */}
           <div className="pointer-events-none absolute -left-20 -bottom-20 z-0 hidden opacity-60 lg:block">

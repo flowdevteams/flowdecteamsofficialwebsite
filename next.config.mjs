@@ -3,8 +3,24 @@ const nextConfig = {
   typescript: {
     ignoreBuildErrors: true,
   },
+  compress: true,
+  experimental: {
+    optimizePackageImports: [
+      'lucide-react',
+      '@radix-ui/react-accordion',
+      '@radix-ui/react-dropdown-menu',
+      '@radix-ui/react-dialog',
+      'date-fns',
+    ],
+  },
   images: {
-    unoptimized: true,
+    formats: ['image/avif', 'image/webp'],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'didinmediagroup.s3.ap-southeast-3.amazonaws.com',
+      },
+    ],
   },
   async redirects() {
     return [

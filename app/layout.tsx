@@ -4,24 +4,28 @@ import { Antic_Didone, Geist_Mono, Plus_Jakarta_Sans } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import { ThemeProvider } from '@/components/theme-provider'
 import "./globals.css"
-import "leaflet/dist/leaflet.css"
 
 
 const anticDidone = Antic_Didone({
   subsets: ["latin"],
   weight: "400",
   variable: "--font-serif",
+  display: "swap",
+  preload: true,
 });
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
   variable: "--font-body",
   display: "swap",
+  preload: true,
 });
 
 const geistMono = Geist_Mono({
   subsets: ["latin"],
   variable: "--font-geist-mono",
+  display: "swap",
+  preload: true,
 });
 
 export const metadata: Metadata = {

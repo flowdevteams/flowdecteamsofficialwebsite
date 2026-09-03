@@ -106,7 +106,8 @@ export function WhyChooseUs() {
               const isAfterActive = animProgress >= 0.50
 
               return (
-                <div className="relative w-full h-full overflow-hidden flex flex-col items-center justify-center pt-14 lg:pt-16 pb-6 px-6 xl:px-12 gap-3 xl:gap-4">
+                <div className="relative w-full h-full overflow-hidden flex flex-col items-center justify-center pt-14 lg:pt-16 pb-6">
+                  <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-center gap-3 xl:gap-4">
                   
                   {/* Floating Controller / Status Bar */}
                   <div className="relative z-30 max-w-4xl mx-auto w-full flex items-center justify-between gap-4 bg-card/85 dark:bg-card/75 backdrop-blur-md border border-border/80 rounded-full px-5 py-2 shadow-sm">
@@ -147,7 +148,7 @@ export function WhyChooseUs() {
                   </div>
 
                   {/* MAIN COMPARISON CONTAINER */}
-                  <div className="relative w-full max-w-7xl h-[520px] xl:h-[540px] flex items-center justify-center">
+                  <div className="relative w-full h-[520px] xl:h-[540px] flex items-center justify-center">
                     
                     {/* === LAYER 1: BEFORE CONTENT === */}
                     <div 
@@ -278,6 +279,7 @@ export function WhyChooseUs() {
                       </div>
                     </div>
 
+                  </div>
                   </div>
                 </div>
               )

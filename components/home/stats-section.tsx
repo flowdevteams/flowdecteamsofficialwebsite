@@ -20,20 +20,20 @@ const clients = [
 export function StatsSection() {
   return (
     <section className="border-b border-border/60 bg-card py-16">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
           badge="Dipercaya Bisnis & Perusahaan di Indonesia"
           title="Klien yang Mempercayai Flowdev Teams"
         />
 
-        <div className="mt-12 flex flex-wrap justify-center gap-5 sm:gap-6">
+        <div className="mt-8 sm:mt-12 flex flex-wrap justify-center gap-4 sm:gap-5 sm:gap-6">
           {clients.map((client, index) => (
             <AnimatedSection
               key={client.id}
               animation="fade-in-up"
               delay={index * 80}
             >
-              <div className="group relative flex h-44 w-72 sm:w-80 cursor-default flex-col items-center justify-center rounded-2xl border border-border/80 bg-background p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-xl hover:shadow-primary/10">
+              <div className="group relative flex h-36 sm:h-44 w-full sm:w-80 cursor-default flex-col items-center justify-center rounded-2xl border border-border/80 bg-background p-5 sm:p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-xl hover:shadow-primary/10">
                 <Image
                   src={client.logo}
                   alt={client.name}

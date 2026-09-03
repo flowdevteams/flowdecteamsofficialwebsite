@@ -186,9 +186,11 @@
 
 .inverse-grid {
   background-image:
-    linear-gradient(to right, rgb(255 255 255 / 0.08) 1px, transparent 1px),
-    linear-gradient(to bottom, rgb(255 255 255 / 0.08) 1px, transparent 1px);
-  background-size: 56px 56px;
+    linear-gradient(to right, rgba(255, 255, 255, 0.15) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.15) 1px, transparent 1px);
+  background-size: 52px 52px;
+  mask-image: radial-gradient(ellipse 90% 85% at 50% 50%, rgba(0, 0, 0, 1) 35%, rgba(0, 0, 0, 0.5) 75%, transparent 100%);
+  -webkit-mask-image: radial-gradient(ellipse 90% 85% at 50% 50%, rgba(0, 0, 0, 1) 35%, rgba(0, 0, 0, 0.5) 75%, transparent 100%);
 }
 
 .dark .saas-surface {
@@ -213,9 +215,22 @@
   }
 }
 
-/* Smooth scroll behavior */
+/* Smooth scroll & Mobile-First Global Rules */
 html {
   scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  overflow-x: clip;
+  max-width: 100vw;
+}
+
+body {
+  overflow-x: clip;
+  max-width: 100vw;
+  position: relative;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
 }
 
 /* AOS-like animation classes */
@@ -529,6 +544,16 @@ html {
   animation: syncCardIcon 6s linear infinite;
 }
 
+/* Description Synced Colors for High Contrast */
+@keyframes syncCardTextDesc {
+  0%, 8% { color: rgba(255, 255, 255, 0.85); }
+  20%, 80% { color: hsl(var(--muted-foreground)); }
+  92%, 100% { color: rgba(255, 255, 255, 0.85); }
+}
+.animate-sync-text-desc {
+  animation: syncCardTextDesc 6s linear infinite;
+}
+
 /* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
@@ -577,4 +602,16 @@ html {
 .animate-logo-ripple-delay {
   animation: logo-ripple 3s cubic-bezier(0.1, 0, 0.3, 1) infinite;
   animation-delay: 1.5s;
+}
+
+/* Performance Rendering Optimizations */
+.gpu-accelerated {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+.content-auto {
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 600px;
 }

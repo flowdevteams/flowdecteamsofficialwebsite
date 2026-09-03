@@ -30,15 +30,15 @@ const testimonials = [
 
 export function TestimonialsSection() {
   return (
-    <section className="border-b border-border/60 bg-background py-20 lg:py-28">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="border-b border-border/60 bg-background py-14 sm:py-20 lg:py-28">
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
           badge="Testimoni Klien"
           title="Dipercaya oleh Klien dari Berbagai Industri"
           description="Bukan sekadar janji. Berikut pengalaman nyata klien yang telah menggunakan jasa pembuatan Website dari Flowdev Teams."
         />
 
-        <div className="mt-16 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-10 sm:mt-16 grid gap-4 sm:gap-5 md:grid-cols-2 lg:grid-cols-3">
           {testimonials.map((testimonial, index) => (
             <AnimatedSection
               key={testimonial.name}
@@ -46,7 +46,7 @@ export function TestimonialsSection() {
               delay={index * 100}
               className="h-full"
             >
-              <article className="group relative flex h-full flex-col justify-between overflow-hidden rounded-xl border border-border/70 bg-card/90 p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-primary/35 hover:shadow-xl hover:shadow-primary/10 lg:p-8">
+              <article className="group relative flex h-full flex-col justify-between overflow-hidden rounded-xl border border-border/70 bg-card/90 p-5 sm:p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-primary/35 hover:shadow-xl hover:shadow-primary/10 lg:p-8">
                 <div className="relative z-10 flex flex-col flex-1">
                 <div className="mb-6 flex h-10 w-10 items-center justify-center rounded-lg border border-primary/15 bg-primary/10">
                   <Quote className="h-5 w-5 text-primary" />
@@ -63,7 +63,7 @@ export function TestimonialsSection() {
                 </div>
 
                 {/* Content */}
-                <p className="mb-8 flex-1 leading-relaxed text-foreground opacity-90">
+                <p className="mb-6 sm:mb-8 flex-1 text-[13px] sm:text-sm lg:text-base leading-relaxed text-foreground opacity-90">
                   {`"${testimonial.content}"`}
                 </p>
 

@@ -50,7 +50,7 @@ export function HeroSection() {
       ref={mouseGlow.ref}
       onMouseEnter={mouseGlow.onMouseEnter}
       onMouseLeave={mouseGlow.onMouseLeave}
-      className="relative overflow-hidden border-b border-border/60 bg-gradient-to-b from-background via-muted/20 to-background py-16 sm:py-24 lg:py-28"
+      className="relative overflow-hidden border-b border-border/60 bg-gradient-to-b from-background via-muted/20 to-background pt-24 pb-14 sm:pt-28 sm:pb-20 lg:pt-36 lg:pb-28"
     >
       {/* Interactive Mouse Follow Glow */}
       <MouseGlowOverlay className="z-[1]" />
@@ -64,23 +64,24 @@ export function HeroSection() {
       <div className="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-primary/10 to-transparent dark:from-primary/10" />
       <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-muted/70 to-transparent dark:from-background" />
 
-      <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-2 lg:text-left">
+      <div className="w-full max-w-7xl relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid items-center gap-12 lg:grid-cols-2 lg:text-left">
           
           {/* Left Column: Copywriting & CTAs */}
           <div className="text-center lg:text-left">
             <AnimatedSection animation="fade-in-down">
-              <div className="inline-flex items-center gap-2 rounded-md border border-primary/20 bg-card/90 px-3 py-1.5 text-xs font-mono font-semibold text-primary shadow-sm backdrop-blur">
-                <Sparkles className="h-3.5 w-3.5" aria-hidden="true" />
-                <span>// MITRA REKAYASA PERANGKAT LUNAK &amp; TEKNOLOGI DIGITAL</span>
+              <div className="inline-flex max-w-full items-center gap-1.5 sm:gap-2 rounded-md border border-primary/20 bg-card/90 px-2.5 sm:px-3 py-1.5 text-[10px] sm:text-xs font-mono font-semibold text-primary shadow-sm backdrop-blur">
+                <Sparkles className="h-3 w-3 sm:h-3.5 sm:w-3.5 shrink-0" aria-hidden="true" />
+                <span className="sm:hidden tracking-tight">// SOFTWARE HOUSE &amp; TEKNOLOGI DIGITAL</span>
+                <span className="hidden sm:inline">// MITRA REKAYASA PERANGKAT LUNAK &amp; TEKNOLOGI DIGITAL</span>
               </div>
             </AnimatedSection>
 
             <AnimatedSection animation="fade-in-up" delay={100}>
-              <h1 className="mt-6 text-4xl font-semibold leading-[1.08] text-foreground text-balance sm:text-5xl md:text-6xl font-heading">
+              <h1 className="mt-4 sm:mt-6 text-[1.65rem] xs:text-[1.85rem] font-semibold leading-[1.15] text-foreground text-balance sm:text-4xl md:text-5xl lg:text-6xl font-heading">
                 <span className="block">Jasa Pembuatan</span>
                 <span className="relative block text-primary min-h-[1.2em]">
-                  <span>{typedText}</span>
+                  <span className="break-words">{typedText}</span>
                   <span className="animate-caret inline-block ml-0.5 text-primary">|</span>
                 </span>
                 <span className="block">
@@ -90,21 +91,21 @@ export function HeroSection() {
             </AnimatedSection>
 
             <AnimatedSection animation="fade-in-up" delay={200}>
-              <p className="mt-5 max-w-2xl text-sm sm:text-base leading-relaxed text-muted-foreground text-pretty lg:mx-0">
+              <p className="mt-4 sm:mt-5 max-w-2xl text-[13px] sm:text-sm md:text-base leading-relaxed text-muted-foreground text-pretty lg:mx-0">
                 Flowdev Teams membangun solusi teknologi berkinerja tinggi—mulai dari <strong className="text-foreground">Landing Page Konversi Tinggi (mulai Rp 150rb)</strong>, <strong className="text-foreground">Aplikasi Web &amp; Sistem Bisnis (ERP/CRM/SaaS)</strong>, hingga <strong className="text-foreground">Integrasi AI Cerdas</strong>. 100% Hak Milik Source Code, Tanpa Bloatware &amp; Garansi Kecepatan.
               </p>
             </AnimatedSection>
 
             <AnimatedSection animation="fade-in-up" delay={300}>
-              <div className="mt-8 flex flex-col items-stretch gap-3 sm:flex-row sm:items-center sm:justify-center lg:justify-start">
-                <Button asChild size="lg" className="h-12 rounded-xl px-8 text-base font-semibold shadow-lg shadow-primary/20 group">
+              <div className="mt-6 sm:mt-8 flex flex-col items-stretch gap-3 sm:flex-row sm:items-center sm:justify-center lg:justify-start">
+                <Button asChild size="lg" className="h-11 sm:h-12 rounded-xl px-6 sm:px-8 text-[13px] sm:text-base font-semibold shadow-lg shadow-primary/20 group">
                   <Link href="/kontak">
                     Konsultasi Proyek Sekarang
                     <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                   </Link>
                 </Button>
 
-                <Button asChild variant="outline" size="lg" className="h-12 rounded-xl bg-card/80 px-7 text-base shadow-sm hover:bg-card">
+                <Button asChild variant="outline" size="lg" className="h-11 sm:h-12 rounded-xl bg-card/80 px-5 sm:px-7 text-[13px] sm:text-base shadow-sm hover:bg-card">
                   <Link href="/portofolio">
                     <Play className="mr-2 h-4 w-4 text-primary" />
                     Lihat Portofolio Nyata
@@ -115,7 +116,7 @@ export function HeroSection() {
 
             {/* 3 Core Value Props */}
             <AnimatedSection animation="fade-in-up" delay={400}>
-              <div className="mt-10 grid sm:grid-cols-3 gap-3">
+              <div className="mt-8 sm:mt-10 grid grid-cols-1 sm:grid-cols-3 gap-2.5 sm:gap-3">
                 {[
                   { icon: ShieldCheck, title: "100% IP Handover", subtitle: "Source code & DB milik Anda" },
                   { icon: Zap, title: "PageSpeed 95+ Score", subtitle: "Loading kilat tanpa plugin berat" },
@@ -123,7 +124,7 @@ export function HeroSection() {
                 ].map((item) => (
                   <div
                     key={item.title}
-                    className="flex flex-col gap-1 rounded-xl border border-border/80 bg-card/80 p-3.5 text-left shadow-xs backdrop-blur"
+                    className="flex flex-col gap-1 rounded-xl border border-border/80 bg-card/80 p-3 sm:p-3.5 text-left shadow-xs backdrop-blur"
                   >
                     <div className="flex items-center gap-2">
                       <item.icon className="h-4 w-4 text-primary shrink-0" />
@@ -137,8 +138,10 @@ export function HeroSection() {
           </div>
 
           {/* Right Column: Visual Glow Logo */}
-          <AnimatedSection animation="scale-in" delay={500} className="flex items-center justify-center lg:justify-end">
-            <GlowLogo size={420} className="w-full max-w-[420px] lg:scale-105" />
+          <AnimatedSection animation="scale-in" delay={500} className="flex items-center justify-center lg:justify-end w-full py-4 sm:py-6 lg:py-0">
+            <div className="relative flex items-center justify-center w-48 h-48 xs:w-56 xs:h-56 sm:w-64 sm:h-64 md:w-80 md:h-80 lg:w-[400px] lg:h-[400px] aspect-square">
+              <GlowLogo className="w-full h-full" intensity={1} />
+            </div>
           </AnimatedSection>
         </div>
       </div>
