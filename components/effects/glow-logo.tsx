@@ -23,7 +23,7 @@ interface RippleRing {
   type: "auto" | "hover"
 }
 
-function useRippleEngine(isHovered: boolean) {
+function useRippleEngine(isHovered: boolean, isVisible: boolean = true) {
   const [rings, setRings] = useState<RippleRing[]>([])
   const idCounter = useRef(0)
   const autoTimerRef = useRef<NodeJS.Timeout | null>(null)
@@ -31,6 +31,7 @@ function useRippleEngine(isHovered: boolean) {
   // Spawn a single ripple
   const spawnRipple = useCallback(
     (type: "auto" | "hover" = "auto") => {
+      if (!isVisible) return
       const id = idCounter.current++
       const ring: RippleRing = {
         id,
@@ -47,11 +48,17 @@ function useRippleEngine(isHovered: boolean) {
         setRings((prev) => prev.filter((r) => r.id !== id))
       }, ring.duration + 100)
     },
-    []
+    [isVisible]
   )
 
   // Auto-spawn staggered ripples every cycle
   useEffect(() => {
+    if (!isVisible) {
+      if (autoTimerRef.current) clearInterval(autoTimerRef.current)
+      setRings([])
+      return
+    }
+
     const spawnCycle = () => {
       spawnRipple("auto")
       setTimeout(() => spawnRipple("auto"), 800)
@@ -67,16 +74,16 @@ function useRippleEngine(isHovered: boolean) {
     return () => {
       if (autoTimerRef.current) clearInterval(autoTimerRef.current)
     }
-  }, [spawnRipple])
+  }, [spawnRipple, isVisible])
 
   // Extra burst when hovered
   useEffect(() => {
-    if (isHovered) {
+    if (isHovered && isVisible) {
       spawnRipple("hover")
       const t = setTimeout(() => spawnRipple("hover"), 400)
       return () => clearTimeout(t)
     }
-  }, [isHovered, spawnRipple])
+  }, [isHovered, spawnRipple, isVisible])
 
   return rings
 }
@@ -90,13 +97,30 @@ export function GlowLogo({
   logoSrc = "/logo/flowdevteams-vector.svg",
 }: GlowLogoProps) {
   const containerRef = useRef<HTMLDivElement>(null)
+  const [isVisible, setIsVisible] = useState(true)
   
   // Mouse position & tilt physics
   const [mousePos, setMousePos] = useState({ x: 0, y: 0, isActive: false })
   const [tilt, setTilt] = useState({ x: 0, y: 0 })
 
-  // Ripple engine
-  const rippleRings = useRippleEngine(mousePos.isActive)
+  // IntersectionObserver to pause off-screen animations
+  useEffect(() => {
+    const el = containerRef.current
+    if (!el || typeof IntersectionObserver === "undefined") return
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry) setIsVisible(entry.isIntersecting)
+      },
+      { threshold: 0.05 }
+    )
+
+    observer.observe(el)
+    return () => observer.disconnect()
+  }, [])
+
+  // Ripple engine (paused when off-screen)
+  const rippleRings = useRippleEngine(mousePos.isActive, isVisible)
 
   useEffect(() => {
     if (!interactive) return
@@ -200,7 +224,8 @@ export function GlowLogo({
       <div 
         className="absolute inset-0 z-0 pointer-events-none transition-all duration-700 flex items-center justify-center"
         style={{
-          transform: mousePos.isActive ? "scale(1.08)" : "scale(1)",
+          transform: mousePos.isActive ? "scale(1.08) translateZ(0)" : "scale(1) translateZ(0)",
+          willChange: "transform, opacity",
         }}
       >
         <Image

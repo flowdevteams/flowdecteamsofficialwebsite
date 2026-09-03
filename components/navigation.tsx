@@ -118,14 +118,14 @@ export function Navigation() {
     <>
       <header
         className={cn(
-          "fixed top-0 left-0 right-0 z-[100] transition-all duration-500 ease-out",
+          "fixed top-0 left-0 right-0 z-[100] transition-all duration-300 ease-out",
           isScrolled || isOpen
-            ? "border-b border-primary/20 bg-background/40 backdrop-blur-xl"
-            : "border-b border-transparent bg-background/5 backdrop-blur-sm"
+            ? "border-b border-primary/20 bg-background/85 sm:bg-background/40 backdrop-blur-md sm:backdrop-blur-xl"
+            : "border-b border-transparent bg-background/5 backdrop-blur-xs sm:backdrop-blur-sm"
         )}
         style={{
           boxShadow: (isScrolled || isOpen) 
-            ? '0 4px 20px -2px color-mix(in oklch, var(--primary) 40%, transparent), 0 12px 40px -8px color-mix(in oklch, var(--primary) 90%, transparent)' 
+            ? '0 4px 20px -2px rgba(20, 45, 82, 0.15)' 
             : 'none'
         }}
       >
