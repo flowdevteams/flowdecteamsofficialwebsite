@@ -156,8 +156,8 @@
 
 .saas-grid {
   background-image:
-    linear-gradient(to right, color-mix(in oklch, var(--border) 72%, transparent) 1px, transparent 1px),
-    linear-gradient(to bottom, color-mix(in oklch, var(--border) 72%, transparent) 1px, transparent 1px);
+    linear-gradient(to right, color-mix(in oklch, var(--foreground) 10%, transparent) 1px, transparent 1px),
+    linear-gradient(to bottom, color-mix(in oklch, var(--foreground) 10%, transparent) 1px, transparent 1px);
   background-size: 56px 56px;
 }
 
@@ -424,6 +424,15 @@ body {
   box-shadow: 0 0 6px 2px rgba(255,255,255,0.7);
   border-radius: 50%;
   animation: pulseDotInverse 2s ease-in-out infinite;
+}
+
+@keyframes cursorBlink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.animate-cursor {
+  animation: cursorBlink 0.9s step-end infinite;
 }
 
 @keyframes gridLightPath1 {

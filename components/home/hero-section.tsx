@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react"
 import Link from "next/link"
-import { ArrowRight, Code2, Sparkles, ShieldCheck, Zap, Layers, Play } from "lucide-react"
+import { ArrowRight, Code2, Sparkles, ShieldCheck, Zap, Layers, Play, Target } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { AnimatedSection } from "@/components/animated-section"
 import { GlowLogo } from "@/components/effects"
@@ -10,39 +10,43 @@ import { useMouseGlow } from "@/components/effects/use-mouse-glow"
 import { MouseGlowOverlay } from "@/components/effects/mouse-glow-overlay"
 import { AccentTitle } from "@/components/accent-title"
 
-const rotatingWords = [
-  "Website & Landing Page",
-  "Aplikasi Web & Sistem Bisnis",
-  "Solusi Kecerdasan Buatan (AI)",
-  "Platform Digital Skalabel"
-]
+const rotatingWords = ["Website", "Web App"]
 
 export function HeroSection() {
-  const [wordIndex, setWordIndex] = useState(0)
-  const [typedText, setTypedText] = useState("")
-  const [isDeleting, setIsDeleting] = useState(false)
   const mouseGlow = useMouseGlow<HTMLElement>()
+  const [wordIndex, setWordIndex] = useState(0)
+  const [typedText, setTypedText] = useState("Website")
+  const [isDeleting, setIsDeleting] = useState(false)
 
   useEffect(() => {
     const currentWord = rotatingWords[wordIndex]
-    const typeSpeed = isDeleting ? 40 : 80
 
-    const timeout = setTimeout(() => {
-      if (!isDeleting) {
-        setTypedText(currentWord.substring(0, typedText.length + 1))
-        if (typedText.length + 1 === currentWord.length) {
-          setTimeout(() => setIsDeleting(true), 1800)
-        }
-      } else {
-        setTypedText(currentWord.substring(0, typedText.length - 1))
-        if (typedText.length === 0) {
-          setIsDeleting(false)
-          setWordIndex((prev) => (prev + 1) % rotatingWords.length)
-        }
-      }
-    }, typeSpeed)
+    // 1. Full word reached: wait 1200ms before deleting
+    if (!isDeleting && typedText === currentWord) {
+      const pauseTimeout = setTimeout(() => {
+        setIsDeleting(true)
+      }, 1200)
+      return () => clearTimeout(pauseTimeout)
+    }
 
-    return () => clearTimeout(timeout)
+    // 2. Empty word reached: brief pause then switch to next word
+    if (isDeleting && typedText === "") {
+      const nextWordTimeout = setTimeout(() => {
+        setIsDeleting(false)
+        setWordIndex((prev) => (prev + 1) % rotatingWords.length)
+      }, 200)
+      return () => clearTimeout(nextWordTimeout)
+    }
+
+    // 3. Normal typing (60ms) or deleting (30ms) step
+    const stepSpeed = isDeleting ? 30 : 60
+    const stepTimeout = setTimeout(() => {
+      setTypedText((prev) =>
+        isDeleting ? prev.slice(0, -1) : currentWord.slice(0, prev.length + 1)
+      )
+    }, stepSpeed)
+
+    return () => clearTimeout(stepTimeout)
   }, [typedText, isDeleting, wordIndex])
 
   return (
@@ -55,6 +59,12 @@ export function HeroSection() {
       {/* Interactive Mouse Follow Glow */}
       <MouseGlowOverlay className="z-[1]" />
       
+      {/* Background Grid Pattern with Radial Fade */}
+      <div 
+        className="pointer-events-none absolute inset-0 saas-grid opacity-85 dark:opacity-60 [mask-image:radial-gradient(ellipse_85%_70%_at_50%_35%,#000_55%,transparent_100%)]" 
+        aria-hidden="true" 
+      />
+
       {/* Animated Grid Dots */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="grid-dot animate-grid-light-1" />
@@ -78,21 +88,31 @@ export function HeroSection() {
             </AnimatedSection>
 
             <AnimatedSection animation="fade-in-up" delay={100}>
-              <h1 className="mt-4 sm:mt-6 text-[1.65rem] xs:text-[1.85rem] font-semibold leading-[1.15] text-foreground text-balance sm:text-4xl md:text-5xl lg:text-6xl font-heading">
+              <h1 className="mt-4 sm:mt-6 text-[1.85rem] xs:text-3xl sm:text-4xl md:text-5xl lg:text-[3.25rem] font-bold leading-[1.18] text-foreground font-heading tracking-tight">
                 <span className="block">Jasa Pembuatan</span>
-                <span className="relative block text-primary min-h-[1.2em]">
-                  <span className="break-words">{typedText}</span>
-                  <span className="animate-caret inline-block ml-0.5 text-primary">|</span>
+                <span className="block text-primary">
+                  <span className="inline-grid grid-cols-1 grid-rows-1">
+                    {/* Ghost text anchors: locks max width and line-height permanently */}
+                    <span className="invisible col-start-1 row-start-1 select-none pointer-events-none whitespace-nowrap" aria-hidden="true">
+                      Website
+                    </span>
+                    <span className="invisible col-start-1 row-start-1 select-none pointer-events-none whitespace-nowrap" aria-hidden="true">
+                      Web App
+                    </span>
+                    {/* Real active typewriter text */}
+                    <span className="col-start-1 row-start-1 inline-flex items-center justify-center lg:justify-start whitespace-nowrap">
+                      <span>{typedText}</span>
+                      <span className="animate-cursor inline-block ml-1 text-primary font-normal">|</span>
+                    </span>
+                  </span>
                 </span>
-                <span className="block">
-                  Untuk Pertumbuhan <span className="text-primary">Bisnis Nyata</span>
-                </span>
+                <span className="block">&amp; Otomasi Sistem</span>
               </h1>
             </AnimatedSection>
 
             <AnimatedSection animation="fade-in-up" delay={200}>
-              <p className="mt-4 sm:mt-5 max-w-2xl text-[13px] sm:text-sm md:text-base leading-relaxed text-muted-foreground text-pretty lg:mx-0">
-                Flowdev Teams membangun solusi teknologi berkinerja tinggi—mulai dari <strong className="text-foreground">Landing Page Konversi Tinggi (mulai Rp 150rb)</strong>, <strong className="text-foreground">Aplikasi Web &amp; Sistem Bisnis (ERP/CRM/SaaS)</strong>, hingga <strong className="text-foreground">Integrasi AI Cerdas</strong>. 100% Hak Milik Source Code, Tanpa Bloatware &amp; Garansi Kecepatan.
+              <p className="mt-4 sm:mt-5 max-w-2xl text-[15px] sm:text-lg leading-relaxed text-muted-foreground text-pretty lg:mx-0">
+                Software house profesional: cepat, rapi, dan gratis konsultasi bisnis.
               </p>
             </AnimatedSection>
 
@@ -100,7 +120,7 @@ export function HeroSection() {
               <div className="mt-6 sm:mt-8 flex flex-col items-stretch gap-3 sm:flex-row sm:items-center sm:justify-center lg:justify-start">
                 <Button asChild size="lg" className="h-11 sm:h-12 rounded-xl px-6 sm:px-8 text-[13px] sm:text-base font-semibold shadow-lg shadow-primary/20 group">
                   <Link href="/kontak">
-                    Konsultasi Proyek Sekarang
+                    Gratis Konsultasi Sekarang
                     <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                   </Link>
                 </Button>
@@ -118,9 +138,9 @@ export function HeroSection() {
             <AnimatedSection animation="fade-in-up" delay={400}>
               <div className="mt-8 sm:mt-10 grid grid-cols-1 sm:grid-cols-3 gap-2.5 sm:gap-3">
                 {[
-                  { icon: ShieldCheck, title: "100% IP Handover", subtitle: "Source code & DB milik Anda" },
-                  { icon: Zap, title: "PageSpeed 95+ Score", subtitle: "Loading kilat tanpa plugin berat" },
-                  { icon: Layers, title: "Milestone Escrow", subtitle: "Pembayaran bertahap terukur" },
+                  { icon: Target, title: "Solusi Presisi", subtitle: "Dirancang sesuai kebutuhan" },
+                  { icon: Zap, title: "Eksekusi Cepat", subtitle: "Pengerjaan rapi & profesional" },
+                  { icon: ShieldCheck, title: "Biaya Transparan", subtitle: "Jujur & bersahabat di awal" },
                 ].map((item) => (
                   <div
                     key={item.title}
