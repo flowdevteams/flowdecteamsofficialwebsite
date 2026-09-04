@@ -52,8 +52,6 @@ export function HeroSection() {
   return (
     <section
       ref={mouseGlow.ref}
-      onMouseEnter={mouseGlow.onMouseEnter}
-      onMouseLeave={mouseGlow.onMouseLeave}
       className="relative overflow-hidden border-b border-border/60 bg-gradient-to-b from-background via-muted/20 to-background pt-24 pb-14 sm:pt-28 sm:pb-20 lg:pt-36 lg:pb-28"
     >
       {/* Interactive Mouse Follow Glow */}
@@ -112,7 +110,7 @@ export function HeroSection() {
 
             <AnimatedSection animation="fade-in-up" delay={200}>
               <p className="mt-4 sm:mt-5 max-w-2xl text-[15px] sm:text-lg leading-relaxed text-muted-foreground text-pretty lg:mx-0">
-                Software house profesional: cepat, rapi, dan gratis konsultasi bisnis.
+                Software House Profesional: Cepat, Rapi, Dan Gratis Konsultasi Bisnis.
               </p>
             </AnimatedSection>
 

@@ -25,7 +25,7 @@ export function PartnersSection() {
                 <SectionHeader
                     badge="Partner & Vendor Teknologi"
                     title="Bekerja Sama dengan Vendor Terpercaya"
-                    description="Flowdev Teams berkolaborasi dengan berbagai vendor dan platform teknologi untuk memastikan kualitas, performa, dan keamanan setiap solusi digital yang kami bangun."
+                    description="Flowdev Teams Berkolaborasi Dengan Berbagai Vendor Dan Platform Teknologi Untuk Memastikan Kualitas, Performa, Dan Keamanan Setiap Solusi Digital Yang Kami Bangun."
                 />
                 <div className="mt-10 sm:mt-14 flex flex-wrap justify-center gap-4 sm:gap-5">
                     {partners.map((partner, index) => (

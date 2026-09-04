@@ -32,7 +32,7 @@ export function ServicesHero() {
             
             <AnimatedSection animation="fade-in-up" delay={200}>
               <p className="text-base sm:text-lg text-white/80 leading-relaxed text-pretty">
-                Dari landing page konversi tinggi untuk akselerasi pemasaran, sistem web enterprise kustom, hingga integrasi kecerdasan buatan (AI) otonom. Dibangun dengan standar performa 95+ PageSpeed dan 100% kepemilikan source code.
+                Dari Landing Page Konversi Tinggi Untuk Akselerasi Pemasaran, Sistem Web Enterprise Kustom, Hingga Integrasi Kecerdasan Buatan (AI) Otonom. Dibangun Dengan Standar Performa Tinggi Dan 100% Kepemilikan Source Code.
               </p>
             </AnimatedSection>
           </div>

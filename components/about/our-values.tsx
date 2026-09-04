@@ -34,7 +34,7 @@ export function OurValues() {
         <SectionHeader
           badge="STANDAR KERJA KAMI"
           title="Prinsip Rekayasa yang Memberi Nilai Nyata"
-          description="Empat pilar utama yang mendasari setiap baris kode dan keputusan teknis yang kami buat demi kesuksesan investasi digital Anda."
+          description="Empat Pilar Utama Yang Mendasari Setiap Baris Kode Dan Keputusan Teknis Demi Kesuksesan Investasi Digital Anda."
         />
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-16">

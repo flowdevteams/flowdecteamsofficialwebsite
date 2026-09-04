@@ -47,7 +47,7 @@ export function ClientsSection() {
         <SectionHeader
           badge="Dipercaya Bisnis & Mitra"
           title="Kemitraan yang Terus Berkembang"
-          description="Flowdev Teams berkolaborasi dengan perusahaan, startup, dan pelaku bisnis di berbagai industri untuk menghadirkan solusi teknologi yang handal, aman, dan siap bertumbuh."
+          description="Flowdev Teams Berkolaborasi Dengan Perusahaan, Startup, Dan Pelaku Bisnis Di Berbagai Industri Untuk Menghadirkan Solusi Teknologi Yang Handal, Aman, Dan Siap Bertumbuh."
         />
 
         {/* Real Client & Partner Cards */}

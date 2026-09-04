@@ -35,7 +35,7 @@ export function TestimonialsSection() {
         <SectionHeader
           badge="Testimoni Klien"
           title="Dipercaya oleh Klien dari Berbagai Industri"
-          description="Bukan sekadar janji. Berikut pengalaman nyata klien yang telah menggunakan jasa pembuatan Website dari Flowdev Teams."
+          description="Bukan Sekadar Janji. Berikut Pengalaman Nyata Klien Yang Telah Menggunakan Jasa Pembuatan Website Dari Flowdev Teams."
         />
 
         <div className="mt-10 sm:mt-16 grid gap-4 sm:gap-5 md:grid-cols-2 lg:grid-cols-3">

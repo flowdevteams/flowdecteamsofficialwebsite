@@ -9,6 +9,7 @@ import { WhyChooseUs } from "@/components/home/why-choose-us"
 import { TestimonialsSection } from "@/components/home/testimonials-section"
 import { CTASection } from "@/components/home/cta-section"
 import { HowWeWorkSection } from "@/components/home/howwe-work"
+import { FeaturesBentoSection } from "@/components/home/features-bento"
 import { GlowLogo, GlowRing } from "@/components/effects"
 
 export default function HomePage() {
@@ -31,7 +32,10 @@ export default function HomePage() {
         {/* 5. How We Work / Alur Kerja */}
         <HowWeWorkSection />
 
-        {/* 6. Why Choose Us / Komparasi Nilai */}
+        {/* 6. Features & Ecosystem Bento Showcase */}
+        <FeaturesBentoSection />
+
+        {/* 7. Why Choose Us / Komparasi Nilai */}
         <WhyChooseUs />
 
         {/* 7. Client Testimonials */}

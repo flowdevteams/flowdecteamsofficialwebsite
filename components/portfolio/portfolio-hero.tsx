@@ -34,7 +34,7 @@ export function PortfolioHero() {
             
             <AnimatedSection animation="fade-in-up" delay={200}>
               <p className="text-[13px] sm:text-base lg:text-lg text-white/80 leading-relaxed text-pretty">
-                Eksplorasi hasil rekayasa nyata Flowdev Teams—mulai dari Landing Page konversi tinggi, Aplikasi Web &amp; ERP Logistik, hingga implementasi Kecerdasan Buatan (AI) industri.
+                Eksplorasi Hasil Rekayasa Nyata Flowdev Teams: Mulai Dari Landing Page Konversi Tinggi, Aplikasi Web Bisnis, Hingga Implementasi Kecerdasan Buatan (AI) Cerdas.
               </p>
             </AnimatedSection>
 

@@ -102,7 +102,7 @@ export function PricingPreviewSection() {
             </h2>
 
             <p className="text-base leading-relaxed text-muted-foreground sm:text-lg">
-              Solusi rekayasa digital berkinerja tinggi tanpa kompromi kualitas. Pilih paket sesuai kebutuhan bisnis Anda dan nikmati promo potongan 50% terbatas.
+              Solusi Rekayasa Digital Berkinerja Tinggi Tanpa Kompromi Kualitas. Pilih Paket Sesuai Kebutuhan Bisnis Anda Dan Nikmati Promo Potongan 50% Terbatas.
             </p>
           </div>
         </AnimatedSection>

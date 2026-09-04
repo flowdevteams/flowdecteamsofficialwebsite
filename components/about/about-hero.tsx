@@ -32,7 +32,7 @@ export function AboutHero() {
             
             <AnimatedSection animation="fade-in-up" delay={200}>
               <p className="text-[13px] sm:text-base lg:text-lg text-white/80 leading-relaxed text-pretty">
-                Kami adalah software house independen berfokus pada kecepatan, transparansi kepemilikan kode, dan inovasi teknologi modern (Next.js, Cloud, & AI). Membantu UMKM hingga korporasi memiliki infrastruktur digital kelas enterprise tanpa keterikatan vendor.
+                Kami Adalah Software House Independen Berfokus Pada Kecepatan, Transparansi Kepemilikan Kode, Dan Inovasi Teknologi Modern. Membantu Bisnis Memiliki Infrastruktur Digital Kelas Enterprise Tanpa Keterikatan Vendor.
               </p>
             </AnimatedSection>
           </div>

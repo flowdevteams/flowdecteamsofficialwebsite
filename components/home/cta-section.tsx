@@ -41,7 +41,7 @@ export function CTASection() {
 
             <AnimatedSection animation="fade-in-up" delay={200}>
               <p className="mx-auto mb-6 sm:mb-8 max-w-2xl text-[13px] sm:text-base lg:text-lg leading-relaxed text-white/80">
-                Diskusikan tujuan kampanye penjualan, rencana pembuatan sistem aplikasi, atau ide integrasi AI bersama tim developer Flowdev Teams. Dapatkan rekomendasi arsitektur dan estimasi biaya transparan hari ini.
+                Diskusikan Tujuan Kampanye Penjualan, Rencana Pembuatan Sistem Aplikasi, Atau Ide Integrasi AI Bersama Tim Developer Flowdev Teams. Dapatkan Rekomendasi Arsitektur Dan Estimasi Biaya Transparan Hari Ini.
               </p>
             </AnimatedSection>
 

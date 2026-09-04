@@ -1,19 +1,19 @@
 "use client"
 
 import { useState } from "react"
-import { 
-  Brain, 
-  Globe, 
-  LayoutDashboard, 
-  ExternalLink, 
-  Sparkles, 
-  Cpu, 
-  ArrowRight, 
-  CheckCircle2, 
-  Layers, 
-  Zap, 
-  ShieldCheck, 
-  TrendingUp, 
+import {
+  Brain,
+  Globe,
+  LayoutDashboard,
+  ExternalLink,
+  Sparkles,
+  Cpu,
+  ArrowRight,
+  CheckCircle2,
+  Layers,
+  Zap,
+  ShieldCheck,
+  TrendingUp,
   ChevronRight,
   Database,
   Code2,
@@ -307,25 +307,26 @@ export function PortfolioShowcaseSection() {
 
   return (
     <section className="relative border-b border-border/60 bg-gradient-to-b from-background via-card/50 to-background py-20 lg:py-28 overflow-hidden">
-      
+
       {/* Background Ambient Saas Glows & Grid */}
       <div className="absolute inset-0 saas-grid opacity-30 pointer-events-none" />
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[800px] h-[350px] bg-primary/10 blur-[130px] rounded-full pointer-events-none" />
       <div className="absolute -bottom-24 right-10 w-[450px] h-[450px] bg-blue-500/10 blur-[120px] rounded-full pointer-events-none" />
 
       <div className="w-full max-w-7xl relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
-        
+
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-12 lg:mb-16">
           <span className="inline-flex items-center gap-1.5 px-3.5 py-1 text-xs font-semibold uppercase tracking-wider mb-3 bg-primary/10 text-primary rounded-full border border-primary/20 shadow-xs">
             <Flame className="w-3.5 h-3.5 text-primary animate-pulse" />
-            Showcase Portofolio & Produk Unggulan
+            Portfolio
           </span>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-foreground leading-tight">
-            Karya & Solusi Digital Berstandar Tinggi
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight leading-tight">
+            <span className="text-foreground">Portofolio Jasa Pembuatan </span>
+            <span className="text-primary">Website, Aplikasi Bisnis & Sistem Otomasi</span>
           </h2>
-          <p className="mt-4 text-sm sm:text-base text-muted-foreground leading-relaxed">
-            Eksplorasi portfolio interaktif Flowdev Teams mulai dari kecerdasan buatan, sistem web enterprise, hingga website berdesain mewah dengan performa optimal.
+          <p className="mt-4 text-sm sm:text-base text-muted-foreground leading-relaxed max-w-2xl mx-auto">
+            Lihat Bagaimana Rancangan <strong className="font-semibold text-foreground">Website Berkonversi</strong>, <strong className="font-semibold text-foreground">Sistem Manajemen Bisnis</strong>, Dan <strong className="font-semibold text-foreground">Otomasi Cerdas</strong> Dapat Membantu Efisiensi Serta Percepatan Pertumbuhan Bisnis Anda.
           </p>
         </div>
 
@@ -341,8 +342,8 @@ export function PortfolioShowcaseSection() {
                   onClick={() => handleCategoryChange(cat.key)}
                   className={cn(
                     "relative flex items-center gap-2 px-4 sm:px-6 py-3 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-300",
-                    isActive 
-                      ? "bg-primary text-primary-foreground shadow-md shadow-primary/25 scale-[1.02]" 
+                    isActive
+                      ? "bg-primary text-primary-foreground shadow-md shadow-primary/25 scale-[1.02]"
                       : "text-muted-foreground hover:text-foreground hover:bg-muted/50"
                   )}
                 >
@@ -375,15 +376,15 @@ export function PortfolioShowcaseSection() {
 
         {/* MAIN IMMERSIVE SHOWCASE CARD */}
         <div className="relative rounded-3xl border border-border/80 bg-card/85 backdrop-blur-xl shadow-2xl p-6 sm:p-8 lg:p-10 overflow-hidden transition-all duration-300">
-          
+
           {/* Subtle Ambient Glow corresponding to Project Accent */}
           <div className={cn("absolute -top-32 -right-32 w-96 h-96 rounded-full blur-3xl opacity-35 pointer-events-none bg-gradient-to-br", currentProject.accentColor)} />
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-            
+
             {/* LEFT COLUMN: Project Details & Value Proposition */}
             <div className="lg:col-span-6 flex flex-col gap-6">
-              
+
               {/* Badge & Client */}
               <div>
                 <div className="flex flex-wrap items-center gap-2 mb-3">
@@ -453,7 +454,7 @@ export function PortfolioShowcaseSection() {
 
               {/* CTA Action Buttons */}
               <div className="flex flex-wrap items-center gap-3 pt-2">
-                <Button 
+                <Button
                   asChild
                   className="rounded-xl px-6 py-5 shadow-lg shadow-primary/20 gap-2 text-xs sm:text-sm font-semibold"
                 >
@@ -462,7 +463,7 @@ export function PortfolioShowcaseSection() {
                     <ArrowRight className="w-4 h-4" />
                   </a>
                 </Button>
-                <Button 
+                <Button
                   variant="outline"
                   asChild
                   className="rounded-xl px-5 py-5 gap-2 text-xs sm:text-sm font-semibold border-border/80 hover:bg-muted/60"
@@ -479,7 +480,7 @@ export function PortfolioShowcaseSection() {
             {/* RIGHT COLUMN: Realistic Immersive Device & UI Preview */}
             <div className="lg:col-span-6 flex items-center justify-center">
               <div className="relative w-full max-w-lg lg:max-w-none rounded-2xl overflow-hidden border border-border/80 bg-background/95 shadow-2xl transition-all duration-300 group hover:border-primary/40">
-                
+
                 {/* Browser Window Chrome / Header */}
                 <div className="flex items-center justify-between px-4 py-3 bg-muted/60 border-b border-border/70">
                   <div className="flex items-center gap-2">
@@ -498,7 +499,7 @@ export function PortfolioShowcaseSection() {
 
                 {/* Interactive Dynamic Mockup Screen according to project type */}
                 <div className="p-5 sm:p-6 bg-gradient-to-br from-card to-muted/20 min-h-[400px] sm:min-h-[440px] flex flex-col justify-between relative overflow-hidden">
-                  
+
                   {/* Subtle Grid in Mockup */}
                   <div className="absolute inset-0 saas-grid opacity-20 pointer-events-none" />
 
@@ -565,7 +566,7 @@ export function PortfolioShowcaseSection() {
                     </div>
                   ) : (
                     <div className="relative z-10 my-3 flex-1 flex flex-col justify-center gap-3">
-                      
+
                       {/* Visual Card: Interactive Live Graph / Status */}
                       <div className="p-4 rounded-xl border border-border/70 bg-card/80 backdrop-blur-sm shadow-xs flex flex-col gap-2.5">
                         <div className="flex items-center justify-between">
@@ -575,12 +576,12 @@ export function PortfolioShowcaseSection() {
                           </span>
                           <span className="text-[10px] font-mono text-muted-foreground">Streaming data</span>
                         </div>
-                        
+
                         {/* Simulated Graphical Waves / Bars */}
                         <div className="h-16 flex items-end gap-1.5 pt-2">
                           {[35, 60, 50, 75, 65, 90, 80, 100, 85, 70, 95, 100].map((val, idx) => (
                             <div key={idx} className="flex-1 flex flex-col items-center gap-1">
-                              <div 
+                              <div
                                 className="w-full rounded-t-sm transition-all duration-500 bg-gradient-to-t from-primary/40 to-primary"
                                 style={{ height: `${val}%` }}
                               />

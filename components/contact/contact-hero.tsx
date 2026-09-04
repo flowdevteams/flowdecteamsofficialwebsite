@@ -32,7 +32,7 @@ export function ContactHero() {
             
             <AnimatedSection animation="fade-in-up" delay={200}>
               <p className="text-base sm:text-lg text-white/80 leading-relaxed text-pretty">
-                Tim developer Flowdev Teams siap memberikan estimasi teknis, timeline pengerjaan, dan skema biaya transparan. Konsultasi awal 100% gratis tanpa komitmen.
+                Tim Developer Flowdev Teams Siap Memberikan Estimasi Teknis, Timeline Pengerjaan, Dan Skema Biaya Transparan. Konsultasi Awal 100% Gratis Tanpa Komitmen.
               </p>
             </AnimatedSection>
           </div>

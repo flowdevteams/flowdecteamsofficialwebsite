@@ -49,7 +49,7 @@ export function PricingFAQ() {
         <SectionHeader
           badge="TRANSPARANSI &amp; FAQ"
           title="Pertanyaan Seputar Investasi &amp; Alur Kerja"
-          description="Jawaban ringkas dan transparan mengenai skema pembayaran, hak milik kode, dan jaminan keamanan proyek Anda."
+          description="Jawaban Ringkas Dan Transparan Mengenai Skema Pembayaran, Hak Milik Kode, Dan Jaminan Keamanan Proyek Anda."
         />
 
         <AnimatedSection animation="fade-in-up" delay={200} className="max-w-3xl mx-auto mt-12">

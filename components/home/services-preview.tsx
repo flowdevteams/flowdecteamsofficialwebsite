@@ -7,104 +7,124 @@ import {
   Globe, 
   ArrowRight, 
   Check, 
-  ShieldCheck, 
-  Zap, 
-  Search, 
-  Server, 
-  ArrowBigRight
+  ArrowBigRight,
+  Users
 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { SectionHeader } from "@/components/section-header"
 import { AnimatedSection } from "@/components/animated-section"
 import { cn } from "@/lib/utils"
 
+const unifiedTheme = {
+  cardBorder: "border-indigo-400/30 hover:border-indigo-400/60",
+  cardBg: "bg-gradient-to-b from-indigo-950/30 via-white/[0.07] to-white/[0.04]",
+  iconContainer: "border-indigo-400/40 bg-indigo-500/15 text-indigo-300 shadow-[0_0_20px_rgba(99,102,241,0.35)]",
+  badge: "border-indigo-400/30 bg-indigo-500/15 text-indigo-200",
+  checkCircle: "bg-indigo-500/20 text-indigo-300 border-indigo-400/40",
+  topGlowBar: "bg-gradient-to-r from-transparent via-indigo-400 to-transparent",
+  audienceBox: "border-indigo-400/25 bg-indigo-950/40 text-indigo-300",
+  hoverShadow: "hover:shadow-[0_8px_32px_rgba(99,102,241,0.2)]"
+}
+
 const mainPillars = [
   {
     icon: Globe,
-    title: "Landing Page & Web Interaktif",
-    badge: "PROMO PERDANA 50%",
+    title: "Pembuatan Website & Landing Page",
+    badge: "WEB & BRANDING",
     isPopular: true,
-    tagline: "Desain Berkecepatan Tinggi untuk Maksimalkan Konversi Penjualan",
-    description: "Halaman web berkecepatan kilat (< 1.5 detik) yang dirancang khusus untuk mengubah trafik iklan (Meta, TikTok, Google Ads) menjadi closing penjualan WhatsApp.",
+    tagline: "Tingkatkan Visibilitas Brand & Konversi Penjualan Secara Online",
     features: [
-      "Performa Cepat: Google PageSpeed 95+ Score",
-      "Struktur Copywriting Persuasif & Direct WA Checkout",
-      "Setup Tracking: Meta Pixel & Google Tag Manager",
-      "Gratis Domain & Cloud Hosting 1 Tahun Penuh",
-      "100% Hak Milik Source Code & Desain Kustom"
+      {
+        highlight: "Company Profile Profesional",
+        detail: "Bangun kredibilitas resmi dan kepercayaan mitra bisnis dengan profil perusahaan yang elegan."
+      },
+      {
+        highlight: "Landing Page Iklan (High-Conversion)",
+        detail: "Halaman fokus pemasaran untuk melipatgandakan hasil dari kampanye iklan digital Anda."
+      },
+      {
+        highlight: "Katalog & Portofolio Bisnis",
+        detail: "Pamerkan produk dan karya unggulan yang siap diakses klien 24 jam penuh tanpa batas."
+      },
+      {
+        highlight: "Portal Edukasi & Berita (Blog)",
+        detail: "Tingkatkan otoritas brand (SEO) di Google melalui publikasi artikel dan wawasan industri."
+      },
+      {
+        highlight: "Website Lead Generation",
+        detail: "Jaring prospek potensial secara otomatis melalui formulir penawaran dan kontak terintegrasi."
+      }
     ],
-    priceLabel: "Paket UMKM & Iklan",
-    discountBadge: "Hemat 50%",
-    numericPrice: "Rp 150.000",
-    hasPrefix: false,
-    originalPrice: "Coret Rp 300.000",
-    paymentTerm: "Bayar 1x • Tanpa Royalti",
+    targetAudience: "Perusahaan dan profesional yang ingin membangun identitas digital resmi atau meluncurkan kampanye marketing online.",
     href: "/layanan/landing-page",
-    ctaText: "Mulai Landing Page"
+    ctaText: "Konsultasi Website",
+    theme: unifiedTheme
   },
   {
     icon: LayoutDashboard,
-    title: "Aplikasi Web & Sistem Bisnis",
+    title: "Aplikasi Web & Sistem Kustom",
     badge: "SISTEM & SAAS",
     isPopular: false,
-    tagline: "Digitalkan Operasional Bisnis Anda Tanpa Batas Lisensi",
-    description: "Pengembangan platform SaaS, sistem ERP/CRM, POS kasir multi-cabang, dan dashboard analitik real-time yang disesuaikan 100% dengan alur kerja bisnis Anda.",
+    tagline: "Otomatisasi Operasional Bisnis dengan Perangkat Lunak Tepat Guna",
     features: [
-      "Full-Stack Modern: Next.js 16, TypeScript & PostgreSQL",
-      "Role-Based Access Control (RBAC) & Multi-Role User",
-      "Integrasi Payment Gateway Otomatis (Midtrans / Xendit)",
-      "RESTful API & Webhooks Siap Integrasi Eksternal",
-      "Penyerahan Lengkap Git Repository & Dokumentasi"
+      {
+        highlight: "Sistem Manajemen Perusahaan (ERP)",
+        detail: "Sentralisasi operasional gudang, keuangan, hingga pembelian dalam satu sistem terpadu."
+      },
+      {
+        highlight: "Aplikasi Manajemen SDM (HRIS)",
+        detail: "Kelola absensi, cuti, KPI, hingga perhitungan gaji (payroll) karyawan secara otomatis."
+      },
+      {
+        highlight: "Aplikasi Kasir & Inventaris (POS)",
+        detail: "Percepat transaksi penjualan toko dan pantau ketersediaan stok barang secara real-time."
+      },
+      {
+        highlight: "Manajemen Pelanggan (CRM)",
+        detail: "Lacak riwayat interaksi prospek dan jaga hubungan baik pelanggan untuk loyalitas jangka panjang."
+      },
+      {
+        highlight: "Aplikasi Kustom Spesifik Bisnis",
+        detail: "Software fleksibel yang dibangun 100% mengikuti prosedur operasional unik (SOP) bisnis Anda."
+      }
     ],
-    priceLabel: "Sistem Kustom & SaaS",
-    discountBadge: "Milestone",
-    numericPrice: "Rp 2.500.000",
-    hasPrefix: true,
-    originalPrice: "Coret Rp 5.000.000",
-    paymentTerm: "Termin Bertahap (Milestone)",
+    targetAudience: "Bisnis berkembang yang membutuhkan digitalisasi untuk menggantikan alur kerja manual berbasis kertas atau spreadsheet.",
     href: "/layanan/aplikasi-web",
-    ctaText: "Konsultasi Sistem Bisnis"
+    ctaText: "Konsultasi Sistem Bisnis",
+    theme: unifiedTheme
   },
   {
     icon: Brain,
-    title: "Kecerdasan Buatan (AI) & ML",
+    title: "Kecerdasan Buatan (AI) & Otomasi",
     badge: "AI & OTOMASI",
     isPopular: false,
-    tagline: "Otomatisasi Cerdas 24/7 & Analitik Prediktif Bisnis",
-    description: "Integrasi LLM RAG berbasis dokumen SOP perusahaan, AI Agent otonom pemroses tugas transaksi, hingga Computer Vision inspeksi mutu industri manufaktur.",
+    tagline: "Percepat Kinerja Bisnis dan Pangkas Biaya dengan Teknologi Masa Depan",
     features: [
-      "Chatbot AI RAG Cerdas Membaca Dokumen SOP & PDF",
-      "AI Agent Eksekusi Alur Kerja Otomatis (Tool Calling)",
-      "Computer Vision Inspeksi Cacat Produk Real-time",
-      "Keamanan Data Terjamin: Enkripsi End-to-End",
-      "Dashboard Monitoring Token & Latensi Respon AI"
+      {
+        highlight: "Chatbot AI & Asisten Virtual 24/7",
+        detail: "Respon instan ribuan pesan pelanggan seketika dengan AI yang memahami konteks produk Anda."
+      },
+      {
+        highlight: "Sistem Ekstraksi Dokumen (OCR AI)",
+        detail: "Ubah foto KTP, faktur, atau dokumen fisik menjadi rekapitulasi data digital secara otomatis."
+      },
+      {
+        highlight: "Otomasi Alur Kerja (Workflow AI)",
+        detail: "Hilangkan tugas repetitif antar departemen sehingga tim dapat fokus pada inovasi strategis."
+      },
+      {
+        highlight: "Mesin Rekomendasi (Recommendation Engine)",
+        detail: "Tingkatkan nilai penjualan dengan menyajikan saran produk paling relevan ke setiap pembeli."
+      },
+      {
+        highlight: "Analitik & Prediksi Bisnis (Data AI)",
+        detail: "Gunakan data historis untuk memprediksi tren permintaan pasar dan optimasi inventaris Anda."
+      }
     ],
-    priceLabel: "Model & Agent AI",
-    discountBadge: "Custom AI",
-    numericPrice: "Rp 3.500.000",
-    hasPrefix: true,
-    originalPrice: "Coret Rp 7.000.000",
-    paymentTerm: "Dataset SOP Kustom",
+    targetAudience: "Perusahaan yang siap bertransformasi untuk meningkatkan efisiensi staf dan kualitas pelayanan melalui otomatisasi AI.",
     href: "/layanan/kecerdasan-buatan",
-    ctaText: "Eksplorasi Solusi AI"
-  }
-]
-
-const supportingCapabilities = [
-  {
-    icon: Search,
-    title: "On-Page SEO & Schema Markup",
-    description: "Struktur teknis teroptimasi agar website bisnis Anda mudah ditemukan di halaman pencarian Google."
-  },
-  {
-    icon: Server,
-    title: "Zero Vendor Lock-in",
-    description: "Seluruh kode, database, dan aset diserahkan 100% kepada Anda tanpa biaya royalti sewa tahunan."
-  },
-  {
-    icon: ShieldCheck,
-    title: "Garansi & SLA Support Terkelola",
-    description: "Pemantauan uptime, backup data rutin, dan pendampingan teknis responsif demi kelancaran operasional."
+    ctaText: "Eksplorasi Solusi AI",
+    theme: unifiedTheme
   }
 ]
 
@@ -124,14 +144,14 @@ export function ServicesPreview() {
 
           <div className="relative z-10">
             <SectionHeader
-              badge="3 PILAR UTAMA &amp; INVESTASI TRANSPARAN"
-              title="Pilihan Solusi Rekayasa Digital yang Dirancang untuk Pertumbuhan Nyata"
-              description="Skema investasi terukur tanpa biaya terselubung. Pilih tingkatan solusi yang paling sesuai dengan target dan skala bisnis Anda."
+              badge="SOLUSI UNTUK BISNIS ANDA"
+              title="Layanan Website, Aplikasi & Otomasi Bisnis"
+              description="Pilih Sesuai Kebutuhan Bisnis Anda: Website Resmi Agar Lebih Dipercaya, Aplikasi Untuk Merapikan Operasional, Atau Sistem Otomatis Yang Efisien."
               tone="inverse"
             />
 
             {/* 3 Main Pillars Cards Grid */}
-            <div className="mt-8 sm:mt-12 grid gap-4 sm:gap-6 md:grid-cols-2 lg:grid-cols-3 items-stretch">
+            <div className="mt-8 sm:mt-12 grid gap-5 sm:gap-6 md:grid-cols-2 lg:grid-cols-3 items-stretch">
               {mainPillars.map((pillar, index) => (
                 <AnimatedSection
                   key={pillar.title}
@@ -140,117 +160,97 @@ export function ServicesPreview() {
                   className="h-full"
                 >
                   <article className={cn(
-                    "group relative flex h-full flex-col justify-between rounded-xl sm:rounded-2xl p-5 sm:p-6 lg:p-7 shadow-lg backdrop-blur transition-all duration-300 hover:-translate-y-1",
-                    pillar.isPopular 
-                      ? "border-2 border-white/35 bg-white/[0.10] shadow-2xl ring-1 ring-white/20" 
-                      : "border border-white/15 bg-white/[0.06] hover:border-white/30 hover:bg-white/[0.09]"
+                    "group relative flex h-full flex-col justify-between rounded-2xl p-6 sm:p-7 lg:p-8 shadow-xl backdrop-blur-md transition-all duration-300 hover:-translate-y-1.5 overflow-hidden border",
+                    pillar.theme.cardBorder,
+                    pillar.theme.cardBg,
+                    pillar.theme.hoverShadow
                   )}>
+                    {/* Top Glow Accent Bar */}
+                    <div className={cn("absolute top-0 left-0 right-0 h-[2px]", pillar.theme.topGlowBar)} />
                     
                     {/* Top Content Area */}
                     <div>
                       {/* Card Header: Icon & Badge */}
-                      <div className="flex items-center justify-between gap-3 mb-5">
-                        <div className="flex h-11 w-11 items-center justify-center rounded-xl border border-white/20 bg-white/10 text-white shadow-xs group-hover:scale-105 transition-transform">
-                          <pillar.icon className="h-5 w-5 text-white" />
+                      <div className="flex items-center justify-between gap-3 mb-6">
+                        <div className={cn(
+                          "flex h-12 w-12 items-center justify-center rounded-xl border transition-transform duration-300 group-hover:scale-110",
+                          pillar.theme.iconContainer
+                        )}>
+                          <pillar.icon className="h-6 w-6" />
                         </div>
                         <span className={cn(
-                          "rounded-full px-3 py-1 text-[10px] font-mono font-bold uppercase tracking-wider",
-                          pillar.isPopular 
-                            ? "bg-white text-primary shadow-xs" 
-                            : "bg-white/10 text-white border border-white/20"
+                          "rounded-full px-3.5 py-1 text-[11px] font-mono font-bold uppercase tracking-wider border shadow-xs",
+                          pillar.theme.badge
                         )}>
                           {pillar.badge}
                         </span>
                       </div>
 
                       {/* Card Heading */}
-                      <h3 className="text-lg sm:text-xl font-bold text-white mb-2 leading-snug font-heading">
+                      <h3 className="text-xl sm:text-2xl font-bold text-white mb-2.5 leading-snug font-heading tracking-tight">
                         {pillar.title}
                       </h3>
                       
-                      <p className="text-xs font-semibold text-white/90 mb-2 leading-relaxed">
+                      {/* Tagline / Subtitle */}
+                      <p className="text-sm sm:text-[14.5px] font-medium text-white/90 mb-7 leading-relaxed">
                         {pillar.tagline}
                       </p>
 
-                      <p className="text-xs text-white/75 leading-relaxed mb-6">
-                        {pillar.description}
-                      </p>
-
-                      {/* Feature Bullet Points */}
-                      <div className="space-y-2.5 mb-6 pb-6 border-b border-white/15 text-xs">
+                      {/* Feature Bullet Points with Clear Highlighting */}
+                      <div className="space-y-3.5 mb-7 pb-7 border-b border-white/15">
                         {pillar.features.map((feat) => (
-                          <div key={feat} className="flex items-start gap-2.5 text-white/90 leading-relaxed">
-                            <Check className="h-3.5 w-3.5 text-white shrink-0 mt-0.5" />
-                            <span>{feat}</span>
+                          <div key={feat.highlight} className="flex items-start gap-3">
+                            <div className={cn(
+                              "flex h-5 w-5 shrink-0 items-center justify-center rounded-full border mt-0.5 shadow-xs transition-transform group-hover:scale-105",
+                              pillar.theme.checkCircle
+                            )}>
+                              <Check className="h-3 w-3 stroke-[3]" />
+                            </div>
+                            <div className="text-[13.5px] sm:text-[14px] leading-snug">
+                              <span className="font-bold text-white tracking-normal block sm:inline mr-1.5">
+                                {feat.highlight}:
+                              </span>
+                              <span className="text-white/85 font-normal">
+                                {feat.detail}
+                              </span>
+                            </div>
                           </div>
                         ))}
                       </div>
                     </div>
 
-                    {/* DEDICATED ROBUST PRICE BOX (Zero Overflow) */}
-                    <div className="flex flex-col gap-3.5">
-                      <div className="rounded-2xl border border-white/20 bg-white/10 p-4.5 backdrop-blur-md">
-                        {/* Top Label & Discount Tag */}
-                        <div className="flex items-center justify-between gap-2 mb-2">
-                          <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-white/70 truncate">
-                            {pillar.priceLabel}
-                          </span>
-                          <span className="text-[10px] font-mono font-bold px-2 py-0.5 rounded bg-white/15 border border-white/20 text-white shrink-0">
-                            {pillar.discountBadge}
-                          </span>
-                        </div>
-
-                        {/* Large Clean Price Value */}
-                        <div className="my-1.5">
-                          <div className="flex items-baseline gap-1.5">
-                            {pillar.hasPrefix && (
-                              <span className="text-xs font-mono text-white/60 font-medium">Mulai</span>
-                            )}
-                            <span className="text-2xl sm:text-3xl font-extrabold text-white font-mono tracking-tight">
-                              {pillar.numericPrice}
-                            </span>
+                    {/* Target Audience Qualification & CTA */}
+                    <div className="flex flex-col gap-4 mt-auto">
+                      <div className={cn(
+                        "rounded-xl border p-4 backdrop-blur-sm transition-colors",
+                        pillar.theme.audienceBox
+                      )}>
+                        <div className="space-y-1.5">
+                          <div className="flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-wider">
+                            <Users className="h-4 w-4 shrink-0" />
+                            <span>Cocok Untuk:</span>
                           </div>
-                        </div>
-
-                        {/* Bottom Terms & Anchor Price */}
-                        <div className="mt-2.5 pt-2.5 border-t border-white/10 flex items-center justify-between text-[11px] text-white/75">
-                          <span className="font-medium truncate">{pillar.paymentTerm}</span>
-                          <span className="font-mono line-through text-white/50 text-[10px] shrink-0">
-                            {pillar.originalPrice}
-                          </span>
+                          <p className="text-[13px] sm:text-sm text-white/95 font-medium leading-relaxed pl-6">
+                            {pillar.targetAudience}
+                          </p>
                         </div>
                       </div>
 
-                      {/* Full-width CTA Button */}
+                      {/* Full-width High-Impact CTA Button */}
                       <Button 
                         asChild 
                         size="lg" 
-                        className="w-full h-11 rounded-xl font-bold text-xs sm:text-sm bg-white text-primary hover:bg-white/90 shadow-md transition-all group/btn"
+                        className="w-full h-11 sm:h-12 rounded-xl font-bold text-sm bg-white text-primary hover:bg-white/95 shadow-lg shadow-black/25 transition-all duration-200 group/btn"
                       >
                         <Link href={pillar.href} className="flex items-center justify-center gap-2">
                           <span>{pillar.ctaText}</span>
-                          <ArrowRight className="h-4 w-4 transition-transform group-hover/btn:translate-x-1" />
+                          <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover/btn:translate-x-1" />
                         </Link>
                       </Button>
                     </div>
 
                   </article>
                 </AnimatedSection>
-              ))}
-            </div>
-
-            {/* 3 Supporting Capabilities Strip */}
-            <div className="mt-8 grid gap-4 sm:grid-cols-3">
-              {supportingCapabilities.map((cap) => (
-                <div key={cap.title} className="rounded-xl border border-white/15 bg-white/[0.05] p-4 backdrop-blur text-left flex flex-col gap-1">
-                  <div className="flex items-center gap-2 text-xs font-bold text-white">
-                    <cap.icon className="h-4 w-4 text-white shrink-0" />
-                    <span>{cap.title}</span>
-                  </div>
-                  <p className="text-[11px] text-white/70 leading-relaxed">
-                    {cap.description}
-                  </p>
-                </div>
               ))}
             </div>
 
@@ -275,3 +275,4 @@ export function ServicesPreview() {
     </section>
   )
 }
+

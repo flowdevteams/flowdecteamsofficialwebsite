@@ -39,7 +39,7 @@ export function PricingHero() {
             
             <AnimatedSection animation="fade-in-up" delay={200}>
               <p className="text-[13px] sm:text-base lg:text-lg text-white/80 leading-relaxed text-pretty">
-                Skema harga terstruktur tanpa biaya tersembunyi. Mulai dari landing page konversi tinggi untuk kampanye pemasaran, sistem aplikasi web bisnis, hingga integrasi kecerdasan buatan (AI) skala enterprise.
+                Skema Harga Terstruktur Tanpa Biaya Tersembunyi: Mulai Dari Landing Page Konversi Tinggi, Sistem Aplikasi Web Bisnis, Hingga Integrasi Kecerdasan Buatan (AI) Skala Enterprise.
               </p>
             </AnimatedSection>
 

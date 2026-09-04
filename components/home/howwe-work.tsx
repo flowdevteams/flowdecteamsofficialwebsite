@@ -1,46 +1,46 @@
 "use client"
 
 import {
-  MessageSquare,
-  ClipboardList,
-  Code2,
-  Bug,
-  Rocket,
-  Headphones,
+  Globe,
+  LayoutDashboard,
+  Brain,
+  Database,
+  Zap,
+  ShieldCheck,
 } from "lucide-react"
 import { SectionHeader } from "@/components/section-header"
 import { AnimatedSection } from "@/components/animated-section"
 
 const steps = [
   { 
-    icon: MessageSquare, 
-    title: "Konsultasi & Analisis", 
-    desc: "Pemetaan target bisnis, spesifikasi teknis, dan alokasi anggaran tanpa komitmen awal." 
+    icon: Globe, 
+    title: "Website & Landing Page Konversi", 
+    desc: "Desain berkecepatan tinggi yang dirancang khusus untuk mengubah pengunjung menjadi pelanggan aktif bisnis Anda." 
   },
   { 
-    icon: ClipboardList, 
-    title: "Arsitektur & UI/UX", 
-    desc: "Perancangan alur sistem, wireframe antarmuka modern, dan roadmap kerja terukur." 
+    icon: LayoutDashboard, 
+    title: "Aplikasi Web & Sistem Bisnis Kustom", 
+    desc: "Sistem operasional terpadu (ERP/CRM/SaaS) yang dibangun mengikuti alur kerja nyata perusahaan tanpa biaya lisensi per user." 
   },
   { 
-    icon: Code2, 
-    title: "Rekayasa Kode Bersih", 
-    desc: "Pengembangan full-stack native (Next.js 16/TypeScript/Python) bebas bloatware." 
+    icon: Brain, 
+    title: "Otomasi Alur Kerja & Integrasi AI", 
+    desc: "Memangkas pekerjaan manual yang repetitif dan mempercepat respon layanan menggunakan asisten cerdas berbasis AI/ML." 
   },
   { 
-    icon: Bug, 
-    title: "Quality Assurance & Uji Cepat", 
-    desc: "Audit performa Google PageSpeed 95+, uji responsif multi-device, dan security audit." 
+    icon: Database, 
+    title: "Integrasi Database & Pembayaran", 
+    desc: "Terhubung mulus ke payment gateway otomatis, API WhatsApp bisnis, dan sinkronisasi data real-time antar divisi." 
   },
   { 
-    icon: Rocket, 
-    title: "Deployment & Handover 100%", 
-    desc: "Peluncuran ke cloud hosting, setup domain, dan penyerahan penuh source code repository." 
+    icon: Zap, 
+    title: "Akses Super Cepat & Ramah Mobile", 
+    desc: "Dioptimasi ringan dan responsif sempurna di semua layar HP pengguna Indonesia untuk meminimalkan rasio bounce rate." 
   },
   { 
-    icon: Headphones, 
-    title: "Pemeliharaan & Garansi SLA", 
-    desc: "Pendampingan pasca-rilis, backup berkala, dan pemantauan stabilitas server 24/7." 
+    icon: ShieldCheck, 
+    title: "Pendampingan & Garansi Performa", 
+    desc: "Bimbingan operasional lengkap, pemantauan sistem, dan dukungan teknis responsif saat bisnis Anda berjalan." 
   },
 ]
 
@@ -58,9 +58,9 @@ export function HowWeWorkSection() {
 
       <div className="w-full max-w-7xl relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
-          badge="ALUR KERJA TERSTRUKTUR"
-          title="Metodologi Eksekusi yang Cepat, Transparan, & Terukur"
-          description="Alur kerja rekayasa modern yang memastikan setiap proyek selesai tepat waktu, sesuai anggaran, dan memenuhi standar kualitas tertinggi."
+          badge="LAYANAN & SPESIALISASI KAMI"
+          title="Layanan Jasa Pembuatan Website, Aplikasi, & Sistem Bisnis"
+          description="Dari Website Profil Terpercaya, Aplikasi Web Kustom, Hingga Otomasi Kerja Harian Semua Dirancang Siap Pakai Untuk Kemajuan Bisnis Anda."
         />
 
         <div className="relative mx-auto mt-16 max-w-5xl">
@@ -76,7 +76,7 @@ export function HowWeWorkSection() {
 
               return (
                 <AnimatedSection key={step.title} animation={isLeft ? "fade-in-right" : "fade-in-left"} delay={index * 100}>
-                  <div className="group relative flex w-full items-center md:h-36 lg:h-40">
+                  <div className="group relative flex w-full items-center md:min-h-44 lg:min-h-48 md:py-3">
                     
                     {/* Desktop Layout */}
                     <div className="hidden md:flex w-full items-center">
@@ -84,33 +84,33 @@ export function HowWeWorkSection() {
                         <>
                           <div className="flex w-1/2 items-center justify-end pr-10 lg:pr-14">
                             <div 
-                              className="animate-sync-card flex w-80 lg:w-96 items-center gap-4 rounded-2xl border border-border/80 bg-card/90 p-5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:!border-primary/40 hover:!shadow-lg"
+                              className="animate-sync-card flex w-full max-w-[420px] lg:max-w-[450px] items-start gap-4 rounded-2xl border border-border/80 bg-card p-5 sm:p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:!border-primary/50 hover:!shadow-lg"
                               style={{ animationDelay: `-${6 - index}s` }}
                             >
                               <div 
-                                className="animate-sync-icon-box flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl border border-primary/20 bg-primary/10 text-primary shadow-xs"
+                                className="animate-sync-icon-box flex h-12 w-12 sm:h-14 sm:w-14 shrink-0 items-center justify-center rounded-xl border border-primary/25 bg-primary/10 text-primary shadow-xs mt-0.5"
                                 style={{ animationDelay: `-${6 - index}s` }}
                               >
                                 <step.icon 
-                                  className="animate-sync-icon h-5 w-5 transition-transform group-hover:scale-110" 
+                                  className="animate-sync-icon h-6 w-6 transition-transform group-hover:scale-110" 
                                   style={{ animationDelay: `-${6 - index}s` }}
                                 />
                               </div>
                               <div className="flex flex-col text-left">
                                 <span 
-                                  className="animate-sync-text-sub mb-0.5 font-mono text-[10px] font-bold uppercase tracking-widest text-primary"
+                                  className="animate-sync-text-sub mb-1 font-mono text-xs font-bold uppercase tracking-wider text-primary"
                                   style={{ animationDelay: `-${6 - index}s` }}
                                 >
-                                  FASE 0{index + 1}
+                                  SOLUSI 0{index + 1}
                                 </span>
                                 <h3 
-                                  className="animate-sync-text-main text-sm lg:text-base font-bold tracking-tight text-foreground"
+                                  className="animate-sync-text-main text-base lg:text-lg font-bold font-sans tracking-tight text-foreground leading-snug"
                                   style={{ animationDelay: `-${6 - index}s` }}
                                 >
                                   {step.title}
                                 </h3>
                                 <p 
-                                  className="animate-sync-text-desc text-[11px] text-muted-foreground leading-relaxed mt-0.5"
+                                  className="animate-sync-text-desc text-[13px] lg:text-sm text-foreground/80 leading-relaxed mt-1"
                                   style={{ animationDelay: `-${6 - index}s` }}
                                 >
                                   {step.desc}
@@ -125,33 +125,33 @@ export function HowWeWorkSection() {
                           <div className="w-1/2" />
                           <div className="flex w-1/2 items-center justify-start pl-10 lg:pl-14">
                             <div 
-                              className="animate-sync-card flex w-80 lg:w-96 items-center gap-4 rounded-2xl border border-border/80 bg-card/90 p-5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:!border-primary/40 hover:!shadow-lg"
+                              className="animate-sync-card flex w-full max-w-[420px] lg:max-w-[450px] items-start gap-4 rounded-2xl border border-border/80 bg-card p-5 sm:p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:!border-primary/50 hover:!shadow-lg"
                               style={{ animationDelay: `-${6 - index}s` }}
                             >
                               <div 
-                                className="animate-sync-icon-box flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl border border-primary/20 bg-primary/10 text-primary shadow-xs"
+                                className="animate-sync-icon-box flex h-12 w-12 sm:h-14 sm:w-14 shrink-0 items-center justify-center rounded-xl border border-primary/25 bg-primary/10 text-primary shadow-xs mt-0.5"
                                 style={{ animationDelay: `-${6 - index}s` }}
                               >
                                 <step.icon 
-                                  className="animate-sync-icon h-5 w-5 transition-transform group-hover:scale-110" 
+                                  className="animate-sync-icon h-6 w-6 transition-transform group-hover:scale-110" 
                                   style={{ animationDelay: `-${6 - index}s` }}
                                 />
                               </div>
                               <div className="flex flex-col text-left">
                                 <span 
-                                  className="animate-sync-text-sub mb-0.5 font-mono text-[10px] font-bold uppercase tracking-widest text-primary"
+                                  className="animate-sync-text-sub mb-1 font-mono text-xs font-bold uppercase tracking-wider text-primary"
                                   style={{ animationDelay: `-${6 - index}s` }}
                                 >
-                                  FASE 0{index + 1}
+                                  SOLUSI 0{index + 1}
                                 </span>
                                 <h3 
-                                  className="animate-sync-text-main text-sm lg:text-base font-bold tracking-tight text-foreground"
+                                  className="animate-sync-text-main text-base lg:text-lg font-bold font-sans tracking-tight text-foreground leading-snug"
                                   style={{ animationDelay: `-${6 - index}s` }}
                                 >
                                   {step.title}
                                 </h3>
                                 <p 
-                                  className="animate-sync-text-desc text-[11px] text-muted-foreground leading-relaxed mt-0.5"
+                                  className="animate-sync-text-desc text-[13px] lg:text-sm text-foreground/80 leading-relaxed mt-1"
                                   style={{ animationDelay: `-${6 - index}s` }}
                                 >
                                   {step.desc}
@@ -165,30 +165,30 @@ export function HowWeWorkSection() {
 
                     {/* Mobile Layout (Stacked) */}
                     <div 
-                      className="animate-sync-card flex md:hidden w-full items-center gap-3 sm:gap-4 rounded-xl border border-border/80 bg-card p-3.5 sm:p-4 shadow-xs"
+                      className="animate-sync-card flex md:hidden w-full items-start gap-3.5 sm:gap-4 rounded-xl border border-border/90 bg-card p-4 sm:p-5 shadow-xs"
                       style={{ animationDelay: `-${6 - index}s` }}
                     >
                       <div 
-                        className="animate-sync-icon-box flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-xl border border-primary/20 bg-primary/10 text-primary"
+                        className="animate-sync-icon-box flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-primary/25 bg-primary/10 text-primary mt-0.5"
                         style={{ animationDelay: `-${6 - index}s` }}
                       >
-                        <step.icon className="animate-sync-icon h-5 w-5" style={{ animationDelay: `-${6 - index}s` }} />
+                        <step.icon className="animate-sync-icon h-6 w-6" style={{ animationDelay: `-${6 - index}s` }} />
                       </div>
                       <div className="flex flex-col text-left">
                         <span 
-                          className="animate-sync-text-sub font-mono text-[10px] font-bold uppercase tracking-widest text-primary"
+                          className="animate-sync-text-sub font-mono text-xs font-bold uppercase tracking-wider text-primary mb-0.5"
                           style={{ animationDelay: `-${6 - index}s` }}
                         >
-                          FASE 0{index + 1}
+                          SOLUSI 0{index + 1}
                         </span>
                         <h3 
-                          className="animate-sync-text-main text-sm font-bold tracking-tight text-foreground"
+                          className="animate-sync-text-main text-base font-bold font-sans tracking-tight text-foreground leading-snug"
                           style={{ animationDelay: `-${6 - index}s` }}
                         >
                           {step.title}
                         </h3>
                         <p 
-                          className="animate-sync-text-desc text-[11px] text-muted-foreground leading-relaxed mt-0.5"
+                          className="animate-sync-text-desc text-[13px] text-foreground/80 leading-relaxed mt-1"
                           style={{ animationDelay: `-${6 - index}s` }}
                         >
                           {step.desc}

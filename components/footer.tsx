@@ -3,24 +3,24 @@ import { Mail, Phone, MapPin, Instagram } from "lucide-react"
 import Image from "next/image"
 
 const footerLinks = {
-  company: [
-    { href: "/layanan", label: "Layanan" },
-    { href: "/tentang-kami", label: "Tentang Kami" },
-    { href: "/portofolio", label: "Portofolio" },
-  ],
   services: [
-    { href: "/layanan/kecerdasan-buatan", label: "Kecerdasan Buatan (AI)" },
-    { href: "/layanan/aplikasi-web", label: "Aplikasi Web & Sistem" },
-    { href: "/layanan/landing-page", label: "Landing Page & Web" },
+    { href: "/layanan/landing-page", label: "Jasa Pembuatan Website & Landing Page" },
+    { href: "/layanan/aplikasi-web", label: "Aplikasi Web & Sistem Bisnis Kustom" },
+    { href: "/layanan/kecerdasan-buatan", label: "Otomasi & Kecerdasan Buatan (AI)" },
+    { href: "/layanan", label: "Katalog Seluruh Solusi Digital" },
+  ],
+  company: [
+    { href: "/tentang-kami", label: "Tentang Flowdev Teams" },
+    { href: "/portofolio", label: "Showcase Portofolio & Proyek" },
+    { href: "/harga-paket", label: "Estimasi Biaya & Paket Layanan" },
   ],
   support: [
-    { href: "/kontak", label: "Kontak" },
-    { href: "/harga-paket", label: "Harga & Paket" },
-    { href: "#", label: "FAQ" },
+    { href: "/kontak", label: "Konsultasi Kebutuhan Proyek (Gratis)" },
+    { href: "/kontak", label: "Pusat Bantuan & Tanya Jawab (FAQ)" },
   ],
   legal: [
     { href: "#", label: "Kebijakan Privasi" },
-    { href: "#", label: "Syarat & Ketentuan" },
+    { href: "#", label: "Syarat & Ketentuan Layanan" },
   ],
 }
 
@@ -43,7 +43,7 @@ export function Footer() {
               <div className="flex h-9 w-9 items-center justify-center overflow-hidden rounded-lg border border-primary/15 bg-background shadow-sm">
                 <Image
                   src="/logo/flowdevteams-logo.png"
-                  alt="Flowdev Teams - Jasa Pembuatan Website"
+                  alt="Flowdev Teams - Jasa Pembuatan Website dan Software House"
                   width={32}
                   height={32}
                   className="object-contain"
@@ -58,9 +58,7 @@ export function Footer() {
             </Link>
 
             <p className="text-muted-foreground text-sm mb-6 max-w-sm leading-relaxed mt-4 sm:mt-5">
-              Flowdev Teams adalah Software House yang menyediakan rekayasa AI,
-              aplikasi web kustom, dan landing page performa tinggi untuk membantu bisnis berkembang lebih
-              cepat melalui solusi digital yang modern, aman, dan scalable.
+              Software House & IT Consultant Tepercaya Di Indonesia. Kami Menghadirkan Solusi Teknologi Terpadu: Jasa Pembuatan Website, Aplikasi Bisnis Kustom, Dan Otomasi AI Cerdas Untuk Memangkas Biaya Operasional Serta Mempercepat Pertumbuhan Skala Bisnis Anda.
             </p>
 
             <div className="space-y-3">
@@ -68,8 +66,8 @@ export function Footer() {
                 href="mailto:flodev261123@gmail.com"
                 className="flex items-center gap-3 text-muted-foreground transition-colors hover:text-primary"
               >
-                <Mail className="h-5 w-5" />
-                <span>flodev261123@gmail.com</span>
+                <Mail className="h-5 w-5 shrink-0" />
+                <span className="text-sm">flodev261123@gmail.com</span>
               </a>
 
               <div className="space-y-2">
@@ -90,21 +88,21 @@ export function Footer() {
               </div>
 
               <div className="flex items-center gap-3 text-muted-foreground">
-                <MapPin className="h-5 w-5" />
-                <span>Bekasi, Indonesia</span>
+                <MapPin className="h-5 w-5 shrink-0" />
+                <span className="text-sm">Bekasi & Jakarta, Indonesia</span>
               </div>
             </div>
           </div>
 
           {/* Service Categories Links */}
           <div>
-            <h3 className="mb-4 font-semibold text-foreground">Kategori Layanan</h3>
+            <h3 className="mb-4 font-semibold text-foreground text-sm uppercase tracking-wider">Kategori Layanan</h3>
             <ul className="space-y-3">
               {footerLinks.services.map((link) => (
-                <li key={link.href}>
+                <li key={link.label}>
                   <Link
                     href={link.href}
-                    className="text-muted-foreground transition-colors hover:text-primary text-sm"
+                    className="text-muted-foreground transition-colors hover:text-primary text-sm leading-snug block"
                   >
                     {link.label}
                   </Link>
@@ -115,13 +113,13 @@ export function Footer() {
 
           {/* Company Links */}
           <div>
-            <h3 className="mb-4 font-semibold text-foreground">Perusahaan</h3>
+            <h3 className="mb-4 font-semibold text-foreground text-sm uppercase tracking-wider">Perusahaan</h3>
             <ul className="space-y-3">
               {footerLinks.company.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-muted-foreground transition-colors hover:text-primary text-sm"
+                    className="text-muted-foreground transition-colors hover:text-primary text-sm leading-snug block"
                   >
                     {link.label}
                   </Link>
@@ -132,13 +130,13 @@ export function Footer() {
 
           {/* Support & Legal Links */}
           <div>
-            <h3 className="mb-4 font-semibold text-foreground">Bantuan & Legal</h3>
+            <h3 className="mb-4 font-semibold text-foreground text-sm uppercase tracking-wider">Bantuan & Legal</h3>
             <ul className="space-y-3">
               {footerLinks.support.map((link) => (
                 <li key={link.label}>
                   <Link
                     href={link.href}
-                    className="text-muted-foreground transition-colors hover:text-primary text-sm"
+                    className="text-muted-foreground transition-colors hover:text-primary text-sm leading-snug block"
                   >
                     {link.label}
                   </Link>
@@ -148,7 +146,7 @@ export function Footer() {
                 <li key={link.label}>
                   <Link
                     href={link.href}
-                    className="text-muted-foreground transition-colors hover:text-primary text-sm"
+                    className="text-muted-foreground transition-colors hover:text-primary text-sm leading-snug block"
                   >
                     {link.label}
                   </Link>
@@ -158,8 +156,18 @@ export function Footer() {
           </div>
         </div>
 
+        {/* SEO Coverage & Tagline Strip */}
+        <div className="mt-10 pt-6 border-t border-border/60 text-xs text-muted-foreground/80 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+          <p>
+            <span className="font-semibold text-foreground">Flowdev Teams</span> — Software House & IT Consultant Untuk Jasa Pembuatan Website, Aplikasi Bisnis, Dan Sistem Otomasi Cerdas.
+          </p>
+          <p className="text-[11px] shrink-0 text-muted-foreground/70">
+            Melayani Klien Di Jakarta, Bekasi, Bandung, Surabaya, Dan Seluruh Indonesia.
+          </p>
+        </div>
+
         {/* Bottom Section */}
-        <div className="mt-8 sm:mt-12 flex flex-col items-center justify-between gap-4 border-t border-border/70 pt-6 sm:pt-8 sm:flex-row">
+        <div className="mt-6 flex flex-col items-center justify-between gap-4 border-t border-border/40 pt-6 sm:flex-row">
           <p className="text-muted-foreground text-xs sm:text-sm">
             © {new Date().getFullYear()} Flowdev Teams. Seluruh hak cipta dilindungi.
           </p>
