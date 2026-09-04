@@ -10,6 +10,7 @@ import { TestimonialsSection } from "@/components/home/testimonials-section"
 import { CTASection } from "@/components/home/cta-section"
 import { HowWeWorkSection } from "@/components/home/howwe-work"
 import { FeaturesBentoSection } from "@/components/home/features-bento"
+import { TechStackSection } from "@/components/home/tech-stack"
 import { GlowLogo, GlowRing } from "@/components/effects"
 
 export default function HomePage() {
@@ -35,7 +36,10 @@ export default function HomePage() {
         {/* 6. Features & Ecosystem Bento Showcase */}
         <FeaturesBentoSection />
 
-        {/* 7. Why Choose Us / Komparasi Nilai */}
+        {/* 7. Tech Stack & Engineering Tools (High SEO Value) */}
+        <TechStackSection />
+
+        {/* 8. Why Choose Us / Komparasi Nilai */}
         <WhyChooseUs />
 
         {/* 7. Client Testimonials */}
