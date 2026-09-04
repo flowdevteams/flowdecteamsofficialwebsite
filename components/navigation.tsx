@@ -57,7 +57,7 @@ const navLinks = [
   { href: "/tentang-kami", label: "Tentang Kami" },
   { href: "/harga-paket", label: "Harga" },
   { href: "/portofolio", label: "Portofolio" },
-  { href: "/kontak", label: "Kontak" },
+  { href: "/kontak", label: "Konsultasi Gratis" },
 ]
 
 export function Navigation() {
@@ -296,6 +296,16 @@ export function Navigation() {
                         PROMO
                       </span>
                     )}
+
+                    {link.href === "/kontak" && (
+                      <span className="absolute -top-2.5 -right-2 flex items-center gap-1 rounded-full bg-red-600 px-1.5 py-[1px] text-[8px] font-bold text-white shadow-[0_0_10px_rgba(239,68,68,0.7)] animate-pulse">
+                        <span className="relative flex h-1.5 w-1.5">
+                          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-200 opacity-80"></span>
+                          <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-white"></span>
+                        </span>
+                        HOT
+                      </span>
+                    )}
                   </Link>
                 )
               })}
@@ -426,6 +436,15 @@ export function Navigation() {
                       {link.href === "/harga-paket" && (
                         <span className="rounded-full bg-primary-foreground/15 px-2 py-0.5 text-[10px] font-semibold">
                           PROMO
+                        </span>
+                      )}
+                      {link.href === "/kontak" && (
+                        <span className="flex items-center gap-1.5 rounded-full bg-red-600 px-2 py-0.5 text-[10px] font-bold text-white shadow-[0_0_8px_rgba(239,68,68,0.6)] animate-pulse">
+                          <span className="relative flex h-1.5 w-1.5">
+                            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-80"></span>
+                            <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-white"></span>
+                          </span>
+                          HOT
                         </span>
                       )}
                     </span>
