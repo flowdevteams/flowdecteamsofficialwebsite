@@ -9,6 +9,7 @@ import { WhyChooseUs } from "@/components/home/why-choose-us"
 import { TestimonialsSection } from "@/components/home/testimonials-section"
 import { CTASection } from "@/components/home/cta-section"
 import { HowWeWorkSection } from "@/components/home/howwe-work"
+import { SolutionsShowcaseSection } from "@/components/home/solutions-showcase"
 import { FeaturesBentoSection } from "@/components/home/features-bento"
 import { TechStackSection } from "@/components/home/tech-stack"
 import { GlowLogo, GlowRing } from "@/components/effects"
@@ -20,17 +21,20 @@ export default function HomePage() {
       <main className="relative min-h-screen overflow-x-clip w-full max-w-full">
         {/* 1. Hero Section */}
         <HeroSection />
+
+        {/* 2. Granular Solutions Showcase & SEO Gateway (12 Pilihan Website & Web App Kustom Looping Marquee) */}
+        <SolutionsShowcaseSection />
         
-        {/* 2. Client Social Proof */}
+        {/* 3. Client Social Proof & Metrics */}
         <StatsSection />
 
-        {/* 3. Interactive Portfolio Showcase */}
+        {/* 4. Interactive Portfolio Showcase */}
         <PortfolioShowcaseSection />
 
-        {/* 4. 3 Core Business Pillars & Starting Investments */}
+        {/* 5. 3 Core Business Pillars & Starting Investments */}
         <ServicesPreview />
 
-        {/* 5. How We Work / Alur Kerja */}
+        {/* 6. How We Work / Alur Kerja */}
         <HowWeWorkSection />
 
         {/* 6. Features & Ecosystem Bento Showcase */}

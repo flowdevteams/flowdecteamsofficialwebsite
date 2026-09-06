@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  body { margin: 0; background: transparent; display: flex; align-items: center; justify-content: center; width: 400px; height: 400px; }
+</style>
+</head>
+<body>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <defs>
+    <!-- Dark forest green gradient -->
+    <radialGradient id="bgGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#1b4332"/>
+      <stop offset="100%" stop-color="#0e231a"/>
+    </radialGradient>
+    
+    <!-- Gold gradient -->
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fcd34d"/>
+      <stop offset="50%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#d97706"/>
+    </linearGradient>
+
+    <!-- Leaf Green Gradient -->
+    <linearGradient id="greenGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#4ade80"/>
+      <stop offset="100%" stop-color="#16a34a"/>
+    </linearGradient>
+
+    <!-- Arc path for HIJAU BERKAH text -->
+    <path id="curveBottom" d="M 60,240 A 145,145 0 0,0 340,240" fill="none"/>
+  </defs>
+
+  <!-- Outer Ring with Gold Stroke -->
+  <circle cx="200" cy="200" r="185" fill="url(#bgGrad)" stroke="url(#goldGrad)" stroke-width="14"/>
+  <circle cx="200" cy="200" r="172" fill="none" stroke="#2d6a4f" stroke-width="2" opacity="0.6"/>
+
+  <!-- Left Star -->
+  <polygon points="68,190 73,205 88,205 76,214 80,229 68,220 56,229 60,214 48,205 63,205" fill="url(#goldGrad)"/>
+
+  <!-- Right Star -->
+  <polygon points="332,190 337,205 352,205 340,214 344,229 332,220 320,229 324,214 312,205 327,205" fill="url(#goldGrad)"/>
+
+  <!-- Curved Text: HIJAU BERKAH -->
+  <text font-family="'Arial Black', 'Montserrat', Impact, sans-serif" font-size="27" font-weight="900" fill="#ffffff" letter-spacing="5">
+    <textPath href="#curveBottom" startOffset="50%" text-anchor="middle">
+      HIJAU BERKAH
+    </textPath>
+  </text>
+
+  <!-- Central Emblem: Sprouting Leaf on top of Recycle Symbol -->
+  <g transform="translate(200, 185) scale(0.95)">
+    <!-- Sprouting Leaves at top -->
+    <g transform="translate(0, -50)">
+      <!-- Left Leaf (Golden Yellow) -->
+      <path d="M -2,0 C -35,-20 -60,-65 -25,-95 C 5,-90 15,-50 -2,0 Z" fill="url(#goldGrad)" stroke="#b45309" stroke-width="3"/>
+      <path d="M -2,0 C -15,-30 -25,-60 -25,-95" fill="none" stroke="#92400e" stroke-width="2.5"/>
+      <path d="M -15,-40 C -30,-48 -35,-52 -35,-52" fill="none" stroke="#92400e" stroke-width="1.8"/>
+      <path d="M -20,-65 C -35,-72 -42,-75 -42,-75" fill="none" stroke="#92400e" stroke-width="1.8"/>
+
+      <!-- Right Leaf (Golden Yellow) -->
+      <path d="M 2,0 C 35,-20 60,-65 25,-95 C -5,-90 -15,-50 2,0 Z" fill="url(#goldGrad)" stroke="#b45309" stroke-width="3"/>
+      <path d="M 2,0 C 15,-30 25,-60 25,-95" fill="none" stroke="#92400e" stroke-width="2.5"/>
+      <path d="M 15,-40 C 30,-48 35,-52 35,-52" fill="none" stroke="#92400e" stroke-width="1.8"/>
+      <path d="M 20,-65 C 35,-72 42,-75 42,-75" fill="none" stroke="#92400e" stroke-width="1.8"/>
+
+      <!-- Center stem -->
+      <path d="M 0,0 L 0,-25" stroke="#15803d" stroke-width="4" stroke-linecap="round"/>
+    </g>
+
+    <!-- Recycle 3-Arrows Symbol -->
+    <g transform="translate(0, 10)">
+      <!-- Top-Left Arrow (Yellow-Gold) -->
+      <g>
+        <path d="M -25,-30 C -55,-20 -70,5 -65,30 L -50,22 C -53,5 -40,-12 -18,-18 Z" fill="url(#goldGrad)"/>
+        <!-- Arrowhead -->
+        <polygon points="-75,10 -50,45 -30,20" fill="url(#goldGrad)" stroke="#b45309" stroke-width="1.5"/>
+      </g>
+
+      <!-- Right Arrow (Green) -->
+      <g>
+        <path d="M 45,-20 C 65,0 70,30 55,55 L 42,45 C 52,25 48,5 32,-10 Z" fill="url(#greenGrad)"/>
+        <!-- Arrowhead -->
+        <polygon points="65,-30 25,-25 45,5" fill="url(#greenGrad)" stroke="#15803d" stroke-width="1.5"/>
+      </g>
+
+      <!-- Bottom Arrow (Green) -->
+      <g>
+        <path d="M 30,55 C 5,75 -25,75 -50,60 L -42,48 C -22,60 0,60 20,45 Z" fill="url(#greenGrad)"/>
+        <!-- Arrowhead -->
+        <polygon points="10,40 50,55 35,80" fill="url(#greenGrad)" stroke="#15803d" stroke-width="1.5"/>
+      </g>
+    </g>
+  </g>
+</svg>
+</body>
+</html>

@@ -41,11 +41,11 @@ export const serviceCategoriesNav = [
   },
   {
     href: "/layanan/landing-page",
-    label: "Landing Page & Web Interaktif",
-    shortLabel: "Landing Page & Web",
-    description: "Sales Page Iklan, Company Profile Modern & Konversi Tinggi",
+    label: "Website & Landing Page",
+    shortLabel: "Website & Landing Page",
+    description: "Website Perusahaan, Company Profile & Landing Page Kredibilitas Tinggi",
     icon: Globe,
-    badge: "High-Conversion",
+    badge: "Profil & Web",
     accentColor: "group-hover:text-primary group-hover:border-primary/30",
     iconBg: "bg-primary/10 text-primary border-primary/20"
   },
@@ -172,20 +172,22 @@ export function Navigation() {
                       onMouseEnter={handleServicesMouseEnter}
                       onMouseLeave={handleServicesMouseLeave}
                     >
-                      <Link
-                        href={link.href}
-                        onMouseEnter={() => setHoveredLink(link.href)}
+                      <button
+                        type="button"
+                        onClick={() => setIsServicesDropdownOpen((prev) => !prev)}
+                        onMouseEnter={() => setHoveredLink(link.label)}
                         onMouseLeave={() => setHoveredLink(null)}
                         className={cn(
-                          "relative px-3.5 py-2 rounded-lg text-sm font-medium transition-all duration-200 group flex items-center gap-1.5",
+                          "relative px-3.5 py-2 rounded-lg text-sm font-medium transition-all duration-200 group flex items-center gap-1.5 cursor-pointer outline-none select-none",
                           isActive
                             ? "bg-primary text-primary-foreground shadow-sm"
                             : "text-muted-foreground hover:text-foreground"
                         )}
+                        aria-expanded={isServicesDropdownOpen}
                       >
                         <span className={cn(
                           "absolute inset-0 rounded-lg bg-accent/70 opacity-0 transition-opacity duration-200",
-                          hoveredLink === link.href && !isActive && "opacity-100"
+                          hoveredLink === link.label && !isActive && "opacity-100"
                         )} />
 
                         <span className="relative z-10 inline-block">
@@ -198,7 +200,7 @@ export function Navigation() {
                             isServicesDropdownOpen && "rotate-180"
                           )} 
                         />
-                      </Link>
+                      </button>
 
                       {/* Dropdown Menu Popover */}
                       {isServicesDropdownOpen && (
@@ -219,6 +221,7 @@ export function Navigation() {
                               <Link
                                 key={item.href}
                                 href={item.href}
+                                onClick={() => setIsServicesDropdownOpen(false)}
                                 className={cn(
                                   "group flex items-start gap-3 rounded-xl p-2.5 transition-all duration-200 hover:bg-accent/60 border border-transparent hover:border-border/60",
                                   pathname === item.href && "bg-accent/80 border-primary/20"
@@ -250,14 +253,16 @@ export function Navigation() {
                           {/* Dropdown Footer */}
                           <div className="mt-2.5 pt-2.5 border-t border-border/50 flex items-center justify-between px-2 text-xs">
                             <Link
-                              href="/layanan"
+                              href="/harga-paket"
+                              onClick={() => setIsServicesDropdownOpen(false)}
                               className="font-semibold text-primary hover:underline flex items-center gap-1"
                             >
-                              Lihat Semua Layanan
+                              Lihat Estimasi Biaya
                               <ArrowRight className="h-3 w-3" />
                             </Link>
                             <Link
                               href="/kontak"
+                              onClick={() => setIsServicesDropdownOpen(false)}
                               className="text-muted-foreground hover:text-foreground font-medium"
                             >
                               Konsultasi Gratis →
@@ -371,28 +376,25 @@ export function Navigation() {
                 if (link.hasDropdown) {
                   return (
                     <div key={link.href} className="space-y-1">
-                      <div className="flex items-center justify-between">
-                        <Link
-                          href={link.href}
-                          onClick={() => setIsOpen(false)}
+                      <button
+                        type="button"
+                        onClick={() => setIsMobileServicesOpen((prev) => !prev)}
+                        className={cn(
+                          "w-full flex items-center justify-between rounded-lg px-4 py-3 text-[15px] sm:text-base font-medium transition-all duration-200 text-left cursor-pointer",
+                          isServiceActive
+                            ? "bg-primary/10 text-primary font-semibold"
+                            : "text-muted-foreground hover:bg-accent hover:text-foreground"
+                        )}
+                        aria-expanded={isMobileServicesOpen}
+                      >
+                        <span>{link.label}</span>
+                        <ChevronDown 
                           className={cn(
-                            "flex-1 rounded-lg px-4 py-3 text-[15px] sm:text-base font-medium transition-all duration-200",
-                            pathname === "/layanan"
-                              ? "bg-primary text-primary-foreground shadow-sm"
-                              : "text-muted-foreground hover:bg-accent hover:text-foreground"
-                          )}
-                        >
-                          {link.label}
-                        </Link>
-                        <button
-                          type="button"
-                          onClick={() => setIsMobileServicesOpen(!isMobileServicesOpen)}
-                          className="p-2.5 rounded-lg text-muted-foreground hover:bg-accent hover:text-foreground"
-                          aria-label="Toggle Layanan Submenu"
-                        >
-                          <ChevronDown className={cn("h-4 w-4 transition-transform", isMobileServicesOpen && "rotate-180")} />
-                        </button>
-                      </div>
+                            "h-4 w-4 transition-transform duration-200",
+                            isMobileServicesOpen && "rotate-180 text-primary"
+                          )} 
+                        />
+                      </button>
 
                       {/* Mobile Collapsible Submenu */}
                       {isMobileServicesOpen && (

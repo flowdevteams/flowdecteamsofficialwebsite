@@ -32,24 +32,31 @@ export async function generateMetadata({ params }: ServicePageProps): Promise<Me
 
   if (!service) {
     return {
-      title: "Layanan Tidak Ditemukan | Flowdev Teams",
+      title: "Layanan Tidak Ditemukan",
       description: "Halaman layanan yang Anda cari tidak ditemukan.",
     }
   }
 
+  const seoTitle = service.seoTitle || service.title
+
   return {
-    title: `${service.title} | Flowdev Teams`,
+    title: seoTitle,
     description: service.summary,
     alternates: {
-      canonical: `/layanan/${service.slug}`,
+      canonical: `https://www.flowdevteams.com/layanan/${service.slug}`,
     },
     openGraph: {
-      title: `${service.title} - Flowdev Teams`,
+      title: `${seoTitle} | Flowdev Teams`,
       description: service.summary,
-      url: `https://flowdevteams.com/layanan/${service.slug}`,
+      url: `https://www.flowdevteams.com/layanan/${service.slug}`,
       siteName: "Flowdev Teams",
       locale: "id_ID",
       type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${seoTitle} | Flowdev Teams`,
+      description: service.summary,
     },
   }
 }
@@ -62,8 +69,62 @@ export default async function ServiceCategoryPage({ params }: ServicePageProps) 
     notFound()
   }
 
+  const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: service.title,
+    serviceType: service.shortTitle,
+    provider: {
+      "@type": "ProfessionalService",
+      name: "Flowdev Teams",
+      url: "https://www.flowdevteams.com",
+    },
+    areaServed: {
+      "@type": "Country",
+      name: "Indonesia",
+    },
+    description: service.summary,
+    url: `https://www.flowdevteams.com/layanan/${service.slug}`,
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: service.badgeText,
+      itemListElement: service.deliverables.map((item, index) => ({
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: item.title,
+          description: item.description,
+        },
+        position: index + 1,
+      })),
+    },
+  }
+
+  const faqSchema = service.faqs && service.faqs.length > 0 ? {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: service.faqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.answer,
+      },
+    })),
+  } : null
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
+      {faqSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        />
+      )}
       <Navigation />
       <main className="min-h-screen pt-20">
         <ServiceDetailView service={service} />

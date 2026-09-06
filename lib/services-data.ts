@@ -2,6 +2,7 @@ export interface ServiceCategory {
   slug: string
   aliases?: string[]
   title: string
+  seoTitle?: string
   shortTitle: string
   badgeText: string
   tagline: string
@@ -30,6 +31,8 @@ export interface ServiceCategory {
     title: string
     description: string
     tags: string[]
+    image?: string
+    target?: string
   }[]
 
   // Suitable for / Target Business
@@ -57,6 +60,17 @@ export interface ServiceCategory {
     answer: string
   }[]
 
+  // Micro Trust Triggers in Hero
+  microTrustTriggers?: string[]
+
+  // Client Gateway Segment Options in Hero
+  gatewayNeeds?: {
+    badge: string
+    title: string
+    desc: string
+    targetDeliverableIndex?: number
+  }[]
+
   // Matching Portfolio Category filter key
   portfolioCategoryKey: "ai" | "webapp" | "landing"
 }
@@ -67,6 +81,7 @@ export const servicesData: ServiceCategory[] = [
     slug: "kecerdasan-buatan",
     aliases: ["ai", "machine-learning", "artificial-intelligence"],
     title: "Kecerdasan Buatan (AI) & Machine Learning",
+    seoTitle: "Jasa AI & Otomasi Sistem Cerdas | Solusi Machine Learning Bisnis",
     shortTitle: "Kecerdasan Buatan (AI)",
     badgeText: "AI & Machine Learning",
     tagline: "Otomatisasi Cerdas & Analisis Prediktif Berbasis AI untuk Akselerasi Bisnis Modern",
@@ -76,6 +91,12 @@ export const servicesData: ServiceCategory[] = [
     gradient: "from-primary/20 via-blue-600/10 to-transparent",
     badgeColor: "bg-primary/10 text-primary border-primary/20",
     portfolioCategoryKey: "ai",
+    microTrustTriggers: [
+      "Data Privat & On-Premise Ready",
+      "Akurasi Inferensi Teruji 99.4%",
+      "Multi-LLM & Computer Vision",
+      "100% Hak Milik Model & Kode"
+    ],
 
     problemSolution: {
       problem: "Proses operasional manual yang memakan ribuan jam kerja, keterbatasan respon layanan pelanggan di luar jam kantor, serta tingginya risiko human-error dalam analisis data dan inspeksi kualitas.",
@@ -211,16 +232,49 @@ export const servicesData: ServiceCategory[] = [
   {
     slug: "aplikasi-web",
     aliases: ["webapp", "web-app", "aplikasi-bisnis", "custom-web"],
-    title: "Aplikasi Web & Sistem Enterprise",
+    title: "Jasa Pembuatan Aplikasi Kustom Untuk UMKM/UKM & Sistem Enterprise Skalabel",
+    seoTitle: "Jasa Pembuatan Aplikasi Web Kustom & Sistem Bisnis | Flowdev Teams",
     shortTitle: "Aplikasi Web & Sistem",
-    badgeText: "Web Application & SaaS",
-    tagline: "Sistem Web Kustom Skalabel, Dashboard Manajemen & Platform Bisnis Kinerja Tinggi",
-    summary: "Bangun fondasi digital bisnis Anda dengan aplikasi web kustom yang aman, cepat, dan siap berkembang. Dari platform SaaS, ERP/CRM internal, sistem transaksi multi-cabang, hingga dashboard analitik real-time.",
+    badgeText: "JASA PEMBUATAN APLIKASI WEB & SISTEM BISNIS",
+    tagline: "Sistem Web Kustom Skalabel, Platform SaaS & Otomasi Alur Kerja Tanpa Biaya Lisensi Bulanan",
+    summary: "Tingkatkan efisiensi operasional dan sentralisasi data bisnis Anda. Dari aplikasi kasir POS & stok multi-cabang UMKM hingga sistem ERP, CRM terintegrasi, dan platform SaaS skala enterprise tanpa biaya lisensi bulanan.",
     iconName: "LayoutDashboard",
     accentColor: "from-primary to-blue-800",
     gradient: "from-primary/20 via-blue-600/10 to-transparent",
     badgeColor: "bg-primary/10 text-primary border-primary/20",
     portfolioCategoryKey: "webapp",
+    microTrustTriggers: [
+      "100% Hak Milik Source Code (Full IP)",
+      "Bebas Biaya Lisensi Bulanan Per-User",
+      "Keamanan Enkripsi & Audit Trail",
+      "Arsitektur Skalabel (High Concurrency)"
+    ],
+    gatewayNeeds: [
+      {
+        badge: "Sistem Internal & ERP",
+        title: "Otomasi Operasional Bisnis",
+        desc: "Stok multi-gudang, approval bertingkat, kasir POS & pembukuan otomatis bebas selisih.",
+        targetDeliverableIndex: 1
+      },
+      {
+        badge: "Platform SaaS & Startup MVP",
+        title: "Produk Digital Berlangganan",
+        desc: "Arsitektur multi-tenant, billing subscription otomatis, dan onboarding mandiri siap skala.",
+        targetDeliverableIndex: 2
+      },
+      {
+        badge: "Portal CRM & Multi-Cabang",
+        title: "Sentralisasi Data Pelanggan",
+        desc: "Sinkronisasi real-time data transaksi cabang, sales pipeline, dan portal akses klien privat.",
+        targetDeliverableIndex: 3
+      },
+      {
+        badge: "Dashboard Analitik & API",
+        title: "Monitoring Real-Time & Integrasi",
+        desc: "Visualisasi KPI interaktif, integrasi payment gateway (Midtrans/Xendit) & WhatsApp API.",
+        targetDeliverableIndex: 5
+      }
+    ],
 
     problemSolution: {
       problem: "Penggunaan software siap pakai (off-the-shelf) yang kaku dan tidak cocok dengan SOP unik perusahaan, data tersebar di banyak spreadsheet terpisah, serta sulitnya memantau performa bisnis real-time.",
@@ -258,43 +312,65 @@ export const servicesData: ServiceCategory[] = [
 
     deliverables: [
       {
-        title: "Custom SaaS & Platform Berlangganan",
-        description: "Membangun produk software-as-a-service lengkap dengan fitur multi-tenancy, manajemen langganan berkala, integrasi payment gateway otomatis, dan billing invoice.",
-        tags: ["Multi-Tenancy", "Subscription Billing", "RBAC Access", "Next.js & Supabase"]
+        title: "Sistem Kasir Cloud POS & Inventori Multi-Cabang (Aplikasi UMKM)",
+        description: "Solusi sentralisasi penjualan dan stok barang untuk toko retail, F&B, dan distributor. Dilengkapi fitur multi-gudang real-time, pencatatan kasir instan, cetak struk Bluetooth, barcode scan, dan laporan laba kotor otomatis tanpa risiko selisih stok.",
+        tags: ["Cloud POS", "Multi-Gudang Real-Time", "Laporan Margin Otomatis", "Bebas Biaya Per-Kasir"],
+        image: "/services/types/webapp-pos-inventory.jpg",
+        target: "UMKM Retail, F&B Multi-Outlet, Grosir, Distributor & Toko Bangunan"
       },
       {
-        title: "Sistem ERP, CRM & Manajemen Operasional",
-        description: "Aplikasi internal untuk mengelola rantai pasok (supply chain), stok gudang multi-lokasi, pelacakan prospek sales, dan manajemen tugas karyawan dengan approval bertingkat.",
-        tags: ["Custom ERP", "Warehouse POS", "Pipeline CRM", "Role Permission"]
+        title: "Sistem ERP & Manajemen Operasional Internal (Enterprise ERP)",
+        description: "Menyatukan alur kerja lintas divisi dalam satu sistem terpusat: pengadaan barang (procurement), purchase order (PO), approval bertingkat otomatis, pelacakan progres proyek, dan otomasi penagihan invoice terhubung ke bagian keuangan.",
+        tags: ["Approval Workflow", "Manajemen Proyek & PO", "Otomasi Invoice", "Multi-Divisi RBAC"],
+        image: "/services/types/webapp-custom-erp.jpg",
+        target: "Pabrik / Manufaktur, Kontraktor Proyek, Perusahaan Logistik & Jasa Operasional"
       },
       {
-        title: "Dashboard Analitik & Pelaporan Real-Time",
-        description: "Pusat visualisasi data interaktif untuk memantau KPI utama bisnis, grafik profitabilitas, analitik perilaku pengguna, dan ekspor otomatis ke Excel/PDF.",
-        tags: ["Interactive Charts", "WebSockets Live Data", "Data Aggregation", "Audit Logs"]
+        title: "Platform SaaS Berlangganan & Produk Digital MVP (Custom SaaS)",
+        description: "Aplikasi web modern berbasis langganan dengan arsitektur multi-tenancy yang aman. Terintegrasi penuh dengan auto-billing payment gateway (Midtrans/Xendit), manajemen batas kuota user (tiering), dashboard pelanggan mandiri, dan analitik churn rate.",
+        tags: ["Multi-Tenancy", "Subscription Billing", "Payment Gateway Auto", "Tiering Limits"],
+        image: "/services/types/webapp-saas-platform.jpg",
+        target: "Startup Founder, Software Innovator, Pemilik Produk Digital & Komunitas Bisnis"
       },
       {
-        title: "Integrasi API Eksternal & Payment Gateway",
-        description: "Integrasi mulus dengan gateway pembayaran nasional (Midtrans, Xendit), kurir ekspedisi logistik, WhatsApp API blast, serta sistem perbankan.",
-        tags: ["Midtrans / Xendit", "RajaOngkir", "WhatsApp Gateway", "REST & GraphQL"]
+        title: "Portal CRM Terintegrasi WhatsApp API & Pipeline Leads (Sales CRM)",
+        description: "Sistem pengelolaan prospek iklan tanpa ada leads yang tercecer. Dilengkapi integrasi WhatsApp Official/Gateway, distribusi leads otomatis ke tim sales (round-robin), pelacakan tahapan negosiasi deal (pipeline), dan audit riwayat percakapan.",
+        tags: ["WhatsApp API Sync", "Lead Distribution Auto", "Pipeline Deal Tracker", "Audit Riwayat Chat"],
+        image: "/services/types/webapp-crm-leads.jpg",
+        target: "Brand Bisnis Online D2C, Tim Sales B2B, Properti, Asuransi & Agensi Konsultan"
+      },
+      {
+        title: "Portal Reservasi, Booking Online & Member Area Privat (Client Portal)",
+        description: "Sistem reservasi mandiri 24 jam dengan kalender ketersediaan real-time, pembayaran deposit otomatis (QRIS/VA), manajemen data rekam medis/pasien, portal materi edukasi khusus member, dan pengingat jadwal otomatis via WhatsApp.",
+        tags: ["Live Booking Calendar", "Instant Deposit Payment", "Portal Member Privat", "Notifikasi Pengingat"],
+        image: "/services/types/webapp-booking-portal.jpg",
+        target: "Klinik Dokter & Medis, Lembaga Kursus/Bimbel, Fitness Center & Konsultan Profesional"
+      },
+      {
+        title: "Dashboard Analitik Eksekutif & Sistem Agregasi Data (Business Intelligence)",
+        description: "Pusat kendali bisnis interaktif untuk pemilik usaha dan jajaran direksi. Mengagregasi data omset dari banyak cabang dan marketplace secara real-time, kalkulasi margin laba-rugi otomatis, metrik cash flow harian, dan ekspor instan ke format Excel/PDF.",
+        tags: ["Real-Time WebSocket", "Otomasi Cash Flow & PnL", "Ekspor Excel/PDF", "Audit Trail & Enkripsi"],
+        image: "/services/types/webapp-bi-dashboard.jpg",
+        target: "Direktur, Pemilik Multi-Bisnis, Investor & Tim Finance Korporat"
       }
     ],
 
     targetAudience: [
       {
-        businessType: "Distributor, Retail & Multi-Cabang",
-        description: "Sentralisasi sistem kasir (POS), sinkronisasi stok antar cabang, dan laporan laba-rugi otomatis."
+        businessType: "Pelaku Usaha UMKM & Retail Berkembang",
+        description: "Sentralisasi sistem kasir (POS), sinkronisasi stok antar cabang/gudang, dan pembukuan otomatis bebas biaya lisensi."
       },
       {
-        businessType: "Startup Digital & Tech Founders",
-        description: "Pengembangan platform aplikasi web dari tahap MVP hingga arsitektur siap skala jutaan user."
+        businessType: "Perusahaan Menengah & Pabrik Manufaktur",
+        description: "Digitalisasi alur operasional internal (ERP), pelacakan inventori bahan baku, approval berjenjang, dan manajemen proyek."
       },
       {
-        businessType: "Perusahaan Jasa & Klinik / Edukasi",
-        description: "Sistem reservasi online, manajemen rekam medis/jadwal, dan portal interaktif khusus member."
+        businessType: "Startup Founders & Pemilik Produk Digital",
+        description: "Pengembangan platform aplikasi web SaaS dari tahap validasi MVP hingga arsitektur cloud siap skala jutaan user."
       },
       {
-        businessType: "Korporat & Instansi",
-        description: "Digitalisasi birokrasi dokumen internal, approval workflow, dan sistem inventaris aset aman."
+        businessType: "Korporat, Agensi & Institusi Bisnis",
+        description: "Sistem CRM leads, portal klien privat, integrasi payment gateway nasional, dan dashboard analitik eksekutif."
       }
     ],
 
@@ -355,17 +431,24 @@ export const servicesData: ServiceCategory[] = [
   // 3. LANDING PAGE & WEB INTERAKTIF
   {
     slug: "landing-page",
-    aliases: ["landing", "company-profile", "web-bisnis", "landing-page-konversi"],
-    title: "Landing Page & Web Interaktif",
-    shortTitle: "Landing Page & Web",
-    badgeText: "High-Conversion Web",
-    tagline: "Website & Landing Page Berkecepatan Tinggi yang Dirancang untuk Memaksimalkan Penjualan",
-    summary: "Hadirkan kesan pertama yang memukau bagi calon pelanggan Anda. Landing page berkecepatan kilat (< 1.5 detik), copywriting persuasif, dan desain berorientasi konversi yang siap menyulap trafik iklan menjadi pembeli setia.",
+    aliases: ["landing", "company-profile", "web-bisnis", "landing-page-konversi", "website"],
+    title: "Jasa Pembuatan Website Perusahaan & Landing Page Untuk Meningkatkan Kredibilitas Bisnis",
+    seoTitle: "Jasa Pembuatan Website Perusahaan & Landing Page | Tingkatkan Kredibilitas Bisnis",
+    shortTitle: "Website & Landing Page",
+    badgeText: "PREMIUM COMPANY PROFILE & WEB",
+    tagline: "Bangun reputasi profesional dan menangkan kesepakatan bernilai tinggi dengan website yang meyakinkan klien sejak detik pertama.",
+    summary: "Bangun reputasi profesional dan menangkan kesepakatan bernilai tinggi. Website berkecepatan instan (< 1.2s), berdesain elegan, dan SEO-ready untuk mengunci kepercayaan klien sejak detik pertama.",
     iconName: "Globe",
     accentColor: "from-primary to-blue-800",
     gradient: "from-primary/20 via-blue-600/10 to-transparent",
     badgeColor: "bg-primary/10 text-primary border-primary/20",
     portfolioCategoryKey: "landing",
+    microTrustTriggers: [
+      "PageSpeed 95+ (Anti-Lemot)",
+      "100% On-Page SEO Google",
+      "Struktur Profil Kredibel",
+      "100% Hak Milik Source Code"
+    ],
 
     problemSolution: {
       problem: "Trafik iklan berbayar (Meta Ads / Google Ads / TikTok Ads) terbuang sia-sia karena website memuat sangat lambat (> 3 detik), desain tampak usang dan tidak meyakinkan, serta alur kontak ke WhatsApp yang rumit.",
@@ -403,24 +486,46 @@ export const servicesData: ServiceCategory[] = [
 
     deliverables: [
       {
-        title: "Sales & Campaign Landing Page Berkinerja Tinggi",
-        description: "Landing page khusus untuk kampanye iklan Google, Meta, dan TikTok Ads dengan tata letak visual dinamis, bukti sosial (social proof), dan penawaran berbatas waktu.",
-        tags: ["Direct WhatsApp CTA", "Meta Pixel & GA4 Ready", "Fast Loading", "A/B Testing Friendly"]
+        title: "Corporate Company Profile (Website Perusahaan)",
+        description: "Membangun kredibilitas resmi dan reputasi prestisius brand Anda di hadapan mitra korporat, investor, dan tender pengadaan. Lengkap dengan profil manajemen, legalitas, showcase proyek, dan tombol unduh company profile PDF.",
+        tags: ["Multi-Halaman", "Otoritas Brand", "Legalitas B2B", "Profil PDF Ready"],
+        image: "/services/types/company-profile-v2.jpg",
+        target: "PT, CV, Manufaktur, Kontraktor & Kantor Jasa Profesional"
       },
       {
-        title: "Company Profile Interaktif & Berkelas",
-        description: "Website profil perusahaan modern yang mencerminkan prestise dan reputasi tinggi brand Anda di mata investor, klien korporat, dan mitra bisnis.",
-        tags: ["Glassmorphism & Micro-animations", "About & Portfolio Showcase", "Interactive Map", "PDF Catalog Download"]
+        title: "High-Converting Sales Landing Page (Halaman Iklan)",
+        description: "Halaman penawaran tunggal berkecepatan ultra tinggi (< 1.2 detik) tanpa distraksi, dirancang dengan psikologi direct-response sales copywriting yang mengunci atensi pengunjung iklan dan mengarahkan checkout langsung ke WhatsApp.",
+        tags: ["Direct WhatsApp CTA", "Meta Pixel & TikTok Ads", "Zero Distraction", "A/B Testing Ready"],
+        image: "/services/types/sales-landing-v3.jpg",
+        target: "Advertiser Meta Ads, TikTok Ads, Google Ads & Brand Produk/Jasa"
       },
       {
-        title: "On-Page SEO & Optimasi Mesin Pencari",
-        description: "Penerapan metadata OpenGraph, canonical URL, sitemap XML otomatis, schema markup JSON-LD, serta optimasi kata kunci target bisnis Anda.",
-        tags: ["Schema.org Markup", "Fast Indexing", "Rich Snippets", "Mobile-First Index"]
+        title: "Website Katalog Produk & Showcase Portofolio",
+        description: "Etalase digital 24 jam dengan visual beresolusi tinggi, filter kategori cerdas, galeri interaktif, dan formulir permintaan penawaran harga (request quote) otomatis untuk memamerkan produk dan karya unggulan Anda.",
+        tags: ["Visual Showcase", "Filter Kategori", "Request Quote", "Galeri Interaktif"],
+        image: "/services/types/portfolio-catalog-v2.jpg",
+        target: "Properti, Arsitektur, Furnitur, Interior & Studio Kreatif"
       },
       {
-        title: "Integrasi Pelacakan Analitik & Direct Leads",
-        description: "Pemasangan lengkap Google Tag Manager, Meta Pixel Ads, TikTok Pixel, serta formulir pemesanan instan dengan notifikasi otomatis ke WhatsApp / Email.",
-        tags: ["Meta Pixel Tracking", "Google Analytics 4", "Form to WhatsApp", "Instant Notification"]
+        title: "Website Portal Informasi, Edukasi & Registrasi",
+        description: "Pusat informasi dan edukasi interaktif dengan sistem pendaftaran online, kalender booking konsultasi, artikel edukasi SEO-ready, dan manajemen formulir prospek otomatis yang terhubung ke database.",
+        tags: ["Online Booking", "Artikel SEO", "Sistem Registrasi", "Form Leads Database"],
+        image: "/services/types/portal-booking-v2.jpg",
+        target: "Klinik & Medis, Lembaga Kursus/Edukasi, Yayasan & Event Organizer"
+      },
+      {
+        title: "Modern SaaS & Tech Product Landing Page (Website Software & Startup)",
+        description: "Halaman penawaran khusus produk digital, SaaS, dan platform AI. Dilengkapi toggle harga bulanan/tahunan interaktif, visualisasi dashboard fitur produk, trust badge keamanan enterprise, dan alur konversi registrasi trial yang seamless.",
+        tags: ["Interactive Pricing", "Live UI Preview", "Enterprise Trust Badges", "Trial Funnel"],
+        image: "/services/types/saas-product-v2.jpg",
+        target: "Startup Digital, Software House, SaaS B2B, AI Tools & Tech Founders"
+      },
+      {
+        title: "D2C E-Commerce & Brand Experience Store (Toko Online Brand D2C)",
+        description: "Etalase digital independen berkecepatan instan tanpa potongan komisi marketplace. Terintegrasi langsung dengan katalog produk interaktif, kalkulator ongkir otomatis, payment gateway (QRIS/VA), dan konfirmasi pemesanan otomatis ke WhatsApp.",
+        tags: ["Bebas Komisi Marketplace", "Direct WhatsApp Order", "Multi-Payment Gateway", "Kalkulator Ongkir"],
+        image: "/services/types/d2c-store-v2.jpg",
+        target: "Brand Fashion, Skincare & Beauty, Gadget, F&B Retail & Brand D2C"
       }
     ],
 

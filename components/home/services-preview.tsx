@@ -257,8 +257,8 @@ export function ServicesPreview() {
             {/* Bottom Section Action Buttons */}
             <AnimatedSection animation="fade-in-up" delay={500} className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-4">
               <Button asChild size="lg" className="h-11 rounded-xl font-bold px-7 bg-white text-primary shadow-lg shadow-black/20 hover:bg-white/90">
-                <Link href="/layanan">
-                  Jelajahi Rincian Semua Layanan
+                <Link href="/portofolio">
+                  Lihat Showcase Portofolio
                   <ArrowBigRight className="ml-2 h-4 w-4" />
                 </Link>
               </Button>

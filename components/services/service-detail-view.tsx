@@ -2,18 +2,18 @@
 
 import { useState } from "react"
 import Link from "next/link"
-import { 
-  Brain, 
-  LayoutDashboard, 
-  Globe, 
-  ArrowRight, 
-  CheckCircle2, 
-  Sparkles, 
-  ShieldCheck, 
-  ChevronDown, 
-  Layers, 
-  Code2, 
-  Briefcase, 
+import Image from "next/image"
+import {
+  Brain,
+  LayoutDashboard,
+  Globe,
+  ArrowRight,
+  CheckCircle2,
+  ShieldCheck,
+  ChevronDown,
+  Layers,
+  Code2,
+  Briefcase,
   MessageSquare,
   Terminal,
   Server,
@@ -47,7 +47,7 @@ export function ServiceDetailView({ service }: ServiceDetailViewProps) {
 
   return (
     <div className="space-y-16 pb-20 lg:space-y-24">
-      
+
       {/* 1. HERO SECTION (DEEP BLUE & WHITE) */}
       <section className="relative px-4 pt-8 sm:px-6 lg:px-8">
         <div className="container mx-auto max-w-7xl">
@@ -66,11 +66,11 @@ export function ServiceDetailView({ service }: ServiceDetailViewProps) {
 
           <div className="inverse-panel relative overflow-hidden rounded-3xl border border-white/10 px-6 py-14 text-center sm:px-10 lg:px-16 lg:py-20 bg-[#142d52]">
             <div className="absolute inset-0 inverse-grid" />
-            
+
             {/* Ambient Lighting */}
             <div className="pointer-events-none absolute -top-20 left-1/2 -translate-x-1/2 h-72 w-96 rounded-full bg-primary/20 blur-[100px]" />
 
-            <div className="relative z-10 mx-auto max-w-4xl">
+            <div className="relative z-10 mx-auto max-w-5xl">
               <AnimatedSection animation="fade-in-down">
                 <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-xs font-mono font-semibold uppercase tracking-wider text-white backdrop-blur-md mb-6">
                   <IconComponent className="h-3.5 w-3.5 text-white/90" />
@@ -79,21 +79,13 @@ export function ServiceDetailView({ service }: ServiceDetailViewProps) {
               </AnimatedSection>
 
               <AnimatedSection animation="fade-in-up" delay={100}>
-                <h1 className="text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl lg:leading-tight">
-                  <AccentTitle 
-                    text={service.title} 
-                    highlightWords={2} 
-                    className="text-white" 
-                    accentClassName="text-white/70" 
-                  />
+                <h1 className="text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl lg:leading-tight max-w-4xl mx-auto font-heading">
+                  {service.title}
                 </h1>
               </AnimatedSection>
 
               <AnimatedSection animation="fade-in-up" delay={200}>
-                <p className="mt-4 text-base font-semibold text-white/90 sm:text-lg">
-                  {service.tagline}
-                </p>
-                <p className="mt-4 text-sm sm:text-base leading-relaxed text-white/75 text-pretty max-w-3xl mx-auto">
+                <p className="mt-5 text-base sm:text-lg leading-relaxed text-white/85 text-pretty max-w-3xl mx-auto font-normal">
                   {service.summary}
                 </p>
               </AnimatedSection>
@@ -107,10 +99,73 @@ export function ServiceDetailView({ service }: ServiceDetailViewProps) {
                 </Button>
                 <Button asChild variant="outline" size="lg" className="rounded-xl border-white/25 bg-white/5 text-white backdrop-blur hover:bg-white/15">
                   <Link href="/portofolio">
-                    <Sparkles className="mr-2 h-4 w-4 text-white/90" />
+                    <Briefcase className="mr-2 h-4 w-4 text-white/90" />
                     Lihat Contoh Portofolio
                   </Link>
                 </Button>
+              </AnimatedSection>
+
+              {/* Client Gateway Segmentation (Gerbang Konsumen Berdasarkan Kebutuhan Bisnis) */}
+              {service.gatewayNeeds && service.gatewayNeeds.length > 0 && (
+                <AnimatedSection animation="fade-in-up" delay={350} className="mt-10 pt-8 border-t border-white/10 text-left">
+                  <div className="mb-4 flex items-center justify-between">
+                    <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-sky-200 flex items-center gap-1.5">
+                      <Layers className="h-3.5 w-3.5 text-sky-300" />
+                      Pilih Spesifikasi Kebutuhan Sistem Bisnis Anda:
+                    </span>
+                    <span className="text-[10px] font-mono text-white/60 hidden sm:inline-block">
+                      [ Rekayasa Kode Kustom 100% ]
+                    </span>
+                  </div>
+
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5">
+                    {service.gatewayNeeds.map((need) => (
+                      <Link
+                        key={need.title}
+                        href={`https://wa.me/62882008453472?text=Halo%20Flowdev%20Teams,%20saya%20tertarik%20konsultasi%20pembuatan%20${encodeURIComponent(need.title)}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="group/gate relative rounded-2xl border border-white/15 bg-white/[0.06] p-4 sm:p-4.5 backdrop-blur-md transition-all duration-300 hover:border-white/35 hover:bg-white/[0.12] hover:-translate-y-1 flex flex-col justify-between"
+                      >
+                        <div>
+                          <div className="flex items-center justify-between gap-2 mb-2">
+                            <span className="inline-block rounded bg-sky-400/20 px-2 py-0.5 text-[10px] font-mono font-bold uppercase text-sky-200 border border-sky-400/30">
+                              {need.badge}
+                            </span>
+                            <ArrowRight className="h-3.5 w-3.5 text-white/50 transition-transform duration-200 group-hover/gate:translate-x-1 group-hover/gate:text-white" />
+                          </div>
+                          <h4 className="text-sm font-bold text-white group-hover/gate:text-sky-200 transition-colors">
+                            {need.title}
+                          </h4>
+                          <p className="mt-1 text-xs text-white/75 leading-relaxed">
+                            {need.desc}
+                          </p>
+                        </div>
+                        <div className="mt-3.5 pt-2 border-t border-white/10 flex items-center gap-1.5 text-[11px] font-semibold text-sky-300 group-hover/gate:text-white">
+                          <span>Konsultasikan Kebutuhan Ini</span>
+                          <span className="text-xs transition-transform duration-200 group-hover/gate:translate-x-0.5">→</span>
+                        </div>
+                      </Link>
+                    ))}
+                  </div>
+                </AnimatedSection>
+              )}
+
+              {/* Micro-Trust Closing Triggers */}
+              <AnimatedSection animation="fade-in-up" delay={400} className="mt-8 pt-6 border-t border-white/10">
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-3 text-left sm:text-center">
+                  {(service.microTrustTriggers || [
+                    "PageSpeed 95+ (Anti-Lemot)",
+                    "100% On-Page SEO Google",
+                    "Struktur Profil Kredibel",
+                    "100% Hak Milik Source Code"
+                  ]).map((trigger, i) => (
+                    <div key={i} className="flex items-center sm:justify-center gap-2 text-xs font-medium text-white/90">
+                      <CheckCircle2 className="h-4 w-4 text-sky-300 shrink-0" />
+                      <span>{trigger}</span>
+                    </div>
+                  ))}
+                </div>
               </AnimatedSection>
             </div>
           </div>
@@ -144,7 +199,285 @@ export function ServiceDetailView({ service }: ServiceDetailViewProps) {
         </div>
       </section>
 
-      {/* 3. PROBLEM VS SOLUTION (CLEAN SLATE GREY & DEEP BLUE MATRIX) */}
+      {/* 3. DELIVERABLES & KEY FEATURES / WEBSITE TYPES */}
+      <section className="px-4 sm:px-6 lg:px-8">
+        <div className="container mx-auto max-w-7xl">
+          <div className="mb-12 text-center">
+            <span className="inline-block px-3.5 py-1 text-xs font-mono font-semibold uppercase tracking-wider rounded-full bg-primary/10 text-primary border border-primary/20 mb-3">
+              {service.slug === "landing-page"
+                ? "PILIHAN SPESIFIKASI WEBSITE"
+                : service.slug === "aplikasi-web"
+                ? "PILIHAN SPESIFIKASI SISTEM & APLIKASI WEB"
+                : "CAKUPAN LAYANAN & FITUR"}
+            </span>
+            <h2 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl lg:text-4xl">
+              {service.slug === "landing-page" ? (
+                <AccentTitle text="Pilihan Jenis Website & Landing Page Sesuai Kebutuhan Bisnis Anda" highlightWords={4} />
+              ) : service.slug === "aplikasi-web" ? (
+                <AccentTitle text="Pilihan Jenis Aplikasi Web & Sistem Kustom untuk UMKM Hingga Enterprise" highlightWords={5} />
+              ) : (
+                <AccentTitle text="Apa yang Anda Dapatkan dalam Layanan Ini?" />
+              )}
+            </h2>
+            <p className={cn(
+              "mt-4 text-muted-foreground mx-auto leading-relaxed",
+              (service.slug === "landing-page" || service.slug === "aplikasi-web")
+                ? "text-base sm:text-lg text-muted-foreground/90 max-w-3xl font-normal"
+                : "text-sm sm:text-base max-w-2xl"
+            )}>
+              {service.slug === "landing-page"
+                ? "Mulai Dari Website Profil Perusahaan, Sales Landing Page, Katalog Portofolio, Portal Booking, Platform SaaS, Hingga Toko Online D2C Tanpa Template Pasaran."
+                : service.slug === "aplikasi-web"
+                ? "Mulai Dari Sistem Kasir POS & Inventori Multi-Gudang UMKM, Aplikasi Operasional ERP Internal, Platform SaaS Berlangganan, Portal CRM WhatsApp, Hingga Dashboard Analitik Eksekutif Tanpa Biaya Lisensi Bulanan."
+                : "Paket menyeluruh dari perencanaan arsitektur, desain antarmuka, hingga implementasi kode siap produksi."}
+            </p>
+          </div>
+
+          <div className="grid gap-6 sm:grid-cols-2">
+            {service.deliverables.map((item, idx) => (
+              <AnimatedSection
+                key={item.title}
+                animation="fade-in-up"
+                delay={idx * 100}
+              >
+                <div className="group h-full rounded-2xl border border-border/80 bg-card p-4 sm:p-5 shadow-sm transition-all duration-300 hover:border-primary/50 hover:shadow-xl hover:shadow-primary/5 flex flex-col justify-between overflow-hidden">
+                  <div>
+                    {/* Visual Image Mockup Container (if available) */}
+                    {item.image ? (
+                      <div className="relative rounded-xl overflow-hidden border border-primary/25 bg-[#0b1728] shadow-md group-hover:border-primary/50 group-hover:shadow-2xl group-hover:shadow-primary/15 transition-all duration-300 mb-4">
+                        {/* Browser Chrome Header */}
+                        <div className="flex items-center justify-between px-3.5 py-2.5 bg-[#0d1c33] border-b border-white/10 text-white select-none">
+                          {/* 3 Window dots */}
+                          <div className="flex items-center gap-1.5">
+                            <span className="h-2 w-2 rounded-full bg-white/30" />
+                            <span className="h-2 w-2 rounded-full bg-white/30" />
+                            <span className="h-2 w-2 rounded-full bg-white/30" />
+                          </div>
+
+                          {/* Clean Tipe indicator badge */}
+                          <span className="rounded bg-primary/25 px-2.5 py-0.5 text-[9px] font-mono font-bold uppercase tracking-wider text-sky-200 border border-primary/40">
+                            TIPE 0{idx + 1}
+                          </span>
+                        </div>
+
+                        {/* Big Immersive Viewport */}
+                        <div className="relative aspect-[16/10] w-full overflow-hidden bg-[#0a1424]">
+                          <Image
+                            src={item.image}
+                            alt={item.title}
+                            fill
+                            className="object-cover object-top transition-transform duration-500 ease-out group-hover:scale-[1.03]"
+                            sizes="(max-width: 768px) 100vw, 50vw"
+                            priority={idx < 2}
+                          />
+                        </div>
+                      </div>
+                    ) : (
+                      <div className="mb-4 flex items-center justify-between">
+                        <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary/10 text-primary border border-primary/20">
+                          <Code2 className="h-5 w-5" />
+                        </div>
+                        <span className="text-xs font-mono font-bold text-muted-foreground">
+                          [{String(idx + 1).padStart(2, "0")}]
+                        </span>
+                      </div>
+                    )}
+
+                    {/* Target Business Highlight - Outside the image */}
+                    {item.target && (
+                      <div className="mb-3.5 flex items-start gap-2.5 rounded-xl bg-primary/[0.04] p-3 border border-primary/15 text-xs">
+                        <span className="font-semibold text-primary shrink-0">Cocok untuk:</span>
+                        <span className="text-foreground/85 font-medium leading-relaxed">{item.target}</span>
+                      </div>
+                    )}
+
+                    <h3 className="text-base sm:text-lg font-bold text-foreground leading-snug mb-2 group-hover:text-primary transition-colors">
+                      {item.title}
+                    </h3>
+
+                    <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed mb-5">
+                      {item.description}
+                    </p>
+                  </div>
+
+                  <div>
+                    {/* Tags List */}
+                    <div className="flex flex-wrap gap-1.5 pt-3 border-t border-border/50 mb-4">
+                      {item.tags.map((tag) => (
+                        <span
+                          key={tag}
+                          className="rounded-md bg-muted/60 px-2 py-0.5 text-[10px] font-mono font-medium text-foreground/80 border border-border/50"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+
+                    {/* Interactive Action Button */}
+                    <Button
+                      asChild
+                      variant="outline"
+                      className="w-full rounded-xl border-primary/30 bg-background text-primary hover:bg-primary hover:text-primary-foreground font-semibold text-xs h-9 transition-all duration-200 group/btn"
+                    >
+                      <Link
+                        href={`https://wa.me/62882008453472?text=Halo%20Flowdev%20Teams,%20saya%20tertarik%20konsultasi%20pembuatan%20${encodeURIComponent(item.title)}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center justify-center gap-1.5"
+                      >
+                        <span>Konsultasikan Jenis Ini</span>
+                        <ArrowRight className="h-3.5 w-3.5 transition-transform duration-200 group-hover/btn:translate-x-1" />
+                      </Link>
+                    </Button>
+                  </div>
+                </div>
+              </AnimatedSection>
+            ))}
+          </div>
+
+          {/* Included Standard Feature Banner (Blue & White Only) */}
+          <AnimatedSection animation="fade-in-up" delay={500} className="mt-12">
+            <div className="relative overflow-hidden rounded-3xl border border-primary/30 bg-[#142d52] p-6 sm:p-8 lg:p-10 text-white shadow-xl">
+              <div className="absolute inset-0 inverse-grid opacity-25 pointer-events-none" />
+              <div className="pointer-events-none absolute -right-20 -top-20 h-64 w-64 rounded-full bg-primary/20 blur-3xl" />
+
+              <div className="relative z-10">
+                <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6 pb-8 border-b border-white/10">
+                  <div className="max-w-2xl">
+                    <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/10 border border-white/20 text-[11px] font-mono font-semibold uppercase tracking-wider text-sky-200 mb-3 backdrop-blur-md">
+                      <ShieldCheck className="h-3.5 w-3.5 text-white" />
+                      <span>STANDAR MUTLAK FLOWDEV TEAMS</span>
+                    </div>
+                    <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold tracking-tight text-white leading-snug">
+                      {service.slug === "aplikasi-web"
+                        ? "Semua Jenis Sistem & Aplikasi Web Otomatis Mendapatkan Standar Mutlak Ini"
+                        : "Semua Jenis Website Otomatis Mendapatkan Fitur Ini Tanpa Biaya Tambahan"}
+                    </h3>
+                    <p className="mt-2 text-xs sm:text-sm text-white/80 leading-relaxed">
+                      {service.slug === "aplikasi-web"
+                        ? "Kami membangun dengan arsitektur clean-code berstandar industri. Bebas biaya sewa bulanan per-user, database terenkripsi aman, dan sistem siap berkembang seiring pertumbuhan bisnis Anda."
+                        : "Kami tidak mengenakan biaya lisensi bulanan tersembunyi. Seluruh aspek kecepatan, SEO, analitik, dan keamanan sudah termasuk dalam paket pengerjaan."}
+                    </p>
+                  </div>
+
+                  <Button asChild size="lg" className="shrink-0 rounded-xl bg-white text-primary font-bold hover:bg-white/90 shadow-lg shadow-black/20 px-6">
+                    <Link href="/kontak" className="flex items-center gap-2">
+                      <span>Mulai Konsultasi Gratis</span>
+                      <ArrowRight className="h-4 w-4" />
+                    </Link>
+                  </Button>
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 pt-8">
+                  {service.slug === "aplikasi-web" ? (
+                    <>
+                      <div className="flex items-start gap-3.5">
+                        <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-white/10 border border-white/15 text-white font-mono text-sm font-bold">
+                          01
+                        </div>
+                        <div>
+                          <h4 className="text-sm font-bold text-white">Respon API &lt; 120ms</h4>
+                          <p className="mt-1 text-xs text-white/75 leading-relaxed">
+                            Arsitektur backend efisien dan query database teroptimasi untuk volume transaksi besar.
+                          </p>
+                        </div>
+                      </div>
+
+                      <div className="flex items-start gap-3.5">
+                        <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-white/10 border border-white/15 text-white font-mono text-sm font-bold">
+                          02
+                        </div>
+                        <div>
+                          <h4 className="text-sm font-bold text-white">Keamanan Data &amp; RBAC</h4>
+                          <p className="mt-1 text-xs text-white/75 leading-relaxed">
+                            Pembatasan hak akses staf bertingkat, enkripsi JWT/OAuth2 dan proteksi SQL injection.
+                          </p>
+                        </div>
+                      </div>
+
+                      <div className="flex items-start gap-3.5">
+                        <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-white/10 border border-white/15 text-white font-mono text-sm font-bold">
+                          03
+                        </div>
+                        <div>
+                          <h4 className="text-sm font-bold text-white">Automated Cloud Backup</h4>
+                          <p className="mt-1 text-xs text-white/75 leading-relaxed">
+                            Pencadangan database otomatis berkala demi memastikan data bisnis Anda tidak pernah hilang.
+                          </p>
+                        </div>
+                      </div>
+
+                      <div className="flex items-start gap-3.5">
+                        <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-white/10 border border-white/15 text-white font-mono text-sm font-bold">
+                          04
+                        </div>
+                        <div>
+                          <h4 className="text-sm font-bold text-white">100% Hak Milik Source Code</h4>
+                          <p className="mt-1 text-xs text-white/75 leading-relaxed">
+                            Source code &amp; database milik penuh perusahaan Anda tanpa keterikatan lisensi vendor.
+                          </p>
+                        </div>
+                      </div>
+                    </>
+                  ) : (
+                    <>
+                      <div className="flex items-start gap-3.5">
+                        <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-white/10 border border-white/15 text-white font-mono text-sm font-bold">
+                          01
+                        </div>
+                        <div>
+                          <h4 className="text-sm font-bold text-white">PageSpeed 95+ (Anti-Lemot)</h4>
+                          <p className="mt-1 text-xs text-white/75 leading-relaxed">
+                            Loading instan di bawah 1.2 detik di seluruh jaringan smartphone Indonesia.
+                          </p>
+                        </div>
+                      </div>
+
+                      <div className="flex items-start gap-3.5">
+                        <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-white/10 border border-white/15 text-white font-mono text-sm font-bold">
+                          02
+                        </div>
+                        <div>
+                          <h4 className="text-sm font-bold text-white">100% On-Page SEO Google</h4>
+                          <p className="mt-1 text-xs text-white/75 leading-relaxed">
+                            Struktur semantic HTML5, Schema.org &amp; meta tag lengkap siap mendominasi Google.
+                          </p>
+                        </div>
+                      </div>
+
+                      <div className="flex items-start gap-3.5">
+                        <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-white/10 border border-white/15 text-white font-mono text-sm font-bold">
+                          03
+                        </div>
+                        <div>
+                          <h4 className="text-sm font-bold text-white">Tracking Iklan Terintegrasi</h4>
+                          <p className="mt-1 text-xs text-white/75 leading-relaxed">
+                            Meta Pixel, TikTok Pixel &amp; Google Analytics 4 terpasang akurat untuk analisa konversi.
+                          </p>
+                        </div>
+                      </div>
+
+                      <div className="flex items-start gap-3.5">
+                        <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-white/10 border border-white/15 text-white font-mono text-sm font-bold">
+                          04
+                        </div>
+                        <div>
+                          <h4 className="text-sm font-bold text-white">100% Hak Milik Source Code</h4>
+                          <p className="mt-1 text-xs text-white/75 leading-relaxed">
+                            Source code &amp; database milik penuh perusahaan Anda tanpa ikatan lisensi vendor.
+                          </p>
+                        </div>
+                      </div>
+                    </>
+                  )}
+                </div>
+              </div>
+            </div>
+          </AnimatedSection>
+        </div>
+      </section>
+
+      {/* 4. PROBLEM VS SOLUTION (CLEAN SLATE GREY & DEEP BLUE MATRIX) */}
       <section className="px-4 sm:px-6 lg:px-8">
         <div className="container mx-auto max-w-7xl">
           <div className="mb-10 text-center">
@@ -158,7 +491,7 @@ export function ServiceDetailView({ service }: ServiceDetailViewProps) {
           </div>
 
           <div className="grid gap-6 md:grid-cols-2">
-            
+
             {/* Problem Card (Neutral Slate Grey & White - No Red) */}
             <AnimatedSection animation="fade-in-right">
               <div className="h-full rounded-2xl border border-border/80 bg-muted/30 p-6 sm:p-8 flex flex-col justify-between">
@@ -230,70 +563,11 @@ export function ServiceDetailView({ service }: ServiceDetailViewProps) {
         </div>
       </section>
 
-      {/* 4. DELIVERABLES & KEY FEATURES */}
-      <section className="px-4 sm:px-6 lg:px-8">
-        <div className="container mx-auto max-w-7xl">
-          <div className="mb-10 text-center">
-            <span className="inline-block px-3 py-1 text-xs font-mono font-semibold uppercase tracking-wider rounded-md bg-primary/10 text-primary mb-3">
-              CAKUPAN LAYANAN &amp; FITUR
-            </span>
-            <h2 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl lg:text-4xl">
-              <AccentTitle text="Apa yang Anda Dapatkan dalam Layanan Ini?" />
-            </h2>
-            <p className="mt-2 text-xs sm:text-sm text-muted-foreground max-w-2xl mx-auto">
-              Paket menyeluruh dari perencanaan arsitektur, desain antarmuka, hingga implementasi kode siap produksi.
-            </p>
-          </div>
-
-          <div className="grid gap-6 sm:grid-cols-2">
-            {service.deliverables.map((item, idx) => (
-              <AnimatedSection
-                key={item.title}
-                animation="fade-in-up"
-                delay={idx * 100}
-              >
-                <div className="group h-full rounded-2xl border border-border/80 bg-card p-6 sm:p-7 shadow-sm transition-all duration-300 hover:border-primary/40 hover:shadow-md flex flex-col justify-between">
-                  <div>
-                    <div className="mb-4 flex items-center justify-between">
-                      <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary/10 text-primary border border-primary/20">
-                        <Code2 className="h-5 w-5" />
-                      </div>
-                      <span className="text-xs font-mono font-bold text-muted-foreground">
-                        [{String(idx + 1).padStart(2, "0")}]
-                      </span>
-                    </div>
-
-                    <h3 className="text-base font-bold text-foreground leading-snug mb-2 group-hover:text-primary transition-colors">
-                      {item.title}
-                    </h3>
-
-                    <p className="text-xs text-muted-foreground leading-relaxed mb-5">
-                      {item.description}
-                    </p>
-                  </div>
-
-                  <div className="flex flex-wrap gap-1.5 pt-3 border-t border-border/50">
-                    {item.tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="rounded-md bg-muted/60 px-2 py-0.5 text-[10px] font-mono font-medium text-foreground/80 border border-border/50"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              </AnimatedSection>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* 5. TARGET AUDIENCE & TECH STACK */}
       <section className="px-4 sm:px-6 lg:px-8">
         <div className="container mx-auto max-w-7xl">
           <div className="grid gap-8 lg:grid-cols-2">
-            
+
             {/* Target Audience */}
             <AnimatedSection animation="fade-in-right">
               <div className="h-full rounded-2xl border border-border/80 bg-card p-6 sm:p-8">
@@ -447,7 +721,7 @@ export function ServiceDetailView({ service }: ServiceDetailViewProps) {
         <div className="container mx-auto max-w-7xl">
           <div className="inverse-panel relative overflow-hidden rounded-3xl border border-white/10 px-6 py-12 text-center sm:px-12 lg:py-16 bg-[#142d52]">
             <div className="absolute inset-0 inverse-grid" />
-            
+
             <div className="relative z-10 mx-auto max-w-2xl">
               <h3 className="text-2xl font-bold text-white sm:text-3xl">
                 Siap Mengakselerasi Bisnis Anda dengan {service.shortTitle}?

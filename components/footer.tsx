@@ -7,7 +7,6 @@ const footerLinks = {
     { href: "/layanan/landing-page", label: "Jasa Pembuatan Website & Landing Page" },
     { href: "/layanan/aplikasi-web", label: "Aplikasi Web & Sistem Bisnis Kustom" },
     { href: "/layanan/kecerdasan-buatan", label: "Otomasi & Kecerdasan Buatan (AI)" },
-    { href: "/layanan", label: "Katalog Seluruh Solusi Digital" },
   ],
   company: [
     { href: "/tentang-kami", label: "Tentang Flowdev Teams" },

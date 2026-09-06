@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react"
 import Link from "next/link"
+import Image from "next/image"
 import { ArrowRight, Code2, Sparkles, ShieldCheck, Zap, Layers, Play, Target } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { AnimatedSection } from "@/components/animated-section"
@@ -11,6 +12,29 @@ import { MouseGlowOverlay } from "@/components/effects/mouse-glow-overlay"
 import { AccentTitle } from "@/components/accent-title"
 
 const rotatingWords = ["Website", "Web App"]
+
+interface PartnerLogo {
+  name: string
+  logo: string
+}
+
+const heroPartners: PartnerLogo[] = [
+  { name: "Google Ads", logo: "/tech/google-ads-color.svg" },
+  { name: "Google Search Console", logo: "/tech/google-search-console-color.svg" },
+  { name: "Next.js", logo: "/tech/nextjs-color.svg" },
+  { name: "NestJS", logo: "/tech/nestjs-color.svg" },
+  { name: "Cloudflare", logo: "/tech/cloudflare-color.svg" },
+  { name: "PostgreSQL", logo: "/tech/postgresql-color.svg" },
+  { name: "Docker", logo: "/tech/docker-color.svg" },
+  { name: "TypeScript", logo: "/tech/typescript-color.svg" },
+  { name: "Tailwind CSS", logo: "/tech/tailwind-color.svg" },
+  { name: "Redis", logo: "/tech/redis-color.svg" },
+  { name: "Python", logo: "/tech/python-color.svg" },
+  { name: "Supabase", logo: "/tech/supabase-color.svg" },
+  { name: "Vercel", logo: "/tech/vercel-color.svg" },
+  { name: "WhatsApp Business API", logo: "/tech/whatsapp.svg" },
+  { name: "Meta Ads", logo: "/tech/meta.svg" },
+]
 
 export function HeroSection() {
   const mouseGlow = useMouseGlow<HTMLElement>()
@@ -162,6 +186,45 @@ export function HeroSection() {
             </div>
           </AnimatedSection>
         </div>
+
+        {/* Hero Bottom: Infinite Auto-Running Partner & Tech Ecosystem Marquee (Logo Nya Saja) */}
+        <AnimatedSection animation="fade-in-up" delay={600} className="mt-12 sm:mt-16 pt-8 sm:pt-10 border-t border-border/40">
+          <div className="flex items-center justify-between gap-2 mb-4 sm:mb-5">
+            <span className="text-[11px] sm:text-xs font-mono font-semibold tracking-wider uppercase text-muted-foreground">
+              // TEKNOLOGI &amp; PLATFORM TERINTEGRASI
+            </span>
+            <span className="text-[10px] font-mono text-muted-foreground/60 hidden sm:inline-block">
+              // 100% Modern Stack &bull; Siap Scale-Up
+            </span>
+          </div>
+
+          <div className="relative w-full overflow-hidden py-2">
+            {/* Left & Right Soft Fade Masks */}
+            <div className="pointer-events-none absolute inset-y-0 left-0 w-12 sm:w-24 bg-gradient-to-r from-background via-background/80 to-transparent z-10" />
+            <div className="pointer-events-none absolute inset-y-0 right-0 w-12 sm:w-24 bg-gradient-to-l from-background via-background/80 to-transparent z-10" />
+
+            <div className="animate-marquee-left flex items-center gap-8 sm:gap-12 gpu-accelerated">
+              {[...heroPartners, ...heroPartners].map((partner, idx) => (
+                <div
+                  key={`${partner.name}-${idx}`}
+                  className="flex items-center justify-center shrink-0 group/logo select-none px-2"
+                  title={partner.name}
+                >
+                  <div className="relative h-8 sm:h-9 w-8 sm:w-9 flex items-center justify-center transition-transform duration-300 group-hover/logo:scale-115">
+                    <Image
+                      src={partner.logo}
+                      alt={partner.name}
+                      width={36}
+                      height={36}
+                      unoptimized
+                      className="h-7 sm:h-8 w-7 sm:w-8 object-contain transition-all duration-300 opacity-80 group-hover/logo:opacity-100"
+                    />
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </AnimatedSection>
       </div>
     </section>
   )

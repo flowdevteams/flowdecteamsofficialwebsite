@@ -31,7 +31,7 @@ const nextConfig = {
       },
       {
         source: "/services",
-        destination: "/layanan",
+        destination: "/",
         permanent: true,
       },
       {
