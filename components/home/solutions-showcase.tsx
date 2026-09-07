@@ -405,7 +405,7 @@ function SolutionCard({ item }: { item: SolutionItem }) {
             className="flex-1 rounded-xl bg-primary text-primary-foreground font-semibold text-xs h-8.5 shadow-sm shadow-primary/20 hover:bg-primary/90 transition-all duration-200"
           >
             <Link
-              href={`https://wa.me/62882008453472?text=Halo%20Flowdev%20Teams,%20saya%20tertarik%20konsultasi%20pembuatan%20${encodeURIComponent(item.title)}`}
+              href={`https://wa.me/6281574673448?text=Halo%20Flowdev%20Teams,%20saya%20tertarik%20konsultasi%20pembuatan%20${encodeURIComponent(item.title)}`}
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center justify-center gap-1.5"

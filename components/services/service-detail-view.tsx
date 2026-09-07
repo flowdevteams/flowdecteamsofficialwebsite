@@ -122,7 +122,7 @@ export function ServiceDetailView({ service }: ServiceDetailViewProps) {
                     {service.gatewayNeeds.map((need) => (
                       <Link
                         key={need.title}
-                        href={`https://wa.me/62882008453472?text=Halo%20Flowdev%20Teams,%20saya%20tertarik%20konsultasi%20pembuatan%20${encodeURIComponent(need.title)}`}
+                        href={`https://wa.me/6281574673448?text=Halo%20Flowdev%20Teams,%20saya%20tertarik%20konsultasi%20pembuatan%20${encodeURIComponent(need.title)}`}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="group/gate relative rounded-2xl border border-white/15 bg-white/[0.06] p-4 sm:p-4.5 backdrop-blur-md transition-all duration-300 hover:border-white/35 hover:bg-white/[0.12] hover:-translate-y-1 flex flex-col justify-between"
@@ -320,7 +320,7 @@ export function ServiceDetailView({ service }: ServiceDetailViewProps) {
                       className="w-full rounded-xl border-primary/30 bg-background text-primary hover:bg-primary hover:text-primary-foreground font-semibold text-xs h-9 transition-all duration-200 group/btn"
                     >
                       <Link
-                        href={`https://wa.me/62882008453472?text=Halo%20Flowdev%20Teams,%20saya%20tertarik%20konsultasi%20pembuatan%20${encodeURIComponent(item.title)}`}
+                        href={`https://wa.me/6281574673448?text=Halo%20Flowdev%20Teams,%20saya%20tertarik%20konsultasi%20pembuatan%20${encodeURIComponent(item.title)}`}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="flex items-center justify-center gap-1.5"

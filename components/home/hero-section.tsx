@@ -198,26 +198,26 @@ export function HeroSection() {
             </span>
           </div>
 
-          <div className="relative w-full overflow-hidden py-2">
+          <div className="relative w-full overflow-hidden py-3 sm:py-4">
             {/* Left & Right Soft Fade Masks */}
-            <div className="pointer-events-none absolute inset-y-0 left-0 w-12 sm:w-24 bg-gradient-to-r from-background via-background/80 to-transparent z-10" />
-            <div className="pointer-events-none absolute inset-y-0 right-0 w-12 sm:w-24 bg-gradient-to-l from-background via-background/80 to-transparent z-10" />
+            <div className="pointer-events-none absolute inset-y-0 left-0 w-16 sm:w-32 bg-gradient-to-r from-background via-background/80 to-transparent z-10" />
+            <div className="pointer-events-none absolute inset-y-0 right-0 w-16 sm:w-32 bg-gradient-to-l from-background via-background/80 to-transparent z-10" />
 
-            <div className="animate-marquee-left flex items-center gap-8 sm:gap-12 gpu-accelerated">
+            <div className="animate-marquee-left flex items-center gap-10 sm:gap-14 md:gap-16 gpu-accelerated">
               {[...heroPartners, ...heroPartners].map((partner, idx) => (
                 <div
                   key={`${partner.name}-${idx}`}
                   className="flex items-center justify-center shrink-0 group/logo select-none px-2"
                   title={partner.name}
                 >
-                  <div className="relative h-8 sm:h-9 w-8 sm:w-9 flex items-center justify-center transition-transform duration-300 group-hover/logo:scale-115">
+                  <div className="relative h-13 sm:h-15 md:h-16 w-13 sm:w-15 md:w-16 flex items-center justify-center transition-transform duration-300 group-hover/logo:scale-115">
                     <Image
                       src={partner.logo}
                       alt={partner.name}
-                      width={36}
-                      height={36}
+                      width={64}
+                      height={64}
                       unoptimized
-                      className="h-7 sm:h-8 w-7 sm:w-8 object-contain transition-all duration-300 opacity-80 group-hover/logo:opacity-100"
+                      className="h-11 sm:h-13 md:h-14 w-auto max-w-[56px] sm:max-w-[64px] object-contain transition-all duration-300 opacity-85 group-hover/logo:opacity-100 drop-shadow-sm"
                     />
                   </div>
                 </div>
