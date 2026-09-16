@@ -51,24 +51,24 @@ export function ClientsSection() {
         />
 
         {/* Real Client & Partner Cards */}
-        <div className="mt-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div className="mt-8 sm:mt-14 grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-5">
           {realClients.map((client, index) => (
             <AnimatedSection
               key={client.name}
               animation="fade-in-up"
               delay={index * 80}
             >
-              <div className="group relative flex h-44 flex-col items-center justify-center rounded-2xl border border-border/80 bg-card p-6 shadow-xs transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-xl hover:shadow-primary/10">
+              <div className="group relative flex h-28 sm:h-44 flex-col items-center justify-center rounded-xl sm:rounded-2xl border border-border/80 bg-card p-2.5 sm:p-6 shadow-xs transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-xl hover:shadow-primary/10">
                 <Image
                   src={client.logo}
                   alt={`Logo ${client.name}`}
                   width={160}
                   height={80}
-                  className="max-h-20 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+                  className="max-h-10 sm:max-h-20 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
                 />
-                <div className="mt-3 text-center">
-                  <h4 className="text-xs font-bold text-foreground truncate max-w-[200px]">{client.name}</h4>
-                  <p className="text-[10px] text-muted-foreground mt-0.5">{client.category}</p>
+                <div className="mt-2 sm:mt-3 text-center w-full px-1">
+                  <h4 className="text-[10.5px] sm:text-xs font-bold text-foreground truncate max-w-full">{client.name}</h4>
+                  <p className="text-[8.5px] sm:text-[10px] text-muted-foreground mt-0.5 truncate max-w-full">{client.category}</p>
                 </div>
               </div>
             </AnimatedSection>
@@ -76,16 +76,16 @@ export function ClientsSection() {
         </div>
 
         {/* Industry Focus Pills */}
-        <div className="mt-12 flex flex-wrap justify-center gap-3">
+        <div className="mt-6 sm:mt-12 grid grid-cols-2 sm:flex sm:flex-wrap justify-center gap-2 sm:gap-3">
           {industries.map((ind, i) => {
             const Icon = ind.icon
             return (
               <div 
                 key={i}
-                className="flex items-center gap-2 px-4 py-2 rounded-xl bg-background/80 border border-border/70 text-xs font-medium text-muted-foreground shadow-xs"
+                className="flex items-center justify-center sm:justify-start gap-1.5 sm:gap-2 px-2.5 sm:px-4 py-2 rounded-lg sm:rounded-xl bg-background/80 border border-border/70 text-[10px] sm:text-xs font-medium text-muted-foreground shadow-xs text-center sm:text-left"
               >
-                <Icon className="w-3.5 h-3.5 text-primary" />
-                <span>{ind.name}</span>
+                <Icon className="w-3.5 h-3.5 text-primary shrink-0" />
+                <span className="truncate">{ind.name}</span>
               </div>
             )
           })}

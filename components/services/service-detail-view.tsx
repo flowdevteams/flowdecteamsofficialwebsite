@@ -118,31 +118,34 @@ export function ServiceDetailView({ service }: ServiceDetailViewProps) {
                     </span>
                   </div>
 
-                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5">
+                  <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-3.5">
                     {service.gatewayNeeds.map((need) => (
                       <Link
                         key={need.title}
                         href={`https://wa.me/6281574673448?text=Halo%20Flowdev%20Teams,%20saya%20tertarik%20konsultasi%20pembuatan%20${encodeURIComponent(need.title)}`}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="group/gate relative rounded-2xl border border-white/15 bg-white/[0.06] p-4 sm:p-4.5 backdrop-blur-md transition-all duration-300 hover:border-white/35 hover:bg-white/[0.12] hover:-translate-y-1 flex flex-col justify-between"
+                        className="group/gate relative rounded-xl sm:rounded-2xl border border-white/15 bg-white/[0.06] p-2.5 sm:p-4.5 backdrop-blur-md transition-all duration-300 hover:border-white/35 hover:bg-white/[0.12] hover:-translate-y-1 flex flex-col justify-between"
                       >
                         <div>
-                          <div className="flex items-center justify-between gap-2 mb-2">
-                            <span className="inline-block rounded bg-sky-400/20 px-2 py-0.5 text-[10px] font-mono font-bold uppercase text-sky-200 border border-sky-400/30">
+                          <div className="flex items-center justify-between gap-1 sm:gap-2 mb-1.5 sm:mb-2">
+                            <span className="inline-block rounded bg-sky-400/20 px-1.5 sm:px-2 py-0.5 text-[8.5px] sm:text-[10px] font-mono font-bold uppercase text-sky-200 border border-sky-400/30 truncate">
                               {need.badge}
                             </span>
-                            <ArrowRight className="h-3.5 w-3.5 text-white/50 transition-transform duration-200 group-hover/gate:translate-x-1 group-hover/gate:text-white" />
+                            <ArrowRight className="h-3 w-3 sm:h-3.5 sm:w-3.5 text-white/50 transition-transform duration-200 group-hover/gate:translate-x-1 group-hover/gate:text-white shrink-0" />
                           </div>
-                          <h4 className="text-sm font-bold text-white group-hover/gate:text-sky-200 transition-colors">
+                          <h4 className="text-xs sm:text-sm font-bold text-white group-hover/gate:text-sky-200 transition-colors line-clamp-1 sm:line-clamp-none">
                             {need.title}
                           </h4>
-                          <p className="mt-1 text-xs text-white/75 leading-relaxed">
+                          <p className="mt-1 text-[9.5px] sm:text-xs text-white/75 leading-tight sm:leading-relaxed line-clamp-2 sm:line-clamp-none">
                             {need.desc}
                           </p>
                         </div>
-                        <div className="mt-3.5 pt-2 border-t border-white/10 flex items-center gap-1.5 text-[11px] font-semibold text-sky-300 group-hover/gate:text-white">
-                          <span>Konsultasikan Kebutuhan Ini</span>
+                        <div className="mt-2.5 sm:mt-3.5 pt-1.5 sm:pt-2 border-t border-white/10 flex items-center gap-1 sm:gap-1.5 text-[10px] sm:text-[11px] font-semibold text-sky-300 group-hover/gate:text-white">
+                          <span>
+                            <span className="sm:hidden text-[9.5px]">Konsultasi</span>
+                            <span className="hidden sm:inline">Konsultasikan Kebutuhan Ini</span>
+                          </span>
                           <span className="text-xs transition-transform duration-200 group-hover/gate:translate-x-0.5">→</span>
                         </div>
                       </Link>
@@ -175,21 +178,21 @@ export function ServiceDetailView({ service }: ServiceDetailViewProps) {
       {/* 2. ROI & IMPACT METRICS */}
       <section className="px-4 sm:px-6 lg:px-8">
         <div className="container mx-auto max-w-7xl">
-          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-4">
             {service.roiMetrics.map((metric, idx) => (
               <AnimatedSection
                 key={metric.label}
                 animation="fade-in-up"
                 delay={idx * 100}
               >
-                <div className="relative h-full overflow-hidden rounded-2xl border border-border/80 bg-card p-6 shadow-sm transition-all duration-300 hover:border-primary/40 hover:-translate-y-1">
-                  <div className="text-3xl font-extrabold tracking-tight text-primary font-mono">
+                <div className="relative h-full overflow-hidden rounded-xl sm:rounded-2xl border border-border/80 bg-card p-3 sm:p-6 shadow-sm transition-all duration-300 hover:border-primary/40 hover:-translate-y-1">
+                  <div className="text-xl sm:text-3xl font-extrabold tracking-tight text-primary font-mono">
                     {metric.value}
                   </div>
-                  <div className="mt-2 font-bold text-foreground text-sm">
+                  <div className="mt-1 sm:mt-2 font-bold text-foreground text-xs sm:text-sm line-clamp-1 sm:line-clamp-none">
                     {metric.label}
                   </div>
-                  <div className="mt-1 text-xs text-muted-foreground leading-relaxed">
+                  <div className="mt-0.5 sm:mt-1 text-[9.5px] sm:text-xs text-muted-foreground leading-tight sm:leading-relaxed line-clamp-2 sm:line-clamp-none">
                     {metric.description}
                   </div>
                 </div>
@@ -368,52 +371,52 @@ export function ServiceDetailView({ service }: ServiceDetailViewProps) {
                   </Button>
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 pt-8">
+                <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-2.5 sm:gap-6 pt-6 sm:pt-8">
                   {service.slug === "aplikasi-web" ? (
                     <>
-                      <div className="flex items-start gap-3.5">
-                        <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-white/10 border border-white/15 text-white font-mono text-sm font-bold">
+                      <div className="flex flex-col sm:flex-row items-start gap-2 sm:gap-3.5">
+                        <div className="flex h-7 w-7 sm:h-10 sm:w-10 shrink-0 items-center justify-center rounded-lg sm:rounded-xl bg-white/10 border border-white/15 text-white font-mono text-xs sm:text-sm font-bold">
                           01
                         </div>
                         <div>
-                          <h4 className="text-sm font-bold text-white">Respon API &lt; 120ms</h4>
-                          <p className="mt-1 text-xs text-white/75 leading-relaxed">
+                          <h4 className="text-xs sm:text-sm font-bold text-white line-clamp-1 sm:line-clamp-none">Respon API &lt; 120ms</h4>
+                          <p className="mt-0.5 sm:mt-1 text-[9.5px] sm:text-xs text-white/75 leading-tight sm:leading-relaxed line-clamp-2 sm:line-clamp-none">
                             Arsitektur backend efisien dan query database teroptimasi untuk volume transaksi besar.
                           </p>
                         </div>
                       </div>
 
-                      <div className="flex items-start gap-3.5">
-                        <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-white/10 border border-white/15 text-white font-mono text-sm font-bold">
+                      <div className="flex flex-col sm:flex-row items-start gap-2 sm:gap-3.5">
+                        <div className="flex h-7 w-7 sm:h-10 sm:w-10 shrink-0 items-center justify-center rounded-lg sm:rounded-xl bg-white/10 border border-white/15 text-white font-mono text-xs sm:text-sm font-bold">
                           02
                         </div>
                         <div>
-                          <h4 className="text-sm font-bold text-white">Keamanan Data &amp; RBAC</h4>
-                          <p className="mt-1 text-xs text-white/75 leading-relaxed">
+                          <h4 className="text-xs sm:text-sm font-bold text-white line-clamp-1 sm:line-clamp-none">Keamanan Data &amp; RBAC</h4>
+                          <p className="mt-0.5 sm:mt-1 text-[9.5px] sm:text-xs text-white/75 leading-tight sm:leading-relaxed line-clamp-2 sm:line-clamp-none">
                             Pembatasan hak akses staf bertingkat, enkripsi JWT/OAuth2 dan proteksi SQL injection.
                           </p>
                         </div>
                       </div>
 
-                      <div className="flex items-start gap-3.5">
-                        <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-white/10 border border-white/15 text-white font-mono text-sm font-bold">
+                      <div className="flex flex-col sm:flex-row items-start gap-2 sm:gap-3.5">
+                        <div className="flex h-7 w-7 sm:h-10 sm:w-10 shrink-0 items-center justify-center rounded-lg sm:rounded-xl bg-white/10 border border-white/15 text-white font-mono text-xs sm:text-sm font-bold">
                           03
                         </div>
                         <div>
-                          <h4 className="text-sm font-bold text-white">Automated Cloud Backup</h4>
-                          <p className="mt-1 text-xs text-white/75 leading-relaxed">
+                          <h4 className="text-xs sm:text-sm font-bold text-white line-clamp-1 sm:line-clamp-none">Automated Cloud Backup</h4>
+                          <p className="mt-0.5 sm:mt-1 text-[9.5px] sm:text-xs text-white/75 leading-tight sm:leading-relaxed line-clamp-2 sm:line-clamp-none">
                             Pencadangan database otomatis berkala demi memastikan data bisnis Anda tidak pernah hilang.
                           </p>
                         </div>
                       </div>
 
-                      <div className="flex items-start gap-3.5">
-                        <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-white/10 border border-white/15 text-white font-mono text-sm font-bold">
+                      <div className="flex flex-col sm:flex-row items-start gap-2 sm:gap-3.5">
+                        <div className="flex h-7 w-7 sm:h-10 sm:w-10 shrink-0 items-center justify-center rounded-lg sm:rounded-xl bg-white/10 border border-white/15 text-white font-mono text-xs sm:text-sm font-bold">
                           04
                         </div>
                         <div>
-                          <h4 className="text-sm font-bold text-white">100% Hak Milik Source Code</h4>
-                          <p className="mt-1 text-xs text-white/75 leading-relaxed">
+                          <h4 className="text-xs sm:text-sm font-bold text-white line-clamp-1 sm:line-clamp-none">100% Hak Milik Source Code</h4>
+                          <p className="mt-0.5 sm:mt-1 text-[9.5px] sm:text-xs text-white/75 leading-tight sm:leading-relaxed line-clamp-2 sm:line-clamp-none">
                             Source code &amp; database milik penuh perusahaan Anda tanpa keterikatan lisensi vendor.
                           </p>
                         </div>
@@ -421,50 +424,50 @@ export function ServiceDetailView({ service }: ServiceDetailViewProps) {
                     </>
                   ) : (
                     <>
-                      <div className="flex items-start gap-3.5">
-                        <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-white/10 border border-white/15 text-white font-mono text-sm font-bold">
+                      <div className="flex flex-col sm:flex-row items-start gap-2 sm:gap-3.5">
+                        <div className="flex h-7 w-7 sm:h-10 sm:w-10 shrink-0 items-center justify-center rounded-lg sm:rounded-xl bg-white/10 border border-white/15 text-white font-mono text-xs sm:text-sm font-bold">
                           01
                         </div>
                         <div>
-                          <h4 className="text-sm font-bold text-white">PageSpeed 95+ (Anti-Lemot)</h4>
-                          <p className="mt-1 text-xs text-white/75 leading-relaxed">
+                          <h4 className="text-xs sm:text-sm font-bold text-white line-clamp-1 sm:line-clamp-none">PageSpeed 95+ (Anti-Lemot)</h4>
+                          <p className="mt-0.5 sm:mt-1 text-[9.5px] sm:text-xs text-white/75 leading-tight sm:leading-relaxed line-clamp-2 sm:line-clamp-none">
                             Loading instan di bawah 1.2 detik di seluruh jaringan smartphone Indonesia.
                           </p>
                         </div>
                       </div>
 
-                      <div className="flex items-start gap-3.5">
-                        <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-white/10 border border-white/15 text-white font-mono text-sm font-bold">
+                      <div className="flex flex-col sm:flex-row items-start gap-2 sm:gap-3.5">
+                        <div className="flex h-7 w-7 sm:h-10 sm:w-10 shrink-0 items-center justify-center rounded-lg sm:rounded-xl bg-white/10 border border-white/15 text-white font-mono text-xs sm:text-sm font-bold">
                           02
                         </div>
                         <div>
-                          <h4 className="text-sm font-bold text-white">100% On-Page SEO Google</h4>
-                          <p className="mt-1 text-xs text-white/75 leading-relaxed">
+                          <h4 className="text-xs sm:text-sm font-bold text-white line-clamp-1 sm:line-clamp-none">100% On-Page SEO Google</h4>
+                          <p className="mt-0.5 sm:mt-1 text-[9.5px] sm:text-xs text-white/75 leading-tight sm:leading-relaxed line-clamp-2 sm:line-clamp-none">
                             Struktur semantic HTML5, Schema.org &amp; meta tag lengkap siap mendominasi Google.
                           </p>
                         </div>
                       </div>
 
-                      <div className="flex items-start gap-3.5">
-                        <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-white/10 border border-white/15 text-white font-mono text-sm font-bold">
+                      <div className="flex flex-col sm:flex-row items-start gap-2 sm:gap-3.5">
+                        <div className="flex h-7 w-7 sm:h-10 sm:w-10 shrink-0 items-center justify-center rounded-lg sm:rounded-xl bg-white/10 border border-white/15 text-white font-mono text-xs sm:text-sm font-bold">
                           03
                         </div>
                         <div>
-                          <h4 className="text-sm font-bold text-white">Tracking Iklan Terintegrasi</h4>
-                          <p className="mt-1 text-xs text-white/75 leading-relaxed">
+                          <h4 className="text-xs sm:text-sm font-bold text-white line-clamp-1 sm:line-clamp-none">Tracking Iklan Terintegrasi</h4>
+                          <p className="mt-0.5 sm:mt-1 text-[9.5px] sm:text-xs text-white/75 leading-tight sm:leading-relaxed line-clamp-2 sm:line-clamp-none">
                             Meta Pixel, TikTok Pixel &amp; Google Analytics 4 terpasang akurat untuk analisa konversi.
                           </p>
                         </div>
                       </div>
 
-                      <div className="flex items-start gap-3.5">
-                        <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-white/10 border border-white/15 text-white font-mono text-sm font-bold">
+                      <div className="flex flex-col sm:flex-row items-start gap-2 sm:gap-3.5">
+                        <div className="flex h-7 w-7 sm:h-10 sm:w-10 shrink-0 items-center justify-center rounded-lg sm:rounded-xl bg-white/10 border border-white/15 text-white font-mono text-xs sm:text-sm font-bold">
                           04
                         </div>
                         <div>
-                          <h4 className="text-sm font-bold text-white">100% Hak Milik Source Code</h4>
-                          <p className="mt-1 text-xs text-white/75 leading-relaxed">
-                            Source code &amp; database milik penuh perusahaan Anda tanpa ikatan lisensi vendor.
+                          <h4 className="text-xs sm:text-sm font-bold text-white line-clamp-1 sm:line-clamp-none">100% Hak Milik Source Code</h4>
+                          <p className="mt-0.5 sm:mt-1 text-[9.5px] sm:text-xs text-white/75 leading-tight sm:leading-relaxed line-clamp-2 sm:line-clamp-none">
+                            Kode program, database, dan seluruh aset digital diserahkan penuh kepada Anda.
                           </p>
                         </div>
                       </div>
@@ -648,21 +651,21 @@ export function ServiceDetailView({ service }: ServiceDetailViewProps) {
             </h2>
           </div>
 
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-4">
             {service.workflow.map((flow) => (
               <AnimatedSection
                 key={flow.step}
                 animation="fade-in-up"
                 delay={parseInt(flow.step) * 80}
               >
-                <div className="relative h-full rounded-2xl border border-border/80 bg-card p-6 shadow-sm">
-                  <div className="mb-3 font-mono text-xl font-black text-primary">
+                <div className="relative h-full rounded-xl sm:rounded-2xl border border-border/80 bg-card p-3 sm:p-6 shadow-sm">
+                  <div className="mb-1 sm:mb-3 font-mono text-base sm:text-xl font-black text-primary">
                     {flow.step}
                   </div>
-                  <h4 className="text-sm font-bold text-foreground mb-1.5">
+                  <h4 className="text-xs sm:text-sm font-bold text-foreground mb-1 sm:mb-1.5 line-clamp-1 sm:line-clamp-none">
                     {flow.title}
                   </h4>
-                  <p className="text-xs text-muted-foreground leading-relaxed">
+                  <p className="text-[9.5px] sm:text-xs text-muted-foreground leading-tight sm:leading-relaxed line-clamp-2 sm:line-clamp-none">
                     {flow.description}
                   </p>
                 </div>

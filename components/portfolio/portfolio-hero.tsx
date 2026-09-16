@@ -39,18 +39,27 @@ export function PortfolioHero() {
             </AnimatedSection>
 
             {/* Micro Trust Pills */}
-            <AnimatedSection animation="fade-in-up" delay={300} className="mt-6 sm:mt-8 flex flex-col sm:flex-row flex-wrap items-center justify-center gap-2.5 sm:gap-3 lg:gap-6 text-[10px] sm:text-xs lg:text-sm text-white/90">
-              <div className="flex items-center gap-2 rounded-xl bg-white/10 px-3.5 py-2 border border-white/20">
-                <Code2 className="h-4 w-4 text-white" />
-                <span>Next.js 16 &amp; Full-Stack Modern</span>
+            <AnimatedSection animation="fade-in-up" delay={300} className="mt-6 sm:mt-8 grid grid-cols-3 sm:flex sm:flex-wrap items-center justify-center gap-1.5 sm:gap-3 lg:gap-6 text-[9px] sm:text-xs lg:text-sm text-white/90">
+              <div className="flex flex-col sm:flex-row items-center justify-center text-center gap-1 sm:gap-2 rounded-lg sm:rounded-xl bg-white/10 p-2 sm:px-3.5 sm:py-2 border border-white/20">
+                <Code2 className="h-3.5 w-3.5 text-white shrink-0" />
+                <span className="truncate max-w-full">
+                  <span className="sm:hidden">Next.js 16</span>
+                  <span className="hidden sm:inline">Next.js 16 &amp; Full-Stack Modern</span>
+                </span>
               </div>
-              <div className="flex items-center gap-2 rounded-xl bg-white/10 px-3.5 py-2 border border-white/20">
-                <Globe className="h-4 w-4 text-white" />
-                <span>PageSpeed Score 95+</span>
+              <div className="flex flex-col sm:flex-row items-center justify-center text-center gap-1 sm:gap-2 rounded-lg sm:rounded-xl bg-white/10 p-2 sm:px-3.5 sm:py-2 border border-white/20">
+                <Globe className="h-3.5 w-3.5 text-white shrink-0" />
+                <span className="truncate max-w-full">
+                  <span className="sm:hidden">Speed 95+</span>
+                  <span className="hidden sm:inline">PageSpeed Score 95+</span>
+                </span>
               </div>
-              <div className="flex items-center gap-2 rounded-xl bg-white/10 px-3.5 py-2 border border-white/20">
-                <ShieldCheck className="h-4 w-4 text-white" />
-                <span>Enterprise Production Ready</span>
+              <div className="flex flex-col sm:flex-row items-center justify-center text-center gap-1 sm:gap-2 rounded-lg sm:rounded-xl bg-white/10 p-2 sm:px-3.5 sm:py-2 border border-white/20">
+                <ShieldCheck className="h-3.5 w-3.5 text-white shrink-0" />
+                <span className="truncate max-w-full">
+                  <span className="sm:hidden">Prod-Ready</span>
+                  <span className="hidden sm:inline">Enterprise Production Ready</span>
+                </span>
               </div>
             </AnimatedSection>
           </div>

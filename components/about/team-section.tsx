@@ -438,24 +438,30 @@ export function TeamSection() {
                   </div>
 
                   {/* Bottom Action */}
-                  <div className="pt-2 border-t border-border/60 flex flex-wrap items-center gap-3">
+                  <div className="pt-2 border-t border-border/60 flex flex-wrap items-center gap-2 sm:gap-3">
                     <Button 
                       asChild
-                      className="rounded-xl px-6 py-5 shadow-lg shadow-primary/20 gap-2 text-xs sm:text-sm font-semibold"
+                      className="rounded-xl px-4 sm:px-6 py-3 sm:py-5 shadow-lg shadow-primary/20 gap-1.5 sm:gap-2 text-xs sm:text-sm font-semibold flex-1 sm:flex-none justify-center"
                     >
                       <a href="#kontak">
-                        Konsultasi dengan {currentMember.name.split(" ")[0]}
-                        <ArrowRight className="w-4 h-4" />
+                        <span>
+                          <span className="sm:hidden">Konsultasi</span>
+                          <span className="hidden sm:inline">Konsultasi dengan {currentMember.name.split(" ")[0]}</span>
+                        </span>
+                        <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                       </a>
                     </Button>
                     {currentMember.portfolioUrl && currentMember.portfolioUrl !== "#" && (
                       <Button
                         variant="outline"
                         asChild
-                        className="rounded-xl px-5 py-5 gap-2 text-xs sm:text-sm font-semibold border-border/80"
+                        className="rounded-xl px-3 sm:px-5 py-3 sm:py-5 gap-1.5 sm:gap-2 text-xs sm:text-sm font-semibold border-border/80 flex-1 sm:flex-none justify-center"
                       >
                         <a href={currentMember.portfolioUrl} target="_blank" rel="noopener noreferrer">
-                          Lihat Website Personal
+                          <span>
+                            <span className="sm:hidden">Website</span>
+                            <span className="hidden sm:inline">Lihat Website Personal</span>
+                          </span>
                           <ExternalLink className="w-3.5 h-3.5" />
                         </a>
                       </Button>
@@ -473,7 +479,7 @@ export function TeamSection() {
 
         {/* ================= MODE 2: GRID SEMUA ANGGOTA ================= */}
         {viewMode === "grid" && (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2 sm:gap-4 lg:gap-6">
             {teamMembers.map((member, index) => (
               <AnimatedSection
                 key={member.id}
@@ -481,51 +487,51 @@ export function TeamSection() {
                 delay={index * 50}
                 className="h-full"
               >
-                <div className="group relative flex h-full flex-col justify-between overflow-hidden rounded-3xl border border-border/80 bg-card p-4 shadow-md transition-all duration-300 hover:-translate-y-2 hover:border-primary/40 hover:shadow-2xl hover:shadow-primary/15">
+                <div className="group relative flex h-full flex-col justify-between overflow-hidden rounded-xl sm:rounded-3xl border border-border/80 bg-card p-2 sm:p-4 shadow-md transition-all duration-300 hover:-translate-y-1.5 hover:border-primary/40 hover:shadow-2xl hover:shadow-primary/15">
                   
                   {/* Image */}
-                  <div className="relative w-full aspect-[4/5] rounded-2xl overflow-hidden bg-muted border border-border/60">
+                  <div className="relative w-full aspect-[4/5] rounded-lg sm:rounded-2xl overflow-hidden bg-muted border border-border/60">
                     <Image
                       src={member.image}
                       alt={member.name}
                       fill
                       className="object-cover object-[center_20%] transition-transform duration-500 group-hover:scale-105"
-                      sizes="(max-width: 640px) 100vw, 300px"
+                      sizes="(max-width: 640px) 50vw, 300px"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-transparent to-transparent opacity-60" />
-                    <span className="absolute top-2.5 right-2.5 px-2.5 py-0.5 rounded-full bg-background/80 backdrop-blur-md border border-border text-[10px] font-mono text-primary font-bold">
+                    <span className="absolute top-1.5 right-1.5 sm:top-2.5 sm:right-2.5 px-1.5 sm:px-2.5 py-0.5 rounded-full bg-background/80 backdrop-blur-md border border-border text-[8px] sm:text-[10px] font-mono text-primary font-bold">
                       #{String(index + 1).padStart(2, "0")}
                     </span>
                   </div>
 
                   {/* Body */}
-                  <div className="flex flex-1 flex-col justify-between pt-4 pb-1">
+                  <div className="flex flex-1 flex-col justify-between pt-2 sm:pt-4 pb-0.5 sm:pb-1">
                     <div>
-                      <span className="text-[10px] font-semibold text-primary uppercase tracking-wider">
+                      <span className="text-[8px] sm:text-[10px] font-semibold text-primary uppercase tracking-wider block truncate">
                         {member.division}
                       </span>
-                      <h3 className="text-base font-bold text-foreground tracking-tight mt-0.5">
+                      <h3 className="text-xs sm:text-base font-bold text-foreground tracking-tight mt-0.5 truncate">
                         {member.name}
                       </h3>
-                      <p className="text-xs text-muted-foreground font-medium line-clamp-1 mt-0.5">
+                      <p className="text-[10px] sm:text-xs text-muted-foreground font-medium line-clamp-1 mt-0.5">
                         {member.role}
                       </p>
-                      <p className="text-xs text-muted-foreground/80 leading-relaxed mt-2 line-clamp-2">
+                      <p className="text-[9px] sm:text-xs text-muted-foreground/80 leading-relaxed mt-1 sm:mt-2 line-clamp-2">
                         {member.bio}
                       </p>
                     </div>
 
                     {/* Actions */}
-                    <div className="mt-4 pt-3 border-t border-border/60 flex items-center justify-between">
+                    <div className="mt-2.5 sm:mt-4 pt-2 sm:pt-3 border-t border-border/60 flex items-center justify-between gap-1">
                       {member.socials.linkedin && member.socials.linkedin !== "#" ? (
                         <a
                           href={member.socials.linkedin}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="w-7 h-7 rounded-lg bg-muted text-muted-foreground hover:bg-primary hover:text-white flex items-center justify-center transition-colors"
+                          className="w-6 h-6 sm:w-7 sm:h-7 rounded-md sm:rounded-lg bg-muted text-muted-foreground hover:bg-primary hover:text-white flex items-center justify-center transition-colors shrink-0"
                           aria-label="LinkedIn"
                         >
-                          <Linkedin className="w-3.5 h-3.5" />
+                          <Linkedin className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
                         </a>
                       ) : <div />}
 
@@ -534,10 +540,13 @@ export function TeamSection() {
                           setActiveMemberIndex(index)
                           setViewMode("spotlight")
                         }}
-                        className="text-xs font-semibold text-primary hover:underline flex items-center gap-1"
+                        className="text-[10px] sm:text-xs font-semibold text-primary hover:underline flex items-center gap-0.5 sm:gap-1"
                       >
-                        Buka Profil
-                        <ChevronRight className="w-3.5 h-3.5" />
+                        <span>
+                          <span className="sm:hidden">Profil</span>
+                          <span className="hidden sm:inline">Buka Profil</span>
+                        </span>
+                        <ChevronRight className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
                       </button>
                     </div>
 

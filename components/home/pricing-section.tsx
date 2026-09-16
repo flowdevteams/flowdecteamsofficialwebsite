@@ -78,7 +78,7 @@ const plans = [
 
 export function PricingPreviewSection() {
   return (
-    <section className="relative overflow-hidden border-b border-border/60 bg-muted/35 py-20 lg:py-28">
+    <section className="relative overflow-hidden border-b border-border/60 bg-muted/35 py-10 sm:py-16 lg:py-28">
       <div className="absolute inset-0 saas-grid opacity-35 dark:opacity-15" />
       
       {/* Animated Grid Dots */}
@@ -87,28 +87,28 @@ export function PricingPreviewSection() {
         <div className="grid-dot animate-grid-light-2" />
         <div className="grid-dot animate-grid-light-3" />
       </div>
-      <div className="container relative mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="container relative mx-auto px-2 sm:px-6 lg:px-8">
 
         {/* Header */}
         <AnimatedSection animation="fade-in-up">
-          <div className="relative mx-auto mb-14 max-w-3xl text-center">
-            <span className="mb-4 inline-flex items-center gap-1.5 rounded-md border border-primary/15 bg-card/80 px-3 py-1.5 text-xs font-bold uppercase tracking-wider text-primary shadow-sm backdrop-blur">
+          <div className="relative mx-auto mb-8 sm:mb-10 lg:mb-14 max-w-3xl text-center">
+            <span className="mb-3 sm:mb-4 inline-flex items-center gap-1.5 rounded-md border border-primary/15 bg-card/80 px-2.5 py-1 sm:px-3 sm:py-1.5 text-[10px] sm:text-xs font-bold uppercase tracking-wider text-primary shadow-sm backdrop-blur">
               <Sparkles className="h-3.5 w-3.5" />
               Promo Subsidi Digitalisasi UMKM 2026
             </span>
 
-            <h2 className="mb-4 text-3xl font-semibold leading-[1.08] text-foreground sm:text-4xl lg:text-5xl">
+            <h2 className="mb-3 sm:mb-4 text-xl sm:text-2xl lg:text-4xl xl:text-5xl font-semibold leading-[1.08] text-foreground">
               <AccentTitle text="Paket Landing Page Terlengkap dengan Harga Paling Sahabat" />
             </h2>
 
-            <p className="text-base leading-relaxed text-muted-foreground sm:text-lg">
+            <p className="text-xs sm:text-sm lg:text-base leading-relaxed text-muted-foreground lg:text-lg">
               Solusi Rekayasa Digital Berkinerja Tinggi Tanpa Kompromi Kualitas. Pilih Paket Sesuai Kebutuhan Bisnis Anda Dan Nikmati Promo Potongan 50% Terbatas.
             </p>
           </div>
         </AnimatedSection>
 
         {/* Pricing Cards */}
-        <div className="relative mx-auto grid max-w-6xl gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <div className="relative mx-auto grid max-w-6xl grid-cols-2 sm:grid-cols-3 gap-2 sm:gap-3 lg:gap-6">
           {plans.map((plan, index) => (
             <AnimatedSection
               key={plan.name}
@@ -117,7 +117,7 @@ export function PricingPreviewSection() {
             >
               <div
                 className={cn(
-                  "relative flex h-full flex-col overflow-visible rounded-2xl border p-7 sm:p-8 transition-all duration-300",
+                  "relative flex h-full flex-col overflow-visible rounded-xl sm:rounded-2xl border p-3 sm:p-5 lg:p-8 transition-all duration-300",
                   plan.popular
                     ? "border-primary bg-card/90 shadow-2xl shadow-primary/15 ring-2 ring-primary/40 -translate-y-1"
                     : "border-border/80 bg-card/70 hover:border-primary/50 hover:shadow-lg"
@@ -125,8 +125,8 @@ export function PricingPreviewSection() {
               >
                 {/* Ribbon Discount */}
                 {plan.discount && !plan.popular && (
-                  <div className="absolute top-3 right-3 z-10">
-                    <span className="rounded-md bg-muted/90 text-foreground border border-border px-2.5 py-0.5 text-xs font-mono font-bold">
+                  <div className="absolute top-2 right-2 sm:top-3 sm:right-3 z-10">
+                    <span className="rounded-md bg-muted/90 text-foreground border border-border px-1.5 py-0.5 sm:px-2.5 text-[9px] sm:text-xs font-mono font-bold">
                       Diskon {plan.discount}
                     </span>
                   </div>
@@ -134,8 +134,8 @@ export function PricingPreviewSection() {
 
                 {/* Popular Badge */}
                 {plan.popular && (
-                  <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 z-20">
-                    <div className="flex items-center gap-1.5 rounded-full bg-primary px-3.5 py-1 text-xs font-bold text-primary-foreground shadow-md">
+                  <div className="absolute -top-3 sm:-top-3.5 left-1/2 -translate-x-1/2 z-20">
+                    <div className="flex items-center gap-1 sm:gap-1.5 rounded-full bg-primary px-2.5 py-0.5 sm:px-3.5 sm:py-1 text-[9px] sm:text-xs font-bold text-primary-foreground shadow-md">
                       <Star className="h-3.5 w-3.5 fill-current" />
                       Paling Banyak Dipilih (Best Seller)
                     </div>
@@ -143,36 +143,36 @@ export function PricingPreviewSection() {
                 )}
 
                 {/* Header */}
-                <div className="mb-4">
-                  <h3 className="text-xl font-bold text-foreground mb-1">
+                <div className="mb-2 sm:mb-3 lg:mb-4">
+                  <h3 className="text-sm sm:text-base lg:text-xl font-bold text-foreground mb-0.5 sm:mb-1">
                     {plan.name}
                   </h3>
-                  <p className="text-xs text-muted-foreground leading-relaxed">
+                  <p className="text-[10px] sm:text-xs text-muted-foreground leading-relaxed line-clamp-2 sm:line-clamp-none">
                     {plan.description}
                   </p>
                 </div>
 
                 {/* Price */}
-                <div className="mb-5 pb-5 border-b border-border/60">
+                <div className="mb-3 sm:mb-4 lg:mb-5 pb-3 sm:pb-4 lg:pb-5 border-b border-border/60">
                   {plan.oldPrice && (
-                    <div className="text-xs text-muted-foreground line-through mb-0.5">
+                    <div className="text-[10px] sm:text-xs text-muted-foreground line-through mb-0.5">
                       Rp {plan.oldPrice}
                     </div>
                   )}
 
-                  <div className="flex items-baseline gap-1.5">
-                    <span className="text-sm font-semibold text-muted-foreground">Rp</span>
-                    <span className="text-3xl sm:text-4xl font-extrabold text-foreground tracking-tight">
+                  <div className="flex items-baseline gap-1">
+                    <span className="text-[10px] sm:text-xs lg:text-sm font-semibold text-muted-foreground">Rp</span>
+                    <span className="text-lg sm:text-2xl lg:text-4xl font-extrabold text-foreground tracking-tight">
                       {plan.price}
                     </span>
-                    <span className="text-xs text-muted-foreground">
+                    <span className="text-[9px] sm:text-xs text-muted-foreground">
                       /{plan.period}
                     </span>
                   </div>
 
                   {plan.monthlyNote && (
                     <div className="mt-2.5">
-                      <span className="inline-block rounded-md bg-muted/60 border border-border/50 text-foreground/80 text-[11px] font-medium px-2.5 py-1">
+                      <span className="inline-block rounded-md bg-muted/60 border border-border/50 text-foreground/80 text-[9px] sm:text-[11px] font-medium px-1.5 sm:px-2.5 py-0.5 sm:py-1">
                         {plan.monthlyNote}
                       </span>
                     </div>
@@ -180,13 +180,13 @@ export function PricingPreviewSection() {
                 </div>
 
                 {/* Features */}
-                <ul className="space-y-2.5 mb-8 flex-1 text-xs">
+                <ul className="space-y-1.5 sm:space-y-2 lg:space-y-2.5 mb-4 sm:mb-6 lg:mb-8 flex-1 text-[10px] sm:text-xs">
                   {plan.features.map((feature) => (
                     <li key={feature} className="flex items-start gap-2.5 text-foreground/90 leading-relaxed">
-                      <div className="flex-shrink-0 w-4 h-4 rounded-full bg-primary/15 flex items-center justify-center mt-0.5 text-primary">
+                      <div className="flex-shrink-0 w-3 h-3 sm:w-3.5 sm:h-3.5 lg:w-4 lg:h-4 rounded-full bg-primary/15 flex items-center justify-center mt-0.5 text-primary">
                         <Check className="h-2.5 w-2.5" />
                       </div>
-                      <span>{feature}</span>
+                      <span className="line-clamp-2 sm:line-clamp-none">{feature}</span>
                     </li>
                   ))}
                 </ul>
@@ -196,7 +196,7 @@ export function PricingPreviewSection() {
                   asChild
                   size="lg"
                   variant={plan.popular ? "default" : "outline"}
-                  className="w-full rounded-lg font-semibold shadow-sm"
+                  className="w-full rounded-lg font-semibold shadow-sm h-9 sm:h-10 lg:h-11 text-[11px] sm:text-xs lg:text-sm"
                 >
                   <Link href={plan.href}>
                     {plan.cta}

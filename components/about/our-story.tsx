@@ -33,59 +33,59 @@ export function OurStory() {
           </div>
 
           {/* Right - 4 Core Pillars of Engineering Value */}
-          <div className="lg:col-span-7 grid sm:grid-cols-2 gap-4 sm:gap-6">
+          <div className="lg:col-span-7 grid grid-cols-2 gap-2 sm:gap-6">
             
             <AnimatedSection animation="fade-in-up" delay={100}>
-              <div className="h-full p-6 rounded-2xl bg-card border border-border/80 shadow-xs hover:border-primary/40 transition-colors">
-                <div className="w-11 h-11 rounded-xl bg-primary/10 flex items-center justify-center mb-4 border border-primary/20">
-                  <ShieldCheck className="h-5 w-5 text-primary" />
+              <div className="h-full p-3 sm:p-6 rounded-xl sm:rounded-2xl bg-card border border-border/80 shadow-xs hover:border-primary/40 transition-colors">
+                <div className="w-9 h-9 sm:w-11 sm:h-11 rounded-lg sm:rounded-xl bg-primary/10 flex items-center justify-center mb-2.5 sm:mb-4 border border-primary/20">
+                  <ShieldCheck className="h-4 w-4 sm:h-5 sm:w-5 text-primary" />
                 </div>
-                <h3 className="text-base font-bold text-foreground mb-1.5">
+                <h3 className="text-xs sm:text-base font-bold text-foreground mb-1 sm:mb-1.5 line-clamp-2">
                   100% Hak Milik Source Code
                 </h3>
-                <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
+                <p className="text-[9.5px] sm:text-xs lg:text-sm text-muted-foreground leading-tight sm:leading-relaxed line-clamp-3 sm:line-clamp-none">
                   Penyerahan penuh repositori Git, skema database, dan dokumentasi API. Bebas royalti tahunan.
                 </p>
               </div>
             </AnimatedSection>
 
             <AnimatedSection animation="fade-in-up" delay={200}>
-              <div className="h-full p-6 rounded-2xl bg-card border border-border/80 shadow-xs hover:border-primary/40 transition-colors">
-                <div className="w-11 h-11 rounded-xl bg-primary/10 flex items-center justify-center mb-4 border border-primary/20">
-                  <Zap className="h-5 w-5 text-primary" />
+              <div className="h-full p-3 sm:p-6 rounded-xl sm:rounded-2xl bg-card border border-border/80 shadow-xs hover:border-primary/40 transition-colors">
+                <div className="w-9 h-9 sm:w-11 sm:h-11 rounded-lg sm:rounded-xl bg-primary/10 flex items-center justify-center mb-2.5 sm:mb-4 border border-primary/20">
+                  <Zap className="h-4 w-4 sm:h-5 sm:w-5 text-primary" />
                 </div>
-                <h3 className="text-base font-bold text-foreground mb-1.5">
+                <h3 className="text-xs sm:text-base font-bold text-foreground mb-1 sm:mb-1.5 line-clamp-2">
                   Performa Kilat (Score 95+)
                 </h3>
-                <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
+                <p className="text-[9.5px] sm:text-xs lg:text-sm text-muted-foreground leading-tight sm:leading-relaxed line-clamp-3 sm:line-clamp-none">
                   Loading cepat di bawah 1.5 detik memangkas bounce rate iklan dan meningkatkan ranking SEO Google.
                 </p>
               </div>
             </AnimatedSection>
 
             <AnimatedSection animation="fade-in-up" delay={300}>
-              <div className="h-full p-6 rounded-2xl bg-card border border-border/80 shadow-xs hover:border-primary/40 transition-colors">
-                <div className="w-11 h-11 rounded-xl bg-primary/10 flex items-center justify-center mb-4 border border-primary/20">
-                  <Code2 className="h-5 w-5 text-primary" />
+              <div className="h-full p-3 sm:p-6 rounded-xl sm:rounded-2xl bg-card border border-border/80 shadow-xs hover:border-primary/40 transition-colors">
+                <div className="w-9 h-9 sm:w-11 sm:h-11 rounded-lg sm:rounded-xl bg-primary/10 flex items-center justify-center mb-2.5 sm:mb-4 border border-primary/20">
+                  <Code2 className="h-4 w-4 sm:h-5 sm:w-5 text-primary" />
                 </div>
-                <h3 className="text-base font-bold text-foreground mb-1.5">
+                <h3 className="text-xs sm:text-base font-bold text-foreground mb-1 sm:mb-1.5 line-clamp-2">
                   Arsitektur Skalabel Modern
                 </h3>
-                <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
+                <p className="text-[9.5px] sm:text-xs lg:text-sm text-muted-foreground leading-tight sm:leading-relaxed line-clamp-3 sm:line-clamp-none">
                   Siap diintegrasikan ke sistem pembayaran otomatis, CRM, ERP bisnis, hingga modul AI cerdas.
                 </p>
               </div>
             </AnimatedSection>
 
             <AnimatedSection animation="fade-in-up" delay={400}>
-              <div className="h-full p-6 rounded-2xl bg-card border border-border/80 shadow-xs hover:border-primary/40 transition-colors">
-                <div className="w-11 h-11 rounded-xl bg-primary/10 flex items-center justify-center mb-4 border border-primary/20">
-                  <Lock className="h-5 w-5 text-primary" />
+              <div className="h-full p-3 sm:p-6 rounded-xl sm:rounded-2xl bg-card border border-border/80 shadow-xs hover:border-primary/40 transition-colors">
+                <div className="w-9 h-9 sm:w-11 sm:h-11 rounded-lg sm:rounded-xl bg-primary/10 flex items-center justify-center mb-2.5 sm:mb-4 border border-primary/20">
+                  <Lock className="h-4 w-4 sm:h-5 sm:w-5 text-primary" />
                 </div>
-                <h3 className="text-base font-bold text-foreground mb-1.5">
+                <h3 className="text-xs sm:text-base font-bold text-foreground mb-1 sm:mb-1.5 line-clamp-2">
                   Termin Milestone Transparan
                 </h3>
-                <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
+                <p className="text-[9.5px] sm:text-xs lg:text-sm text-muted-foreground leading-tight sm:leading-relaxed line-clamp-3 sm:line-clamp-none">
                   Skema pembayaran bertahap berbasis validasi progres nyata. Keamanan investasi Anda terjamin.
                 </p>
               </div>

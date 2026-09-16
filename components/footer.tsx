@@ -30,8 +30,8 @@ const socialLinks = [
 export function Footer() {
   return (
     <footer className="border-t border-border/60 bg-card">
-      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-12 lg:py-16">
-        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-12">
+      <div className="w-full max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 py-6 sm:py-12 lg:py-16">
+        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-5 gap-4 sm:gap-8 lg:gap-12">
 
           {/* Brand Section */}
           <div className="col-span-2 lg:col-span-2">
@@ -56,7 +56,7 @@ export function Footer() {
               <span className="sm:hidden"> Flowdev <span className="text-primary">Teams</span></span>
             </Link>
 
-            <p className="text-muted-foreground text-sm mb-6 max-w-sm leading-relaxed mt-4 sm:mt-5">
+            <p className="text-muted-foreground text-[10px] sm:text-sm mb-4 sm:mb-6 max-w-sm leading-relaxed mt-3 sm:mt-5">
               Software House & IT Consultant Tepercaya Di Indonesia. Kami Menghadirkan Solusi Teknologi Terpadu: Jasa Pembuatan Website, Aplikasi Bisnis Kustom, Dan Otomasi AI Cerdas Untuk Memangkas Biaya Operasional Serta Mempercepat Pertumbuhan Skala Bisnis Anda.
             </p>
 
@@ -95,13 +95,13 @@ export function Footer() {
 
           {/* Service Categories Links */}
           <div>
-            <h3 className="mb-4 font-semibold text-foreground text-sm uppercase tracking-wider">Kategori Layanan</h3>
-            <ul className="space-y-3">
+            <h3 className="mb-2 sm:mb-4 font-semibold text-foreground text-[10px] sm:text-sm uppercase tracking-wider">Kategori Layanan</h3>
+            <ul className="space-y-1.5 sm:space-y-3">
               {footerLinks.services.map((link) => (
                 <li key={link.label}>
                   <Link
                     href={link.href}
-                    className="text-muted-foreground transition-colors hover:text-primary text-sm leading-snug block"
+                    className="text-muted-foreground transition-colors hover:text-primary text-[10px] sm:text-sm leading-snug block"
                   >
                     {link.label}
                   </Link>
@@ -112,13 +112,13 @@ export function Footer() {
 
           {/* Company Links */}
           <div>
-            <h3 className="mb-4 font-semibold text-foreground text-sm uppercase tracking-wider">Perusahaan</h3>
-            <ul className="space-y-3">
+            <h3 className="mb-2 sm:mb-4 font-semibold text-foreground text-[10px] sm:text-sm uppercase tracking-wider">Perusahaan</h3>
+            <ul className="space-y-1.5 sm:space-y-3">
               {footerLinks.company.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-muted-foreground transition-colors hover:text-primary text-sm leading-snug block"
+                    className="text-muted-foreground transition-colors hover:text-primary text-[10px] sm:text-sm leading-snug block"
                   >
                     {link.label}
                   </Link>
@@ -129,13 +129,13 @@ export function Footer() {
 
           {/* Support & Legal Links */}
           <div>
-            <h3 className="mb-4 font-semibold text-foreground text-sm uppercase tracking-wider">Bantuan & Legal</h3>
-            <ul className="space-y-3">
+            <h3 className="mb-2 sm:mb-4 font-semibold text-foreground text-[10px] sm:text-sm uppercase tracking-wider">Bantuan & Legal</h3>
+            <ul className="space-y-1.5 sm:space-y-3">
               {footerLinks.support.map((link) => (
                 <li key={link.label}>
                   <Link
                     href={link.href}
-                    className="text-muted-foreground transition-colors hover:text-primary text-sm leading-snug block"
+                    className="text-muted-foreground transition-colors hover:text-primary text-[10px] sm:text-sm leading-snug block"
                   >
                     {link.label}
                   </Link>
@@ -145,7 +145,7 @@ export function Footer() {
                 <li key={link.label}>
                   <Link
                     href={link.href}
-                    className="text-muted-foreground transition-colors hover:text-primary text-sm leading-snug block"
+                    className="text-muted-foreground transition-colors hover:text-primary text-[10px] sm:text-sm leading-snug block"
                   >
                     {link.label}
                   </Link>

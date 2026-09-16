@@ -430,53 +430,65 @@ export function PortfolioGrid() {
         <div className="flex flex-col lg:flex-row items-center justify-between gap-6 mb-12">
           
           {/* 4 Category Filter Pills */}
-          <div className="inline-flex flex-wrap justify-center p-1.5 bg-card rounded-2xl border border-border/80 shadow-xs gap-1.5 max-w-full">
+          <div className="grid grid-cols-2 sm:flex sm:flex-wrap justify-center p-1 sm:p-1.5 bg-card rounded-2xl border border-border/80 shadow-xs gap-1 sm:gap-1.5 w-full sm:w-auto">
             <button
               onClick={() => setActiveCategory("all")}
               className={cn(
-                "px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-200",
+                "px-2.5 sm:px-4 py-2 sm:py-2.5 rounded-xl text-[11px] sm:text-sm font-semibold transition-all duration-200 text-center flex items-center justify-center",
                 activeCategory === "all"
                   ? "bg-primary text-primary-foreground shadow-xs scale-102"
                   : "text-muted-foreground hover:text-foreground hover:bg-muted/50"
               )}
             >
-              Semua Proyek ({allPortfolioProjects.length})
+              <span>
+                <span className="sm:hidden">Semua ({allPortfolioProjects.length})</span>
+                <span className="hidden sm:inline">Semua Proyek ({allPortfolioProjects.length})</span>
+              </span>
             </button>
             <button
               onClick={() => setActiveCategory("ai")}
               className={cn(
-                "flex items-center gap-1.5 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-200",
+                "flex items-center justify-center gap-1 sm:gap-1.5 px-2 sm:px-4 py-2 sm:py-2.5 rounded-xl text-[11px] sm:text-sm font-semibold transition-all duration-200",
                 activeCategory === "ai"
                   ? "bg-primary text-primary-foreground shadow-xs scale-102"
                   : "text-muted-foreground hover:text-foreground hover:bg-muted/50"
               )}
             >
-              <Brain className="w-3.5 h-3.5" />
-              Kecerdasan Buatan (AI)
+              <Brain className="w-3.5 h-3.5 shrink-0" />
+              <span>
+                <span className="sm:hidden">AI &amp; ML</span>
+                <span className="hidden sm:inline">Kecerdasan Buatan (AI)</span>
+              </span>
             </button>
             <button
               onClick={() => setActiveCategory("webapp")}
               className={cn(
-                "flex items-center gap-1.5 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-200",
+                "flex items-center justify-center gap-1 sm:gap-1.5 px-2 sm:px-4 py-2 sm:py-2.5 rounded-xl text-[11px] sm:text-sm font-semibold transition-all duration-200",
                 activeCategory === "webapp"
                   ? "bg-primary text-primary-foreground shadow-xs scale-102"
                   : "text-muted-foreground hover:text-foreground hover:bg-muted/50"
               )}
             >
-              <LayoutDashboard className="w-3.5 h-3.5" />
-              Aplikasi Web & ERP
+              <LayoutDashboard className="w-3.5 h-3.5 shrink-0" />
+              <span>
+                <span className="sm:hidden">Web App</span>
+                <span className="hidden sm:inline">Aplikasi Web &amp; ERP</span>
+              </span>
             </button>
             <button
               onClick={() => setActiveCategory("landing")}
               className={cn(
-                "flex items-center gap-1.5 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-200",
+                "flex items-center justify-center gap-1 sm:gap-1.5 px-2 sm:px-4 py-2 sm:py-2.5 rounded-xl text-[11px] sm:text-sm font-semibold transition-all duration-200",
                 activeCategory === "landing"
                   ? "bg-primary text-primary-foreground shadow-xs scale-102"
                   : "text-muted-foreground hover:text-foreground hover:bg-muted/50"
               )}
             >
-              <Globe className="w-3.5 h-3.5" />
-              Website Landing Page
+              <Globe className="w-3.5 h-3.5 shrink-0" />
+              <span>
+                <span className="sm:hidden">Landing Page</span>
+                <span className="hidden sm:inline">Website Landing Page</span>
+              </span>
             </button>
           </div>
 
@@ -524,7 +536,7 @@ export function PortfolioGrid() {
         )}
 
         {/* COMPREHENSIVE PORTFOLIO GRID */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-2 sm:gap-4 lg:gap-8">
           {filteredProjects.map((project, index) => (
             <AnimatedSection
               key={project.id}
@@ -532,45 +544,45 @@ export function PortfolioGrid() {
               delay={index * 50}
               className="h-full"
             >
-              <div className="group relative flex h-full flex-col justify-between overflow-hidden rounded-2xl border border-border/80 bg-card/90 shadow-md transition-all duration-300 hover:-translate-y-1.5 hover:border-primary/40 hover:shadow-2xl hover:shadow-primary/10">
+              <div className="group relative flex h-full flex-col justify-between overflow-hidden rounded-xl sm:rounded-2xl border border-border/80 bg-card/90 shadow-md transition-all duration-300 hover:-translate-y-1.5 hover:border-primary/40 hover:shadow-2xl hover:shadow-primary/10">
                 
                 {/* Top Mockup Preview Header */}
-                <div className="relative aspect-[16/10] overflow-hidden bg-muted/40 border-b border-border/70 p-4 flex flex-col justify-between">
+                <div className="relative aspect-[16/10] overflow-hidden bg-muted/40 border-b border-border/70 p-2 sm:p-4 flex flex-col justify-between">
                   
                   {/* Subtle Grid in Card Mockup */}
                   <div className="absolute inset-0 saas-grid opacity-25 pointer-events-none" />
                   <div className={cn("absolute -top-10 -right-10 w-44 h-44 rounded-full blur-2xl opacity-30 pointer-events-none bg-gradient-to-br", project.accentColor)} />
 
                   {/* Browser Bar Mini */}
-                  <div className="relative z-10 flex items-center justify-between pb-2 border-b border-border/60">
-                    <div className="flex items-center gap-1.5">
-                      <div className="w-2.5 h-2.5 rounded-full bg-red-500/70" />
-                      <div className="w-2.5 h-2.5 rounded-full bg-yellow-500/70" />
-                      <div className="w-2.5 h-2.5 rounded-full bg-green-500/70" />
+                  <div className="relative z-10 flex items-center justify-between pb-1 sm:pb-2 border-b border-border/60">
+                    <div className="flex items-center gap-1 sm:gap-1.5">
+                      <div className="w-1.5 h-1.5 sm:w-2.5 sm:h-2.5 rounded-full bg-red-500/70" />
+                      <div className="w-1.5 h-1.5 sm:w-2.5 sm:h-2.5 rounded-full bg-yellow-500/70" />
+                      <div className="w-1.5 h-1.5 sm:w-2.5 sm:h-2.5 rounded-full bg-green-500/70" />
                     </div>
-                    <span className="text-[10px] font-mono text-muted-foreground/80 px-2 py-0.5 rounded bg-background/80 border border-border/60 truncate max-w-[150px]">
-                      flowdevteams.com/demo/{project.id}
+                    <span className="text-[8px] sm:text-[10px] font-mono text-muted-foreground/80 px-1.5 sm:px-2 py-0.5 rounded bg-background/80 border border-border/60 truncate max-w-[85px] sm:max-w-[150px]">
+                      demo/{project.id}
                     </span>
-                    <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
+                    <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-primary animate-pulse" />
                   </div>
 
                   {/* Visual Simulation in Mockup */}
-                  <div className="relative z-10 my-auto flex flex-col items-center justify-center text-center p-2">
-                    <div className={cn("w-12 h-12 rounded-xl flex items-center justify-center text-white bg-gradient-to-br shadow-md transition-transform duration-300 group-hover:scale-110", project.accentColor)}>
-                      {project.category === "ai" && <Brain className="w-6 h-6" />}
-                      {project.category === "webapp" && <LayoutDashboard className="w-6 h-6" />}
-                      {project.category === "landing" && <Globe className="w-6 h-6" />}
+                  <div className="relative z-10 my-auto flex flex-col items-center justify-center text-center p-1 sm:p-2">
+                    <div className={cn("w-8 h-8 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl flex items-center justify-center text-white bg-gradient-to-br shadow-md transition-transform duration-300 group-hover:scale-110", project.accentColor)}>
+                      {project.category === "ai" && <Brain className="w-4 h-4 sm:w-6 sm:h-6" />}
+                      {project.category === "webapp" && <LayoutDashboard className="w-4 h-4 sm:w-6 sm:h-6" />}
+                      {project.category === "landing" && <Globe className="w-4 h-4 sm:w-6 sm:h-6" />}
                     </div>
-                    <span className="text-xs font-bold text-foreground mt-2 font-mono">{project.title}</span>
-                    <span className="text-[10px] text-muted-foreground">{project.client}</span>
+                    <span className="text-[10px] sm:text-xs font-bold text-foreground mt-1 sm:mt-2 font-mono line-clamp-1">{project.title}</span>
+                    <span className="text-[8px] sm:text-[10px] text-muted-foreground truncate max-w-full">{project.client}</span>
                   </div>
 
                   {/* Category Pill Tag */}
-                  <div className="relative z-10 flex items-center justify-between pt-2 border-t border-border/50 text-[10px]">
-                    <span className="font-semibold text-primary px-2 py-0.5 rounded bg-primary/10 border border-primary/20">
+                  <div className="relative z-10 flex items-center justify-between pt-1 sm:pt-2 border-t border-border/50 text-[8px] sm:text-[10px]">
+                    <span className="font-semibold text-primary px-1.5 sm:px-2 py-0.5 rounded bg-primary/10 border border-primary/20 truncate max-w-[90px] sm:max-w-none">
                       {project.badgeText}
                     </span>
-                    <span className="font-mono text-muted-foreground font-medium">
+                    <span className="font-mono text-muted-foreground font-medium hidden sm:inline">
                       {project.categoryLabel}
                     </span>
                   </div>
@@ -578,64 +590,67 @@ export function PortfolioGrid() {
                 </div>
 
                 {/* Card Body */}
-                <div className="flex flex-1 flex-col justify-between p-5 sm:p-6">
+                <div className="flex flex-1 flex-col justify-between p-2.5 sm:p-6">
                   
                   <div>
-                    <h3 className="text-lg sm:text-xl font-bold text-foreground tracking-tight leading-snug group-hover:text-primary transition-colors">
+                    <h3 className="text-xs sm:text-lg lg:text-xl font-bold text-foreground tracking-tight leading-snug group-hover:text-primary transition-colors line-clamp-1 sm:line-clamp-none">
                       {project.title}
                     </h3>
-                    <p className="mt-1 text-xs font-medium text-primary line-clamp-1">
+                    <p className="mt-0.5 sm:mt-1 text-[9px] sm:text-xs font-medium text-primary line-clamp-1">
                       {project.tagline}
                     </p>
-                    <p className="mt-2.5 text-xs text-muted-foreground leading-relaxed line-clamp-3">
+                    <p className="mt-1.5 sm:mt-2.5 text-[9.5px] sm:text-xs text-muted-foreground leading-tight sm:leading-relaxed line-clamp-2 sm:line-clamp-3">
                       {project.description}
                     </p>
 
                     {/* 3 Metrics */}
-                    <div className="mt-4 grid grid-cols-3 gap-2 p-2.5 rounded-xl bg-muted/40 border border-border/60 text-center">
+                    <div className="mt-2.5 sm:mt-4 grid grid-cols-3 gap-1 sm:gap-2 p-1.5 sm:p-2.5 rounded-lg sm:rounded-xl bg-muted/40 border border-border/60 text-center">
                       {project.highlights.map((h, i) => (
                         <div key={i} className="flex flex-col">
-                          <span className="text-[10px] text-muted-foreground font-medium truncate">{h.label}</span>
-                          <span className="text-xs sm:text-sm font-bold text-foreground font-mono">{h.value}</span>
+                          <span className="text-[7px] sm:text-[10px] text-muted-foreground font-medium truncate">{h.label}</span>
+                          <span className="text-[9.5px] sm:text-xs sm:text-sm font-bold text-foreground font-mono">{h.value}</span>
                         </div>
                       ))}
                     </div>
 
                     {/* Tech Stack */}
-                    <div className="mt-4 flex flex-wrap gap-1.5">
-                      {project.techStack.slice(0, 4).map((tech) => (
+                    <div className="mt-2.5 sm:mt-4 flex flex-wrap gap-1 sm:gap-1.5">
+                      {project.techStack.slice(0, 3).map((tech) => (
                         <span 
                           key={tech}
-                          className="px-2 py-0.5 rounded text-[10px] font-mono font-medium bg-background border border-border/70 text-muted-foreground"
+                          className="px-1.5 py-0.5 rounded text-[8px] sm:text-[10px] font-mono font-medium bg-background border border-border/70 text-muted-foreground truncate"
                         >
                           {tech}
                         </span>
                       ))}
-                      {project.techStack.length > 4 && (
-                        <span className="px-1.5 py-0.5 rounded text-[10px] font-mono text-muted-foreground bg-muted">
-                          +{project.techStack.length - 4}
+                      {project.techStack.length > 3 && (
+                        <span className="px-1 py-0.5 rounded text-[8px] sm:text-[10px] font-mono text-muted-foreground bg-muted">
+                          +{project.techStack.length - 3}
                         </span>
                       )}
                     </div>
                   </div>
 
                   {/* Card Action Button */}
-                  <div className="mt-6 pt-4 border-t border-border/60 flex items-center justify-between">
+                  <div className="mt-3 sm:mt-6 pt-2.5 sm:pt-4 border-t border-border/60 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-1.5 sm:gap-2">
                     <button
                       onClick={() => setSelectedProject(project)}
-                      className="text-xs font-semibold text-primary hover:text-primary/80 flex items-center gap-1 group/btn"
+                      className="text-[10px] sm:text-xs font-semibold text-primary hover:text-primary/80 flex items-center justify-center sm:justify-start gap-0.5 group/btn py-1 sm:py-0"
                     >
-                      Lihat Detail & Studi Kasus
-                      <ChevronRight className="w-3.5 h-3.5 transition-transform group-hover/btn:translate-x-1" />
+                      <span>
+                        <span className="sm:hidden">Detail Kasus</span>
+                        <span className="hidden sm:inline">Lihat Detail &amp; Studi Kasus</span>
+                      </span>
+                      <ChevronRight className="w-3 h-3 transition-transform group-hover/btn:translate-x-1" />
                     </button>
                     <Button
                       size="sm"
                       asChild
-                      className="rounded-lg text-xs h-8 px-3 gap-1 shadow-xs"
+                      className="rounded-lg text-[10px] sm:text-xs h-7 sm:h-8 px-2 sm:px-3 gap-1 shadow-xs w-full sm:w-auto justify-center"
                     >
                       <a href="#kontak">
                         Konsultasi
-                        <ArrowRight className="w-3 h-3" />
+                        <ArrowRight className="w-2.5 h-2.5 sm:w-3 sm:h-3" />
                       </a>
                     </Button>
                   </div>

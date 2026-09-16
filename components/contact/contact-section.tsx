@@ -59,64 +59,69 @@ export function ContactSection() {
               </p>
               
               {/* Direct Guarantees */}
-              <div className="flex flex-wrap gap-2.5 mb-8 text-xs font-mono">
-                <span className="px-3 py-1 rounded-full bg-primary/10 text-primary border border-primary/20">
-                  ✓ Respon WhatsApp &lt; 15 Menit
+              <div className="grid grid-cols-3 sm:flex sm:flex-wrap gap-1.5 sm:gap-2.5 mb-6 sm:mb-8 text-[9px] sm:text-xs font-mono">
+                <span className="px-1.5 sm:px-3 py-1 rounded-lg sm:rounded-full bg-primary/10 text-primary border border-primary/20 text-center truncate">
+                  <span className="sm:hidden">✓ WA &lt; 15m</span>
+                  <span className="hidden sm:inline">✓ Respon WhatsApp &lt; 15 Menit</span>
                 </span>
-                <span className="px-3 py-1 rounded-full bg-primary/10 text-primary border border-primary/20">
-                  ✓ Konsultasi Awal 100% Gratis
+                <span className="px-1.5 sm:px-3 py-1 rounded-lg sm:rounded-full bg-primary/10 text-primary border border-primary/20 text-center truncate">
+                  <span className="sm:hidden">✓ Konsul Gratis</span>
+                  <span className="hidden sm:inline">✓ Konsultasi Awal 100% Gratis</span>
                 </span>
-                <span className="px-3 py-1 rounded-full bg-primary/10 text-primary border border-primary/20">
-                  ✓ Jaminan Kerahasiaan NDA
+                <span className="px-1.5 sm:px-3 py-1 rounded-lg sm:rounded-full bg-primary/10 text-primary border border-primary/20 text-center truncate">
+                  <span className="sm:hidden">✓ Garansi NDA</span>
+                  <span className="hidden sm:inline">✓ Jaminan Kerahasiaan NDA</span>
                 </span>
               </div>
             </AnimatedSection>
 
-            <div className="grid sm:grid-cols-2 gap-6">
+            <div className="grid grid-cols-2 gap-2 sm:gap-6">
               {contactInfo.map((info, index) => (
                 <AnimatedSection
                   key={info.title}
                   animation="fade-in-up"
                   delay={index * 100}
                 >
-                  <div className="p-6 flex-1 h-full rounded-2xl bg-card border text-center border-border hover:border-primary/30 transition-colors">
-                    <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                      <info.icon className="h-6 w-6 text-primary" />
-                    </div>
-                    <h3 className="font-semibold text-foreground mb-2 text-sm sm:text-base">
-                      {info.title}
-                    </h3>
-                    
-                    {info.isPhones ? (
-                      <div className="space-y-1.5 mb-3">
-                        {info.phones?.map((p) => (
-                          <a
-                            key={p.number}
-                            href={p.href}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="block text-sm font-medium text-foreground hover:text-primary transition-colors"
-                          >
-                            {p.number}
-                          </a>
-                        ))}
+                  <div className="p-3 sm:p-6 flex-1 h-full rounded-xl sm:rounded-2xl bg-card border text-center border-border hover:border-primary/30 transition-colors flex flex-col justify-between">
+                    <div>
+                      <div className="w-9 h-9 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl bg-primary/10 flex items-center justify-center mx-auto mb-2 sm:mb-4">
+                        <info.icon className="h-4 w-4 sm:h-6 sm:w-6 text-primary" />
                       </div>
-                    ) : info.href ? (
-                      <p className="mb-3">
-                        <a 
-                          href={info.href} 
-                          className="text-foreground font-medium text-sm hover:text-primary transition-colors"
-                        >
+                      <h3 className="font-semibold text-foreground mb-1 sm:mb-2 text-xs sm:text-base line-clamp-1">
+                        {info.title}
+                      </h3>
+                      
+                      {info.isPhones ? (
+                        <div className="space-y-1 mb-2 sm:mb-3">
+                          {info.phones?.map((p) => (
+                            <a
+                              key={p.number}
+                              href={p.href}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="block text-[10px] sm:text-sm font-medium text-foreground hover:text-primary transition-colors truncate"
+                            >
+                              {p.number}
+                            </a>
+                          ))}
+                        </div>
+                      ) : info.href ? (
+                        <p className="mb-2 sm:mb-3">
+                          <a 
+                            href={info.href} 
+                            className="text-foreground font-medium text-[10px] sm:text-sm hover:text-primary transition-colors truncate block max-w-full"
+                          >
+                            {info.content}
+                          </a>
+                        </p>
+                      ) : (
+                        <p className="text-foreground font-medium text-[10px] sm:text-sm mb-2 sm:mb-3 truncate">
                           {info.content}
-                        </a>
-                      </p>
-                    ) : (
-                      <p className="text-foreground font-medium text-sm mb-3">
-                        {info.content}
-                      </p>
-                    )}
+                        </p>
+                      )}
+                    </div>
 
-                    <p className="text-xs text-muted-foreground">
+                    <p className="text-[8.5px] sm:text-xs text-muted-foreground line-clamp-2">
                       {info.description}
                     </p>
                   </div>
@@ -126,7 +131,7 @@ export function ContactSection() {
 
             {/* Map Placeholder */}
             <AnimatedSection animation="fade-in-up" delay={400}>
-              <div className="mt-8 rounded-2xl bg-muted/50 border border-border overflow-hidden h-64 flex items-center justify-center">
+              <div className="mt-6 sm:mt-8 rounded-xl sm:rounded-2xl bg-muted/50 border border-border overflow-hidden h-48 sm:h-64 flex items-center justify-center">
                 <InteractiveMap />
               </div>
             </AnimatedSection>
@@ -135,12 +140,12 @@ export function ContactSection() {
           {/* Contact Form */}
           <div>
             <AnimatedSection animation="fade-in-right">
-              <div className="p-8 rounded-2xl bg-card border border-border shadow-sm">
-                <div className="flex items-center gap-3 mb-6">
-                  <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
-                    <Send className="h-5 w-5 text-primary" />
+              <div className="p-4 sm:p-8 rounded-xl sm:rounded-2xl bg-card border border-border shadow-sm">
+                <div className="flex items-center gap-2.5 sm:gap-3 mb-4 sm:mb-6">
+                  <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-primary/10 flex items-center justify-center">
+                    <Send className="h-4 w-4 sm:h-5 sm:w-5 text-primary" />
                   </div>
-                  <h3 className="text-2xl font-bold text-foreground">
+                  <h3 className="text-lg sm:text-2xl font-bold text-foreground">
                     <AccentTitle text="Kirim Pesan & Mulai Diskusi" highlightWords={2} />
                   </h3>
                 </div>

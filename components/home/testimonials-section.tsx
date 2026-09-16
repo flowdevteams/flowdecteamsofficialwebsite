@@ -30,15 +30,15 @@ const testimonials = [
 
 export function TestimonialsSection() {
   return (
-    <section className="border-b border-border/60 bg-background py-14 sm:py-20 lg:py-28">
-      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="border-b border-border/60 bg-background py-8 sm:py-16 lg:py-28">
+      <div className="w-full max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
         <SectionHeader
           badge="Testimoni Klien"
           title="Dipercaya oleh Klien dari Berbagai Industri"
           description="Bukan Sekadar Janji. Berikut Pengalaman Nyata Klien Yang Telah Menggunakan Jasa Pembuatan Website Dari Flowdev Teams."
         />
 
-        <div className="mt-10 sm:mt-16 grid gap-4 sm:gap-5 md:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-6 sm:mt-12 lg:mt-16 grid grid-cols-3 gap-1.5 sm:gap-4 lg:gap-6">
           {testimonials.map((testimonial, index) => (
             <AnimatedSection
               key={testimonial.name}
@@ -46,43 +46,44 @@ export function TestimonialsSection() {
               delay={index * 100}
               className="h-full"
             >
-              <article className="group relative flex h-full flex-col justify-between overflow-hidden rounded-xl border border-border/70 bg-card/90 p-5 sm:p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-primary/35 hover:shadow-xl hover:shadow-primary/10 lg:p-8">
+              <article className="group relative flex h-full flex-col justify-between overflow-hidden rounded-lg sm:rounded-xl border border-border/70 bg-card/90 p-2 sm:p-5 lg:p-8 shadow-2xs transition-all duration-300 hover:-translate-y-1 hover:border-primary/35 hover:shadow-xl hover:shadow-primary/10">
                 <div className="relative z-10 flex flex-col flex-1">
-                <div className="mb-6 flex h-10 w-10 items-center justify-center rounded-lg border border-primary/15 bg-primary/10">
-                  <Quote className="h-5 w-5 text-primary" />
-                </div>
-
-                {/* Rating */}
-                <div className="flex gap-1 mb-4">
-                  {Array.from({ length: testimonial.rating }).map((_, i) => (
-                    <Star
-                      key={i}
-                      className="h-5 w-5 fill-primary text-primary"
-                    />
-                  ))}
-                </div>
-
-                {/* Content */}
-                <p className="mb-6 sm:mb-8 flex-1 text-[13px] sm:text-sm lg:text-base leading-relaxed text-foreground opacity-90">
-                  {`"${testimonial.content}"`}
-                </p>
-
-                {/* Author */}
-                <div className="flex items-center gap-4 pt-6 border-t border-border/50">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-lg border border-primary/20 bg-primary/10 transition-colors duration-300 group-hover:bg-primary/15">
-                    <span className="text-primary font-bold text-lg">
-                      {testimonial.name.charAt(0)}
-                    </span>
+                  {/* Quote Icon */}
+                  <div className="mb-2 sm:mb-4 lg:mb-6 flex h-6 w-6 sm:h-8 sm:w-8 lg:h-10 lg:w-10 items-center justify-center rounded sm:rounded-lg border border-primary/15 bg-primary/10">
+                    <Quote className="h-3 w-3 sm:h-4 sm:w-4 lg:h-5 lg:w-5 text-primary" />
                   </div>
-                  <div>
-                    <div className="font-semibold text-foreground">
-                      {testimonial.name}
+
+                  {/* Rating */}
+                  <div className="flex gap-0.5 sm:gap-1 mb-1.5 sm:mb-3 lg:mb-4">
+                    {Array.from({ length: testimonial.rating }).map((_, i) => (
+                      <Star
+                        key={i}
+                        className="h-2.5 w-2.5 sm:h-4 sm:w-4 lg:h-5 lg:w-5 fill-primary text-primary shrink-0"
+                      />
+                    ))}
+                  </div>
+
+                  {/* Content */}
+                  <p className="mb-2 sm:mb-6 lg:mb-8 flex-1 text-[9px] sm:text-xs lg:text-base leading-snug sm:leading-relaxed text-foreground opacity-90 line-clamp-3 sm:line-clamp-none">
+                    {`"${testimonial.content}"`}
+                  </p>
+
+                  {/* Author */}
+                  <div className="flex items-center gap-1.5 sm:gap-3 lg:gap-4 pt-2 sm:pt-4 lg:pt-6 border-t border-border/50 mt-auto">
+                    <div className="flex h-6 w-6 sm:h-9 sm:w-9 lg:h-12 lg:w-12 items-center justify-center rounded sm:rounded-lg border border-primary/20 bg-primary/10 transition-colors duration-300 group-hover:bg-primary/15 shrink-0">
+                      <span className="text-primary font-bold text-[10px] sm:text-sm lg:text-lg">
+                        {testimonial.name.charAt(0)}
+                      </span>
                     </div>
-                    <div className="text-sm text-muted-foreground">
-                      {testimonial.role}
+                    <div className="min-w-0 flex-1">
+                      <div className="font-semibold text-foreground text-[10px] sm:text-xs lg:text-base truncate">
+                        {testimonial.name}
+                      </div>
+                      <div className="text-[7.5px] sm:text-[11px] lg:text-sm text-muted-foreground truncate">
+                        {testimonial.role}
+                      </div>
                     </div>
                   </div>
-                </div>
                 </div>
               </article>
             </AnimatedSection>

@@ -185,21 +185,21 @@ export function SolutionsShowcaseSection() {
   const [activeTab, setActiveTab] = useState<"all" | "website" | "webapp">("all")
 
   return (
-    <section id="katalog-spesifikasi" className="relative py-20 sm:py-28 overflow-hidden bg-background">
+    <section id="katalog-spesifikasi" className="relative py-10 sm:py-20 lg:py-28 overflow-hidden bg-background">
       {/* Background Decor Ambient (Blue & White Only) */}
       <div className="pointer-events-none absolute -top-40 left-1/2 -translate-x-1/2 h-96 w-[700px] rounded-full bg-primary/10 blur-[120px]" />
 
-      <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10 mb-12 sm:mb-16">
+      <div className="container mx-auto max-w-7xl px-2 sm:px-6 lg:px-8 relative z-10 mb-6 sm:mb-12 lg:mb-16">
         <div className="text-center max-w-4xl mx-auto">
           <AnimatedSection animation="fade-in-down">
-            <div className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/10 px-4 py-1.5 text-xs font-mono font-semibold uppercase tracking-wider text-primary mb-4">
+            <div className="inline-flex items-center gap-1.5 sm:gap-2 rounded-full border border-primary/20 bg-primary/10 px-2.5 py-1 sm:px-4 sm:py-1.5 text-[9px] sm:text-xs font-mono font-semibold uppercase tracking-wider text-primary mb-2 sm:mb-4">
               <Zap className="h-3.5 w-3.5 text-primary" />
               <span>PILIHAN WEBSITE &amp; APLIKASI WEB KUSTOM</span>
             </div>
           </AnimatedSection>
 
           <AnimatedSection animation="fade-in-up" delay={100}>
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-foreground font-heading">
+            <h2 className="text-lg sm:text-2xl lg:text-4xl font-bold tracking-tight text-foreground font-heading">
               <AccentTitle
                 text="Jasa Pembuatan Website & Aplikasi Web Kustom Sesuai Kebutuhan Bisnis Anda"
                 highlightWords={4}
@@ -208,48 +208,53 @@ export function SolutionsShowcaseSection() {
           </AnimatedSection>
 
           <AnimatedSection animation="fade-in-up" delay={200}>
-            <p className="mt-4 text-base sm:text-lg text-muted-foreground leading-relaxed font-normal max-w-2xl mx-auto">
+            <p className="mt-2 sm:mt-4 text-[11px] sm:text-sm lg:text-lg text-muted-foreground leading-relaxed font-normal max-w-2xl mx-auto">
               Temukan Solusi Website dan Aplikasi yang Tepat Untuk Bisnis Anda. Dari profil perusahaan, landing page iklan, Hingga Sistem Kasir dan Operasional.
             </p>
           </AnimatedSection>
 
           {/* Interactive Category Filter Pills */}
-          <AnimatedSection animation="fade-in-up" delay={300} className="mt-8 flex flex-wrap items-center justify-center gap-2.5">
-            <button
-              onClick={() => setActiveTab("all")}
-              className={cn(
-                "rounded-full px-5 py-2 text-xs sm:text-sm font-semibold transition-all duration-200 border",
-                activeTab === "all"
-                  ? "bg-primary text-primary-foreground border-primary shadow-md shadow-primary/25"
-                  : "bg-card text-muted-foreground border-border hover:border-primary/40 hover:text-foreground"
-              )}
-            >
-              Semua Pilihan (12 Tipe)
-            </button>
-            <button
-              onClick={() => setActiveTab("website")}
-              className={cn(
-                "inline-flex items-center gap-1.5 rounded-full px-5 py-2 text-xs sm:text-sm font-semibold transition-all duration-200 border",
-                activeTab === "website"
-                  ? "bg-primary text-primary-foreground border-primary shadow-md shadow-primary/25"
-                  : "bg-card text-muted-foreground border-border hover:border-primary/40 hover:text-foreground"
-              )}
-            >
-              <Globe className="h-4 w-4" />
-              <span>Website &amp; Landing Page (6)</span>
-            </button>
-            <button
-              onClick={() => setActiveTab("webapp")}
-              className={cn(
-                "inline-flex items-center gap-1.5 rounded-full px-5 py-2 text-xs sm:text-sm font-semibold transition-all duration-200 border",
-                activeTab === "webapp"
-                  ? "bg-primary text-primary-foreground border-primary shadow-md shadow-primary/25"
-                  : "bg-card text-muted-foreground border-border hover:border-primary/40 hover:text-foreground"
-              )}
-            >
-              <LayoutDashboard className="h-4 w-4" />
-              <span>Aplikasi Web &amp; Sistem Bisnis (6)</span>
-            </button>
+          <AnimatedSection animation="fade-in-up" delay={300} className="mt-4 sm:mt-8 w-full max-w-sm sm:max-w-none mx-auto">
+            <div className="grid grid-cols-3 gap-1 sm:flex sm:flex-wrap sm:items-center sm:justify-center sm:gap-2.5">
+              <button
+                onClick={() => setActiveTab("all")}
+                className={cn(
+                  "rounded-full px-1.5 py-2 sm:px-5 sm:py-2 text-[10px] sm:text-sm font-semibold transition-all duration-200 border whitespace-nowrap flex items-center justify-center min-h-[38px] sm:min-h-[40px]",
+                  activeTab === "all"
+                    ? "bg-primary text-primary-foreground border-primary shadow-md shadow-primary/25"
+                    : "bg-card text-muted-foreground border-border hover:border-primary/40 hover:text-foreground"
+                )}
+              >
+                <span className="sm:hidden">Semua (12)</span>
+                <span className="hidden sm:inline">Semua Pilihan (12 Tipe)</span>
+              </button>
+              <button
+                onClick={() => setActiveTab("website")}
+                className={cn(
+                  "inline-flex items-center justify-center gap-1 sm:gap-1.5 rounded-full px-1.5 py-2 sm:px-5 sm:py-2 text-[10px] sm:text-sm font-semibold transition-all duration-200 border whitespace-nowrap min-h-[38px] sm:min-h-[40px]",
+                  activeTab === "website"
+                    ? "bg-primary text-primary-foreground border-primary shadow-md shadow-primary/25"
+                    : "bg-card text-muted-foreground border-border hover:border-primary/40 hover:text-foreground"
+                )}
+              >
+                <Globe className="h-3 w-3 sm:h-4 sm:w-4 shrink-0" />
+                <span className="sm:hidden">Website (6)</span>
+                <span className="hidden sm:inline">Website &amp; Landing Page (6)</span>
+              </button>
+              <button
+                onClick={() => setActiveTab("webapp")}
+                className={cn(
+                  "inline-flex items-center justify-center gap-1 sm:gap-1.5 rounded-full px-1.5 py-2 sm:px-5 sm:py-2 text-[10px] sm:text-sm font-semibold transition-all duration-200 border whitespace-nowrap min-h-[38px] sm:min-h-[40px]",
+                  activeTab === "webapp"
+                    ? "bg-primary text-primary-foreground border-primary shadow-md shadow-primary/25"
+                    : "bg-card text-muted-foreground border-border hover:border-primary/40 hover:text-foreground"
+                )}
+              >
+                <LayoutDashboard className="h-3 w-3 sm:h-4 sm:w-4 shrink-0" />
+                <span className="sm:hidden">Aplikasi (6)</span>
+                <span className="hidden sm:inline">Aplikasi Web &amp; Sistem Bisnis (6)</span>
+              </button>
+            </div>
           </AnimatedSection>
         </div>
       </div>
@@ -262,9 +267,9 @@ export function SolutionsShowcaseSection() {
 
         {/* Row 1: Website & Landing Page (Sliding Left ←) */}
         {(activeTab === "all" || activeTab === "website") && (
-          <div className="mb-6 group">
-            <div className="flex items-center gap-2 px-6 sm:px-12 mb-3">
-              <span className="inline-flex items-center gap-1.5 text-[11px] font-mono font-bold uppercase tracking-wider text-primary bg-primary/10 px-2.5 py-0.5 rounded border border-primary/20">
+          <div className="mb-3 sm:mb-6 group">
+            <div className="flex items-center gap-1.5 sm:gap-2 px-3 sm:px-12 mb-2 sm:mb-3">
+              <span className="inline-flex items-center gap-1 sm:gap-1.5 text-[9px] sm:text-[11px] font-mono font-bold uppercase tracking-wider text-primary bg-primary/10 px-2 py-0.5 sm:px-2.5 rounded border border-primary/20">
                 <Globe className="h-3 w-3" />
                 PILIHAN WEBSITE &amp; LANDING PAGE
               </span>
@@ -273,7 +278,7 @@ export function SolutionsShowcaseSection() {
               </span>
             </div>
 
-            <div className="animate-marquee-left flex gap-5 gpu-accelerated">
+            <div className="animate-marquee-left flex gap-2 sm:gap-5 gpu-accelerated">
               {/* Double array for infinite continuous loop */}
               {[...websiteSolutions, ...websiteSolutions].map((item, idx) => (
                 <SolutionCard key={`${item.id}-${idx}`} item={item} />
@@ -285,8 +290,8 @@ export function SolutionsShowcaseSection() {
         {/* Row 2: Aplikasi Web & Sistem Enterprise (Sliding Right →) */}
         {(activeTab === "all" || activeTab === "webapp") && (
           <div className="group mt-2">
-            <div className="flex items-center gap-2 px-6 sm:px-12 mb-3">
-              <span className="inline-flex items-center gap-1.5 text-[11px] font-mono font-bold uppercase tracking-wider text-sky-400 bg-sky-500/10 px-2.5 py-0.5 rounded border border-sky-500/20">
+            <div className="flex items-center gap-1.5 sm:gap-2 px-3 sm:px-12 mb-2 sm:mb-3">
+              <span className="inline-flex items-center gap-1 sm:gap-1.5 text-[9px] sm:text-[11px] font-mono font-bold uppercase tracking-wider text-sky-400 bg-sky-500/10 px-2 py-0.5 sm:px-2.5 rounded border border-sky-500/20">
                 <LayoutDashboard className="h-3 w-3" />
                 PILIHAN APLIKASI WEB &amp; SISTEM BISNIS
               </span>
@@ -295,7 +300,7 @@ export function SolutionsShowcaseSection() {
               </span>
             </div>
 
-            <div className="animate-marquee-right flex gap-5 gpu-accelerated">
+            <div className="animate-marquee-right flex gap-2 sm:gap-5 gpu-accelerated">
               {/* Double array for infinite continuous loop */}
               {[...webAppSolutions, ...webAppSolutions].map((item, idx) => (
                 <SolutionCard key={`${item.id}-${idx}`} item={item} />
@@ -306,22 +311,22 @@ export function SolutionsShowcaseSection() {
       </div>
 
       {/* Bottom Micro-Trust Value Bar */}
-      <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mt-12 sm:mt-16">
-        <div className="rounded-2xl border border-border/80 bg-card p-6 shadow-sm">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-left sm:text-center">
-            <div className="flex items-center sm:justify-center gap-2 text-xs font-semibold text-foreground">
+      <div className="container mx-auto max-w-7xl px-2 sm:px-6 lg:px-8 mt-6 sm:mt-12 lg:mt-16">
+        <div className="rounded-xl sm:rounded-2xl border border-border/80 bg-card p-3 sm:p-6 shadow-sm">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-2 sm:gap-4 text-left sm:text-center">
+            <div className="flex items-center sm:justify-center gap-1.5 sm:gap-2 text-[9px] sm:text-xs font-semibold text-foreground">
               <CheckCircle2 className="h-4 w-4 text-primary shrink-0" />
               <span>100% Hak Milik Source Code</span>
             </div>
-            <div className="flex items-center sm:justify-center gap-2 text-xs font-semibold text-foreground">
+            <div className="flex items-center sm:justify-center gap-1.5 sm:gap-2 text-[9px] sm:text-xs font-semibold text-foreground">
               <CheckCircle2 className="h-4 w-4 text-primary shrink-0" />
               <span>Bebas Biaya Lisensi Per-User</span>
             </div>
-            <div className="flex items-center sm:justify-center gap-2 text-xs font-semibold text-foreground">
+            <div className="flex items-center sm:justify-center gap-1.5 sm:gap-2 text-[9px] sm:text-xs font-semibold text-foreground">
               <CheckCircle2 className="h-4 w-4 text-primary shrink-0" />
               <span>Desain Kustom Tanpa Template</span>
             </div>
-            <div className="flex items-center sm:justify-center gap-2 text-xs font-semibold text-foreground">
+            <div className="flex items-center sm:justify-center gap-1.5 sm:gap-2 text-[9px] sm:text-xs font-semibold text-foreground">
               <CheckCircle2 className="h-4 w-4 text-primary shrink-0" />
               <span>Integrasi API &amp; Payment Gateway</span>
             </div>
@@ -334,10 +339,10 @@ export function SolutionsShowcaseSection() {
 
 function SolutionCard({ item }: { item: SolutionItem }) {
   return (
-    <div className="w-[310px] sm:w-[370px] shrink-0 rounded-2xl border border-border/80 bg-card p-4 shadow-sm transition-all duration-300 hover:border-primary/50 hover:shadow-xl hover:shadow-primary/10 flex flex-col justify-between overflow-hidden group/card select-none">
+    <div className="w-[220px] sm:w-[310px] lg:w-[370px] shrink-0 rounded-xl sm:rounded-2xl border border-border/80 bg-card p-2.5 sm:p-4 shadow-sm transition-all duration-300 hover:border-primary/50 hover:shadow-xl hover:shadow-primary/10 flex flex-col justify-between overflow-hidden group/card select-none">
       <div>
         {/* Browser Chrome Header Mockup */}
-        <div className="relative rounded-xl overflow-hidden border border-primary/25 bg-[#0b1728] shadow-md group-hover/card:border-primary/50 transition-all duration-300 mb-3.5">
+        <div className="relative rounded-lg sm:rounded-xl overflow-hidden border border-primary/25 bg-[#0b1728] shadow-md group-hover/card:border-primary/50 transition-all duration-300 mb-2 sm:mb-3.5">
           <div className="flex items-center justify-between px-3 py-2 bg-[#0d1c33] border-b border-white/10 text-white select-none">
             {/* 3 Window dots */}
             <div className="flex items-center gap-1.5">
@@ -370,27 +375,27 @@ function SolutionCard({ item }: { item: SolutionItem }) {
         </div>
 
         {/* Target Audience Pill */}
-        <div className="mb-2.5 flex items-start gap-2 rounded-lg bg-primary/[0.04] px-2.5 py-1.5 border border-primary/15 text-[11px]">
+        <div className="mb-1.5 sm:mb-2.5 flex items-start gap-1.5 sm:gap-2 rounded-md sm:rounded-lg bg-primary/[0.04] px-2 py-1 sm:px-2.5 sm:py-1.5 border border-primary/15 text-[9px] sm:text-[11px]">
           <span className="font-semibold text-primary shrink-0">Cocok:</span>
           <span className="text-foreground/85 font-medium line-clamp-1 leading-normal">{item.target}</span>
         </div>
 
-        <h3 className="text-sm sm:text-base font-bold text-foreground leading-snug mb-1.5 group-hover/card:text-primary transition-colors line-clamp-1">
+        <h3 className="text-[11px] sm:text-sm lg:text-base font-bold text-foreground leading-snug mb-1 sm:mb-1.5 group-hover/card:text-primary transition-colors line-clamp-1">
           {item.title}
         </h3>
 
-        <p className="text-xs text-muted-foreground leading-relaxed line-clamp-2 mb-3">
+        <p className="text-[9px] sm:text-xs text-muted-foreground leading-relaxed line-clamp-2 mb-2 sm:mb-3">
           {item.description}
         </p>
       </div>
 
       <div>
         {/* Tags */}
-        <div className="flex flex-wrap gap-1 pt-2.5 border-t border-border/50 mb-3">
+        <div className="flex flex-wrap gap-0.5 sm:gap-1 pt-2 sm:pt-2.5 border-t border-border/50 mb-2 sm:mb-3">
           {item.tags.slice(0, 3).map((tag) => (
             <span
               key={tag}
-              className="rounded bg-muted/60 px-2 py-0.5 text-[9px] font-mono font-medium text-foreground/75 border border-border/50"
+              className="rounded bg-muted/60 px-1.5 sm:px-2 py-0.5 text-[7px] sm:text-[9px] font-mono font-medium text-foreground/75 border border-border/50 line-clamp-1"
             >
               {tag}
             </span>
@@ -398,11 +403,11 @@ function SolutionCard({ item }: { item: SolutionItem }) {
         </div>
 
         {/* Action Button */}
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-1.5 sm:gap-2">
           <Button
             asChild
             size="sm"
-            className="flex-1 rounded-xl bg-primary text-primary-foreground font-semibold text-xs h-8.5 shadow-sm shadow-primary/20 hover:bg-primary/90 transition-all duration-200"
+            className="flex-1 rounded-lg sm:rounded-xl bg-primary text-primary-foreground font-semibold text-[9px] sm:text-xs h-7 sm:h-8.5 shadow-sm shadow-primary/20 hover:bg-primary/90 transition-all duration-200"
           >
             <Link
               href={`https://wa.me/6281574673448?text=Halo%20Flowdev%20Teams,%20saya%20tertarik%20konsultasi%20pembuatan%20${encodeURIComponent(item.title)}`}
@@ -419,7 +424,7 @@ function SolutionCard({ item }: { item: SolutionItem }) {
             asChild
             variant="outline"
             size="sm"
-            className="rounded-xl border-border hover:border-primary/40 text-muted-foreground hover:text-foreground h-8.5 px-2.5"
+            className="rounded-lg sm:rounded-xl border-border hover:border-primary/40 text-muted-foreground hover:text-foreground h-7 sm:h-8.5 px-2 sm:px-2.5"
             title="Lihat Detail Layanan"
           >
             <Link href={item.serviceUrl}>

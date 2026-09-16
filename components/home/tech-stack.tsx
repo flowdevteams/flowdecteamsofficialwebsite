@@ -168,41 +168,41 @@ export function TechStackSection() {
   return (
     <section 
       id="tech-stack" 
-      className="relative overflow-hidden border-b border-border/60 bg-background py-16 sm:py-24 lg:py-28"
+      className="relative overflow-hidden border-b border-border/60 bg-background py-10 sm:py-16 lg:py-28"
     >
       {/* Background Subtle Ambience */}
       <div className="absolute inset-0 saas-grid opacity-25 pointer-events-none" />
       <div className="absolute top-1/4 -right-20 w-96 h-96 bg-primary/10 rounded-full blur-[120px] pointer-events-none" />
       <div className="absolute bottom-10 -left-20 w-96 h-96 bg-blue-500/10 rounded-full blur-[120px] pointer-events-none" />
 
-      <div className="w-full max-w-7xl relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="w-full max-w-7xl relative z-10 mx-auto px-2 sm:px-6 lg:px-8">
         
         {/* SEO Header: Bait for Technical Inquiries */}
-        <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-14">
+        <div className="text-center max-w-3xl mx-auto mb-6 sm:mb-10 lg:mb-14">
           <AnimatedSection animation="fade-in-down">
-            <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 text-xs font-semibold uppercase tracking-wider mb-3.5 bg-primary/10 text-primary rounded-full border border-primary/20 shadow-2xs">
+            <span className="inline-flex items-center gap-1.5 px-2.5 py-1 sm:px-3.5 sm:py-1.5 text-[10px] sm:text-xs font-semibold uppercase tracking-wider mb-2 sm:mb-3.5 bg-primary/10 text-primary rounded-full border border-primary/20 shadow-2xs">
               <Cpu className="w-3.5 h-3.5 text-primary animate-pulse" />
               Tech Stack &amp; Arsitektur Sistem
             </span>
           </AnimatedSection>
 
           <AnimatedSection animation="fade-in-up" delay={100}>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight leading-tight text-foreground">
+            <h2 className="text-xl sm:text-2xl lg:text-4xl xl:text-5xl font-bold tracking-tight leading-tight text-foreground">
               <span>Tech Stack Modern: </span>
               <span className="text-primary">Next.js, NestJS, PostgreSQL &amp; AI</span>
             </h2>
           </AnimatedSection>
 
           <AnimatedSection animation="fade-in-up" delay={200}>
-            <p className="mt-4 text-sm sm:text-base text-muted-foreground leading-relaxed max-w-2xl mx-auto">
+            <p className="mt-2 sm:mt-3 lg:mt-4 text-[11px] sm:text-xs lg:text-base text-muted-foreground leading-relaxed max-w-2xl mx-auto">
               Stack modern untuk performa tinggi, keamanan, dan skalabilitas bisnis.
             </p>
           </AnimatedSection>
         </div>
 
         {/* Filter Navigation Tabs: Base Navy Styled */}
-        <AnimatedSection animation="fade-in-up" delay={250} className="mb-8 sm:mb-12">
-          <div className="flex flex-wrap items-center justify-center gap-2 p-1.5 max-w-2xl mx-auto rounded-2xl bg-[#142d52] border border-white/15 shadow-md">
+        <AnimatedSection animation="fade-in-up" delay={250} className="mb-4 sm:mb-8 lg:mb-12">
+          <div className="flex overflow-x-auto no-scrollbar items-center gap-1.5 sm:gap-2 p-1 sm:p-1.5 max-w-2xl mx-auto rounded-xl sm:rounded-2xl bg-[#142d52] border border-white/15 shadow-md sm:flex-wrap sm:justify-center">
             {filterTabs.map((tab) => {
               const Icon = tab.icon
               const isActive = activeTab === tab.id
@@ -211,7 +211,7 @@ export function TechStackSection() {
                   key={tab.id}
                   onClick={() => setActiveTab(tab.id)}
                   className={cn(
-                    "flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs sm:text-sm font-medium transition-transform duration-200 cursor-pointer select-none",
+                    "flex items-center gap-1.5 sm:gap-2 px-2.5 py-1.5 sm:px-3.5 sm:py-2 rounded-lg sm:rounded-xl text-[10px] sm:text-xs lg:text-sm font-medium transition-transform duration-200 cursor-pointer select-none whitespace-nowrap",
                     isActive
                       ? "bg-white text-[#142d52] shadow-sm font-semibold"
                       : "text-blue-100 hover:text-white hover:bg-white/10"
@@ -226,7 +226,7 @@ export function TechStackSection() {
         </AnimatedSection>
 
         {/* Grid Tools Showcase with Base Navy Grid Style & Pure Motion Hover (No Color Change) */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-5">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2 sm:gap-3 lg:gap-5">
           {filteredTools.map((tool, idx) => (
             <AnimatedSection
               key={tool.name}
@@ -234,51 +234,51 @@ export function TechStackSection() {
               delay={(idx % 4) * 50}
             >
               <div 
-                className="relative h-full rounded-2xl border border-white/15 bg-[#142d52] p-5 sm:p-6 shadow-md transition-transform duration-300 hover:-translate-y-1.5 flex flex-col justify-between overflow-hidden text-white"
+                className="relative h-full rounded-xl sm:rounded-2xl border border-white/15 bg-[#142d52] p-3 sm:p-4 lg:p-6 shadow-md transition-transform duration-300 hover:-translate-y-1.5 flex flex-col justify-between overflow-hidden text-white"
               >
                 {/* Background Inverse Grid Pattern */}
                 <div className="absolute inset-0 inverse-grid opacity-25 pointer-events-none" />
 
                 <div className="relative z-10">
                   {/* Card Header: White Logo in Container + Version Tag */}
-                  <div className="flex items-start justify-between gap-3 mb-4">
-                    <div className="relative flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-white/15 bg-white/10 p-2 shadow-inner">
+                  <div className="flex items-start justify-between gap-2 sm:gap-3 mb-2.5 sm:mb-3 lg:mb-4">
+                    <div className="relative flex h-8 w-8 sm:h-10 sm:w-10 lg:h-11 lg:w-11 shrink-0 items-center justify-center rounded-lg sm:rounded-xl border border-white/15 bg-white/10 p-1.5 sm:p-2 shadow-inner">
                       <Image
                         src={tool.logo}
                         alt={`Logo Resmi ${tool.name} - Flowdev Teams`}
-                        width={26}
-                        height={26}
-                        className="brightness-0 invert object-contain max-h-6 max-w-6"
+                        width={20}
+                        height={20}
+                        className="brightness-0 invert object-contain max-h-4 max-w-4 sm:max-h-5 sm:max-w-5 lg:max-h-6 lg:max-w-6"
                       />
                     </div>
 
-                    <span className="text-[10px] font-mono font-medium px-2 py-0.5 rounded-md bg-white/10 text-blue-200 border border-white/15">
+                    <span className="text-[8px] sm:text-[9px] lg:text-[10px] font-mono font-medium px-1.5 sm:px-2 py-0.5 rounded-md bg-white/10 text-blue-200 border border-white/15 line-clamp-1">
                       {tool.versionTag}
                     </span>
                   </div>
 
                   {/* Tool Title & SEO Role */}
-                  <div className="mb-2">
-                    <h3 className="text-base sm:text-lg font-bold text-white tracking-tight">
+                  <div className="mb-1.5 sm:mb-2">
+                    <h3 className="text-xs sm:text-sm lg:text-lg font-bold text-white tracking-tight">
                       {tool.name}
                     </h3>
-                    <span className="text-[11px] font-medium text-blue-300 block mt-0.5">
+                    <span className="text-[9px] sm:text-[10px] lg:text-[11px] font-medium text-blue-300 block mt-0.5 line-clamp-1">
                       {tool.seoRole}
                     </span>
                   </div>
 
                   {/* Description */}
-                  <p className="text-xs text-blue-100/75 leading-relaxed line-clamp-3 mb-4">
+                  <p className="text-[10px] sm:text-xs text-blue-100/75 leading-relaxed line-clamp-2 sm:line-clamp-3 mb-2.5 sm:mb-3 lg:mb-4">
                     {tool.description}
                   </p>
                 </div>
 
                 {/* Bottom Tags */}
-                <div className="relative z-10 pt-3 border-t border-white/15 flex flex-wrap items-center gap-1.5">
+                <div className="relative z-10 pt-2 sm:pt-2.5 lg:pt-3 border-t border-white/15 flex flex-wrap items-center gap-1">
                   {tool.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="text-[10px] font-medium px-2 py-0.5 rounded-md bg-white/10 text-blue-100 border border-white/10"
+                      className="text-[8px] sm:text-[9px] lg:text-[10px] font-medium px-1.5 sm:px-2 py-0.5 rounded-md bg-white/10 text-blue-100 border border-white/10 line-clamp-1"
                     >
                       {tag}
                     </span>

@@ -92,10 +92,13 @@ export function ContactForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-6">
-      <div className="grid sm:grid-cols-2 gap-6">
-        <div className="space-y-2">
-          <Label htmlFor="name">Nama Lengkap *</Label>
+    <form onSubmit={handleSubmit} className="space-y-3 sm:space-y-4 lg:space-y-6">
+      <div className="grid grid-cols-2 gap-2 sm:gap-4 lg:gap-6">
+        <div className="space-y-1 sm:space-y-2">
+          <Label htmlFor="name" className="text-xs sm:text-sm truncate block">
+            <span className="sm:hidden">Nama *</span>
+            <span className="hidden sm:inline">Nama Lengkap *</span>
+          </Label>
           <Input
             id="name"
             name="name"
@@ -115,8 +118,11 @@ export function ContactForm() {
             autoComplete="off"
           />
         </div>
-        <div className="space-y-2">
-          <Label htmlFor="email">Alamat Email *</Label>
+        <div className="space-y-1 sm:space-y-2">
+          <Label htmlFor="email" className="text-xs sm:text-sm truncate block">
+            <span className="sm:hidden">Email *</span>
+            <span className="hidden sm:inline">Alamat Email *</span>
+          </Label>
           <Input
             id="email"
             name="email"
@@ -129,19 +135,25 @@ export function ContactForm() {
         </div>
       </div>
 
-      <div className="grid sm:grid-cols-2 gap-6">
-        <div className="space-y-2">
-          <Label htmlFor="company">Nama Perusahaan</Label>
+      <div className="grid grid-cols-2 gap-2 sm:gap-4 lg:gap-6">
+        <div className="space-y-1 sm:space-y-2">
+          <Label htmlFor="company" className="text-xs sm:text-sm truncate block">
+            <span className="sm:hidden">Perusahaan</span>
+            <span className="hidden sm:inline">Nama Perusahaan</span>
+          </Label>
           <Input
             id="company"
             name="company"
             value={formData.company}
             onChange={handleChange}
-            placeholder="PT / Startup / Brand Anda"
+            placeholder="PT / Brand Anda"
           />
         </div>
-        <div className="space-y-2">
-          <Label htmlFor="phone">Nomor WhatsApp</Label>
+        <div className="space-y-1 sm:space-y-2">
+          <Label htmlFor="phone" className="text-xs sm:text-sm truncate block">
+            <span className="sm:hidden">WhatsApp</span>
+            <span className="hidden sm:inline">Nomor WhatsApp</span>
+          </Label>
           <Input
             id="phone"
             name="phone"
@@ -153,9 +165,12 @@ export function ContactForm() {
         </div>
       </div>
 
-      <div className="grid sm:grid-cols-2 gap-6">
-        <div className="space-y-2">
-          <Label htmlFor="service">Layanan yang Dibutuhkan *</Label>
+      <div className="grid grid-cols-2 gap-2 sm:gap-4 lg:gap-6">
+        <div className="space-y-1 sm:space-y-2">
+          <Label htmlFor="service" className="text-xs sm:text-sm truncate block">
+            <span className="sm:hidden">Layanan *</span>
+            <span className="hidden sm:inline">Layanan yang Dibutuhkan *</span>
+          </Label>
           <Select
             value={formData.service}
             onValueChange={(value) =>
@@ -176,8 +191,11 @@ export function ContactForm() {
           </Select>
         </div>
 
-        <div className="space-y-2">
-          <Label htmlFor="budget">Estimasi Anggaran</Label>
+        <div className="space-y-1 sm:space-y-2">
+          <Label htmlFor="budget" className="text-xs sm:text-sm truncate block">
+            <span className="sm:hidden">Budget</span>
+            <span className="hidden sm:inline">Estimasi Anggaran</span>
+          </Label>
           <Select
             value={formData.budget}
             onValueChange={(value) =>
@@ -185,7 +203,7 @@ export function ContactForm() {
             }
           >
             <SelectTrigger>
-              <SelectValue placeholder="Pilih range budget" />
+              <SelectValue placeholder="Pilih range" />
             </SelectTrigger>
             <SelectContent>
               {budgets.map((budget) => (
@@ -198,8 +216,8 @@ export function ContactForm() {
         </div>
       </div>
 
-      <div className="space-y-2">
-        <Label htmlFor="message">Detail Proyek *</Label>
+      <div className="space-y-1 sm:space-y-2">
+        <Label htmlFor="message" className="text-xs sm:text-sm">Detail Proyek *</Label>
         <Textarea
           id="message"
           name="message"

@@ -46,7 +46,7 @@ const steps = [
 
 export function HowWeWorkSection() {
   return (
-    <section className="relative overflow-hidden border-b border-border/60 bg-background py-14 sm:py-20 lg:py-28">
+    <section className="relative overflow-hidden border-b border-border/60 bg-background py-8 sm:py-14 lg:py-28">
       <div className="pointer-events-none absolute inset-0 saas-grid opacity-35 dark:opacity-15" />
       
       {/* Animated Grid Dots */}
@@ -56,21 +56,21 @@ export function HowWeWorkSection() {
         <div className="grid-dot animate-grid-light-3" />
       </div>
 
-      <div className="w-full max-w-7xl relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="w-full max-w-7xl relative z-10 mx-auto px-2 sm:px-6 lg:px-8">
         <SectionHeader
           badge="LAYANAN & SPESIALISASI KAMI"
           title="Layanan Jasa Pembuatan Website, Aplikasi, & Sistem Bisnis"
           description="Dari Website Profil Terpercaya, Aplikasi Web Kustom, Hingga Otomasi Kerja Harian Semua Dirancang Siap Pakai Untuk Kemajuan Bisnis Anda."
         />
 
-        <div className="relative mx-auto mt-16 max-w-5xl">
+        <div className="relative mx-auto mt-8 sm:mt-12 lg:mt-16 max-w-5xl">
           {/* Central Timeline Line (Desktop Only) */}
           <div className="absolute left-1/2 inset-y-0 hidden w-px -translate-x-1/2 bg-primary/20 md:block">
             {/* Animated Arrow Light */}
             <div className="absolute left-1/2 top-0 h-[16.66%] w-[2px] -translate-x-1/2 rounded-full bg-gradient-to-b from-transparent via-primary to-transparent shadow-[0_0_15px_3px_var(--primary)] animate-timeline-light" />
           </div>
 
-          <div className="relative z-10 flex flex-col gap-6 md:gap-0">
+          <div className="relative z-10 hidden md:flex flex-col gap-0">
             {steps.map((step, index) => {
               const isLeft = index % 2 === 0;
 
@@ -163,32 +163,32 @@ export function HowWeWorkSection() {
                       )}
                     </div>
 
-                    {/* Mobile Layout (Stacked) */}
+                    {/* Mobile Layout (2-Column Compact Grid) */}
                     <div 
-                      className="animate-sync-card flex md:hidden w-full items-start gap-3.5 sm:gap-4 rounded-xl border border-border/90 bg-card p-4 sm:p-5 shadow-xs"
+                      className="animate-sync-card flex md:hidden w-full items-start gap-2 sm:gap-3 rounded-lg sm:rounded-xl border border-border/90 bg-card p-2.5 sm:p-4 shadow-xs"
                       style={{ animationDelay: `-${6 - index}s` }}
                     >
                       <div 
-                        className="animate-sync-icon-box flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-primary/25 bg-primary/10 text-primary mt-0.5"
+                        className="animate-sync-icon-box flex h-8 w-8 sm:h-10 sm:w-10 shrink-0 items-center justify-center rounded-lg sm:rounded-xl border border-primary/25 bg-primary/10 text-primary mt-0.5"
                         style={{ animationDelay: `-${6 - index}s` }}
                       >
-                        <step.icon className="animate-sync-icon h-6 w-6" style={{ animationDelay: `-${6 - index}s` }} />
+                        <step.icon className="animate-sync-icon h-4 w-4 sm:h-5 sm:w-5" style={{ animationDelay: `-${6 - index}s` }} />
                       </div>
-                      <div className="flex flex-col text-left">
+                      <div className="flex flex-col text-left min-w-0">
                         <span 
-                          className="animate-sync-text-sub font-mono text-xs font-bold uppercase tracking-wider text-primary mb-0.5"
+                          className="animate-sync-text-sub font-mono text-[9px] sm:text-xs font-bold uppercase tracking-wider text-primary mb-0.5"
                           style={{ animationDelay: `-${6 - index}s` }}
                         >
                           SOLUSI 0{index + 1}
                         </span>
                         <h3 
-                          className="animate-sync-text-main text-base font-bold font-sans tracking-tight text-foreground leading-snug"
+                          className="animate-sync-text-main text-xs sm:text-sm font-bold font-sans tracking-tight text-foreground leading-snug line-clamp-2"
                           style={{ animationDelay: `-${6 - index}s` }}
                         >
                           {step.title}
                         </h3>
                         <p 
-                          className="animate-sync-text-desc text-[13px] text-foreground/80 leading-relaxed mt-1"
+                          className="animate-sync-text-desc text-[10px] sm:text-xs text-foreground/80 leading-relaxed mt-0.5 sm:mt-1 line-clamp-2"
                           style={{ animationDelay: `-${6 - index}s` }}
                         >
                           {step.desc}
@@ -200,6 +200,45 @@ export function HowWeWorkSection() {
                 </AnimatedSection>
               );
             })}
+          </div>
+
+          {/* Mobile 2-Column Compact Grid */}
+          <div className="relative z-10 grid grid-cols-2 gap-2 sm:gap-3 md:hidden">
+            {steps.map((step, index) => (
+              <AnimatedSection key={step.title} animation="fade-in-up" delay={index * 80}>
+                <div 
+                  className="animate-sync-card flex flex-col rounded-lg sm:rounded-xl border border-border/90 bg-card p-2.5 sm:p-4 shadow-xs h-full"
+                  style={{ animationDelay: `-${6 - index}s` }}
+                >
+                  <div className="flex items-center gap-2 mb-1.5 sm:mb-2">
+                    <div 
+                      className="animate-sync-icon-box flex h-8 w-8 sm:h-10 sm:w-10 shrink-0 items-center justify-center rounded-lg sm:rounded-xl border border-primary/25 bg-primary/10 text-primary"
+                      style={{ animationDelay: `-${6 - index}s` }}
+                    >
+                      <step.icon className="animate-sync-icon h-4 w-4 sm:h-5 sm:w-5" style={{ animationDelay: `-${6 - index}s` }} />
+                    </div>
+                    <span 
+                      className="animate-sync-text-sub font-mono text-[9px] sm:text-xs font-bold uppercase tracking-wider text-primary"
+                      style={{ animationDelay: `-${6 - index}s` }}
+                    >
+                      0{index + 1}
+                    </span>
+                  </div>
+                  <h3 
+                    className="animate-sync-text-main text-xs sm:text-sm font-bold font-sans tracking-tight text-foreground leading-snug line-clamp-2 mb-1"
+                    style={{ animationDelay: `-${6 - index}s` }}
+                  >
+                    {step.title}
+                  </h3>
+                  <p 
+                    className="animate-sync-text-desc text-[10px] sm:text-xs text-foreground/80 leading-relaxed line-clamp-2"
+                    style={{ animationDelay: `-${6 - index}s` }}
+                  >
+                    {step.desc}
+                  </p>
+                </div>
+              </AnimatedSection>
+            ))}
           </div>
         </div>
 

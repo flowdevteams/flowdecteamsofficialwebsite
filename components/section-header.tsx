@@ -29,7 +29,7 @@ export function SectionHeader({
         <AnimatedSection animation="fade-in-down">
           <span
             className={cn(
-              "mb-4 inline-flex items-center rounded-md border px-3 py-1.5 text-sm font-semibold shadow-sm",
+              "mb-2 sm:mb-4 inline-flex items-center rounded-md border px-2 py-1 sm:px-3 sm:py-1.5 text-[10px] sm:text-xs lg:text-sm font-semibold shadow-sm",
               isInverse
                 ? "border-white/15 bg-white/10 text-white"
                 : "border-primary/15 bg-primary/10 text-primary"
@@ -42,7 +42,7 @@ export function SectionHeader({
       <AnimatedSection animation="fade-in-up" delay={100}>
         <h2
           className={cn(
-            "text-3xl sm:text-4xl lg:text-5xl font-semibold mb-4 text-balance leading-[1.08]",
+            "text-xl sm:text-3xl lg:text-5xl font-semibold mb-2 sm:mb-4 text-balance leading-[1.08]",
             isInverse ? "text-white" : "text-foreground"
           )}
         >
@@ -57,7 +57,7 @@ export function SectionHeader({
         <AnimatedSection animation="fade-in-up" delay={200}>
           <p
             className={cn(
-              "text-base sm:text-lg leading-relaxed text-pretty",
+              "text-[11px] sm:text-sm lg:text-lg leading-relaxed text-pretty",
               isInverse ? "text-white/82" : "text-muted-foreground"
             )}
           >

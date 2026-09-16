@@ -29,30 +29,30 @@ const clients = [
 
 export function StatsSection() {
   return (
-    <section className="border-b border-border/60 bg-card py-16">
-      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="border-b border-border/60 bg-card py-8 sm:py-12 lg:py-16">
+      <div className="w-full max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
         <SectionHeader
           badge="Dipercaya Bisnis & Institusi di Indonesia"
           title="Klien yang Mempercayai Flowdev Teams"
         />
 
-        <div className="mt-8 sm:mt-12 flex flex-wrap justify-center gap-4 sm:gap-5 sm:gap-6">
+        <div className="mt-6 sm:mt-12 grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-4 lg:gap-6">
           {clients.map((client, index) => (
             <AnimatedSection
               key={client.id}
               animation="fade-in-up"
               delay={index * 80}
             >
-              <div className="group relative flex h-36 sm:h-44 w-full sm:w-64 lg:w-68 cursor-default flex-col items-center justify-center rounded-2xl border border-border/80 bg-background p-5 sm:p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-xl hover:shadow-primary/10">
+              <div className="group relative flex h-28 sm:h-36 lg:h-44 w-full cursor-default flex-col items-center justify-center rounded-xl sm:rounded-2xl border border-border/80 bg-background p-3 sm:p-5 lg:p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-xl hover:shadow-primary/10">
                 <Image
                   src={client.logo}
                   alt={client.name}
                   width={180}
                   height={100}
                   unoptimized={client.logo.endsWith('.svg')}
-                  className="max-h-20 sm:max-h-24 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+                  className="max-h-12 sm:max-h-20 lg:max-h-24 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
                 />
-                <h3 className="mt-3 text-center text-xs font-semibold uppercase tracking-wider text-muted-foreground/80 transition-colors group-hover:text-foreground">
+                <h3 className="mt-2 sm:mt-3 text-center text-[9px] sm:text-xs font-semibold uppercase tracking-wider text-muted-foreground/80 transition-colors group-hover:text-foreground line-clamp-2">
                   {client.name}
                 </h3>
               </div>

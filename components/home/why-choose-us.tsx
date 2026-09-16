@@ -289,8 +289,8 @@ export function WhyChooseUs() {
       </div>
 
       {/* MOBILE / TABLET VIEW */}
-      <div className="block lg:hidden py-12 px-4 sm:px-6">
-        <div className="max-w-xl mx-auto flex flex-col gap-6">
+      <div className="block lg:hidden py-8 sm:py-12 px-2 sm:px-6">
+        <div className="max-w-xl mx-auto flex flex-col gap-3 sm:gap-6">
           
           {/* Tab Controls */}
           <div className="flex p-1 bg-muted rounded-xl border border-border/70">
@@ -322,36 +322,36 @@ export function WhyChooseUs() {
 
           {/* Tab Content: Before */}
           {activeTab === "before" && (
-            <div className="rounded-2xl border border-border/80 bg-card p-5 sm:p-7 shadow-md flex flex-col gap-6 animate-in fade-in zoom-in-95 duration-200">
+            <div className="rounded-xl sm:rounded-2xl border border-border/80 bg-card p-3 sm:p-5 lg:p-7 shadow-md flex flex-col gap-3 sm:gap-4 lg:gap-6 animate-in fade-in zoom-in-95 duration-200">
               <div>
-                <span className="inline-flex items-center gap-1.5 px-3 py-1 text-xs font-semibold uppercase tracking-wider mb-3 bg-primary/10 text-primary rounded-md border border-primary/20">
+                <span className="inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-0.5 sm:py-1 text-[10px] sm:text-xs font-semibold uppercase tracking-wider mb-2 sm:mb-3 bg-primary/10 text-primary rounded-md border border-primary/20">
                   <AlertTriangle className="w-3.5 h-3.5 text-primary" />
                   Masalah Vendor Web Umum
                 </span>
-                <h3 className="text-2xl font-bold leading-tight text-foreground">
+                <h3 className="text-lg sm:text-xl lg:text-2xl font-bold leading-tight text-foreground">
                   Keterikatan Vendor &amp; Biaya Tak Terduga
                 </h3>
               </div>
 
-              <div className="flex flex-col gap-2">
+              <div className="flex flex-col gap-1.5 sm:gap-2">
                 {beforeBenefits.map((benefit, index) => (
                   <div key={index} className="flex items-start gap-2.5">
                     <div className="mt-0.5 flex-shrink-0 flex items-center justify-center w-4 h-4 bg-primary/10 text-primary border border-primary/20 rounded">
                       <X className="w-3 h-3" />
                     </div>
-                    <span className="text-xs sm:text-sm leading-relaxed text-muted-foreground">{benefit}</span>
+                    <span className="text-[10px] sm:text-xs lg:text-sm leading-relaxed text-muted-foreground line-clamp-2 sm:line-clamp-none">{benefit}</span>
                   </div>
                 ))}
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
+              <div className="grid grid-cols-2 gap-2 sm:gap-3 pt-2">
                 {beforeFeatures.map((feature, index) => (
-                  <div key={index} className="p-3.5 rounded-xl border border-border/70 bg-muted/40 flex flex-col gap-1.5">
-                    <div className="w-8 h-8 flex items-center justify-center rounded-lg bg-primary/10 text-primary border border-primary/20">
-                      <feature.icon className="w-4 h-4" />
+                  <div key={index} className="p-2.5 sm:p-3 lg:p-3.5 rounded-lg sm:rounded-xl border border-border/70 bg-muted/40 flex flex-col gap-1 sm:gap-1.5">
+                    <div className="w-7 h-7 sm:w-8 sm:h-8 flex items-center justify-center rounded-lg bg-primary/10 text-primary border border-primary/20">
+                      <feature.icon className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                     </div>
-                    <h4 className="text-sm font-semibold text-foreground">{feature.title}</h4>
-                    <p className="text-xs text-muted-foreground">{feature.description}</p>
+                    <h4 className="text-[11px] sm:text-xs lg:text-sm font-semibold text-foreground line-clamp-2">{feature.title}</h4>
+                    <p className="text-[10px] sm:text-xs text-muted-foreground line-clamp-2 sm:line-clamp-none">{feature.description}</p>
                   </div>
                 ))}
               </div>
@@ -360,7 +360,7 @@ export function WhyChooseUs() {
 
           {/* Tab Content: After */}
           {activeTab === "after" && (
-            <div className="relative rounded-2xl overflow-hidden border border-primary/30 bg-[#142d52] text-white p-5 sm:p-7 shadow-xl flex flex-col gap-6 animate-in fade-in zoom-in-95 duration-200">
+            <div className="relative rounded-xl sm:rounded-2xl overflow-hidden border border-primary/30 bg-[#142d52] text-white p-3 sm:p-5 lg:p-7 shadow-xl flex flex-col gap-3 sm:gap-4 lg:gap-6 animate-in fade-in zoom-in-95 duration-200">
               
               {/* Background Animated Dots for Mobile */}
               <div className="absolute inset-0 saas-grid opacity-35 pointer-events-none" />
@@ -370,34 +370,34 @@ export function WhyChooseUs() {
               </div>
 
               <div className="relative z-10">
-                <span className="inline-flex items-center gap-1.5 px-3 py-1 text-xs font-semibold uppercase tracking-wider mb-3 bg-white/15 text-white rounded-md border border-white/20 shadow-sm backdrop-blur-md">
+                <span className="inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-0.5 sm:py-1 text-[10px] sm:text-xs font-semibold uppercase tracking-wider mb-2 sm:mb-3 bg-white/15 text-white rounded-md border border-white/20 shadow-sm backdrop-blur-md">
                   <Star className="w-3.5 h-3.5 fill-white text-white" />
                   Standar Flowdev Teams
                 </span>
-                <h3 className="text-2xl font-bold leading-tight text-white">
+                <h3 className="text-lg sm:text-xl lg:text-2xl font-bold leading-tight text-white">
                   Rekayasa Transparan &amp; Bebas Keterikatan
                 </h3>
               </div>
 
-              <div className="relative z-10 flex flex-col gap-2">
+              <div className="relative z-10 flex flex-col gap-1.5 sm:gap-2">
                 {afterBenefits.map((benefit, index) => (
                   <div key={index} className="flex items-start gap-2.5">
                     <div className="mt-0.5 flex-shrink-0 flex items-center justify-center w-4 h-4 bg-white/20 text-white rounded-full border border-white/40">
                       <Check className="w-2.5 h-2.5" />
                     </div>
-                    <span className="text-xs sm:text-sm leading-relaxed text-white/90">{benefit}</span>
+                    <span className="text-[10px] sm:text-xs lg:text-sm leading-relaxed text-white/90 line-clamp-2 sm:line-clamp-none">{benefit}</span>
                   </div>
                 ))}
               </div>
 
-              <div className="relative z-10 grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
+              <div className="relative z-10 grid grid-cols-2 gap-2 sm:gap-3 pt-2">
                 {afterFeatures.map((feature, index) => (
-                  <div key={index} className="p-3.5 rounded-xl border border-white/15 bg-white/10 backdrop-blur-md flex flex-col gap-1.5">
-                    <div className="w-8 h-8 flex items-center justify-center rounded-lg bg-white/15 border border-white/25 text-white">
-                      <feature.icon className="w-4 h-4" />
+                  <div key={index} className="p-2.5 sm:p-3 lg:p-3.5 rounded-lg sm:rounded-xl border border-white/15 bg-white/10 backdrop-blur-md flex flex-col gap-1 sm:gap-1.5">
+                    <div className="w-7 h-7 sm:w-8 sm:h-8 flex items-center justify-center rounded-lg bg-white/15 border border-white/25 text-white">
+                      <feature.icon className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                     </div>
-                    <h4 className="text-sm font-semibold text-white">{feature.title}</h4>
-                    <p className="text-xs text-white/75">{feature.description}</p>
+                    <h4 className="text-[11px] sm:text-xs lg:text-sm font-semibold text-white line-clamp-2">{feature.title}</h4>
+                    <p className="text-[10px] sm:text-xs text-white/75 line-clamp-2 sm:line-clamp-none">{feature.description}</p>
                   </div>
                 ))}
               </div>
