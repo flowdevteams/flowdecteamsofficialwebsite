@@ -15,6 +15,7 @@ import {
 import { Button } from "@/components/ui/button"
 import { AccentTitle } from "@/components/accent-title"
 import { AnimatedSection } from "@/components/animated-section"
+import { DraggableCarousel } from "@/components/ui/draggable-carousel"
 import { cn } from "@/lib/utils"
 
 interface SolutionItem {
@@ -257,51 +258,59 @@ export function SolutionsShowcaseSection() {
         </div>
       </div>
 
-      {/* Infinite Looping Marquee Area with Edge Gradient Fade Masks */}
-      <div className="relative w-full overflow-hidden py-4">
-        {/* Left & Right Soft Fade Masks */}
-        <div className="pointer-events-none absolute inset-y-0 left-0 w-12 sm:w-28 md:w-40 bg-gradient-to-r from-background via-background/80 to-transparent z-20" />
-        <div className="pointer-events-none absolute inset-y-0 right-0 w-12 sm:w-28 md:w-40 bg-gradient-to-l from-background via-background/80 to-transparent z-20" />
-
-        {/* Row 1: Website & Landing Page (Sliding Left ←) */}
+      {/* Interactive Draggable & Swipeable Showcase Area */}
+      <div className="relative w-full py-2">
+        {/* Row 1: Website & Landing Page (Interactive Touch & Cursor Slider) */}
         {(activeTab === "all" || activeTab === "website") && (
-          <div className="mb-3 sm:mb-6 group">
-            <div className="flex items-center gap-1.5 sm:gap-2 px-3 sm:px-12 mb-2 sm:mb-3">
-              <span className="inline-flex items-center text-[9px] sm:text-[11px] font-semibold uppercase tracking-wider text-primary bg-primary/10 px-2 py-0.5 sm:px-2.5 rounded border border-primary/20">
-                Pilihan Website &amp; Landing Page
-              </span>
-              <span className="text-[10px] text-muted-foreground hidden sm:inline-block">
-                Arahkan kursor untuk menjeda animasi
-              </span>
-            </div>
-
-            <div className="animate-marquee-left flex gap-2 sm:gap-5 gpu-accelerated">
-              {/* Double array for infinite continuous loop */}
-              {[...websiteSolutions, ...websiteSolutions].map((item, idx) => (
-                <SolutionCard key={`${item.id}-${idx}`} item={item} />
+          <div className="mb-6 sm:mb-10">
+            <DraggableCarousel
+              headerBadge={
+                <span className="inline-flex items-center text-[10px] sm:text-xs font-semibold uppercase tracking-wider text-primary bg-primary/10 px-2.5 py-1 rounded-md border border-primary/20">
+                  Pilihan Website &amp; Landing Page
+                </span>
+              }
+              headerTitle={
+                <span className="text-muted-foreground font-normal text-[11px] sm:text-xs">
+                  (6 Tipe Spesifikasi)
+                </span>
+              }
+              trackClassName="gap-3 sm:gap-5"
+              stepScroll={360}
+              ariaLabel="Pilihan Website dan Landing Page"
+            >
+              {websiteSolutions.map((item) => (
+                <div key={item.id} className="snap-start shrink-0">
+                  <SolutionCard item={item} />
+                </div>
               ))}
-            </div>
+            </DraggableCarousel>
           </div>
         )}
 
-        {/* Row 2: Aplikasi Web & Sistem Enterprise (Sliding Right →) */}
+        {/* Row 2: Aplikasi Web & Sistem Enterprise (Interactive Touch & Cursor Slider) */}
         {(activeTab === "all" || activeTab === "webapp") && (
-          <div className="group mt-2">
-            <div className="flex items-center gap-1.5 sm:gap-2 px-3 sm:px-12 mb-2 sm:mb-3">
-              <span className="inline-flex items-center text-[9px] sm:text-[11px] font-semibold uppercase tracking-wider text-sky-400 bg-sky-500/10 px-2 py-0.5 sm:px-2.5 rounded border border-sky-500/20">
-                Pilihan Aplikasi Web &amp; Sistem Bisnis
-              </span>
-              <span className="text-[10px] text-muted-foreground hidden sm:inline-block">
-                Arahkan kursor untuk menjeda animasi
-              </span>
-            </div>
-
-            <div className="animate-marquee-right flex gap-2 sm:gap-5 gpu-accelerated">
-              {/* Double array for infinite continuous loop */}
-              {[...webAppSolutions, ...webAppSolutions].map((item, idx) => (
-                <SolutionCard key={`${item.id}-${idx}`} item={item} />
+          <div className="mb-2 sm:mb-6">
+            <DraggableCarousel
+              headerBadge={
+                <span className="inline-flex items-center text-[10px] sm:text-xs font-semibold uppercase tracking-wider text-sky-400 bg-sky-500/10 px-2.5 py-1 rounded-md border border-sky-500/20">
+                  Pilihan Aplikasi Web &amp; Sistem Bisnis
+                </span>
+              }
+              headerTitle={
+                <span className="text-muted-foreground font-normal text-[11px] sm:text-xs">
+                  (6 Tipe Solusi Operasional)
+                </span>
+              }
+              trackClassName="gap-3 sm:gap-5"
+              stepScroll={360}
+              ariaLabel="Pilihan Aplikasi Web dan Sistem Bisnis"
+            >
+              {webAppSolutions.map((item) => (
+                <div key={item.id} className="snap-start shrink-0">
+                  <SolutionCard item={item} />
+                </div>
               ))}
-            </div>
+            </DraggableCarousel>
           </div>
         )}
       </div>

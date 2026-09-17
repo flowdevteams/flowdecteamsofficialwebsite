@@ -10,6 +10,7 @@ import { GlowLogo } from "@/components/effects"
 import { useMouseGlow } from "@/components/effects/use-mouse-glow"
 import { MouseGlowOverlay } from "@/components/effects/mouse-glow-overlay"
 import { AccentTitle } from "@/components/accent-title"
+import { DraggableCarousel } from "@/components/ui/draggable-carousel"
 
 const rotatingWords = ["Website", "Web App"]
 
@@ -186,43 +187,43 @@ export function HeroSection() {
           </AnimatedSection>
         </div>
 
-        {/* Hero Bottom: Infinite Auto-Running Partner & Tech Ecosystem Marquee (Logo Nya Saja) */}
+        {/* Hero Bottom: Interactive Draggable & Swipeable Partner & Tech Ecosystem */}
         <AnimatedSection animation="fade-in-up" delay={600} className="mt-8 sm:mt-16 pt-6 sm:pt-10 border-t border-border/40">
-          <div className="flex items-center justify-between gap-2 mb-4 sm:mb-5">
-            <span className="text-[11px] sm:text-xs font-semibold tracking-wider uppercase text-muted-foreground">
-              Teknologi &amp; Platform Terintegrasi
-            </span>
-            <span className="text-[10px] text-muted-foreground/60 hidden sm:inline-block">
-              100% Modern Stack &bull; Siap Scale-Up
-            </span>
-          </div>
-
-          <div className="relative w-full overflow-hidden py-3 sm:py-4">
-            {/* Left & Right Soft Fade Masks */}
-            <div className="pointer-events-none absolute inset-y-0 left-0 w-16 sm:w-32 bg-gradient-to-r from-background via-background/80 to-transparent z-10" />
-            <div className="pointer-events-none absolute inset-y-0 right-0 w-16 sm:w-32 bg-gradient-to-l from-background via-background/80 to-transparent z-10" />
-
-            <div className="animate-marquee-left flex items-center gap-10 sm:gap-14 md:gap-16 gpu-accelerated">
-              {[...heroPartners, ...heroPartners].map((partner, idx) => (
-                <div
-                  key={`${partner.name}-${idx}`}
-                  className="flex items-center justify-center shrink-0 group/logo select-none px-2"
-                  title={partner.name}
-                >
-                  <div className="relative h-13 sm:h-15 md:h-16 w-13 sm:w-15 md:w-16 flex items-center justify-center transition-transform duration-300 group-hover/logo:scale-115">
-                    <Image
-                      src={partner.logo}
-                      alt={partner.name}
-                      width={64}
-                      height={64}
-                      unoptimized
-                      className="h-11 sm:h-13 md:h-14 w-auto max-w-[56px] sm:max-w-[64px] object-contain transition-all duration-300 opacity-85 group-hover/logo:opacity-100 drop-shadow-sm"
-                    />
-                  </div>
+          <DraggableCarousel
+            headerTitle={
+              <span className="text-[11px] sm:text-xs font-semibold tracking-wider uppercase text-muted-foreground">
+                Teknologi &amp; Platform Terintegrasi
+              </span>
+            }
+            showFloatingControls={true}
+            showHeaderControls={true}
+            showDragHint={true}
+            autoScroll={true}
+            autoScrollSpeed={0.7}
+            stepScroll={260}
+            trackClassName="items-center gap-8 sm:gap-12 md:gap-14 py-2"
+            maskWidthClass="w-12 sm:w-24 md:w-32"
+            ariaLabel="Teknologi dan Platform Terintegrasi"
+          >
+            {[...heroPartners, ...heroPartners].map((partner, idx) => (
+              <div
+                key={`${partner.name}-${idx}`}
+                className="flex items-center justify-center shrink-0 group/logo select-none px-2 snap-start"
+                title={partner.name}
+              >
+                <div className="relative h-12 sm:h-14 md:h-16 w-12 sm:w-14 md:w-16 flex items-center justify-center transition-transform duration-300 group-hover/logo:scale-115">
+                  <Image
+                    src={partner.logo}
+                    alt={partner.name}
+                    width={64}
+                    height={64}
+                    unoptimized
+                    className="h-10 sm:h-12 md:h-13 w-auto max-w-[52px] sm:max-w-[62px] object-contain transition-all duration-300 opacity-85 group-hover/logo:opacity-100 drop-shadow-sm"
+                  />
                 </div>
-              ))}
-            </div>
-          </div>
+              </div>
+            ))}
+          </DraggableCarousel>
         </AnimatedSection>
       </div>
     </section>
