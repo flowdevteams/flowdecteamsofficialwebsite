@@ -113,6 +113,7 @@ export function PricingPreviewSection() {
               key={plan.name}
               animation="fade-in-up"
               delay={index * 100}
+              className={cn("h-full", index === 2 ? "col-span-2 sm:col-span-1" : "")}
             >
               <div
                 className={cn(

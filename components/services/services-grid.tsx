@@ -55,7 +55,7 @@ export function ServicesGrid() {
                 key={service.slug}
                 animation="fade-in-up"
                 delay={index * 150}
-                className={cn("h-full", index === 2 ? "col-span-2 sm:col-span-1" : "")}
+                className={cn("h-full", index === 2 ? "col-span-2 lg:col-span-1" : "")}
               >
                 <div className="group relative flex h-full flex-col overflow-hidden rounded-xl sm:rounded-2xl border border-border/80 bg-card p-3 sm:p-5 lg:p-8 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-xl">
                   {/* Subtle top accent line */}

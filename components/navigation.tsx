@@ -4,8 +4,6 @@ import * as React from "react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { 
-  Menu, 
-  X, 
   ChevronDown, 
   Brain, 
   LayoutDashboard, 
@@ -16,6 +14,7 @@ import {
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
 import Image from "next/image"
+import { MobileBottomNav } from "@/components/mobile-bottom-nav"
 
 export const serviceCategoriesNav = [
   {
@@ -60,10 +59,8 @@ const navLinks = [
 ]
 
 export function Navigation() {
-  const [isOpen, setIsOpen] = React.useState(false)
   const [isScrolled, setIsScrolled] = React.useState(false)
   const [isServicesDropdownOpen, setIsServicesDropdownOpen] = React.useState(false)
-  const [isMobileServicesOpen, setIsMobileServicesOpen] = React.useState(false)
   const [hoveredLink, setHoveredLink] = React.useState<string | null>(null)
   const dropdownTimeoutRef = React.useRef<NodeJS.Timeout | null>(null)
   const pathname = usePathname()
@@ -85,17 +82,7 @@ export function Navigation() {
   }, [])
 
   React.useEffect(() => {
-    if (isOpen) {
-      document.body.style.overflow = "hidden"
-    } else {
-      document.body.style.overflow = "unset"
-    }
-  }, [isOpen])
-
-  React.useEffect(() => {
-    setIsOpen(false)
     setIsServicesDropdownOpen(false)
-    setIsMobileServicesOpen(false)
   }, [pathname])
 
   const handleServicesMouseEnter = () => {
@@ -118,12 +105,12 @@ export function Navigation() {
       <header
         className={cn(
           "fixed top-0 left-0 right-0 z-[100] transition-all duration-300 ease-out",
-          isScrolled || isOpen
+          isScrolled
             ? "border-b border-primary/20 bg-background/85 sm:bg-background/40 backdrop-blur-md sm:backdrop-blur-xl"
             : "border-b border-transparent bg-background/5 backdrop-blur-xs sm:backdrop-blur-sm"
         )}
         style={{
-          boxShadow: (isScrolled || isOpen) 
+          boxShadow: isScrolled 
             ? '0 4px 20px -2px rgba(20, 45, 82, 0.15)' 
             : 'none'
         }}
@@ -303,155 +290,22 @@ export function Navigation() {
                   </Link>
                 )
               })}
-            </div>
-
-            <div className="flex items-center gap-2">
+            </div>            <div className="hidden lg:flex items-center gap-2">
               <Button
                 asChild
-                className="hidden lg:inline-flex relative h-10 rounded-lg px-5 shadow-sm transition-all duration-200 hover:shadow-primary/20"
+                className="relative h-10 rounded-lg px-5 shadow-sm transition-all duration-200 hover:shadow-primary/20"
               >
                 <Link href="/kontak" className="relative z-10 font-semibold tracking-wide">
                   Mulai Proyek
                 </Link>
-              </Button>
-
-              {/* Mobile Menu Button with morph animation */}
-              <Button
-                variant="ghost"
-                size="icon"
-                className="lg:hidden relative h-10 w-10 overflow-hidden rounded-lg border border-border/70 bg-card/70 shadow-sm"
-                onClick={() => setIsOpen(!isOpen)}
-                aria-label="Menu Navigasi"
-              >
-                <span className="relative z-10">
-                  {isOpen ? (
-                    <X className="h-6 w-6" />
-                  ) : (
-                    <Menu className="h-6 w-6" />
-                  )}
-                </span>
               </Button>
             </div>
           </div>
         </nav>
       </header>
 
-      {/* Mobile Menu Drawer */}
-      <div
-        className={cn(
-          "lg:hidden fixed inset-0 z-[90] overflow-hidden transition-all duration-500",
-          isOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
-        )}
-      >
-        <div
-          className={cn(
-            "absolute inset-0 bg-background/80 transition-all duration-300 touch-none",
-            isOpen ? "backdrop-blur-xl" : "backdrop-blur-none"
-          )}
-          onClick={() => setIsOpen(false)}
-        />
-
-        <div
-          className={cn(
-            "absolute top-0 right-0 h-[100dvh] w-[min(340px,92vw)] border-l border-border/70 bg-card/95 shadow-2xl backdrop-blur-xl transition-all duration-300 ease-out",
-            isOpen ? "translate-x-0 scale-100" : "translate-x-full scale-95"
-          )}
-        >
-          <div className="flex flex-col h-full pt-16 sm:pt-20 px-4 pb-6 relative z-10">
-            <nav className="flex flex-col gap-1.5 overflow-y-auto flex-1 pr-1">
-              {navLinks.map((link) => {
-                const isActive = link.hasDropdown ? isServiceActive : pathname === link.href
-
-                if (link.hasDropdown) {
-                  return (
-                    <div key={link.href} className="space-y-1">
-                      <button
-                        type="button"
-                        onClick={() => setIsMobileServicesOpen((prev) => !prev)}
-                        className={cn(
-                          "w-full flex items-center justify-between rounded-lg px-4 py-3 text-[15px] sm:text-base font-medium transition-all duration-200 text-left cursor-pointer",
-                          isServiceActive
-                            ? "bg-primary/10 text-primary font-semibold"
-                            : "text-muted-foreground hover:bg-accent hover:text-foreground"
-                        )}
-                        aria-expanded={isMobileServicesOpen}
-                      >
-                        <span>{link.label}</span>
-                        <ChevronDown 
-                          className={cn(
-                            "h-4 w-4 transition-transform duration-200",
-                            isMobileServicesOpen && "rotate-180 text-primary"
-                          )} 
-                        />
-                      </button>
-
-                      {/* Mobile Collapsible Submenu */}
-                      {isMobileServicesOpen && (
-                        <div className="ml-3 pl-3 border-l border-primary/20 space-y-1 py-1 animate-in fade-in slide-in-from-top-2 duration-200">
-                          {serviceCategoriesNav.map((item) => (
-                            <Link
-                              key={item.href}
-                              href={item.href}
-                              onClick={() => setIsOpen(false)}
-                              className={cn(
-                                "flex items-center gap-2.5 rounded-lg px-3 py-2 text-xs font-medium transition-colors",
-                                pathname === item.href
-                                  ? "bg-primary/15 text-primary font-semibold"
-                                  : "text-muted-foreground hover:bg-accent hover:text-foreground"
-                              )}
-                            >
-                              <item.icon className="h-3.5 w-3.5 text-primary shrink-0" />
-                              <span>{item.label}</span>
-                            </Link>
-                          ))}
-                        </div>
-                      )}
-                    </div>
-                  )
-                }
-
-                return (
-                  <Link
-                    key={link.href}
-                    href={link.href}
-                    onClick={() => setIsOpen(false)}
-                    className={cn(
-                      "relative overflow-hidden rounded-lg px-4 py-3 text-[15px] sm:text-base font-medium transition-all duration-200 active:scale-[0.98] group",
-                      isActive
-                        ? "bg-primary text-primary-foreground shadow-sm"
-                        : "text-muted-foreground hover:bg-accent hover:text-foreground"
-                    )}
-                  >
-                    <span className="relative z-10 flex items-center justify-between">
-                      {link.label}
-                      {link.href === "/harga-paket" && (
-                        <span className="rounded-full bg-primary-foreground/15 px-2 py-0.5 text-[10px] font-semibold">
-                          PROMO
-                        </span>
-                      )}
-                    </span>
-                  </Link>
-                )
-              })}
-            </nav>
-
-            <div className="mt-auto pt-6 border-t border-border/50 relative">
-              <Button
-                asChild
-                size="lg"
-                className="w-full relative overflow-hidden rounded-xl h-12 text-base shadow-lg shadow-primary/20"
-              >
-                <Link href="/kontak" onClick={() => setIsOpen(false)} className="relative z-10 font-semibold">
-                  Konsultasi Gratis
-                </Link>
-              </Button>
-              <p className="mt-4 text-center text-[12px] text-muted-foreground leading-tight">
-                Siap meningkatkan bisnis digital Anda?
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
+      {/* Modern Sticky Mobile Bottom Nav Dock (Khusus Mobile & Tablet) */}
+      <MobileBottomNav />
     </>
   )
 }

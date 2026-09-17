@@ -333,7 +333,7 @@ export function PricingCards() {
               key={plan.id}
               animation="fade-in-up"
               delay={index * 100}
-              className={cn("h-full", index === 2 ? "col-span-2 sm:col-span-1" : "")}
+              className={cn("h-full", index === 2 ? "col-span-2 lg:col-span-1" : "")}
             >
               <div
                 className={cn(

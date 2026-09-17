@@ -157,7 +157,7 @@ export function ServicesPreview() {
                   key={pillar.title}
                   animation="fade-in-up"
                   delay={index * 120}
-                  className="h-full"
+                  className={cn("h-full", index === 2 ? "col-span-2 sm:col-span-1" : "")}
                 >
                   <article className={cn(
                     // Compact adaptive grid sizing
