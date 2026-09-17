@@ -59,7 +59,7 @@ export function ContactSection() {
               </p>
               
               {/* Direct Guarantees */}
-              <div className="grid grid-cols-3 sm:flex sm:flex-wrap gap-1.5 sm:gap-2.5 mb-6 sm:mb-8 text-[9px] sm:text-xs font-mono">
+              <div className="grid grid-cols-3 sm:flex sm:flex-wrap gap-1.5 sm:gap-2.5 mb-6 sm:mb-8 text-[10px] sm:text-xs font-semibold">
                 <span className="px-1.5 sm:px-3 py-1 rounded-lg sm:rounded-full bg-primary/10 text-primary border border-primary/20 text-center truncate">
                   <span className="sm:hidden">✓ WA &lt; 15m</span>
                   <span className="hidden sm:inline">✓ Respon WhatsApp &lt; 15 Menit</span>
@@ -87,7 +87,7 @@ export function ContactSection() {
                       <div className="w-9 h-9 sm:w-12 sm:h-12 rounded-lg sm:rounded-xl bg-primary/10 flex items-center justify-center mx-auto mb-2 sm:mb-4">
                         <info.icon className="h-4 w-4 sm:h-6 sm:w-6 text-primary" />
                       </div>
-                      <h3 className="font-semibold text-foreground mb-1 sm:mb-2 text-xs sm:text-base line-clamp-1">
+                      <h3 className="font-semibold text-foreground mb-1 sm:mb-2 text-sm sm:text-base line-clamp-1">
                         {info.title}
                       </h3>
                       
@@ -99,7 +99,7 @@ export function ContactSection() {
                               href={p.href}
                               target="_blank"
                               rel="noopener noreferrer"
-                              className="block text-[10px] sm:text-sm font-medium text-foreground hover:text-primary transition-colors truncate"
+                              className="block text-xs sm:text-sm font-medium text-foreground hover:text-primary transition-colors truncate"
                             >
                               {p.number}
                             </a>
@@ -109,19 +109,19 @@ export function ContactSection() {
                         <p className="mb-2 sm:mb-3">
                           <a 
                             href={info.href} 
-                            className="text-foreground font-medium text-[10px] sm:text-sm hover:text-primary transition-colors truncate block max-w-full"
+                            className="text-foreground font-medium text-xs sm:text-sm hover:text-primary transition-colors truncate block max-w-full"
                           >
                             {info.content}
                           </a>
                         </p>
                       ) : (
-                        <p className="text-foreground font-medium text-[10px] sm:text-sm mb-2 sm:mb-3 truncate">
+                        <p className="text-foreground font-medium text-xs sm:text-sm mb-2 sm:mb-3 truncate">
                           {info.content}
                         </p>
                       )}
                     </div>
 
-                    <p className="text-[8.5px] sm:text-xs text-muted-foreground line-clamp-2">
+                    <p className="text-[10.5px] sm:text-xs text-muted-foreground line-clamp-2">
                       {info.description}
                     </p>
                   </div>

@@ -141,7 +141,7 @@ export function WhyChooseUs() {
                           style={{ width: `${displayPercent}%` }}
                         />
                       </div>
-                      <span className="text-xs font-mono text-muted-foreground min-w-[32px] text-right">
+                      <span className="text-xs font-semibold tabular-nums text-muted-foreground min-w-[32px] text-right">
                         {displayPercent}%
                       </span>
                     </div>
@@ -166,8 +166,7 @@ export function WhyChooseUs() {
                           {/* Left Column: Pain Points */}
                           <div className="col-span-5 flex flex-col gap-3.5">
                             <div>
-                              <span className="inline-flex items-center gap-1.5 px-3 py-1 text-xs font-semibold uppercase tracking-wider mb-2.5 bg-primary/10 text-primary rounded-md border border-primary/20">
-                                <AlertTriangle className="w-3.5 h-3.5 text-primary" />
+                              <span className="inline-flex items-center px-3 py-1 text-xs font-semibold uppercase tracking-wider mb-2.5 bg-primary/10 text-primary rounded-md border border-primary/20">
                                 Masalah Vendor Web Konvensional
                               </span>
                               <h3 className="text-2xl xl:text-3xl font-bold leading-snug text-foreground">
@@ -235,8 +234,7 @@ export function WhyChooseUs() {
                           {/* Left Column: Value Prop & Benefits */}
                           <div className="col-span-5 flex flex-col gap-3.5">
                             <div>
-                              <span className="inline-flex items-center gap-1.5 px-3 py-1 text-xs font-semibold uppercase tracking-wider mb-2.5 bg-white/15 text-white rounded-md border border-white/20 shadow-sm backdrop-blur-md">
-                                <Star className="w-3.5 h-3.5 fill-white text-white" />
+                              <span className="inline-flex items-center px-3 py-1 text-xs font-semibold uppercase tracking-wider mb-2.5 bg-white/15 text-white rounded-md border border-white/20 shadow-sm backdrop-blur-md">
                                 Standar Flowdev Teams
                               </span>
                               <h3 className="text-2xl xl:text-3xl font-bold leading-snug text-white">
@@ -324,8 +322,7 @@ export function WhyChooseUs() {
           {activeTab === "before" && (
             <div className="rounded-xl sm:rounded-2xl border border-border/80 bg-card p-3 sm:p-5 lg:p-7 shadow-md flex flex-col gap-3 sm:gap-4 lg:gap-6 animate-in fade-in zoom-in-95 duration-200">
               <div>
-                <span className="inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-0.5 sm:py-1 text-[10px] sm:text-xs font-semibold uppercase tracking-wider mb-2 sm:mb-3 bg-primary/10 text-primary rounded-md border border-primary/20">
-                  <AlertTriangle className="w-3.5 h-3.5 text-primary" />
+                <span className="inline-flex items-center px-2.5 sm:px-3 py-0.5 sm:py-1 text-[10px] sm:text-xs font-semibold uppercase tracking-wider mb-2 sm:mb-3 bg-primary/10 text-primary rounded-md border border-primary/20">
                   Masalah Vendor Web Umum
                 </span>
                 <h3 className="text-lg sm:text-xl lg:text-2xl font-bold leading-tight text-foreground">
@@ -370,8 +367,7 @@ export function WhyChooseUs() {
               </div>
 
               <div className="relative z-10">
-                <span className="inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-0.5 sm:py-1 text-[10px] sm:text-xs font-semibold uppercase tracking-wider mb-2 sm:mb-3 bg-white/15 text-white rounded-md border border-white/20 shadow-sm backdrop-blur-md">
-                  <Star className="w-3.5 h-3.5 fill-white text-white" />
+                <span className="inline-flex items-center px-2.5 sm:px-3 py-0.5 sm:py-1 text-[10px] sm:text-xs font-semibold uppercase tracking-wider mb-2 sm:mb-3 bg-white/15 text-white rounded-md border border-white/20 shadow-sm backdrop-blur-md">
                   Standar Flowdev Teams
                 </span>
                 <h3 className="text-lg sm:text-xl lg:text-2xl font-bold leading-tight text-white">

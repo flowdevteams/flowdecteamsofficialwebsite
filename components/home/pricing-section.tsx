@@ -1,7 +1,7 @@
 "use client"
 
 import Link from "next/link"
-import { Check, Star, ArrowRight, Sparkles } from "lucide-react"
+import { Check, Star, ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { AnimatedSection } from "@/components/animated-section"
 import { cn } from "@/lib/utils"
@@ -92,8 +92,7 @@ export function PricingPreviewSection() {
         {/* Header */}
         <AnimatedSection animation="fade-in-up">
           <div className="relative mx-auto mb-8 sm:mb-10 lg:mb-14 max-w-3xl text-center">
-            <span className="mb-3 sm:mb-4 inline-flex items-center gap-1.5 rounded-md border border-primary/15 bg-card/80 px-2.5 py-1 sm:px-3 sm:py-1.5 text-[10px] sm:text-xs font-bold uppercase tracking-wider text-primary shadow-sm backdrop-blur">
-              <Sparkles className="h-3.5 w-3.5" />
+            <span className="mb-3 sm:mb-4 inline-flex items-center rounded-md border border-primary/15 bg-card/80 px-2.5 py-1 sm:px-3 sm:py-1.5 text-[10px] sm:text-xs font-semibold uppercase tracking-wider text-primary shadow-sm backdrop-blur">
               Promo Subsidi Digitalisasi UMKM 2026
             </span>
 
@@ -126,7 +125,7 @@ export function PricingPreviewSection() {
                 {/* Ribbon Discount */}
                 {plan.discount && !plan.popular && (
                   <div className="absolute top-2 right-2 sm:top-3 sm:right-3 z-10">
-                    <span className="rounded-md bg-muted/90 text-foreground border border-border px-1.5 py-0.5 sm:px-2.5 text-[9px] sm:text-xs font-mono font-bold">
+                    <span className="rounded-md bg-muted/90 text-foreground border border-border px-1.5 py-0.5 sm:px-2.5 text-[9px] sm:text-xs font-bold">
                       Diskon {plan.discount}
                     </span>
                   </div>

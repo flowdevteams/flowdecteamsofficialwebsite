@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react"
 import Link from "next/link"
 import Image from "next/image"
-import { ArrowRight, Code2, Sparkles, ShieldCheck, Zap, Layers, Play, Target } from "lucide-react"
+import { ArrowRight, Code2, ShieldCheck, Zap, Layers, Play, Target } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { AnimatedSection } from "@/components/animated-section"
 import { GlowLogo } from "@/components/effects"
@@ -102,10 +102,9 @@ export function HeroSection() {
           {/* Left Column: Copywriting & CTAs */}
           <div className="text-center lg:text-left">
             <AnimatedSection animation="fade-in-down">
-              <div className="inline-flex max-w-full items-center gap-1.5 sm:gap-2 rounded-md border border-primary/20 bg-card/90 px-2.5 sm:px-3 py-1.5 text-[10px] sm:text-xs font-mono font-semibold text-primary shadow-sm backdrop-blur">
-                <Sparkles className="h-3 w-3 sm:h-3.5 sm:w-3.5 shrink-0" aria-hidden="true" />
-                <span className="sm:hidden tracking-tight">// SOFTWARE HOUSE &amp; TEKNOLOGI DIGITAL</span>
-                <span className="hidden sm:inline">// MITRA REKAYASA PERANGKAT LUNAK &amp; TEKNOLOGI DIGITAL</span>
+              <div className="inline-flex max-w-full items-center rounded-md border border-primary/20 bg-card/90 px-2.5 sm:px-3 py-1.5 text-[11px] sm:text-xs font-semibold uppercase tracking-wider text-primary shadow-sm backdrop-blur">
+                <span className="sm:hidden">Software House &amp; Teknologi Digital</span>
+                <span className="hidden sm:inline">Mitra Rekayasa Perangkat Lunak &amp; Teknologi Digital</span>
               </div>
             </AnimatedSection>
 
@@ -133,7 +132,7 @@ export function HeroSection() {
             </AnimatedSection>
 
             <AnimatedSection animation="fade-in-up" delay={200}>
-              <p className="mt-3 sm:mt-5 max-w-2xl text-xs sm:text-base lg:text-lg leading-relaxed text-muted-foreground text-pretty lg:mx-0">
+              <p className="mt-3 sm:mt-5 max-w-2xl text-sm sm:text-base lg:text-lg leading-relaxed text-muted-foreground text-pretty lg:mx-0">
                 Software House Profesional: Cepat, Rapi, Dan Gratis Konsultasi Bisnis.
               </p>
             </AnimatedSection>
@@ -170,9 +169,9 @@ export function HeroSection() {
                   >
                     <div className="flex items-center gap-2">
                       <item.icon className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-primary shrink-0" />
-                      <span className="text-[10px] sm:text-xs font-bold text-foreground">{item.title}</span>
+                      <span className="text-[11px] sm:text-xs font-bold text-foreground">{item.title}</span>
                     </div>
-                    <span className="text-[9px] sm:text-[11px] text-muted-foreground leading-tight">{item.subtitle}</span>
+                    <span className="text-[10px] sm:text-[11px] text-muted-foreground leading-tight">{item.subtitle}</span>
                   </div>
                 ))}
               </div>
@@ -190,11 +189,11 @@ export function HeroSection() {
         {/* Hero Bottom: Infinite Auto-Running Partner & Tech Ecosystem Marquee (Logo Nya Saja) */}
         <AnimatedSection animation="fade-in-up" delay={600} className="mt-8 sm:mt-16 pt-6 sm:pt-10 border-t border-border/40">
           <div className="flex items-center justify-between gap-2 mb-4 sm:mb-5">
-            <span className="text-[11px] sm:text-xs font-mono font-semibold tracking-wider uppercase text-muted-foreground">
-              // TEKNOLOGI &amp; PLATFORM TERINTEGRASI
+            <span className="text-[11px] sm:text-xs font-semibold tracking-wider uppercase text-muted-foreground">
+              Teknologi &amp; Platform Terintegrasi
             </span>
-            <span className="text-[10px] font-mono text-muted-foreground/60 hidden sm:inline-block">
-              // 100% Modern Stack &bull; Siap Scale-Up
+            <span className="text-[10px] text-muted-foreground/60 hidden sm:inline-block">
+              100% Modern Stack &bull; Siap Scale-Up
             </span>
           </div>
 

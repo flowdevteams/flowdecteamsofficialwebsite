@@ -3,7 +3,6 @@
 import * as React from "react"
 import Image from "next/image"
 import { 
-  Cpu, 
   Layers, 
   Server, 
   Database, 
@@ -180,8 +179,7 @@ export function TechStackSection() {
         {/* SEO Header: Bait for Technical Inquiries */}
         <div className="text-center max-w-3xl mx-auto mb-6 sm:mb-10 lg:mb-14">
           <AnimatedSection animation="fade-in-down">
-            <span className="inline-flex items-center gap-1.5 px-2.5 py-1 sm:px-3.5 sm:py-1.5 text-[10px] sm:text-xs font-semibold uppercase tracking-wider mb-2 sm:mb-3.5 bg-primary/10 text-primary rounded-full border border-primary/20 shadow-2xs">
-              <Cpu className="w-3.5 h-3.5 text-primary animate-pulse" />
+            <span className="inline-flex items-center px-2.5 py-1 sm:px-3.5 sm:py-1.5 text-[10px] sm:text-xs font-semibold uppercase tracking-wider mb-2 sm:mb-3.5 bg-primary/10 text-primary rounded-full border border-primary/20 shadow-2xs">
               Tech Stack &amp; Arsitektur Sistem
             </span>
           </AnimatedSection>
@@ -252,7 +250,7 @@ export function TechStackSection() {
                       />
                     </div>
 
-                    <span className="text-[8px] sm:text-[9px] lg:text-[10px] font-mono font-medium px-1.5 sm:px-2 py-0.5 rounded-md bg-white/10 text-blue-200 border border-white/15 line-clamp-1">
+                    <span className="text-[8px] sm:text-[9px] lg:text-[10px] font-semibold px-1.5 sm:px-2 py-0.5 rounded-md bg-white/10 text-blue-200 border border-white/15 line-clamp-1">
                       {tool.versionTag}
                     </span>
                   </div>

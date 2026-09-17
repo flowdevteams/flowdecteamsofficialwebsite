@@ -63,7 +63,7 @@ export function PricingFAQ() {
                 <AccordionTrigger className="text-left font-semibold hover:no-underline py-5 text-sm sm:text-base text-foreground">
                   {faq.question}
                 </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground pb-6 text-xs sm:text-sm leading-relaxed">
+                <AccordionContent className="text-muted-foreground pb-6 text-sm sm:text-sm lg:text-base leading-relaxed">
                   {faq.answer}
                 </AccordionContent>
               </AccordionItem>

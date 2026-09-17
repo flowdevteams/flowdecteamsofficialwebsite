@@ -98,7 +98,7 @@ export function HowWeWorkSection() {
                               </div>
                               <div className="flex flex-col text-left">
                                 <span 
-                                  className="animate-sync-text-sub mb-1 font-mono text-xs font-bold uppercase tracking-wider text-primary"
+                                  className="animate-sync-text-sub mb-1 text-xs font-bold uppercase tracking-wider text-primary"
                                   style={{ animationDelay: `-${6 - index}s` }}
                                 >
                                   SOLUSI 0{index + 1}
@@ -139,7 +139,7 @@ export function HowWeWorkSection() {
                               </div>
                               <div className="flex flex-col text-left">
                                 <span 
-                                  className="animate-sync-text-sub mb-1 font-mono text-xs font-bold uppercase tracking-wider text-primary"
+                                  className="animate-sync-text-sub mb-1 text-xs font-bold uppercase tracking-wider text-primary"
                                   style={{ animationDelay: `-${6 - index}s` }}
                                 >
                                   SOLUSI 0{index + 1}
@@ -176,7 +176,7 @@ export function HowWeWorkSection() {
                       </div>
                       <div className="flex flex-col text-left min-w-0">
                         <span 
-                          className="animate-sync-text-sub font-mono text-[9px] sm:text-xs font-bold uppercase tracking-wider text-primary mb-0.5"
+                          className="animate-sync-text-sub text-[9px] sm:text-xs font-bold uppercase tracking-wider text-primary mb-0.5"
                           style={{ animationDelay: `-${6 - index}s` }}
                         >
                           SOLUSI 0{index + 1}
@@ -218,7 +218,7 @@ export function HowWeWorkSection() {
                       <step.icon className="animate-sync-icon h-4 w-4 sm:h-5 sm:w-5" style={{ animationDelay: `-${6 - index}s` }} />
                     </div>
                     <span 
-                      className="animate-sync-text-sub font-mono text-[9px] sm:text-xs font-bold uppercase tracking-wider text-primary"
+                      className="animate-sync-text-sub text-[9px] sm:text-xs font-bold uppercase tracking-wider text-primary"
                       style={{ animationDelay: `-${6 - index}s` }}
                     >
                       0{index + 1}

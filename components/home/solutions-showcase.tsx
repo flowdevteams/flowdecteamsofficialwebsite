@@ -8,7 +8,6 @@ import {
   LayoutDashboard,
   ArrowRight,
   ShieldCheck,
-  Zap,
   CheckCircle2,
   ExternalLink,
   Layers
@@ -192,9 +191,8 @@ export function SolutionsShowcaseSection() {
       <div className="container mx-auto max-w-7xl px-2 sm:px-6 lg:px-8 relative z-10 mb-6 sm:mb-12 lg:mb-16">
         <div className="text-center max-w-4xl mx-auto">
           <AnimatedSection animation="fade-in-down">
-            <div className="inline-flex items-center gap-1.5 sm:gap-2 rounded-full border border-primary/20 bg-primary/10 px-2.5 py-1 sm:px-4 sm:py-1.5 text-[9px] sm:text-xs font-mono font-semibold uppercase tracking-wider text-primary mb-2 sm:mb-4">
-              <Zap className="h-3.5 w-3.5 text-primary" />
-              <span>PILIHAN WEBSITE &amp; APLIKASI WEB KUSTOM</span>
+            <div className="inline-flex items-center rounded-full border border-primary/20 bg-primary/10 px-2.5 py-1 sm:px-4 sm:py-1.5 text-[9px] sm:text-xs font-semibold uppercase tracking-wider text-primary mb-2 sm:mb-4">
+              <span>Pilihan Website &amp; Aplikasi Web Kustom</span>
             </div>
           </AnimatedSection>
 
@@ -269,12 +267,11 @@ export function SolutionsShowcaseSection() {
         {(activeTab === "all" || activeTab === "website") && (
           <div className="mb-3 sm:mb-6 group">
             <div className="flex items-center gap-1.5 sm:gap-2 px-3 sm:px-12 mb-2 sm:mb-3">
-              <span className="inline-flex items-center gap-1 sm:gap-1.5 text-[9px] sm:text-[11px] font-mono font-bold uppercase tracking-wider text-primary bg-primary/10 px-2 py-0.5 sm:px-2.5 rounded border border-primary/20">
-                <Globe className="h-3 w-3" />
-                PILIHAN WEBSITE &amp; LANDING PAGE
+              <span className="inline-flex items-center text-[9px] sm:text-[11px] font-semibold uppercase tracking-wider text-primary bg-primary/10 px-2 py-0.5 sm:px-2.5 rounded border border-primary/20">
+                Pilihan Website &amp; Landing Page
               </span>
-              <span className="text-[10px] font-mono text-muted-foreground hidden sm:inline-block">
-                // Arahkan kursor untuk menjeda animasi
+              <span className="text-[10px] text-muted-foreground hidden sm:inline-block">
+                Arahkan kursor untuk menjeda animasi
               </span>
             </div>
 
@@ -291,12 +288,11 @@ export function SolutionsShowcaseSection() {
         {(activeTab === "all" || activeTab === "webapp") && (
           <div className="group mt-2">
             <div className="flex items-center gap-1.5 sm:gap-2 px-3 sm:px-12 mb-2 sm:mb-3">
-              <span className="inline-flex items-center gap-1 sm:gap-1.5 text-[9px] sm:text-[11px] font-mono font-bold uppercase tracking-wider text-sky-400 bg-sky-500/10 px-2 py-0.5 sm:px-2.5 rounded border border-sky-500/20">
-                <LayoutDashboard className="h-3 w-3" />
-                PILIHAN APLIKASI WEB &amp; SISTEM BISNIS
+              <span className="inline-flex items-center text-[9px] sm:text-[11px] font-semibold uppercase tracking-wider text-sky-400 bg-sky-500/10 px-2 py-0.5 sm:px-2.5 rounded border border-sky-500/20">
+                Pilihan Aplikasi Web &amp; Sistem Bisnis
               </span>
-              <span className="text-[10px] font-mono text-muted-foreground hidden sm:inline-block">
-                // Arahkan kursor untuk menjeda animasi
+              <span className="text-[10px] text-muted-foreground hidden sm:inline-block">
+                Arahkan kursor untuk menjeda animasi
               </span>
             </div>
 
@@ -352,10 +348,10 @@ function SolutionCard({ item }: { item: SolutionItem }) {
             </div>
 
             <div className="flex items-center gap-1.5">
-              <span className="rounded bg-white/10 px-2 py-0.5 text-[8px] font-mono font-semibold uppercase tracking-wider text-white/80">
+              <span className="rounded bg-white/10 px-2 py-0.5 text-[8px] font-semibold uppercase tracking-wider text-white/80">
                 {item.categoryLabel}
               </span>
-              <span className="rounded bg-primary/25 px-2 py-0.5 text-[8px] font-mono font-bold uppercase tracking-wider text-sky-200 border border-primary/40">
+              <span className="rounded bg-primary/25 px-2 py-0.5 text-[8px] font-bold uppercase tracking-wider text-sky-200 border border-primary/40">
                 TIPE {item.number}
               </span>
             </div>
@@ -375,16 +371,16 @@ function SolutionCard({ item }: { item: SolutionItem }) {
         </div>
 
         {/* Target Audience Pill */}
-        <div className="mb-1.5 sm:mb-2.5 flex items-start gap-1.5 sm:gap-2 rounded-md sm:rounded-lg bg-primary/[0.04] px-2 py-1 sm:px-2.5 sm:py-1.5 border border-primary/15 text-[9px] sm:text-[11px]">
+        <div className="mb-1.5 sm:mb-2.5 flex items-start gap-1.5 sm:gap-2 rounded-md sm:rounded-lg bg-primary/[0.04] px-2 py-1 sm:px-2.5 sm:py-1.5 border border-primary/15 text-[10.5px] sm:text-[11px]">
           <span className="font-semibold text-primary shrink-0">Cocok:</span>
           <span className="text-foreground/85 font-medium line-clamp-1 leading-normal">{item.target}</span>
         </div>
 
-        <h3 className="text-[11px] sm:text-sm lg:text-base font-bold text-foreground leading-snug mb-1 sm:mb-1.5 group-hover/card:text-primary transition-colors line-clamp-1">
+        <h3 className="text-xs sm:text-sm lg:text-base font-bold text-foreground leading-snug mb-1 sm:mb-1.5 group-hover/card:text-primary transition-colors line-clamp-1">
           {item.title}
         </h3>
 
-        <p className="text-[9px] sm:text-xs text-muted-foreground leading-relaxed line-clamp-2 mb-2 sm:mb-3">
+        <p className="text-[11px] sm:text-xs text-muted-foreground leading-relaxed line-clamp-2 mb-2 sm:mb-3">
           {item.description}
         </p>
       </div>
@@ -395,7 +391,7 @@ function SolutionCard({ item }: { item: SolutionItem }) {
           {item.tags.slice(0, 3).map((tag) => (
             <span
               key={tag}
-              className="rounded bg-muted/60 px-1.5 sm:px-2 py-0.5 text-[7px] sm:text-[9px] font-mono font-medium text-foreground/75 border border-border/50 line-clamp-1"
+              className="rounded bg-muted/60 px-1.5 sm:px-2 py-0.5 text-[9px] sm:text-[9px] font-medium text-foreground/75 border border-border/50 line-clamp-1"
             >
               {tag}
             </span>
@@ -407,7 +403,7 @@ function SolutionCard({ item }: { item: SolutionItem }) {
           <Button
             asChild
             size="sm"
-            className="flex-1 rounded-lg sm:rounded-xl bg-primary text-primary-foreground font-semibold text-[9px] sm:text-xs h-7 sm:h-8.5 shadow-sm shadow-primary/20 hover:bg-primary/90 transition-all duration-200"
+            className="flex-1 rounded-lg sm:rounded-xl bg-primary text-primary-foreground font-semibold text-[10.5px] sm:text-xs h-7 sm:h-8.5 shadow-sm shadow-primary/20 hover:bg-primary/90 transition-all duration-200"
           >
             <Link
               href={`https://wa.me/6281574673448?text=Halo%20Flowdev%20Teams,%20saya%20tertarik%20konsultasi%20pembuatan%20${encodeURIComponent(item.title)}`}

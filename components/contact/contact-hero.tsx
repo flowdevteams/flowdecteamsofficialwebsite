@@ -19,8 +19,8 @@ export function ContactHero() {
 
           <div className="relative z-10 mx-auto max-w-4xl">
             <AnimatedSection animation="fade-in-down">
-              <span className="inline-block px-4 py-1.5 rounded-full text-xs font-mono font-semibold uppercase tracking-wider bg-white/10 text-white mb-6 border border-white/20">
-                KONSULTASI PROYEK
+              <span className="inline-block px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider bg-white/10 text-white mb-6 border border-white/20">
+                Konsultasi Proyek
               </span>
             </AnimatedSection>
             

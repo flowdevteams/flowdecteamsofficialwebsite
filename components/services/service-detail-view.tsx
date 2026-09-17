@@ -52,7 +52,7 @@ export function ServiceDetailView({ service }: ServiceDetailViewProps) {
       <section className="relative px-4 pt-8 sm:px-6 lg:px-8">
         <div className="container mx-auto max-w-7xl">
           {/* Breadcrumb Navigation */}
-          <div className="mb-6 flex items-center gap-2 text-xs font-mono text-muted-foreground">
+          <div className="mb-6 flex items-center gap-2 text-xs font-medium text-muted-foreground">
             <Link href="/" className="transition-colors hover:text-foreground">
               beranda
             </Link>
@@ -72,8 +72,7 @@ export function ServiceDetailView({ service }: ServiceDetailViewProps) {
 
             <div className="relative z-10 mx-auto max-w-5xl">
               <AnimatedSection animation="fade-in-down">
-                <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-xs font-mono font-semibold uppercase tracking-wider text-white backdrop-blur-md mb-6">
-                  <IconComponent className="h-3.5 w-3.5 text-white/90" />
+                <div className="inline-flex items-center rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-white backdrop-blur-md mb-6">
                   <span>{service.badgeText}</span>
                 </div>
               </AnimatedSection>
@@ -109,12 +108,11 @@ export function ServiceDetailView({ service }: ServiceDetailViewProps) {
               {service.gatewayNeeds && service.gatewayNeeds.length > 0 && (
                 <AnimatedSection animation="fade-in-up" delay={350} className="mt-10 pt-8 border-t border-white/10 text-left">
                   <div className="mb-4 flex items-center justify-between">
-                    <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-sky-200 flex items-center gap-1.5">
-                      <Layers className="h-3.5 w-3.5 text-sky-300" />
+                    <span className="text-[11px] font-bold uppercase tracking-wider text-sky-200">
                       Pilih Spesifikasi Kebutuhan Sistem Bisnis Anda:
                     </span>
-                    <span className="text-[10px] font-mono text-white/60 hidden sm:inline-block">
-                      [ Rekayasa Kode Kustom 100% ]
+                    <span className="text-[10px] font-semibold text-white/60 hidden sm:inline-block">
+                      Rekayasa Kode Kustom 100%
                     </span>
                   </div>
 
@@ -129,7 +127,7 @@ export function ServiceDetailView({ service }: ServiceDetailViewProps) {
                       >
                         <div>
                           <div className="flex items-center justify-between gap-1 sm:gap-2 mb-1.5 sm:mb-2">
-                            <span className="inline-block rounded bg-sky-400/20 px-1.5 sm:px-2 py-0.5 text-[8.5px] sm:text-[10px] font-mono font-bold uppercase text-sky-200 border border-sky-400/30 truncate">
+                            <span className="inline-block rounded bg-sky-400/20 px-1.5 sm:px-2 py-0.5 text-[8.5px] sm:text-[10px] font-bold uppercase text-sky-200 border border-sky-400/30 truncate">
                               {need.badge}
                             </span>
                             <ArrowRight className="h-3 w-3 sm:h-3.5 sm:w-3.5 text-white/50 transition-transform duration-200 group-hover/gate:translate-x-1 group-hover/gate:text-white shrink-0" />
@@ -186,7 +184,7 @@ export function ServiceDetailView({ service }: ServiceDetailViewProps) {
                 delay={idx * 100}
               >
                 <div className="relative h-full overflow-hidden rounded-xl sm:rounded-2xl border border-border/80 bg-card p-3 sm:p-6 shadow-sm transition-all duration-300 hover:border-primary/40 hover:-translate-y-1">
-                  <div className="text-xl sm:text-3xl font-extrabold tracking-tight text-primary font-mono">
+                  <div className="text-xl sm:text-3xl font-extrabold tracking-tight text-primary">
                     {metric.value}
                   </div>
                   <div className="mt-1 sm:mt-2 font-bold text-foreground text-xs sm:text-sm line-clamp-1 sm:line-clamp-none">
@@ -206,7 +204,7 @@ export function ServiceDetailView({ service }: ServiceDetailViewProps) {
       <section className="px-4 sm:px-6 lg:px-8">
         <div className="container mx-auto max-w-7xl">
           <div className="mb-12 text-center">
-            <span className="inline-block px-3.5 py-1 text-xs font-mono font-semibold uppercase tracking-wider rounded-full bg-primary/10 text-primary border border-primary/20 mb-3">
+            <span className="inline-block px-3.5 py-1 text-xs font-semibold uppercase tracking-wider rounded-full bg-primary/10 text-primary border border-primary/20 mb-3">
               {service.slug === "landing-page"
                 ? "PILIHAN SPESIFIKASI WEBSITE"
                 : service.slug === "aplikasi-web"
@@ -258,7 +256,7 @@ export function ServiceDetailView({ service }: ServiceDetailViewProps) {
                           </div>
 
                           {/* Clean Tipe indicator badge */}
-                          <span className="rounded bg-primary/25 px-2.5 py-0.5 text-[9px] font-mono font-bold uppercase tracking-wider text-sky-200 border border-primary/40">
+                          <span className="rounded bg-primary/25 px-2.5 py-0.5 text-[9px] font-bold uppercase tracking-wider text-sky-200 border border-primary/40">
                             TIPE 0{idx + 1}
                           </span>
                         </div>
@@ -280,8 +278,8 @@ export function ServiceDetailView({ service }: ServiceDetailViewProps) {
                         <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary/10 text-primary border border-primary/20">
                           <Code2 className="h-5 w-5" />
                         </div>
-                        <span className="text-xs font-mono font-bold text-muted-foreground">
-                          [{String(idx + 1).padStart(2, "0")}]
+                        <span className="text-xs font-bold text-muted-foreground">
+                          0{idx + 1}
                         </span>
                       </div>
                     )}
@@ -309,7 +307,7 @@ export function ServiceDetailView({ service }: ServiceDetailViewProps) {
                       {item.tags.map((tag) => (
                         <span
                           key={tag}
-                          className="rounded-md bg-muted/60 px-2 py-0.5 text-[10px] font-mono font-medium text-foreground/80 border border-border/50"
+                          className="rounded-md bg-muted/60 px-2 py-0.5 text-[10px] font-medium text-foreground/80 border border-border/50"
                         >
                           {tag}
                         </span>
@@ -347,8 +345,7 @@ export function ServiceDetailView({ service }: ServiceDetailViewProps) {
               <div className="relative z-10">
                 <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6 pb-8 border-b border-white/10">
                   <div className="max-w-2xl">
-                    <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/10 border border-white/20 text-[11px] font-mono font-semibold uppercase tracking-wider text-sky-200 mb-3 backdrop-blur-md">
-                      <ShieldCheck className="h-3.5 w-3.5 text-white" />
+                    <div className="inline-flex items-center px-3 py-1 rounded-full bg-white/10 border border-white/20 text-[11px] font-semibold uppercase tracking-wider text-sky-200 mb-3 backdrop-blur-md">
                       <span>STANDAR MUTLAK FLOWDEV TEAMS</span>
                     </div>
                     <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold tracking-tight text-white leading-snug">
@@ -375,7 +372,7 @@ export function ServiceDetailView({ service }: ServiceDetailViewProps) {
                   {service.slug === "aplikasi-web" ? (
                     <>
                       <div className="flex flex-col sm:flex-row items-start gap-2 sm:gap-3.5">
-                        <div className="flex h-7 w-7 sm:h-10 sm:w-10 shrink-0 items-center justify-center rounded-lg sm:rounded-xl bg-white/10 border border-white/15 text-white font-mono text-xs sm:text-sm font-bold">
+                        <div className="flex h-7 w-7 sm:h-10 sm:w-10 shrink-0 items-center justify-center rounded-lg sm:rounded-xl bg-white/10 border border-white/15 text-white text-xs sm:text-sm font-bold">
                           01
                         </div>
                         <div>
@@ -387,7 +384,7 @@ export function ServiceDetailView({ service }: ServiceDetailViewProps) {
                       </div>
 
                       <div className="flex flex-col sm:flex-row items-start gap-2 sm:gap-3.5">
-                        <div className="flex h-7 w-7 sm:h-10 sm:w-10 shrink-0 items-center justify-center rounded-lg sm:rounded-xl bg-white/10 border border-white/15 text-white font-mono text-xs sm:text-sm font-bold">
+                        <div className="flex h-7 w-7 sm:h-10 sm:w-10 shrink-0 items-center justify-center rounded-lg sm:rounded-xl bg-white/10 border border-white/15 text-white text-xs sm:text-sm font-bold">
                           02
                         </div>
                         <div>
@@ -399,7 +396,7 @@ export function ServiceDetailView({ service }: ServiceDetailViewProps) {
                       </div>
 
                       <div className="flex flex-col sm:flex-row items-start gap-2 sm:gap-3.5">
-                        <div className="flex h-7 w-7 sm:h-10 sm:w-10 shrink-0 items-center justify-center rounded-lg sm:rounded-xl bg-white/10 border border-white/15 text-white font-mono text-xs sm:text-sm font-bold">
+                        <div className="flex h-7 w-7 sm:h-10 sm:w-10 shrink-0 items-center justify-center rounded-lg sm:rounded-xl bg-white/10 border border-white/15 text-white text-xs sm:text-sm font-bold">
                           03
                         </div>
                         <div>
@@ -411,7 +408,7 @@ export function ServiceDetailView({ service }: ServiceDetailViewProps) {
                       </div>
 
                       <div className="flex flex-col sm:flex-row items-start gap-2 sm:gap-3.5">
-                        <div className="flex h-7 w-7 sm:h-10 sm:w-10 shrink-0 items-center justify-center rounded-lg sm:rounded-xl bg-white/10 border border-white/15 text-white font-mono text-xs sm:text-sm font-bold">
+                        <div className="flex h-7 w-7 sm:h-10 sm:w-10 shrink-0 items-center justify-center rounded-lg sm:rounded-xl bg-white/10 border border-white/15 text-white text-xs sm:text-sm font-bold">
                           04
                         </div>
                         <div>
@@ -425,7 +422,7 @@ export function ServiceDetailView({ service }: ServiceDetailViewProps) {
                   ) : (
                     <>
                       <div className="flex flex-col sm:flex-row items-start gap-2 sm:gap-3.5">
-                        <div className="flex h-7 w-7 sm:h-10 sm:w-10 shrink-0 items-center justify-center rounded-lg sm:rounded-xl bg-white/10 border border-white/15 text-white font-mono text-xs sm:text-sm font-bold">
+                        <div className="flex h-7 w-7 sm:h-10 sm:w-10 shrink-0 items-center justify-center rounded-lg sm:rounded-xl bg-white/10 border border-white/15 text-white text-xs sm:text-sm font-bold">
                           01
                         </div>
                         <div>
@@ -437,7 +434,7 @@ export function ServiceDetailView({ service }: ServiceDetailViewProps) {
                       </div>
 
                       <div className="flex flex-col sm:flex-row items-start gap-2 sm:gap-3.5">
-                        <div className="flex h-7 w-7 sm:h-10 sm:w-10 shrink-0 items-center justify-center rounded-lg sm:rounded-xl bg-white/10 border border-white/15 text-white font-mono text-xs sm:text-sm font-bold">
+                        <div className="flex h-7 w-7 sm:h-10 sm:w-10 shrink-0 items-center justify-center rounded-lg sm:rounded-xl bg-white/10 border border-white/15 text-white text-xs sm:text-sm font-bold">
                           02
                         </div>
                         <div>
@@ -449,7 +446,7 @@ export function ServiceDetailView({ service }: ServiceDetailViewProps) {
                       </div>
 
                       <div className="flex flex-col sm:flex-row items-start gap-2 sm:gap-3.5">
-                        <div className="flex h-7 w-7 sm:h-10 sm:w-10 shrink-0 items-center justify-center rounded-lg sm:rounded-xl bg-white/10 border border-white/15 text-white font-mono text-xs sm:text-sm font-bold">
+                        <div className="flex h-7 w-7 sm:h-10 sm:w-10 shrink-0 items-center justify-center rounded-lg sm:rounded-xl bg-white/10 border border-white/15 text-white text-xs sm:text-sm font-bold">
                           03
                         </div>
                         <div>
@@ -461,7 +458,7 @@ export function ServiceDetailView({ service }: ServiceDetailViewProps) {
                       </div>
 
                       <div className="flex flex-col sm:flex-row items-start gap-2 sm:gap-3.5">
-                        <div className="flex h-7 w-7 sm:h-10 sm:w-10 shrink-0 items-center justify-center rounded-lg sm:rounded-xl bg-white/10 border border-white/15 text-white font-mono text-xs sm:text-sm font-bold">
+                        <div className="flex h-7 w-7 sm:h-10 sm:w-10 shrink-0 items-center justify-center rounded-lg sm:rounded-xl bg-white/10 border border-white/15 text-white text-xs sm:text-sm font-bold">
                           04
                         </div>
                         <div>
@@ -484,9 +481,8 @@ export function ServiceDetailView({ service }: ServiceDetailViewProps) {
       <section className="px-4 sm:px-6 lg:px-8">
         <div className="container mx-auto max-w-7xl">
           <div className="mb-10 text-center">
-            <div className="inline-flex items-center gap-1.5 px-3 py-1 text-xs font-mono font-semibold uppercase tracking-wider rounded-md bg-muted/80 text-primary border border-border mb-3">
-              <Terminal className="h-3.5 w-3.5" />
-              <span>// ANALISIS MASALAH &amp; SOLUSI REKAYASA</span>
+            <div className="inline-flex items-center px-3 py-1 text-xs font-semibold uppercase tracking-wider rounded-md bg-muted/80 text-primary border border-border mb-3">
+              <span>Analisis Masalah &amp; Solusi Rekayasa</span>
             </div>
             <h2 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl lg:text-4xl">
               <AccentTitle text="Tantangan Bisnis & Jawaban Rekayasa dari Flowdev Teams" />
@@ -501,12 +497,12 @@ export function ServiceDetailView({ service }: ServiceDetailViewProps) {
                 <div>
                   <div className="flex items-center justify-between gap-3 mb-4 pb-3 border-b border-border/60">
                     <div className="flex items-center gap-2.5">
-                      <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-muted border border-border text-muted-foreground font-mono text-xs">
+                      <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-muted border border-border text-muted-foreground font-bold text-xs">
                         01
                       </div>
                       <h3 className="text-base font-bold text-foreground">Kendala Operasional yang Sering Dihadapi</h3>
                     </div>
-                    <span className="text-[10px] font-mono uppercase bg-muted px-2 py-0.5 rounded text-muted-foreground font-semibold">
+                    <span className="text-[10px] uppercase bg-muted px-2 py-0.5 rounded text-muted-foreground font-semibold">
                       Tantangan
                     </span>
                   </div>
@@ -518,7 +514,7 @@ export function ServiceDetailView({ service }: ServiceDetailViewProps) {
                   <div className="space-y-2.5">
                     {service.problemSolution.marketPainPoints.map((pain, i) => (
                       <div key={i} className="flex items-start gap-2.5 text-xs text-foreground/85 leading-relaxed">
-                        <span className="mt-1 flex h-3.5 w-3.5 shrink-0 items-center justify-center rounded bg-muted border border-border text-[10px] font-mono text-muted-foreground">
+                        <span className="mt-1 flex h-3.5 w-3.5 shrink-0 items-center justify-center rounded bg-muted border border-border text-[10px] font-bold text-muted-foreground">
                           —
                         </span>
                         <span>{pain}</span>
@@ -535,12 +531,12 @@ export function ServiceDetailView({ service }: ServiceDetailViewProps) {
                 <div>
                   <div className="flex items-center justify-between gap-3 mb-4 pb-3 border-b border-primary/20">
                     <div className="flex items-center gap-2.5">
-                      <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary/10 border border-primary/20 text-primary font-mono text-xs font-bold">
+                      <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary/10 border border-primary/20 text-primary text-xs font-bold">
                         02
                       </div>
                       <h3 className="text-base font-bold text-foreground">Solusi Rekayasa yang Kami Bangun</h3>
                     </div>
-                    <span className="text-[10px] font-mono uppercase bg-primary/10 px-2 py-0.5 rounded text-primary font-bold">
+                    <span className="text-[10px] uppercase bg-primary/10 px-2 py-0.5 rounded text-primary font-bold">
                       Solusi Teruji
                     </span>
                   </div>
@@ -616,14 +612,14 @@ export function ServiceDetailView({ service }: ServiceDetailViewProps) {
                 <div className="space-y-4">
                   {service.techStack.map((stack, i) => (
                     <div key={i} className="rounded-xl border border-border/60 bg-muted/20 p-3.5">
-                      <div className="text-[11px] font-mono font-bold uppercase tracking-wider text-primary mb-2">
+                      <div className="text-[11px] font-bold uppercase tracking-wider text-primary mb-2">
                         {stack.category}
                       </div>
                       <div className="flex flex-wrap gap-1.5">
                         {stack.items.map((tech) => (
                           <span
                             key={tech}
-                            className="rounded-md border border-border bg-card px-2.5 py-1 text-xs font-mono font-medium text-foreground"
+                            className="rounded-md border border-border bg-card px-2.5 py-1 text-xs font-medium text-foreground"
                           >
                             {tech}
                           </span>
@@ -643,7 +639,7 @@ export function ServiceDetailView({ service }: ServiceDetailViewProps) {
       <section className="px-4 sm:px-6 lg:px-8">
         <div className="container mx-auto max-w-7xl">
           <div className="mb-10 text-center">
-            <span className="inline-block px-3 py-1 text-xs font-mono font-semibold uppercase tracking-wider rounded-md bg-primary/10 text-primary mb-3">
+            <span className="inline-block px-3 py-1 text-xs font-semibold uppercase tracking-wider rounded-md bg-primary/10 text-primary mb-3">
               TAHAPAN REKAYASA
             </span>
             <h2 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl lg:text-4xl">
@@ -659,7 +655,7 @@ export function ServiceDetailView({ service }: ServiceDetailViewProps) {
                 delay={parseInt(flow.step) * 80}
               >
                 <div className="relative h-full rounded-xl sm:rounded-2xl border border-border/80 bg-card p-3 sm:p-6 shadow-sm">
-                  <div className="mb-1 sm:mb-3 font-mono text-base sm:text-xl font-black text-primary">
+                  <div className="mb-1 sm:mb-3 text-base sm:text-xl font-black text-primary">
                     {flow.step}
                   </div>
                   <h4 className="text-xs sm:text-sm font-bold text-foreground mb-1 sm:mb-1.5 line-clamp-1 sm:line-clamp-none">
@@ -679,7 +675,7 @@ export function ServiceDetailView({ service }: ServiceDetailViewProps) {
       <section className="px-4 sm:px-6 lg:px-8">
         <div className="container mx-auto max-w-4xl">
           <div className="mb-10 text-center">
-            <span className="inline-block px-3 py-1 text-xs font-mono font-semibold uppercase tracking-wider rounded-md bg-primary/10 text-primary mb-3">
+            <span className="inline-block px-3 py-1 text-xs font-semibold uppercase tracking-wider rounded-md bg-primary/10 text-primary mb-3">
               TANYA JAWAB TEKNIS
             </span>
             <h2 className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl lg:text-4xl">

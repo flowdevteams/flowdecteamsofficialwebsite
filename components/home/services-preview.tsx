@@ -180,7 +180,7 @@ export function ServicesPreview() {
                           <pillar.icon className="h-4 w-4 sm:h-5 sm:w-5 lg:h-6 lg:w-6" />
                         </div>
                         <span className={cn(
-                          "rounded-full px-2 py-0.5 sm:px-3 sm:py-1 text-[9px] sm:text-[10px] lg:text-[11px] font-mono font-bold uppercase tracking-wider border shadow-xs",
+                          "rounded-full px-2 py-0.5 sm:px-3 sm:py-1 text-[9px] sm:text-[10px] lg:text-[11px] font-bold uppercase tracking-wider border shadow-xs",
                           pillar.theme.badge
                         )}>
                           {pillar.badge}
@@ -227,7 +227,7 @@ export function ServicesPreview() {
                         pillar.theme.audienceBox
                       )}>
                         <div className="space-y-1.5">
-                          <div className="flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-wider">
+                          <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider">
                             <Users className="h-4 w-4 shrink-0" />
                             <span>Cocok Untuk:</span>
                           </div>

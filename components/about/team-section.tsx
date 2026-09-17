@@ -5,7 +5,6 @@ import Image from "next/image"
 import { 
   Linkedin, 
   ExternalLink, 
-  Sparkles, 
   Code2, 
   Cpu, 
   Layers, 
@@ -14,7 +13,6 @@ import {
   Globe, 
   LayoutGrid, 
   Eye, 
-  Flame, 
   CheckCircle2, 
   ChevronLeft, 
   ChevronRight,
@@ -201,8 +199,7 @@ export function TeamSection() {
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 lg:mb-16">
           <div className="max-w-2xl">
-            <span className="inline-flex items-center gap-1.5 px-3.5 py-1 text-xs font-semibold uppercase tracking-wider mb-3 bg-primary/10 text-primary rounded-full border border-primary/20 shadow-xs">
-              <Flame className="w-3.5 h-3.5 text-primary animate-pulse" />
+            <span className="inline-flex items-center px-3.5 py-1 text-xs font-semibold uppercase tracking-wider mb-3 bg-primary/10 text-primary rounded-full border border-primary/20 shadow-xs">
               Talenta Terbaik di Bidangnya
             </span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-foreground leading-tight font-serif">
@@ -307,7 +304,7 @@ export function TeamSection() {
                     <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-transparent to-transparent opacity-60" />
 
                     {/* Number & Role Badge Overlay */}
-                    <div className="absolute top-3 left-3 px-3 py-1 rounded-full bg-background/80 backdrop-blur-md border border-border/60 text-xs font-mono font-bold text-primary shadow-xs">
+                    <div className="absolute top-3 left-3 px-3 py-1 rounded-full bg-background/80 backdrop-blur-md border border-border/60 text-xs font-bold text-primary shadow-xs">
                       #{String(activeMemberIndex + 1).padStart(2, "0")} / {String(teamMembers.length).padStart(2, "0")}
                     </div>
 
@@ -329,7 +326,7 @@ export function TeamSection() {
                             <Linkedin className="w-4 h-4" />
                           </a>
                         )}
-                        <span className="text-[11px] font-mono text-muted-foreground font-semibold">
+                        <span className="text-[11px] text-muted-foreground font-medium">
                           Verified Expert
                         </span>
                       </div>
@@ -360,7 +357,7 @@ export function TeamSection() {
                       <ChevronLeft className="w-4 h-4" />
                       Sebelumnya
                     </Button>
-                    <span className="text-xs font-mono text-muted-foreground">
+                    <span className="text-xs font-medium text-muted-foreground">
                       {activeMemberIndex + 1} of {teamMembers.length}
                     </span>
                     <Button
@@ -380,8 +377,7 @@ export function TeamSection() {
                   
                   <div>
                     <div className="flex items-center gap-2 mb-2">
-                      <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-md text-xs font-semibold bg-primary/10 text-primary border border-primary/20">
-                        <currentMember.icon className="w-3.5 h-3.5" />
+                      <span className="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-semibold bg-primary/10 text-primary border border-primary/20">
                         {currentMember.division}
                       </span>
                     </div>
@@ -398,16 +394,15 @@ export function TeamSection() {
 
                   {/* Core Expertise Progress Metrics */}
                   <div className="p-4 rounded-2xl bg-muted/40 border border-border/70 flex flex-col gap-3">
-                    <span className="text-xs font-semibold uppercase tracking-wider text-muted-foreground flex items-center gap-1.5">
-                      <Sparkles className="w-3.5 h-3.5 text-primary" />
-                      Tingkat Keahlian & Spesialisasi Teknis
+                    <span className="text-xs font-semibold uppercase tracking-wider text-muted-foreground flex items-center">
+                      Tingkat Keahlian &amp; Spesialisasi Teknis
                     </span>
                     <div className="space-y-2.5">
                       {currentMember.expertise.map((exp, i) => (
                         <div key={i} className="space-y-1">
                           <div className="flex justify-between text-xs font-medium">
                             <span className="text-foreground">{exp.label}</span>
-                            <span className="font-mono text-primary font-bold">{exp.level}%</span>
+                            <span className="text-primary font-bold">{exp.level}%</span>
                           </div>
                           <div className="w-full bg-border/60 h-2 rounded-full overflow-hidden">
                             <div 
@@ -429,7 +424,7 @@ export function TeamSection() {
                       {currentMember.skills.map((skill) => (
                         <span 
                           key={skill}
-                          className="px-3 py-1 rounded-lg text-xs font-mono font-medium bg-background border border-border/80 text-foreground shadow-xs"
+                          className="px-3 py-1 rounded-lg text-xs font-medium bg-background border border-border/80 text-foreground shadow-xs"
                         >
                           {skill}
                         </span>
@@ -499,7 +494,7 @@ export function TeamSection() {
                       sizes="(max-width: 640px) 50vw, 300px"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-transparent to-transparent opacity-60" />
-                    <span className="absolute top-1.5 right-1.5 sm:top-2.5 sm:right-2.5 px-1.5 sm:px-2.5 py-0.5 rounded-full bg-background/80 backdrop-blur-md border border-border text-[8px] sm:text-[10px] font-mono text-primary font-bold">
+                    <span className="absolute top-1.5 right-1.5 sm:top-2.5 sm:right-2.5 px-1.5 sm:px-2.5 py-0.5 rounded-full bg-background/80 backdrop-blur-md border border-border text-[8px] sm:text-[10px] text-primary font-bold">
                       #{String(index + 1).padStart(2, "0")}
                     </span>
                   </div>

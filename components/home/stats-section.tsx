@@ -52,7 +52,7 @@ export function StatsSection() {
                   unoptimized={client.logo.endsWith('.svg')}
                   className="max-h-12 sm:max-h-20 lg:max-h-24 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
                 />
-                <h3 className="mt-2 sm:mt-3 text-center text-[9px] sm:text-xs font-semibold uppercase tracking-wider text-muted-foreground/80 transition-colors group-hover:text-foreground line-clamp-2">
+                <h3 className="mt-2 sm:mt-3 text-center text-[10.5px] sm:text-xs font-semibold uppercase tracking-wider text-muted-foreground transition-colors group-hover:text-foreground line-clamp-2">
                   {client.name}
                 </h3>
               </div>

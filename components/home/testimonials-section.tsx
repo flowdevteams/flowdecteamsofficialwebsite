@@ -64,22 +64,22 @@ export function TestimonialsSection() {
                   </div>
 
                   {/* Content */}
-                  <p className="mb-2 sm:mb-6 lg:mb-8 flex-1 text-[9px] sm:text-xs lg:text-base leading-snug sm:leading-relaxed text-foreground opacity-90 line-clamp-3 sm:line-clamp-none">
+                  <p className="mb-2 sm:mb-6 lg:mb-8 flex-1 text-xs sm:text-xs lg:text-base leading-relaxed text-foreground opacity-90 line-clamp-4 sm:line-clamp-none">
                     {`"${testimonial.content}"`}
                   </p>
 
                   {/* Author */}
-                  <div className="flex items-center gap-1.5 sm:gap-3 lg:gap-4 pt-2 sm:pt-4 lg:pt-6 border-t border-border/50 mt-auto">
-                    <div className="flex h-6 w-6 sm:h-9 sm:w-9 lg:h-12 lg:w-12 items-center justify-center rounded sm:rounded-lg border border-primary/20 bg-primary/10 transition-colors duration-300 group-hover:bg-primary/15 shrink-0">
-                      <span className="text-primary font-bold text-[10px] sm:text-sm lg:text-lg">
+                  <div className="flex items-center gap-2 sm:gap-3 lg:gap-4 pt-2 sm:pt-4 lg:pt-6 border-t border-border/50 mt-auto">
+                    <div className="flex h-7 w-7 sm:h-9 sm:w-9 lg:h-12 lg:w-12 items-center justify-center rounded-md sm:rounded-lg border border-primary/20 bg-primary/10 transition-colors duration-300 group-hover:bg-primary/15 shrink-0">
+                      <span className="text-primary font-bold text-xs sm:text-sm lg:text-lg">
                         {testimonial.name.charAt(0)}
                       </span>
                     </div>
                     <div className="min-w-0 flex-1">
-                      <div className="font-semibold text-foreground text-[10px] sm:text-xs lg:text-base truncate">
+                      <div className="font-semibold text-foreground text-xs sm:text-xs lg:text-base truncate">
                         {testimonial.name}
                       </div>
-                      <div className="text-[7.5px] sm:text-[11px] lg:text-sm text-muted-foreground truncate">
+                      <div className="text-[10px] sm:text-[11px] lg:text-sm text-muted-foreground truncate">
                         {testimonial.role}
                       </div>
                     </div>

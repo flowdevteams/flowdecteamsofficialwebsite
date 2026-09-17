@@ -124,6 +124,8 @@
   body {
     @apply bg-background text-foreground;
     text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
     font-feature-settings: "kern" 1, "liga" 1;
     font-weight: 450;
   }
@@ -140,12 +142,73 @@
   p,
   li {
     font-weight: 450;
+    line-height: 1.6;
   }
 
   h1,
   h2,
-  h3 {
+  h3,
+  h4 {
     font-family: var(--font-serif), Georgia, serif;
+    letter-spacing: -0.015em;
+  }
+}
+
+/* ============================================================ */
+/* MOBILE TYPOGRAPHY & READABILITY ENHANCEMENTS                */
+/* Designed to increase legibility on mobile screens without   */
+/* altering the 2-column or responsive layouts in any way.     */
+/* ============================================================ */
+@media (max-width: 640px) {
+  body {
+    font-size: 14.5px;
+    line-height: 1.55;
+  }
+
+  p,
+  li {
+    font-weight: 460;
+    letter-spacing: -0.006em;
+    line-height: 1.55;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    letter-spacing: -0.015em;
+  }
+
+  /* Elevate micro-text sizes to clear, comfortable reading thresholds */
+  .text-\[7px\],
+  .text-\[7\.5px\],
+  .text-\[8px\] {
+    font-size: 9.5px !important;
+    line-height: 1.35 !important;
+  }
+
+  .text-\[8\.5px\],
+  .text-\[9px\],
+  .text-\[9\.5px\] {
+    font-size: 10.5px !important;
+    line-height: 1.4 !important;
+  }
+
+  .text-\[10px\],
+  .text-\[10\.5px\],
+  .text-\[11px\] {
+    font-size: 11.5px !important;
+    line-height: 1.4 !important;
+  }
+
+  .text-xs {
+    font-size: 12.5px !important;
+    line-height: 1.45 !important;
+  }
+
+  /* Increase readability of subtle muted text on mobile screens */
+  .text-muted-foreground {
+    color: color-mix(in oklch, var(--muted-foreground) 88%, var(--foreground) 12%);
   }
 }
 

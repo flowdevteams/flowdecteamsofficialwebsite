@@ -19,8 +19,8 @@ export function ServicesHero() {
 
           <div className="relative z-10 mx-auto max-w-4xl">
             <AnimatedSection animation="fade-in-down">
-              <span className="inline-block px-4 py-1.5 rounded-full text-xs font-mono font-semibold uppercase tracking-wider bg-white/10 text-white mb-6 border border-white/20">
-                LAYANAN &amp; SPESIALISASI TEKNIS
+              <span className="inline-block px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider bg-white/10 text-white mb-6 border border-white/20">
+                Layanan &amp; Spesialisasi Teknis
               </span>
             </AnimatedSection>
             

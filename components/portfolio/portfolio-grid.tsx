@@ -19,7 +19,6 @@ import {
   Code2,
   LineChart,
   Laptop,
-  Flame,
   Search,
   SlidersHorizontal,
   X,
@@ -560,10 +559,10 @@ export function PortfolioGrid() {
                       <div className="w-1.5 h-1.5 sm:w-2.5 sm:h-2.5 rounded-full bg-yellow-500/70" />
                       <div className="w-1.5 h-1.5 sm:w-2.5 sm:h-2.5 rounded-full bg-green-500/70" />
                     </div>
-                    <span className="text-[8px] sm:text-[10px] font-mono text-muted-foreground/80 px-1.5 sm:px-2 py-0.5 rounded bg-background/80 border border-border/60 truncate max-w-[85px] sm:max-w-[150px]">
+                    <span className="text-[9.5px] sm:text-[10px] text-muted-foreground/80 px-1.5 sm:px-2 py-0.5 rounded bg-background/80 border border-border/60 truncate max-w-[85px] sm:max-w-[150px]">
                       demo/{project.id}
                     </span>
-                    <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-primary animate-pulse" />
+                    <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-primary" />
                   </div>
 
                   {/* Visual Simulation in Mockup */}
@@ -573,16 +572,16 @@ export function PortfolioGrid() {
                       {project.category === "webapp" && <LayoutDashboard className="w-4 h-4 sm:w-6 sm:h-6" />}
                       {project.category === "landing" && <Globe className="w-4 h-4 sm:w-6 sm:h-6" />}
                     </div>
-                    <span className="text-[10px] sm:text-xs font-bold text-foreground mt-1 sm:mt-2 font-mono line-clamp-1">{project.title}</span>
-                    <span className="text-[8px] sm:text-[10px] text-muted-foreground truncate max-w-full">{project.client}</span>
+                    <span className="text-[11px] sm:text-xs font-bold text-foreground mt-1 sm:mt-2 line-clamp-1">{project.title}</span>
+                    <span className="text-[9.5px] sm:text-[10px] text-muted-foreground truncate max-w-full">{project.client}</span>
                   </div>
 
                   {/* Category Pill Tag */}
-                  <div className="relative z-10 flex items-center justify-between pt-1 sm:pt-2 border-t border-border/50 text-[8px] sm:text-[10px]">
+                  <div className="relative z-10 flex items-center justify-between pt-1 sm:pt-2 border-t border-border/50 text-[9.5px] sm:text-[10px]">
                     <span className="font-semibold text-primary px-1.5 sm:px-2 py-0.5 rounded bg-primary/10 border border-primary/20 truncate max-w-[90px] sm:max-w-none">
                       {project.badgeText}
                     </span>
-                    <span className="font-mono text-muted-foreground font-medium hidden sm:inline">
+                    <span className="text-muted-foreground font-medium hidden sm:inline">
                       {project.categoryLabel}
                     </span>
                   </div>
@@ -593,13 +592,13 @@ export function PortfolioGrid() {
                 <div className="flex flex-1 flex-col justify-between p-2.5 sm:p-6">
                   
                   <div>
-                    <h3 className="text-xs sm:text-lg lg:text-xl font-bold text-foreground tracking-tight leading-snug group-hover:text-primary transition-colors line-clamp-1 sm:line-clamp-none">
+                    <h3 className="text-sm sm:text-lg lg:text-xl font-bold text-foreground tracking-tight leading-snug group-hover:text-primary transition-colors line-clamp-2 min-h-[2.5rem] sm:min-h-0">
                       {project.title}
                     </h3>
-                    <p className="mt-0.5 sm:mt-1 text-[9px] sm:text-xs font-medium text-primary line-clamp-1">
+                    <p className="mt-0.5 sm:mt-1 text-[11px] sm:text-xs font-medium text-primary line-clamp-1">
                       {project.tagline}
                     </p>
-                    <p className="mt-1.5 sm:mt-2.5 text-[9.5px] sm:text-xs text-muted-foreground leading-tight sm:leading-relaxed line-clamp-2 sm:line-clamp-3">
+                    <p className="mt-1.5 sm:mt-2.5 text-[11px] sm:text-xs text-muted-foreground leading-tight sm:leading-relaxed line-clamp-2 sm:line-clamp-3">
                       {project.description}
                     </p>
 
@@ -607,8 +606,8 @@ export function PortfolioGrid() {
                     <div className="mt-2.5 sm:mt-4 grid grid-cols-3 gap-1 sm:gap-2 p-1.5 sm:p-2.5 rounded-lg sm:rounded-xl bg-muted/40 border border-border/60 text-center">
                       {project.highlights.map((h, i) => (
                         <div key={i} className="flex flex-col">
-                          <span className="text-[7px] sm:text-[10px] text-muted-foreground font-medium truncate">{h.label}</span>
-                          <span className="text-[9.5px] sm:text-xs sm:text-sm font-bold text-foreground font-mono">{h.value}</span>
+                          <span className="text-[8.5px] sm:text-[10px] text-muted-foreground font-medium truncate">{h.label}</span>
+                          <span className="text-xs sm:text-xs sm:text-sm font-bold text-foreground">{h.value}</span>
                         </div>
                       ))}
                     </div>
@@ -618,13 +617,13 @@ export function PortfolioGrid() {
                       {project.techStack.slice(0, 3).map((tech) => (
                         <span 
                           key={tech}
-                          className="px-1.5 py-0.5 rounded text-[8px] sm:text-[10px] font-mono font-medium bg-background border border-border/70 text-muted-foreground truncate"
+                          className="px-1.5 py-0.5 rounded text-[9.5px] sm:text-[10px] font-medium bg-background border border-border/70 text-muted-foreground truncate"
                         >
                           {tech}
                         </span>
                       ))}
                       {project.techStack.length > 3 && (
-                        <span className="px-1 py-0.5 rounded text-[8px] sm:text-[10px] font-mono text-muted-foreground bg-muted">
+                        <span className="px-1 py-0.5 rounded text-[9.5px] sm:text-[10px] text-muted-foreground bg-muted">
                           +{project.techStack.length - 3}
                         </span>
                       )}
@@ -635,7 +634,7 @@ export function PortfolioGrid() {
                   <div className="mt-3 sm:mt-6 pt-2.5 sm:pt-4 border-t border-border/60 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-1.5 sm:gap-2">
                     <button
                       onClick={() => setSelectedProject(project)}
-                      className="text-[10px] sm:text-xs font-semibold text-primary hover:text-primary/80 flex items-center justify-center sm:justify-start gap-0.5 group/btn py-1 sm:py-0"
+                      className="text-xs sm:text-xs font-semibold text-primary hover:text-primary/80 flex items-center justify-center sm:justify-start gap-0.5 group/btn py-1 sm:py-0"
                     >
                       <span>
                         <span className="sm:hidden">Detail Kasus</span>
@@ -646,7 +645,7 @@ export function PortfolioGrid() {
                     <Button
                       size="sm"
                       asChild
-                      className="rounded-lg text-[10px] sm:text-xs h-7 sm:h-8 px-2 sm:px-3 gap-1 shadow-xs w-full sm:w-auto justify-center"
+                      className="rounded-lg text-xs sm:text-xs h-7 sm:h-8 px-2 sm:px-3 gap-1 shadow-xs w-full sm:w-auto justify-center"
                     >
                       <a href="#kontak">
                         Konsultasi
@@ -684,7 +683,7 @@ export function PortfolioGrid() {
                 <span className="px-3 py-1 rounded-full text-xs font-semibold bg-primary/15 text-primary border border-primary/25">
                   {selectedProject.client}
                 </span>
-                <span className="px-2.5 py-0.5 rounded-md text-xs font-mono text-muted-foreground bg-muted border border-border/70">
+                <span className="px-2.5 py-0.5 rounded-md text-xs font-medium text-muted-foreground bg-muted border border-border/70">
                   {selectedProject.badgeText}
                 </span>
               </div>
@@ -704,7 +703,7 @@ export function PortfolioGrid() {
                     <SlidersHorizontal className="w-3.5 h-3.5" />
                     React-Kino Compare Slider (Geser ke Kiri/Kanan)
                   </span>
-                  <span className="font-mono text-[11px]">RAW vs AI INFERENCE</span>
+                  <span className="font-semibold text-[11px]">Raw vs AI Inference</span>
                 </div>
                 <div className="h-64 w-full relative">
                   <CompareSlider
@@ -712,20 +711,20 @@ export function PortfolioGrid() {
                     before={
                       <div className="w-full h-full bg-slate-900 flex flex-col items-center justify-center p-4 text-slate-300 relative">
                         <Scan className="w-12 h-12 text-slate-500 mb-2" />
-                        <span className="text-sm font-mono font-bold text-slate-400">RAW CAMERA INPUT</span>
+                        <span className="text-sm font-bold text-slate-400">Raw Camera Input</span>
                         <span className="text-xs text-slate-500 mt-1">Komponen belum dianalisis (Manual QC)</span>
                       </div>
                     }
                     after={
                       <div className="w-full h-full bg-gradient-to-br from-slate-950 to-blue-950 flex flex-col items-center justify-center p-4 text-white relative">
-                        <div className="absolute top-4 left-6 border border-primary/40 bg-primary/20 px-3 py-1.5 rounded text-xs font-mono font-bold text-white shadow-xs">
-                          [OK] Dimension: 45.02mm (99.8%)
+                        <div className="absolute top-4 left-6 border border-primary/40 bg-primary/20 px-3 py-1.5 rounded text-xs font-bold text-white shadow-xs">
+                          Dimension: 45.02mm (99.8%)
                         </div>
-                        <div className="absolute bottom-4 right-6 border border-border bg-slate-900/80 px-3 py-1.5 rounded text-xs font-mono font-bold text-slate-300">
-                          [LOG] Auto-Inspection Active
+                        <div className="absolute bottom-4 right-6 border border-border bg-slate-900/80 px-3 py-1.5 rounded text-xs font-bold text-slate-300">
+                          Auto-Inspection Active
                         </div>
-                        <Sparkles className="w-12 h-12 text-white animate-pulse mb-2" />
-                        <span className="text-sm font-mono font-bold text-white">AI DETEKSI OTOMATIS</span>
+                        <Cpu className="w-12 h-12 text-white mb-2" />
+                        <span className="text-sm font-bold text-white">AI DETEKSI OTOMATIS</span>
                       </div>
                     }
                   />
@@ -736,11 +735,11 @@ export function PortfolioGrid() {
             {/* Problem & Solution Cards */}
             <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div className="p-4 rounded-2xl bg-muted/40 border border-border/70 flex flex-col gap-1.5">
-                <span className="text-xs font-mono font-semibold text-muted-foreground uppercase tracking-wider">Tantangan Klien:</span>
+                <span className="text-xs font-semibold text-muted-foreground uppercase tracking-wider">Tantangan Klien:</span>
                 <p className="text-xs text-muted-foreground leading-relaxed">{selectedProject.problemSolution.problem}</p>
               </div>
               <div className="p-4 rounded-2xl bg-primary/[0.04] border border-primary/30 flex flex-col gap-1.5">
-                <span className="text-xs font-mono font-semibold text-primary uppercase tracking-wider">Solusi Flowdev Teams:</span>
+                <span className="text-xs font-semibold text-primary uppercase tracking-wider">Solusi Flowdev Teams:</span>
                 <p className="text-xs text-foreground/90 leading-relaxed font-medium">{selectedProject.problemSolution.solution}</p>
               </div>
             </div>
@@ -750,7 +749,7 @@ export function PortfolioGrid() {
               {selectedProject.highlights.map((h, i) => (
                 <div key={i} className="flex flex-col">
                   <span className="text-xs text-muted-foreground">{h.label}</span>
-                  <span className="text-base sm:text-lg font-bold text-foreground font-mono">{h.value}</span>
+                  <span className="text-base sm:text-lg font-bold text-foreground">{h.value}</span>
                 </div>
               ))}
             </div>
@@ -777,7 +776,7 @@ export function PortfolioGrid() {
                 {selectedProject.techStack.map((tech) => (
                   <span
                     key={tech}
-                    className="px-2.5 py-1 rounded-md text-xs font-mono font-medium bg-muted border border-border/70 text-foreground"
+                    className="px-2.5 py-1 rounded-md text-xs font-medium bg-muted border border-border/70 text-foreground"
                   >
                     {tech}
                   </span>

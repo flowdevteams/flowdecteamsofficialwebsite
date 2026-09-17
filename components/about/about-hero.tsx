@@ -19,8 +19,8 @@ export function AboutHero() {
 
           <div className="relative z-10 mx-auto max-w-4xl">
             <AnimatedSection animation="fade-in-down">
-              <span className="inline-block px-3 sm:px-4 py-1.5 rounded-full text-[10px] sm:text-xs font-mono font-semibold uppercase tracking-wider bg-white/10 text-white mb-4 sm:mb-6 border border-white/20">
-                TENTANG FLOWDEV TEAMS
+              <span className="inline-block px-3 sm:px-4 py-1.5 rounded-full text-[10px] sm:text-xs font-semibold uppercase tracking-wider bg-white/10 text-white mb-4 sm:mb-6 border border-white/20">
+                Tentang Flowdev Teams
               </span>
             </AnimatedSection>
             

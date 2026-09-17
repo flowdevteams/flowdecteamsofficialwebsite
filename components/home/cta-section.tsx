@@ -1,7 +1,7 @@
 "use client"
 
 import Link from "next/link"
-import { ArrowRight, MessageSquare, CheckCircle2, ShieldCheck } from "lucide-react"
+import { ArrowRight, MessageSquare, CheckCircle2 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { AnimatedSection } from "@/components/animated-section"
 import { AccentTitle } from "@/components/accent-title"
@@ -22,9 +22,8 @@ export function CTASection() {
 
           <div className="relative z-10 max-w-3xl mx-auto text-center">
             <AnimatedSection animation="fade-in-down">
-              <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-mono font-semibold uppercase tracking-wider bg-white/10 text-white mb-6 border border-white/20 backdrop-blur-md">
-                <ShieldCheck className="h-3.5 w-3.5" />
-                KONSULTASI AWAL 100% GRATIS &amp; TANPA KOMITMEN
+              <span className="inline-flex items-center px-3.5 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider bg-white/10 text-white mb-6 border border-white/20 backdrop-blur-md">
+                Konsultasi Awal 100% Gratis &amp; Tanpa Komitmen
               </span>
             </AnimatedSection>
 

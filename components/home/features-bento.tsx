@@ -2,7 +2,6 @@
 
 import Image from "next/image"
 import { 
-  Sparkles, 
   CheckCircle2, 
   TrendingUp, 
   Search, 
@@ -29,8 +28,7 @@ export function FeaturesBentoSection() {
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-6 sm:mb-10 lg:mb-16">
           <AnimatedSection animation="fade-in-down">
-            <span className="inline-flex items-center gap-1.5 px-2.5 py-1 sm:px-3.5 text-[10px] sm:text-xs font-semibold uppercase tracking-wider mb-2 sm:mb-3 bg-primary/10 text-primary rounded-full border border-primary/20 shadow-xs">
-              <Sparkles className="w-3.5 h-3.5 text-primary animate-pulse" />
+            <span className="inline-flex items-center px-2.5 py-1 sm:px-3.5 text-[10px] sm:text-xs font-semibold uppercase tracking-wider mb-2 sm:mb-3 bg-primary/10 text-primary rounded-full border border-primary/20 shadow-xs">
               Optimalisasi &amp; Ekosistem SEO Siap Pakai
             </span>
           </AnimatedSection>
@@ -57,14 +55,13 @@ export function FeaturesBentoSection() {
           {/* ============================================================ */}
           <div className="col-span-1 lg:col-span-4 rounded-xl sm:rounded-2xl lg:rounded-3xl border border-border/80 bg-gradient-to-b from-card via-card/90 to-muted/20 p-2.5 sm:p-5 lg:p-7 shadow-2xs flex flex-col justify-between overflow-hidden relative group hover:border-primary/40 transition-all duration-300">
             <div>
-              <span className="inline-flex items-center gap-1 sm:gap-1.5 text-[8px] sm:text-[10px] lg:text-[11px] font-semibold uppercase tracking-wider text-primary mb-1 sm:mb-2">
-                <Search className="w-2.5 h-2.5 sm:w-3.5 sm:h-3.5 shrink-0" />
-                <span className="truncate">Technical SEO</span>
+              <span className="inline-block text-[9.5px] sm:text-[10px] lg:text-[11px] font-semibold uppercase tracking-wider text-primary mb-1 sm:mb-2 truncate">
+                Technical SEO
               </span>
-              <h3 className="text-xs sm:text-lg lg:text-2xl font-bold text-foreground mb-1 sm:mb-2 leading-tight line-clamp-2">
+              <h3 className="text-sm sm:text-lg lg:text-2xl font-bold text-foreground mb-1 sm:mb-2 leading-tight line-clamp-2">
                 Google Search Console &amp; Indeks Kilat
               </h3>
-              <p className="text-[9px] sm:text-xs lg:text-sm text-muted-foreground leading-snug mb-2 sm:mb-4 lg:mb-5 line-clamp-2 sm:line-clamp-none">
+              <p className="text-[11px] sm:text-xs lg:text-sm text-muted-foreground leading-snug mb-2 sm:mb-4 lg:mb-5 line-clamp-2 sm:line-clamp-none">
                 Website terverifikasi langsung di Google Search Console, dilengkapi sitemap XML dan struktur ramah bot pencari untuk percepat ranking kata kunci bisnis.
               </p>
             </div>
@@ -109,14 +106,13 @@ export function FeaturesBentoSection() {
           {/* ============================================================ */}
           <div className="col-span-1 lg:col-span-5 rounded-xl sm:rounded-2xl lg:rounded-3xl border border-border/80 bg-gradient-to-b from-card via-card/95 to-muted/20 p-2.5 sm:p-5 lg:p-7 shadow-2xs flex flex-col justify-between overflow-hidden relative group hover:border-primary/40 transition-all duration-300">
             <div>
-              <span className="inline-flex items-center gap-1 sm:gap-1.5 text-[8px] sm:text-[10px] lg:text-[11px] font-semibold uppercase tracking-wider text-primary mb-1 sm:mb-2">
-                <Gauge className="w-2.5 h-2.5 sm:w-3.5 sm:h-3.5 shrink-0" />
-                <span className="truncate">Core Web Vitals</span>
+              <span className="inline-block text-[9.5px] sm:text-[10px] lg:text-[11px] font-semibold uppercase tracking-wider text-primary mb-1 sm:mb-2 truncate">
+                Core Web Vitals
               </span>
-              <h3 className="text-xs sm:text-lg lg:text-2xl font-bold text-foreground mb-1 sm:mb-2 leading-tight line-clamp-2">
+              <h3 className="text-sm sm:text-lg lg:text-2xl font-bold text-foreground mb-1 sm:mb-2 leading-tight line-clamp-2">
                 Skor PageSpeed 95+ Bebas Lemot
               </h3>
-              <p className="text-[9px] sm:text-xs lg:text-sm text-muted-foreground leading-snug mb-2 sm:mb-4 lg:mb-5 line-clamp-2 sm:line-clamp-none">
+              <p className="text-[11px] sm:text-xs lg:text-sm text-muted-foreground leading-snug mb-2 sm:mb-4 lg:mb-5 line-clamp-2 sm:line-clamp-none">
                 Arsitektur Next.js dengan kompresi WebP modern, edge CDN caching, dan audit Lighthouse sempurna untuk loading kilat di bawah 1 detik di setiap layar.
               </p>
             </div>
@@ -130,11 +126,11 @@ export function FeaturesBentoSection() {
                   <div className="w-1.5 h-1.5 sm:w-2.5 sm:h-2.5 rounded-full bg-amber-400" />
                   <div className="w-1.5 h-1.5 sm:w-2.5 sm:h-2.5 rounded-full bg-emerald-400" />
                 </div>
-                <span className="text-[7.5px] sm:text-[10px] font-mono text-muted-foreground truncate max-w-[65px] sm:max-w-[170px]">
+                <span className="text-[7.5px] sm:text-[10px] font-medium text-muted-foreground truncate max-w-[65px] sm:max-w-[170px]">
                   pagespeed
                 </span>
                 <span className="inline-flex items-center gap-0.5 text-[7px] sm:text-[9px] font-bold text-emerald-600 dark:text-emerald-400 bg-emerald-500/10 px-1 py-0.2 sm:px-2 rounded-full">
-                  ⚡ 99/100
+                  Skor 99/100
                 </span>
               </div>
 
@@ -181,14 +177,13 @@ export function FeaturesBentoSection() {
             <div className="absolute top-0 right-0 w-48 h-48 bg-blue-400/15 rounded-full blur-2xl pointer-events-none" />
 
             <div>
-              <span className="inline-flex items-center gap-1 sm:gap-1.5 text-[8px] sm:text-[10px] lg:text-[11px] font-semibold uppercase tracking-wider text-blue-300 mb-1 sm:mb-2">
-                <BarChart3 className="w-2.5 h-2.5 sm:w-3.5 sm:h-3.5 shrink-0" />
-                <span className="truncate">Data &amp; Analytics</span>
+              <span className="inline-block text-[9.5px] sm:text-[10px] lg:text-[11px] font-semibold uppercase tracking-wider text-blue-300 mb-1 sm:mb-2 truncate">
+                Data &amp; Analytics
               </span>
-              <h3 className="text-xs sm:text-lg lg:text-2xl font-bold text-white mb-1 sm:mb-2 leading-tight line-clamp-2">
+              <h3 className="text-sm sm:text-lg lg:text-2xl font-bold text-white mb-1 sm:mb-2 leading-tight line-clamp-2">
                 Google Analytics 4 (GA4)
               </h3>
-              <p className="text-[9px] sm:text-xs lg:text-sm text-blue-100/80 leading-snug mb-2 sm:mb-4 lg:mb-5 line-clamp-2 sm:line-clamp-none">
+              <p className="text-[11px] sm:text-xs lg:text-sm text-blue-100/80 leading-snug mb-2 sm:mb-4 lg:mb-5 line-clamp-2 sm:line-clamp-none">
                 Pantau trafik pengunjung, demografi, saluran akuisisi, dan event konversi secara real-time tanpa setup rumit.
               </p>
             </div>
@@ -205,7 +200,7 @@ export function FeaturesBentoSection() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#142d52]/80 via-transparent to-transparent" />
                 <span className="absolute top-1 left-1 sm:top-2.5 sm:left-2.5 bg-emerald-500/90 text-white text-[7px] sm:text-[9px] font-bold px-1.5 py-0.5 rounded flex items-center gap-1 shadow-2xs backdrop-blur-xs">
-                  <span className="w-1 h-1 rounded-full bg-white animate-pulse" /> 2.4K Aktif
+                  <span className="w-1 h-1 rounded-full bg-white" /> 2.4K Aktif
                 </span>
                 <span className="absolute bottom-1 left-1 sm:bottom-2 sm:left-2.5 text-[7px] sm:text-[10px] font-medium text-blue-100 bg-[#142d52]/90 px-1 py-0.2 sm:px-2 rounded border border-white/20">
                   Live Traffic
@@ -241,14 +236,13 @@ export function FeaturesBentoSection() {
             <div className="absolute -bottom-10 -left-10 w-64 h-64 bg-primary/20 rounded-full blur-3xl pointer-events-none" />
 
             <div className="relative z-10">
-              <span className="inline-flex items-center gap-1 sm:gap-1.5 text-[8px] sm:text-[10px] lg:text-[11px] font-semibold uppercase tracking-wider text-blue-300 mb-1 sm:mb-2">
-                <Target className="w-2.5 h-2.5 sm:w-3.5 sm:h-3.5 shrink-0" />
-                <span className="truncate">SEM &amp; Paid Conversion</span>
+              <span className="inline-block text-[9.5px] sm:text-[10px] lg:text-[11px] font-semibold uppercase tracking-wider text-blue-300 mb-1 sm:mb-2 truncate">
+                SEM &amp; Paid Conversion
               </span>
-              <h3 className="text-xs sm:text-xl lg:text-3xl font-bold text-white mb-1 sm:mb-2 leading-tight line-clamp-2">
+              <h3 className="text-sm sm:text-xl lg:text-3xl font-bold text-white mb-1 sm:mb-2 leading-tight line-clamp-2">
                 Google Ads &amp; Pelacakan Konversi
               </h3>
-              <p className="text-[9px] sm:text-xs lg:text-sm text-blue-100/80 leading-snug mb-2 sm:mb-4 lg:mb-6 max-w-xl line-clamp-2 sm:line-clamp-none">
+              <p className="text-[11px] sm:text-xs lg:text-sm text-blue-100/80 leading-snug mb-2 sm:mb-4 lg:mb-6 max-w-xl line-clamp-2 sm:line-clamp-none">
                 Website dirancang siap kampanye Google Ads (Search &amp; Display) dan Meta Pixel dengan event tracking presisi tinggi untuk melipatgandakan ROAS dan menekan biaya per klik (CPC).
               </p>
             </div>
@@ -280,7 +274,7 @@ export function FeaturesBentoSection() {
 
                 <div className="absolute bottom-1 left-1 right-1 sm:bottom-3 sm:left-3 sm:right-3 flex items-center justify-between text-[7px] sm:text-[11px] text-blue-100 bg-[#0d1f38]/90 backdrop-blur-xs px-1.5 py-0.5 sm:px-3 sm:py-2 rounded border border-white/15">
                   <span className="flex items-center gap-0.5 sm:gap-1.5 truncate">
-                    <span className="w-1 h-1 sm:w-2 sm:h-2 rounded-full bg-emerald-400 animate-pulse shrink-0" />
+                    <span className="w-1 h-1 sm:w-2 sm:h-2 rounded-full bg-emerald-400 shrink-0" />
                     <span className="sm:hidden">Tracking Auto</span>
                     <span className="hidden sm:inline">Tracking Pembelian Otomatis</span>
                   </span>
@@ -320,14 +314,13 @@ export function FeaturesBentoSection() {
           {/* ============================================================ */}
           <div className="col-span-2 lg:col-span-6 rounded-xl sm:rounded-2xl lg:rounded-3xl border border-border/80 bg-gradient-to-b from-primary/[0.04] via-card to-card dark:from-primary/[0.08] dark:via-card dark:to-card p-2.5 sm:p-5 lg:p-8 shadow-2xs flex flex-col justify-between overflow-hidden relative group hover:border-primary/40 transition-all duration-300">
             <div>
-              <span className="inline-flex items-center gap-1 sm:gap-1.5 text-[8px] sm:text-[10px] lg:text-[11px] font-semibold uppercase tracking-wider text-primary mb-1 sm:mb-2">
-                <Code2 className="w-2.5 h-2.5 sm:w-3.5 sm:h-3.5 shrink-0" />
-                <span className="truncate">Centralized Tags &amp; On-Page SEO</span>
+              <span className="inline-block text-[9.5px] sm:text-[10px] lg:text-[11px] font-semibold uppercase tracking-wider text-primary mb-1 sm:mb-2 truncate">
+                Centralized Tags &amp; On-Page SEO
               </span>
-              <h3 className="text-xs sm:text-xl lg:text-3xl font-bold text-foreground mb-1 sm:mb-2 leading-tight">
+              <h3 className="text-sm sm:text-xl lg:text-3xl font-bold text-foreground mb-1 sm:mb-2 leading-tight">
                 Google Tag Manager &amp; Struktur Data Kaya
               </h3>
-              <p className="text-[9px] sm:text-xs lg:text-sm text-muted-foreground leading-snug mb-2 sm:mb-4 lg:mb-5 max-w-xl line-clamp-2 sm:line-clamp-none">
+              <p className="text-[11px] sm:text-xs lg:text-sm text-muted-foreground leading-snug mb-2 sm:mb-4 lg:mb-5 max-w-xl line-clamp-2 sm:line-clamp-none">
                 Kelola semua skrip analitik secara terpusat melalui GTM dan sematkan Schema.org (JSON-LD) agar bisnis Anda tampil menonjol dengan Rich Snippets bintang di Google.
               </p>
             </div>
@@ -346,7 +339,7 @@ export function FeaturesBentoSection() {
                 ].map((tool) => (
                   <span 
                     key={tool}
-                    className="px-1.5 py-0.5 sm:px-2.5 sm:py-1 rounded sm:rounded-lg text-[8px] sm:text-[11px] font-semibold bg-background border border-border/70 text-foreground shadow-2xs"
+                    className="px-1.5 py-0.5 sm:px-2.5 sm:py-1 rounded sm:rounded-lg text-[9.5px] sm:text-[11px] font-semibold bg-background border border-border/70 text-foreground shadow-2xs"
                   >
                     {tool}
                   </span>

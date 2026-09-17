@@ -13,8 +13,8 @@ export function OurStory() {
           {/* Left - Core Philosophy */}
           <div className="lg:col-span-5">
             <AnimatedSection animation="fade-in-left">
-              <span className="inline-block px-3.5 py-1 rounded-full text-xs font-mono font-semibold uppercase tracking-wider bg-primary/10 text-primary mb-4 border border-primary/20">
-                PRINSIP &amp; KOMITMEN KAMI
+              <span className="inline-block px-3.5 py-1 rounded-full text-xs font-semibold uppercase tracking-wider bg-primary/10 text-primary mb-4 border border-primary/20">
+                Prinsip &amp; Komitmen Kami
               </span>
 
               <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-6 font-serif leading-tight">

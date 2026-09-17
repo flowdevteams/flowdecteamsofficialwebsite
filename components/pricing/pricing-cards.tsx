@@ -5,30 +5,15 @@ import Link from "next/link"
 import { 
   Check, 
   Star, 
-  Sparkles, 
-  ShieldCheck, 
   ArrowRight, 
   Globe, 
   LayoutDashboard, 
   Brain, 
-  Zap, 
-  Lock, 
   Clock, 
-  MessageSquare,
-  BadgePercent,
-  GitBranch,
-  Terminal,
-  Cpu,
-  CheckCircle2,
-  Gauge,
-  FileCode2,
-  FolderGit2,
-  Layers,
-  Scale
+  MessageSquare
 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { AnimatedSection } from "@/components/animated-section"
-import { AccentTitle } from "@/components/accent-title"
 import { cn } from "@/lib/utils"
 
 export type PricingCategory = "landing" | "webapp" | "ai"
@@ -286,8 +271,7 @@ export function PricingCards() {
         
         {/* Category Switcher Tabs */}
         <div className="flex flex-col items-center justify-center mb-6 sm:mb-8 lg:mb-12">
-          <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 sm:px-3 sm:py-1 rounded-full bg-primary/10 text-primary text-[10px] sm:text-xs font-semibold uppercase tracking-wider mb-3 sm:mb-4 border border-primary/20">
-            <BadgePercent className="h-3.5 w-3.5" />
+          <div className="inline-flex items-center px-2.5 py-0.5 sm:px-3 sm:py-1 rounded-full bg-primary/10 text-primary text-[10px] sm:text-xs font-semibold uppercase tracking-wider mb-3 sm:mb-4 border border-primary/20">
             Promo Subsidi Digitalisasi UMKM 2026 Aktif
           </div>
           <div className="grid grid-cols-3 gap-1 p-1 sm:p-1.5 rounded-xl border border-border/80 bg-card/90 shadow-xs backdrop-blur w-full max-w-sm sm:max-w-none sm:inline-flex sm:w-auto">
@@ -362,7 +346,7 @@ export function PricingCards() {
                 {/* Popular / Best Badge */}
                 {plan.popular && (
                   <div className="absolute -top-2.5 sm:-top-3.5 left-1/2 -translate-x-1/2 z-20">
-                    <div className="flex items-center gap-1 sm:gap-1.5 px-2 py-0.5 sm:px-3 sm:py-1 rounded-full bg-primary text-primary-foreground text-[8px] sm:text-xs font-bold shadow-md">
+                    <div className="flex items-center gap-1 sm:gap-1.5 px-2.5 py-0.5 sm:px-3 sm:py-1 rounded-full bg-primary text-primary-foreground text-[10px] sm:text-xs font-bold shadow-md whitespace-nowrap">
                       <Star className="h-3.5 w-3.5 fill-current" />
                       {plan.badgeText || "Rekomendasi Utama"}
                     </div>
@@ -372,7 +356,7 @@ export function PricingCards() {
                 {/* Promo Ribbon */}
                 {plan.discount && !plan.popular && (
                   <div className="inline-flex self-start mb-3">
-                    <span className="rounded-md bg-muted/90 text-foreground border border-border px-1.5 py-0.5 sm:px-2.5 text-[9px] sm:text-[11px] font-mono font-bold">
+                    <span className="rounded-md bg-muted/90 text-foreground border border-border px-2 py-0.5 sm:px-2.5 text-[10.5px] sm:text-[11px] font-bold">
                       {plan.discount}
                     </span>
                   </div>
@@ -380,10 +364,10 @@ export function PricingCards() {
 
                 {/* Header */}
                 <div className="mb-2 sm:mb-3 lg:mb-5">
-                  <h3 className="text-xs sm:text-base lg:text-xl font-bold text-foreground mb-0.5 sm:mb-1 lg:mb-1.5 leading-tight line-clamp-2 sm:line-clamp-none">
+                  <h3 className="text-sm sm:text-base lg:text-xl font-bold text-foreground mb-0.5 sm:mb-1 lg:mb-1.5 leading-tight line-clamp-2 sm:line-clamp-none">
                     {plan.name}
                   </h3>
-                  <p className="text-[9px] sm:text-[11px] lg:text-xs text-muted-foreground leading-relaxed line-clamp-2 sm:line-clamp-none">
+                  <p className="text-[11px] sm:text-[11px] lg:text-xs text-muted-foreground leading-relaxed line-clamp-2 sm:line-clamp-none">
                     {plan.subtitle}
                   </p>
                 </div>
@@ -391,14 +375,14 @@ export function PricingCards() {
                 {/* Price Display */}
                 <div className="mb-3 sm:mb-4 lg:mb-6 pb-3 sm:pb-4 lg:pb-6 border-b border-border/60">
                   {plan.oldPrice && (
-                    <div className="text-[9px] sm:text-xs text-muted-foreground line-through mb-0.5 sm:mb-1">
+                    <div className="text-[11px] sm:text-xs text-muted-foreground line-through mb-0.5 sm:mb-1">
                       Rp {plan.oldPrice}
                     </div>
                   )}
 
                   <div className="flex items-baseline gap-1.5">
                     {plan.price !== "Custom Scope" && (
-                      <span className="text-[9px] sm:text-xs lg:text-sm font-semibold text-muted-foreground">Rp</span>
+                      <span className="text-xs sm:text-xs lg:text-sm font-semibold text-muted-foreground">Rp</span>
                     )}
                     <span className={cn(
                       "font-extrabold tracking-tight text-foreground",
@@ -408,13 +392,13 @@ export function PricingCards() {
                     </span>
                   </div>
 
-                  <div className="mt-0.5 sm:mt-1 text-[9px] sm:text-xs text-muted-foreground">
+                  <div className="mt-0.5 sm:mt-1 text-[11px] sm:text-xs text-muted-foreground">
                     {plan.periodNote}
                   </div>
 
                   {plan.maintenanceNote && (
                     <div className="mt-2.5">
-                      <span className="inline-block rounded-md bg-muted/60 border border-border/50 text-foreground/80 text-[8px] sm:text-[10px] lg:text-[11px] font-medium px-1.5 sm:px-2.5 py-0.5 sm:py-1">
+                      <span className="inline-block rounded-md bg-muted/60 border border-border/50 text-foreground/80 text-[10px] sm:text-[10px] lg:text-[11px] font-medium px-2 sm:px-2.5 py-0.5 sm:py-1">
                         {plan.maintenanceNote}
                       </span>
                     </div>
@@ -422,7 +406,7 @@ export function PricingCards() {
                 </div>
 
                 {/* Scope & Target Summary */}
-                <div className="mb-3 sm:mb-4 lg:mb-6 space-y-1 sm:space-y-1.5 lg:space-y-2 text-[9px] sm:text-xs">
+                <div className="mb-3 sm:mb-4 lg:mb-6 space-y-1 sm:space-y-1.5 lg:space-y-2 text-[11px] sm:text-xs">
                   <div className="flex items-center gap-2 text-muted-foreground">
                     <Clock className="h-3.5 w-3.5 text-primary shrink-0" />
                     <span>Estimasi: <strong className="text-foreground">{plan.deliveryTime}</strong></span>
@@ -435,13 +419,13 @@ export function PricingCards() {
 
                 {/* Feature List */}
                 <div className="space-y-1.5 sm:space-y-2 lg:space-y-3 mb-4 sm:mb-6 lg:mb-8 flex-1">
-                  <div className="text-[9px] sm:text-xs font-bold uppercase tracking-wider text-foreground">
+                  <div className="text-[11px] sm:text-xs font-bold uppercase tracking-wider text-foreground">
                     Spesifikasi & Keunggulan Fitur:
                   </div>
                   <ul className="space-y-1 sm:space-y-1.5 lg:space-y-2.5">
                     {plan.features.map((feature) => (
-                      <li key={feature} className="flex items-start gap-1.5 sm:gap-2 lg:gap-2.5 text-[9px] sm:text-xs text-foreground/90 leading-relaxed">
-                        <div className="flex-shrink-0 w-3 h-3 sm:w-3.5 sm:h-3.5 lg:w-4 lg:h-4 rounded-full bg-primary/15 flex items-center justify-center mt-0.5 text-primary">
+                      <li key={feature} className="flex items-start gap-1.5 sm:gap-2 lg:gap-2.5 text-[11.5px] sm:text-xs text-foreground/90 leading-relaxed">
+                        <div className="flex-shrink-0 w-3.5 h-3.5 sm:w-3.5 sm:h-3.5 lg:w-4 lg:h-4 rounded-full bg-primary/15 flex items-center justify-center mt-0.5 text-primary">
                           <Check className="h-2.5 w-2.5" />
                         </div>
                         <span className="line-clamp-2 sm:line-clamp-none">{feature}</span>
@@ -455,7 +439,7 @@ export function PricingCards() {
                   asChild
                   size="lg"
                   variant={plan.popular ? "default" : "outline"}
-                  className="w-full rounded-lg font-semibold shadow-sm h-9 sm:h-10 lg:h-11 text-[10px] sm:text-xs lg:text-sm"
+                  className="w-full rounded-lg font-semibold shadow-sm h-9 sm:h-10 lg:h-11 text-xs sm:text-xs lg:text-sm"
                 >
                   <Link href={plan.ctaHref}>
                     {plan.ctaText}
@@ -467,200 +451,8 @@ export function PricingCards() {
           ))}
         </div>
 
-        {/* ============================================================ */}
-        {/* BESPOKE ENGINEERING TRUST MATRIX (HANDCRAFTED BENTO GRID)   */}
-        {/* ============================================================ */}
-        <div className="mt-12 sm:mt-16 lg:mt-20 rounded-xl sm:rounded-2xl lg:rounded-3xl border border-border/80 bg-card/60 p-3 sm:p-6 lg:p-10 shadow-lg backdrop-blur relative overflow-hidden">
-          {/* Subtle tech background accents */}
-          <div className="pointer-events-none absolute -right-20 -top-20 h-72 w-72 rounded-full bg-primary/5 blur-3xl" />
-          <div className="pointer-events-none absolute -left-20 -bottom-20 h-72 w-72 rounded-full bg-primary/5 blur-3xl" />
-
-          {/* Section Header */}
-          <div className="relative z-10 mx-auto max-w-3xl text-center mb-6 sm:mb-8 lg:mb-12">
-            <div className="inline-flex items-center gap-2 rounded-md bg-muted/80 border border-border px-3 py-1 text-xs font-mono font-semibold text-primary mb-3">
-              <Terminal className="h-3.5 w-3.5" />
-              <span>// PROTOKOL REKAYASA &amp; STANDAR SLA TEKNIS</span>
-            </div>
-            <h3 className="text-base sm:text-xl lg:text-3xl font-bold tracking-tight text-foreground">
-              <AccentTitle text="Arsitektur Bersih, Transparansi Penuh, & Jaminan Kualitas" />
-            </h3>
-            <p className="mt-2.5 text-xs sm:text-sm text-muted-foreground leading-relaxed max-w-2xl mx-auto">
-              Setiap baris kode ditulis secara presisi menggunakan stack modern Next.js 16 tanpa plugin berat. Dirancang untuk keandalan jangka panjang bisnis Anda.
-            </p>
-          </div>
-
-          {/* 4 Bespoke Engineering Bento Cards */}
-          <div className="relative z-10 grid grid-cols-2 gap-2 sm:gap-4 lg:gap-6 md:grid-cols-2">
-
-            {/* BENTO CARD 1: Full IP Handover & Repository Transfer */}
-            <div className="flex flex-col justify-between rounded-xl sm:rounded-2xl border border-border/70 bg-card p-3 sm:p-5 lg:p-7 shadow-sm transition-all duration-300 hover:border-primary/40 hover:shadow-md group">
-              <div>
-                <div className="flex items-center justify-between gap-3 mb-4">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary/10 text-primary border border-primary/20">
-                    <FolderGit2 className="h-5 w-5" />
-                  </div>
-                  <span className="rounded-full bg-primary/10 border border-primary/20 px-2.5 py-0.5 text-[10px] font-mono font-bold text-primary">
-                    100% IP HANDOVER
-                  </span>
-                </div>
-
-                <h4 className="text-base font-bold text-foreground mb-1.5 group-hover:text-primary transition-colors">
-                  Hak Cipta &amp; Source Code Milik Penuh Anda
-                </h4>
-                <p className="text-xs text-muted-foreground leading-relaxed mb-4">
-                  Tidak ada sistem sewa terikat atau biaya royalti tersembunyi. Seluruh repository kode, skema database, dan aset desain diserahkan penuh kepada Anda.
-                </p>
-              </div>
-
-              {/* Developer UI Widget: Terminal / Git Handover */}
-              <div className="rounded-xl border border-border/80 bg-muted/40 p-3.5 font-mono text-xs space-y-2">
-                <div className="flex items-center justify-between text-[10px] text-muted-foreground pb-1.5 border-b border-border/50">
-                  <div className="flex items-center gap-1.5">
-                    <span className="h-2 w-2 rounded-full bg-border inline-block" />
-                    <span className="h-2 w-2 rounded-full bg-border inline-block" />
-                    <span className="h-2 w-2 rounded-full bg-border inline-block" />
-                    <span className="ml-1 text-foreground/70 font-semibold">repo-transfer.sh</span>
-                  </div>
-                  <span className="text-primary font-semibold">Verified Clean Handover</span>
-                </div>
-                <div className="text-[11px] text-foreground/90 space-y-1">
-                  <div className="text-primary font-semibold flex items-center gap-1">
-                    <span>$</span>
-                    <span className="text-foreground truncate max-w-full">
-                      <span className="sm:hidden text-[9.5px]">git push origin --all</span>
-                      <span className="hidden sm:inline">git remote add client-repo git@github.com:client/app.git</span>
-                    </span>
-                  </div>
-                  <div className="text-muted-foreground text-[9px] sm:text-[10px] leading-tight">
-                    <span className="sm:hidden">✔ Full Source ✔ DB Schema ✔ Figma</span>
-                    <span className="hidden sm:inline">✔ Source Code &bull; ✔ PostgreSQL Schema &bull; ✔ Figma File &bull; ✔ No Vendor Lock-in</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* BENTO CARD 2: Milestone Payment Pipeline */}
-            <div className="flex flex-col justify-between rounded-xl sm:rounded-2xl border border-border/70 bg-card p-3 sm:p-5 lg:p-7 shadow-sm transition-all duration-300 hover:border-primary/40 hover:shadow-md group">
-              <div>
-                <div className="flex items-center justify-between gap-3 mb-4">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary/10 text-primary border border-primary/20">
-                    <Layers className="h-5 w-5" />
-                  </div>
-                  <span className="rounded-full bg-primary/10 border border-primary/20 px-2.5 py-0.5 text-[10px] font-mono font-bold text-primary">
-                    ESCROW MILESTONE
-                  </span>
-                </div>
-
-                <h4 className="text-base font-bold text-foreground mb-1.5 group-hover:text-primary transition-colors">
-                  Pembayaran Bertahap Berbasis Capaian Nyata
-                </h4>
-                <p className="text-xs text-muted-foreground leading-relaxed mb-4">
-                  Keamanan dana Anda terjamin dengan skema termin transparan. Pembayaran hanya dilakukan setelah bukti capaian kerja tiap fase disetujui.
-                </p>
-              </div>
-
-              {/* Developer UI Widget: 3-Stage Progress Pipeline */}
-              <div className="rounded-xl border border-border/80 bg-muted/40 p-3.5 space-y-2">
-                <div className="flex items-center justify-between text-[11px] font-mono">
-                  <span className="text-muted-foreground font-semibold">Alur Termin Proyek:</span>
-                  <span className="text-primary font-bold">3-Stage Transparent Flow</span>
-                </div>
-                <div className="grid grid-cols-3 gap-2 text-center font-mono">
-                  <div className="rounded-lg bg-card border border-primary/30 p-2 shadow-xs">
-                    <div className="text-xs font-bold text-primary">30% DP</div>
-                    <div className="text-[9px] text-muted-foreground mt-0.5">Arsitektur &amp; UI</div>
-                  </div>
-                  <div className="rounded-lg bg-card border border-primary/30 p-2 shadow-xs">
-                    <div className="text-xs font-bold text-primary">40% Mid</div>
-                    <div className="text-[9px] text-muted-foreground mt-0.5">Fitur &amp; API</div>
-                  </div>
-                  <div className="rounded-lg bg-card border border-primary/30 p-2 shadow-xs">
-                    <div className="text-xs font-bold text-primary">30% Final</div>
-                    <div className="text-[9px] text-muted-foreground mt-0.5">Live &amp; Handover</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* BENTO CARD 3: Zero Bloatware & Lighthouse 99 Performance */}
-            <div className="flex flex-col justify-between rounded-xl sm:rounded-2xl border border-border/70 bg-card p-3 sm:p-5 lg:p-7 shadow-sm transition-all duration-300 hover:border-primary/40 hover:shadow-md group">
-              <div>
-                <div className="flex items-center justify-between gap-3 mb-4">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary/10 text-primary border border-primary/20">
-                    <Gauge className="h-5 w-5" />
-                  </div>
-                  <span className="rounded-full bg-primary/10 border border-primary/20 px-2.5 py-0.5 text-[10px] font-mono font-bold text-primary">
-                    LIGHTHOUSE 99+ SCORE
-                  </span>
-                </div>
-
-                <h4 className="text-base font-bold text-foreground mb-1.5 group-hover:text-primary transition-colors">
-                  Zero Bloatware &amp; Core Web Vitals Ekstrem
-                </h4>
-                <p className="text-xs text-muted-foreground leading-relaxed mb-4">
-                  Dibangun murni menggunakan Next.js App Router dan Turbopack, tanpa WordPress atau page-builder berat yang memperlambat laju website.
-                </p>
-              </div>
-
-              {/* Developer UI Widget: Performance Metrics Gauge */}
-              <div className="rounded-xl border border-border/80 bg-muted/40 p-3.5 space-y-2">
-                <div className="grid grid-cols-3 gap-2 text-center font-mono">
-                  <div className="rounded-lg bg-primary/10 border border-primary/25 p-2">
-                    <div className="text-base font-black text-primary leading-none">99</div>
-                    <div className="text-[9px] text-muted-foreground uppercase mt-1">PageSpeed</div>
-                  </div>
-                  <div className="rounded-lg bg-card border border-border/70 p-2">
-                    <div className="text-xs font-bold text-foreground leading-none">&lt; 0.8s</div>
-                    <div className="text-[9px] text-muted-foreground uppercase mt-1">LCP Speed</div>
-                  </div>
-                  <div className="rounded-lg bg-card border border-border/70 p-2">
-                    <div className="text-xs font-bold text-foreground leading-none">0.00</div>
-                    <div className="text-[9px] text-muted-foreground uppercase mt-1">CLS Shift</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* BENTO CARD 4: NDA & Isolated Data Privacy */}
-            <div className="flex flex-col justify-between rounded-xl sm:rounded-2xl border border-border/70 bg-card p-3 sm:p-5 lg:p-7 shadow-sm transition-all duration-300 hover:border-primary/40 hover:shadow-md group">
-              <div>
-                <div className="flex items-center justify-between gap-3 mb-4">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary/10 text-primary border border-primary/20">
-                    <Lock className="h-5 w-5" />
-                  </div>
-                  <span className="rounded-full bg-primary/10 border border-primary/20 px-2.5 py-0.5 text-[10px] font-mono font-bold text-primary">
-                    STRICT PRIVACY NDA
-                  </span>
-                </div>
-
-                <h4 className="text-base font-bold text-foreground mb-1.5 group-hover:text-primary transition-colors">
-                  Kerahasiaan Hukum NDA &amp; Keamanan Data
-                </h4>
-                <p className="text-xs text-muted-foreground leading-relaxed mb-4">
-                  Perlindungan hukum sah dengan penandatanganan Non-Disclosure Agreement (NDA). Data dan ide bisnis Anda diisolasi secara ketat dan aman.
-                </p>
-              </div>
-
-              {/* Developer UI Widget: Security Badge */}
-              <div className="rounded-xl border border-border/80 bg-muted/40 p-3.5 font-mono text-xs space-y-1.5">
-                <div className="flex items-center justify-between text-[10px]">
-                  <span className="flex items-center gap-1.5 text-foreground font-semibold">
-                    <ShieldCheck className="h-3.5 w-3.5 text-primary" />
-                    Legally Binding NDA Ready
-                  </span>
-                  <span className="text-primary font-bold">AES-256</span>
-                </div>
-                <div className="text-[10px] text-muted-foreground leading-relaxed">
-                  Semua kredensial, API keys, dan basis data disimpan dalam Environment Variables terenkripsi dengan audit log aman.
-                </div>
-              </div>
-            </div>
-
-          </div>
-        </div>
-
         {/* Custom Scope / Estimator Callout */}
-        <div className="mt-4 sm:mt-6 lg:mt-8 rounded-xl sm:rounded-2xl border border-primary/20 bg-primary/[0.03] p-3 sm:p-5 lg:p-8 flex flex-col md:flex-row items-center justify-between gap-3 sm:gap-4 lg:gap-6">
+        <div className="mt-8 sm:mt-12 lg:mt-16 rounded-xl sm:rounded-2xl border border-primary/20 bg-primary/[0.03] p-3 sm:p-5 lg:p-8 flex flex-col md:flex-row items-center justify-between gap-3 sm:gap-4 lg:gap-6">
           <div className="max-w-xl text-center md:text-left">
             <h4 className="text-lg font-bold text-foreground mb-1">
               Membutuhkan Arsitektur Kustom atau Spesifikasi Khusus?
