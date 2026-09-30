@@ -112,7 +112,7 @@ const comproPlans: ComproPlan[] = [
 export function CompanyProfilePricing() {
   return (
     <section id="company-profile-pricing" className="py-12 sm:py-16 lg:py-24 bg-muted/20 border-t border-border/60">
-      <div className="container mx-auto px-2 sm:px-6 lg:px-8 max-w-7xl">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
         
         {/* Section Header */}
         <div className="text-center mb-8 sm:mb-12 lg:mb-16">
@@ -136,24 +136,24 @@ export function CompanyProfilePricing() {
           </AnimatedSection>
 
           {/* Quick Value Highlights */}
-          <AnimatedSection animation="fade-in-up" delay={300} className="mt-6 flex flex-wrap items-center justify-center gap-2 sm:gap-4 text-[11px] sm:text-xs text-muted-foreground">
-            <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-md bg-background border border-border/80 shadow-2xs">
+          <AnimatedSection animation="fade-in-up" delay={300} className="mt-6 flex flex-wrap items-center justify-center gap-2 sm:gap-4 text-xs sm:text-sm text-muted-foreground">
+            <span className="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-background border border-border/80 shadow-2xs">
               <Building2 className="h-3.5 w-3.5 text-primary" />
               Struktur Profil &amp; Legalitas Resmi
             </span>
-            <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-md bg-background border border-border/80 shadow-2xs">
+            <span className="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-background border border-border/80 shadow-2xs">
               <PhoneCall className="h-3.5 w-3.5 text-primary" />
               Direct WhatsApp CTA &amp; Form RFQ
             </span>
-            <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-md bg-background border border-border/80 shadow-2xs">
+            <span className="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-background border border-border/80 shadow-2xs">
               <ShieldCheck className="h-3.5 w-3.5 text-primary" />
               100% Hak Milik Source Code Next.js
             </span>
           </AnimatedSection>
         </div>
 
-        {/* Pricing Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 items-stretch">
+        {/* Pricing Cards Grid (Stacked 1-column on mobile, 2 on tablet, 3 on desktop) */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-6 lg:gap-8 items-stretch">
           {comproPlans.map((plan, index) => (
             <AnimatedSection
               key={plan.id}
@@ -163,7 +163,7 @@ export function CompanyProfilePricing() {
             >
               <div
                 className={cn(
-                  "relative h-full flex flex-col p-4 sm:p-6 lg:p-8 rounded-xl sm:rounded-2xl border transition-all duration-300",
+                  "relative h-full flex flex-col p-5 sm:p-6 lg:p-8 rounded-2xl border transition-all duration-300",
                   plan.popular
                     ? "bg-card border-primary shadow-xl shadow-primary/10 ring-2 ring-primary/40 -translate-y-1"
                     : "bg-card/75 border-border/80 hover:border-primary/50 hover:shadow-md"
@@ -190,10 +190,10 @@ export function CompanyProfilePricing() {
 
                 {/* Header */}
                 <div className="mb-3 sm:mb-4">
-                  <h3 className="text-base sm:text-lg lg:text-xl font-bold text-foreground mb-1 leading-tight">
+                  <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-foreground mb-1 leading-tight">
                     {plan.name}
                   </h3>
-                  <p className="text-xs text-muted-foreground leading-relaxed">
+                  <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
                     {plan.subtitle}
                   </p>
                 </div>
@@ -201,47 +201,47 @@ export function CompanyProfilePricing() {
                 {/* Price Display (Clean, Fixed, Direct) */}
                 <div className="mb-4 pb-4 border-b border-border/60">
                   <div className="flex items-baseline gap-1.5">
-                    <span className="text-sm font-semibold text-muted-foreground">Rp</span>
+                    <span className="text-sm sm:text-base font-semibold text-muted-foreground">Rp</span>
                     <span className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-foreground">
                       {plan.price}
                     </span>
                   </div>
 
-                  <div className="mt-1 text-xs text-muted-foreground font-medium">
+                  <div className="mt-1 text-xs sm:text-sm text-muted-foreground font-medium">
                     {plan.periodNote}
                   </div>
                 </div>
 
                 {/* Scope & Delivery Info */}
-                <div className="mb-4 space-y-2 text-xs">
-                  <div className="flex items-center justify-between text-muted-foreground py-1 px-2.5 rounded-lg bg-muted/40">
+                <div className="mb-4 space-y-2 text-xs sm:text-sm">
+                  <div className="flex items-center justify-between text-muted-foreground py-1.5 px-3 rounded-lg bg-muted/40">
                     <span className="flex items-center gap-1.5">
                       <Clock className="h-3.5 w-3.5 text-primary" />
                       Waktu Kerja:
                     </span>
                     <strong className="text-foreground">{plan.deliveryTime}</strong>
                   </div>
-                  <div className="flex items-center justify-between text-muted-foreground py-1 px-2.5 rounded-lg bg-muted/40">
+                  <div className="flex items-center justify-between text-muted-foreground py-1.5 px-3 rounded-lg bg-muted/40">
                     <span className="flex items-center gap-1.5">
                       <Layers className="h-3.5 w-3.5 text-primary" />
                       Kapasitas Halaman:
                     </span>
                     <strong className="text-foreground">{plan.pagesCount}</strong>
                   </div>
-                  <div className="rounded-lg bg-muted/20 p-2.5 text-muted-foreground leading-relaxed border border-border/40">
+                  <div className="rounded-xl bg-muted/20 p-3 text-muted-foreground leading-relaxed border border-border/40">
                     <strong className="text-foreground block mb-0.5">Direkomendasikan untuk:</strong>
                     {plan.bestFor}
                   </div>
                 </div>
 
                 {/* Features List */}
-                <div className="space-y-2.5 mb-6 flex-1">
-                  <div className="text-xs font-bold uppercase tracking-wider text-foreground">
+                <div className="space-y-2 sm:space-y-2.5 mb-6 flex-1">
+                  <div className="text-xs sm:text-sm font-bold uppercase tracking-wider text-foreground mb-2">
                     Fitur &amp; Kemampuan Bawaan:
                   </div>
                   <ul className="space-y-2">
                     {plan.features.map((feature, fIndex) => (
-                      <li key={fIndex} className="flex items-start gap-2 text-xs text-foreground/90 leading-relaxed">
+                      <li key={fIndex} className="flex items-start gap-2.5 text-xs sm:text-sm text-foreground/90 leading-relaxed">
                         <div className="flex-shrink-0 w-4 h-4 rounded-full bg-primary/15 flex items-center justify-center mt-0.5 text-primary">
                           <Check className="h-2.5 w-2.5" />
                         </div>
@@ -256,7 +256,7 @@ export function CompanyProfilePricing() {
                   asChild
                   size="lg"
                   variant={plan.popular ? "default" : "outline"}
-                  className="w-full rounded-lg font-semibold shadow-sm h-10 lg:h-11 text-xs sm:text-sm mt-auto"
+                  className="w-full rounded-xl font-semibold shadow-sm h-11 lg:h-12 text-sm mt-auto"
                 >
                   <Link href={plan.ctaHref}>
                     {plan.ctaText}

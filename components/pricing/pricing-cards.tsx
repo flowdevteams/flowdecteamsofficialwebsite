@@ -267,11 +267,11 @@ export function PricingCards() {
 
   return (
     <section className="py-10 sm:py-16 lg:py-24 bg-background">
-      <div className="container mx-auto px-2 sm:px-6 lg:px-8 max-w-7xl">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
         
         {/* Category Switcher Tabs */}
         <div className="flex flex-col items-center justify-center mb-6 sm:mb-8 lg:mb-12">
-          <div className="inline-flex items-center px-2.5 py-0.5 sm:px-3 sm:py-1 rounded-full bg-primary/10 text-primary text-[10px] sm:text-xs font-semibold uppercase tracking-wider mb-3 sm:mb-4 border border-primary/20">
+          <div className="inline-flex items-center px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-semibold uppercase tracking-wider mb-3 sm:mb-4 border border-primary/20">
             Promo Subsidi Digitalisasi UMKM 2026 Aktif
           </div>
           <div className="grid grid-cols-3 gap-1 p-1 sm:p-1.5 rounded-xl border border-border/80 bg-card/90 shadow-xs backdrop-blur w-full max-w-sm sm:max-w-none sm:inline-flex sm:w-auto">
@@ -327,36 +327,36 @@ export function PricingCards() {
 
           <a 
             href="#company-profile-pricing" 
-            className="mt-3 text-[11px] sm:text-xs text-muted-foreground hover:text-primary transition-colors inline-flex items-center gap-1.5"
+            className="mt-3.5 text-xs sm:text-sm text-muted-foreground hover:text-primary transition-colors text-center inline-flex flex-wrap items-center justify-center gap-1.5 px-3 py-1.5 rounded-full bg-muted/60 border border-border/70"
           >
-            <span>Butuh paket khusus <strong>Website Company Profile &amp; Katalog Bisnis</strong>?</span>
+            <span>Butuh paket khusus <strong>Website Company Profile &amp; Bisnis</strong>?</span>
             <span className="font-semibold text-primary underline underline-offset-4 inline-flex items-center gap-0.5">
               Lihat Paket Spesialisasi di Bawah ↓
             </span>
           </a>
         </div>
 
-        {/* Pricing Cards Grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-2 sm:gap-4 lg:gap-8">
+        {/* Pricing Cards Grid (Stacked 1-column on mobile, 2 on tablet, 3 on desktop) */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-6 lg:gap-8 items-stretch">
           {currentPlans.map((plan, index) => (
             <AnimatedSection
               key={plan.id}
               animation="fade-in-up"
               delay={index * 100}
-              className={cn("h-full", index === 2 ? "col-span-2 lg:col-span-1" : "")}
+              className={cn("h-full flex flex-col", index === 2 ? "md:col-span-2 lg:col-span-1" : "")}
             >
               <div
                 className={cn(
-                  "relative h-full flex flex-col p-3 sm:p-5 lg:p-8 rounded-xl sm:rounded-2xl border transition-all duration-300",
+                  "relative h-full flex flex-col p-5 sm:p-6 lg:p-8 rounded-2xl border transition-all duration-300",
                   plan.popular
-                    ? "bg-card border-primary shadow-xl shadow-primary/10 ring-2 ring-primary/35 -translate-y-1"
-                    : "bg-card/70 border-border/80 hover:border-primary/50 hover:shadow-md"
+                    ? "bg-card border-primary shadow-xl shadow-primary/10 ring-2 ring-primary/40 -translate-y-1"
+                    : "bg-card/75 border-border/80 hover:border-primary/50 hover:shadow-md"
                 )}
               >
                 {/* Popular / Best Badge */}
                 {plan.popular && (
-                  <div className="absolute -top-2.5 sm:-top-3.5 left-1/2 -translate-x-1/2 z-20">
-                    <div className="flex items-center gap-1 sm:gap-1.5 px-2.5 py-0.5 sm:px-3 sm:py-1 rounded-full bg-primary text-primary-foreground text-[10px] sm:text-xs font-bold shadow-md whitespace-nowrap">
+                  <div className="absolute -top-3 sm:-top-3.5 left-1/2 -translate-x-1/2 z-20">
+                    <div className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary text-primary-foreground text-xs font-bold shadow-md whitespace-nowrap">
                       <Star className="h-3.5 w-3.5 fill-current" />
                       {plan.badgeText || "Rekomendasi Utama"}
                     </div>
@@ -366,49 +366,49 @@ export function PricingCards() {
                 {/* Promo Ribbon */}
                 {plan.discount && !plan.popular && (
                   <div className="inline-flex self-start mb-3">
-                    <span className="rounded-md bg-muted/90 text-foreground border border-border px-2 py-0.5 sm:px-2.5 text-[10.5px] sm:text-[11px] font-bold">
+                    <span className="rounded-md bg-muted/90 text-foreground border border-border px-2.5 py-1 text-xs font-bold">
                       {plan.discount}
                     </span>
                   </div>
                 )}
 
                 {/* Header */}
-                <div className="mb-2 sm:mb-3 lg:mb-5">
-                  <h3 className="text-sm sm:text-base lg:text-xl font-bold text-foreground mb-0.5 sm:mb-1 lg:mb-1.5 leading-tight line-clamp-2 sm:line-clamp-none">
+                <div className="mb-3 sm:mb-4 lg:mb-5">
+                  <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-foreground mb-1 leading-tight">
                     {plan.name}
                   </h3>
-                  <p className="text-[11px] sm:text-[11px] lg:text-xs text-muted-foreground leading-relaxed line-clamp-2 sm:line-clamp-none">
+                  <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
                     {plan.subtitle}
                   </p>
                 </div>
 
                 {/* Price Display */}
-                <div className="mb-3 sm:mb-4 lg:mb-6 pb-3 sm:pb-4 lg:pb-6 border-b border-border/60">
+                <div className="mb-4 sm:mb-5 lg:mb-6 pb-4 sm:pb-5 lg:pb-6 border-b border-border/60">
                   {plan.oldPrice && (
-                    <div className="text-[11px] sm:text-xs text-muted-foreground line-through mb-0.5 sm:mb-1">
+                    <div className="text-xs sm:text-sm text-muted-foreground line-through mb-1">
                       Rp {plan.oldPrice}
                     </div>
                   )}
 
                   <div className="flex items-baseline gap-1.5">
                     {plan.price !== "Custom Scope" && (
-                      <span className="text-xs sm:text-xs lg:text-sm font-semibold text-muted-foreground">Rp</span>
+                      <span className="text-sm sm:text-base font-semibold text-muted-foreground">Rp</span>
                     )}
                     <span className={cn(
                       "font-extrabold tracking-tight text-foreground",
-                      plan.price === "Custom Scope" ? "text-base sm:text-xl lg:text-3xl" : "text-lg sm:text-2xl lg:text-4xl"
+                      plan.price === "Custom Scope" ? "text-xl sm:text-2xl lg:text-3xl" : "text-2xl sm:text-3xl lg:text-4xl"
                     )}>
                       {plan.price}
                     </span>
                   </div>
 
-                  <div className="mt-0.5 sm:mt-1 text-[11px] sm:text-xs text-muted-foreground">
+                  <div className="mt-1 text-xs sm:text-sm text-muted-foreground">
                     {plan.periodNote}
                   </div>
 
                   {plan.maintenanceNote && (
                     <div className="mt-2.5">
-                      <span className="inline-block rounded-md bg-muted/60 border border-border/50 text-foreground/80 text-[10px] sm:text-[10px] lg:text-[11px] font-medium px-2 sm:px-2.5 py-0.5 sm:py-1">
+                      <span className="inline-block rounded-md bg-muted/60 border border-border/50 text-foreground/80 text-[11px] sm:text-xs font-medium px-2.5 py-1">
                         {plan.maintenanceNote}
                       </span>
                     </div>
@@ -416,29 +416,29 @@ export function PricingCards() {
                 </div>
 
                 {/* Scope & Target Summary */}
-                <div className="mb-3 sm:mb-4 lg:mb-6 space-y-1 sm:space-y-1.5 lg:space-y-2 text-[11px] sm:text-xs">
-                  <div className="flex items-center gap-2 text-muted-foreground">
-                    <Clock className="h-3.5 w-3.5 text-primary shrink-0" />
+                <div className="mb-4 sm:mb-5 space-y-2 text-xs sm:text-sm">
+                  <div className="flex items-center gap-2 text-muted-foreground py-1 px-2.5 rounded-lg bg-muted/40">
+                    <Clock className="h-4 w-4 text-primary shrink-0" />
                     <span>Estimasi: <strong className="text-foreground">{plan.deliveryTime}</strong></span>
                   </div>
-                  <div className="rounded-lg bg-muted/30 p-2.5 text-muted-foreground leading-relaxed">
+                  <div className="rounded-xl bg-muted/30 p-3 text-muted-foreground leading-relaxed border border-border/40">
                     <strong className="text-foreground block mb-0.5">Ideal untuk:</strong>
                     {plan.bestFor}
                   </div>
                 </div>
 
                 {/* Feature List */}
-                <div className="space-y-1.5 sm:space-y-2 lg:space-y-3 mb-4 sm:mb-6 lg:mb-8 flex-1">
-                  <div className="text-[11px] sm:text-xs font-bold uppercase tracking-wider text-foreground">
-                    Spesifikasi & Keunggulan Fitur:
+                <div className="space-y-2 sm:space-y-2.5 mb-6 lg:mb-8 flex-1">
+                  <div className="text-xs sm:text-sm font-bold uppercase tracking-wider text-foreground mb-2">
+                    Spesifikasi &amp; Keunggulan Fitur:
                   </div>
-                  <ul className="space-y-1 sm:space-y-1.5 lg:space-y-2.5">
+                  <ul className="space-y-2 sm:space-y-2.5">
                     {plan.features.map((feature) => (
-                      <li key={feature} className="flex items-start gap-1.5 sm:gap-2 lg:gap-2.5 text-[11.5px] sm:text-xs text-foreground/90 leading-relaxed">
-                        <div className="flex-shrink-0 w-3.5 h-3.5 sm:w-3.5 sm:h-3.5 lg:w-4 lg:h-4 rounded-full bg-primary/15 flex items-center justify-center mt-0.5 text-primary">
+                      <li key={feature} className="flex items-start gap-2.5 text-xs sm:text-sm text-foreground/90 leading-relaxed">
+                        <div className="flex-shrink-0 w-4 h-4 rounded-full bg-primary/15 flex items-center justify-center mt-0.5 text-primary">
                           <Check className="h-2.5 w-2.5" />
                         </div>
-                        <span className="line-clamp-2 sm:line-clamp-none">{feature}</span>
+                        <span>{feature}</span>
                       </li>
                     ))}
                   </ul>
@@ -449,7 +449,7 @@ export function PricingCards() {
                   asChild
                   size="lg"
                   variant={plan.popular ? "default" : "outline"}
-                  className="w-full rounded-lg font-semibold shadow-sm h-9 sm:h-10 lg:h-11 text-xs sm:text-xs lg:text-sm"
+                  className="w-full rounded-xl font-semibold shadow-sm h-11 lg:h-12 text-sm mt-auto"
                 >
                   <Link href={plan.ctaHref}>
                     {plan.ctaText}
