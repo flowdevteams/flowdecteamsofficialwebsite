@@ -4,6 +4,7 @@ import { Footer } from "@/components/footer"
 import { PricingHero } from "@/components/pricing/pricing-hero"
 import { PricingCards } from "@/components/pricing/pricing-cards"
 import { PricingFAQ } from "@/components/pricing/pricing-faq"
+import { CompanyProfilePricing } from "@/components/pricing/company-profile-pricing"
 import { CTASection } from "@/components/home/cta-section"
 
 export const metadata: Metadata = {
@@ -27,6 +28,7 @@ export default function PricingPage() {
         <PricingHero />
         <PricingCards />
         <PricingFAQ />
+        <CompanyProfilePricing />
         <CTASection />
       </main>
       <Footer />

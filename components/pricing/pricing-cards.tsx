@@ -324,6 +324,16 @@ export function PricingCards() {
               </span>
             </button>
           </div>
+
+          <a 
+            href="#company-profile-pricing" 
+            className="mt-3 text-[11px] sm:text-xs text-muted-foreground hover:text-primary transition-colors inline-flex items-center gap-1.5"
+          >
+            <span>Butuh paket khusus <strong>Company Profile &amp; Toko Retail (Accu / Suku Cadang)</strong>?</span>
+            <span className="font-semibold text-primary underline underline-offset-4 inline-flex items-center gap-0.5">
+              Lihat Paket Spesialisasi di Bawah ↓
+            </span>
+          </a>
         </div>
 
         {/* Pricing Cards Grid */}
