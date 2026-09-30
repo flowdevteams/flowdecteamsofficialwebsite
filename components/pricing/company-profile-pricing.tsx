@@ -10,9 +10,6 @@ import {
   Zap, 
   PhoneCall, 
   Building2, 
-  Car, 
-  FileText,
-  BadgePercent,
   Layers
 } from "lucide-react"
 import { Button } from "@/components/ui/button"
@@ -25,8 +22,6 @@ interface ComproPlan {
   subtitle: string
   badgeText?: string
   price: string
-  oldPrice: string
-  discount: string
   periodNote: string
   popular: boolean
   bestFor: string
@@ -40,81 +35,76 @@ interface ComproPlan {
 const comproPlans: ComproPlan[] = [
   {
     id: "compro-starter",
-    name: "Starter Toko & Profil Esensial",
-    subtitle: "Kehadiran online instan agar bengkel / toko fisik ditemukan di Google & terima order cepat via WhatsApp",
-    badgeText: "Hemat 25% • UMKM Entry",
-    price: "3.600.000",
-    oldPrice: "4.800.000",
-    discount: "Diskon 25%",
-    periodNote: "Investasi Sekali Bayar • Hak Milik 100%",
+    name: "Corporate Starter (Profil & Legalitas)",
+    subtitle: "Kehadiran online instan untuk legalitas usaha, profil bisnis kredibel, dan penerimaan prospek via WhatsApp",
+    badgeText: "Entry Level",
+    price: "2.800.000",
+    periodNote: "Investasi Fiks Sekali Bayar • Hak Milik 100%",
     popular: false,
-    bestFor: "Toko fisik aki & terminal mobil, bengkel UMKM, dan profil legalitas CV/PT baru",
+    bestFor: "PT/CV baru berdiri, konsultan independen, UMKM naik kelas, dan pemenuhan syarat tender awal",
     deliveryTime: "5–7 Hari Kerja",
-    pagesCount: "4–5 Halaman Esensial",
+    pagesCount: "7–8 Halaman Lengkap",
     features: [
-      "4–5 Halaman Esensial (Beranda, Antar Pasang, Katalog Produk Inti, Lokasi & Kontak)",
-      "Tombol Darurat Floating WhatsApp ('Aki Mogok? Panggil Bantuan Antar Pasang 1-Klik')",
-      "Informasi Layanan Antar Pasang & Skema Tukar Tambah Aki Bekas / Trade-in",
-      "Integrasi Google Maps Lokasi Toko & Rute Navigasi Langsung",
-      "GRATIS Domain Resmi (.com / .my.id) & Hosting Cloud Berkecepatan Tinggi 1 Tahun",
-      "Optimasi Local SEO Fundamental ('Toko Aki Mobil [Kota] Terdekat')",
+      "7–8 Halaman Lengkap (Beranda, Tentang Kami, Visi-Misi, Layanan/Produk, Galeri/Dokumentasi, Legalitas, Kontak & Lokasi)",
+      "Tombol Direct WhatsApp Interaktif & Form Inquiry Calon Klien Cepat",
+      "Seksi Struktur Organisasi, Nilai Perusahaan, & Dokumen Izin Usaha",
+      "Integrasi Google Maps Interaktif & Profil Google Bisnis Resmi",
+      "Tombol Unduh Dokumen Company Profile Resmi (Format PDF)",
+      "GRATIS Domain Resmi (.com / .id) & Hosting Cloud Berkecepatan Tinggi 1 Tahun",
+      "Optimasi Local SEO Fundamental agar nama perusahaan mudah dicari di Google",
       "Tampilan 100% Responsif & Ringan di Semua Smartphone Android & iPhone",
-      "Garansi Perbaikan Bug 1 Bulan Penuh & Kuota Revisi 2x"
+      "Garansi Pemeliharaan Bug 1 Bulan Penuh & Kuota Revisi 2x"
     ],
-    ctaText: "Pilih Paket Starter Rp 3,6 Jt",
+    ctaText: "Pilih Paket Starter Rp 2,8 Jt",
     ctaHref: "/kontak?paket=compro-starter"
   },
   {
     id: "compro-pro",
-    name: "Spesialis Bisnis & Katalog Interaktif",
-    subtitle: "Standar toko modern & PT berkembang dengan filter tipe mobil, katalog aksesoris lengkap, dan panel admin mandiri",
+    name: "Corporate Pro (Katalog & Interaktif)",
+    subtitle: "Standar representatif untuk PT berkembang dengan katalog produk/layanan lengkap dan panel admin mandiri",
     badgeText: "Paling Banyak Dipilih (Best Value)",
-    price: "5.925.000",
-    oldPrice: "7.900.000",
-    discount: "Diskon 25%",
-    periodNote: "Investasi Sekali Bayar • Sweet Spot Closing",
+    price: "4.900.000",
+    periodNote: "Investasi Fiks Sekali Bayar • Best Value",
     popular: true,
-    bestFor: "Toko spesialis aki modern, bengkel rekanan resmi, dan PT berkembang butuh CMS & katalog",
+    bestFor: "Perusahaan berkembang, distributor, kontraktor, konsultan profesional, dan bisnis B2B",
     deliveryTime: "10–14 Hari Kerja",
-    pagesCount: "7–8 Halaman Interaktif",
+    pagesCount: "10–12 Halaman Interaktif",
     features: [
-      "7–8 Halaman Lengkap (Beranda Promo, Katalog Aki, Aksesoris, Panduan Mobil, Tukar Tambah, Galeri, Form Booking)",
-      "Panduan Pencocokan Aki per Merk Mobil (Toyota, Honda, Mitsubishi, Daihatsu, Suzuki, dll.)",
-      "Katalog Terminal Aki & Kelistrikan (Terminal Kuningan, Timah, Quick Release, Kabel Jumper, Voltmeter)",
-      "Panel Admin (CMS) Simpel: Update harga aki & stok produk mandiri dari HP/Laptop tanpa koding",
-      "Direct WhatsApp Auto-Format (Tipe mobil, jenis aki, & lokasi antar otomatis terisi di chat)",
-      "Tombol Unduh Dokumen / Pricelist Brosur Resmi (Format PDF)",
-      "On-Page Local SEO Komprehensif agar muncul di halaman 1 pencarian Google",
-      "Integrasi Google Analytics & Meta Pixel untuk pelacakan calon pembeli",
-      "Garansi Perbaikan Bug 3 Bulan Penuh & Kuota Revisi 3x"
+      "Hingga 10–12 Halaman Lengkap (Beranda Korporat, Tentang Kami, Katalog Produk/Jasa, Galeri Proyek, Klien & Testimoni, Form RFQ, Berita/Blog)",
+      "Katalog Produk & Portofolio Interaktif (Kategori dinamis, detail spesifikasi, & galeri dokumentasi)",
+      "Panel Admin (CMS) Simpel: Update produk, galeri proyek, & artikel mandiri dari HP/Laptop tanpa koding",
+      "Form Permintaan Penawaran Resmi (RFQ - Request for Quotation)",
+      "Direct WhatsApp Auto-Format (Nama layanan/produk yang diminati otomatis terisi di pesan chat)",
+      "Tombol Unduh Brosur, Katalog Produk, & Dokumen Legalitas (Format PDF)",
+      "On-Page SEO Bisnis Komprehensif agar ranking teratas di mesin pencarian Google",
+      "Integrasi Google Analytics & Meta Pixel untuk pelacakan calon klien potensial",
+      "Garansi Pemeliharaan Bug 3 Bulan Penuh & Kuota Revisi 3x"
     ],
-    ctaText: "Pilih Paket Rekomendasi Rp 5,9 Jt",
+    ctaText: "Pilih Paket Rekomendasi Rp 4,9 Jt",
     ctaHref: "/kontak?paket=compro-pro"
   },
   {
     id: "compro-enterprise",
-    name: "Grosir & Multi-Cabang Enterprise",
-    subtitle: "Skala ekspansi untuk distributor partai besar terminal accu, multi-outlet cabang kota, dan legalitas tender B2B",
-    badgeText: "Hemat 25% • Skala Grosir & B2B",
-    price: "9.990.000",
-    oldPrice: "13.500.000",
-    discount: "Diskon 25%",
-    periodNote: "Investasi Sekali Bayar • Skala Korporat",
+    name: "Corporate Enterprise (Multi-Cabang & Global)",
+    subtitle: "Skala ekspansi untuk holding company, distributor multi-cabang, eksportir, dan tender korporat besar",
+    badgeText: "Skala Korporat & B2B",
+    price: "8.900.000",
+    periodNote: "Investasi Fiks Sekali Bayar • Skala Korporat",
     popular: false,
-    bestFor: "Distributor grosir terminal aki, jaringan toko multi-cabang, dan supplier sparepart B2B",
+    bestFor: "Holding company, distributor multi-outlet, eksportir, manufaktur, dan korporat skala besar",
     deliveryTime: "3–4 Minggu",
-    pagesCount: "12+ Halaman Fleksibel",
+    pagesCount: "15+ Halaman Fleksibel",
     features: [
-      "12+ Halaman Fleksibel (Multi-Cabang, Portal Grosir B2B, Katalog Part Number, Karir, Legalitas)",
-      "Multi-Outlet Location Selector (Pilihan cabang terdekat & kontak admin per kota / area)",
-      "Modul Pesanan Partai Besar / Grosir (Form order B2B per lusin/dus & tier harga reseller)",
-      "Tabel Spesifikasi Teknis Mendalam (Kapasitas Ah, dimensi aki, CCA, ukuran pole & material terminal)",
-      "Headless CMS Lengkap untuk kelola cabang, staf, artikel edukasi, & daftar produk massal",
-      "Local SEO Multi-Kota untuk seluruh cabang outlet yang beroperasi",
+      "15+ Halaman Fleksibel (Multi-Cabang, Karir, Investor Relations, Katalog Mitra B2B, Legalitas ISO)",
+      "Multi-Outlet / Branch Location Selector (Pilihan kantor cabang & kontak admin per kota / area)",
+      "Modul Kerjasama B2B / Kemitraan Bisnis (Form pengajuan kemitraan & proposal resmi)",
+      "Dukungan Struktur Multi-Bahasa / Bilingual (Bahasa Indonesia & English)",
+      "Headless CMS Lengkap untuk kelola cabang, berita/CSR, & lowongan kerja perusahaan",
+      "Local SEO Multi-Kota untuk seluruh cabang operasional yang terdaftar",
       "High Security DDoS Protection, Backup Otomatis Mingguan & SLA Support Tanggap",
       "Handover 100% Hak Milik Source Code + Garansi Bug 6 Bulan Prioritas"
     ],
-    ctaText: "Konsultasi Paket Grosir Rp 9,9 Jt",
+    ctaText: "Konsultasi Paket Korporat Rp 8,9 Jt",
     ctaHref: "/kontak?paket=compro-enterprise"
   }
 ]
@@ -128,32 +118,32 @@ export function CompanyProfilePricing() {
         <div className="text-center mb-8 sm:mb-12 lg:mb-16">
           <AnimatedSection animation="fade-in-down">
             <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-wider mb-3 border border-primary/20">
-              <BadgePercent className="h-3.5 w-3.5" />
-              Edisi Khusus Company Profile &amp; Toko Katalog UMKM
+              <Building2 className="h-3.5 w-3.5" />
+              Paket Resmi Company Profile &amp; Bisnis
             </div>
           </AnimatedSection>
 
           <AnimatedSection animation="fade-in-up" delay={100}>
             <h2 className="text-xl sm:text-2xl lg:text-4xl font-bold text-foreground tracking-tight font-heading">
-              Paket Investasi Khusus Company Profile &amp; Usaha Otomotif
+              Paket Investasi Website Company Profile &amp; Katalog Bisnis
             </h2>
           </AnimatedSection>
 
           <AnimatedSection animation="fade-in-up" delay={200}>
             <p className="mt-2.5 sm:mt-3 text-xs sm:text-sm lg:text-base text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              Diformulasikan khusus untuk UMKM toko retail (seperti penjualan Terminal &amp; Accu Mobil, Bengkel, dan Distributor Teknik) hingga Company Profile PT. Berdasarkan tarif wajar agensi di Indonesia yang telah dipotong <strong>diskon marketing 25%</strong> untuk memberikan ROI dan daya saing tertinggi bagi bisnis Anda.
+              Pilihan investasi terukur untuk CV, PT, penyedia jasa profesional, distributor, hingga korporat modern. Harga fiks transparan tanpa biaya tersembunyi, siap tayang dengan teknologi Next.js native berkecepatan tinggi, SEO optimal, dan 100% hak kepemilikan source code.
             </p>
           </AnimatedSection>
 
           {/* Quick Value Highlights */}
           <AnimatedSection animation="fade-in-up" delay={300} className="mt-6 flex flex-wrap items-center justify-center gap-2 sm:gap-4 text-[11px] sm:text-xs text-muted-foreground">
             <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-md bg-background border border-border/80 shadow-2xs">
-              <Car className="h-3.5 w-3.5 text-primary" />
-              Siap Modul Katalog &amp; Filter Kendaraan
+              <Building2 className="h-3.5 w-3.5 text-primary" />
+              Struktur Profil &amp; Legalitas Resmi
             </span>
             <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-md bg-background border border-border/80 shadow-2xs">
               <PhoneCall className="h-3.5 w-3.5 text-primary" />
-              Floating Tombol Darurat WhatsApp
+              Direct WhatsApp CTA &amp; Form RFQ
             </span>
             <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-md bg-background border border-border/80 shadow-2xs">
               <ShieldCheck className="h-3.5 w-3.5 text-primary" />
@@ -189,7 +179,7 @@ export function CompanyProfilePricing() {
                   </div>
                 )}
 
-                {/* Promo Badge for non-popular */}
+                {/* Badge for non-popular */}
                 {!plan.popular && plan.badgeText && (
                   <div className="inline-flex self-start mb-3">
                     <span className="rounded-md bg-primary/10 text-primary border border-primary/20 px-2.5 py-0.5 text-xs font-bold">
@@ -208,17 +198,8 @@ export function CompanyProfilePricing() {
                   </p>
                 </div>
 
-                {/* Price Display */}
+                {/* Price Display (Clean, Fixed, Direct) */}
                 <div className="mb-4 pb-4 border-b border-border/60">
-                  <div className="flex items-center gap-2 mb-1">
-                    <span className="text-xs text-muted-foreground line-through">
-                      Harga Normal: Rp {plan.oldPrice}
-                    </span>
-                    <span className="text-[10px] font-bold uppercase bg-destructive/10 text-destructive px-1.5 py-0.5 rounded">
-                      {plan.discount}
-                    </span>
-                  </div>
-
                   <div className="flex items-baseline gap-1.5">
                     <span className="text-sm font-semibold text-muted-foreground">Rp</span>
                     <span className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-foreground">
@@ -226,7 +207,7 @@ export function CompanyProfilePricing() {
                     </span>
                   </div>
 
-                  <div className="mt-1 text-xs text-primary font-medium">
+                  <div className="mt-1 text-xs text-muted-foreground font-medium">
                     {plan.periodNote}
                   </div>
                 </div>
@@ -292,13 +273,13 @@ export function CompanyProfilePricing() {
           <div className="space-y-1.5 text-center md:text-left max-w-2xl">
             <div className="inline-flex items-center gap-1.5 text-xs font-bold text-primary">
               <Zap className="h-4 w-4" />
-              Opsi Mesin Pemeliharaan Rutin (Website Care &amp; Fluktuasi Harga)
+              Opsi Pemeliharaan Rutin (Website Care &amp; Growth)
             </div>
             <h4 className="text-base sm:text-lg font-bold text-foreground">
-              Butuh Tim untuk Rutin Update Harga Aki &amp; Stok Suku Cadang?
+              Butuh Tim untuk Rutin Pemeliharaan &amp; Update Konten Bisnis?
             </h4>
             <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
-              Tersedia paket pemeliharaan berkala mulai <strong>Rp 250.000 – Rp 500.000/bulan</strong> untuk update berkala tabel harga aki/terminal, backup mingguan, monitoring uptime server 24/7, dan perpanjangan domain terkelola.
+              Tersedia paket pemeliharaan berkala mulai <strong>Rp 250.000 – Rp 500.000/bulan</strong> untuk update materi promosi berkala, posting artikel SEO, monitoring uptime server 24/7, backup mingguan, dan perpanjangan domain terkelola.
             </p>
           </div>
           <Button asChild variant="outline" className="shrink-0 font-semibold border-primary/30 hover:bg-primary/10">
